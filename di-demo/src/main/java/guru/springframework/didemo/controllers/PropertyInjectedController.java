@@ -20,6 +20,9 @@ public class PropertyInjectedController {
 
     //3rd
     // from 2nd, if we give the property name same as the Bean name name @Qualifier is not required
+    // this causes issue when using @Primary annotation hence avoid, and use @annotation. @Primary overrides this below 
+//    public GreetingService greetingServiceImpl;
+    @Qualifier("greetingServiceImpl")
     public GreetingService greetingServiceImpl;
     public String sayHello(){
 //        return greetingService.sayGreeting();
