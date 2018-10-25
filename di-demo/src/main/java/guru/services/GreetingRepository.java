@@ -1,4 +1,4 @@
-package guru.springframework.didemo.services;
+package guru.services;
 
 public interface GreetingRepository {
 
