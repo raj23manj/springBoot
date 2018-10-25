@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class JokeController {
 
     private JokeService jokeService;
-
+    // this is in the same apllication the service so autowire it
     @Autowired
     public JokeController(JokeService jokeService) {
         this.jokeService = jokeService;

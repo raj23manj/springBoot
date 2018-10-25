@@ -6,9 +6,9 @@ import org.springframework.context.annotation.Configuration;
 
 
 // this type of configuration is used a lot when using a third part package like chucknorris here
-@Configuration
+//@Configuration
 public class ChuckConfiguration {
-    @Bean
+    //@Bean
     public ChuckNorrisQuotes chuckNorrisQuotes() {
         return new ChuckNorrisQuotes();
     }
