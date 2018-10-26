@@ -15,14 +15,14 @@ import org.springframework.core.env.Environment;
 // bring in the file
 //@PropertySource("classpath:datasource.properties")
 //@PropertySource({"classpath:datasource.properties", "classpath:jms.properties"})
-@PropertySources({
-        @PropertySource("classpath:datasource.properties"),
-        @PropertySource("classpath:jms.properties")
-})
+//@PropertySources({
+//        @PropertySource("classpath:datasource.properties"),
+//        @PropertySource("classpath:jms.properties")
+//})
 public class PropertyConfig {
 
-    @Autowired
-    Environment env;
+//    @Autowired
+//    Environment env;
 
     // this will get into the spring context and get it as externalised property
     @Value("${guru.username}")
@@ -47,11 +47,11 @@ public class PropertyConfig {
     @Bean
     public FakeDataSource fakeDataSource() {
         FakeDataSource fakeDataSource = new FakeDataSource();
-//        fakeDataSource.setUser(user); see video 95 section 6 for env
 /*
 * next to hammer > edit configurations > Environment > Environment variables set it there
-* */
-        fakeDataSource.setUser(env.getProperty("USERNAME"));
+* */    //see video 95 section 6 for env
+        //fakeDataSource.setUser(env.getProperty("USERNAME"));
+        fakeDataSource.setUser(user);
         fakeDataSource.setPassword(password);
         fakeDataSource.setUrl(url);
         return fakeDataSource;
@@ -68,10 +68,11 @@ public class PropertyConfig {
 
 
 
-    @Bean
-    // this will match/wire up the properties from the properties file to attributes
-    public static PropertySourcesPlaceholderConfigurer properties() {
-        PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer = new PropertySourcesPlaceholderConfigurer();
-        return propertySourcesPlaceholderConfigurer;
-    }
+//    @Bean
+//    // this will match/wire up the properties from the properties file to attributes
+     // use it if using to set from other property file apart from application.properties
+//    public static PropertySourcesPlaceholderConfigurer properties() {
+//        PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer = new PropertySourcesPlaceholderConfigurer();
+//        return propertySourcesPlaceholderConfigurer;
+//    }
 }
