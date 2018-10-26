@@ -11,7 +11,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 // package scan
-@ComponentScan(basePackages = {"guru.services", "guru.springframework.didemo"})
+@ComponentScan(basePackages = {"guru.springframework.didemo.services", "guru.springframework.didemo"})
 // @ComponentScan(basePackages = {"guru"}) // this also works
 public class DiDemoApplication {
 
