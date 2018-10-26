@@ -1,0 +1,7 @@
+# spring boot will look out application for yml files starting with 'application', and loads by default to spring context
+
+guru:
+  jms:
+    username: JMS Username
+    password: somepass
+    url: SomeURL
