@@ -1,0 +1,36 @@
+# this is a comment, 2 or 4 spaces
+
+name: John
+
+names:
+    - john
+    - Paul
+    - Ringo
+
+pound_sign: "#"  #overrinding/escaping #
+
+book:
+    author: Joe Buck
+    pubisher: random house
+
+truth: yes
+
+another_truth: True
+
+more_true: true
+
+false: no #No, false, False
+
+sting_val: "this is it's quote"
+
+colon_string: "my courses: one two three"
+
+include_new_lines: |  # pipe say pull in everything
+  asdd adasds asdasd
+  adasd asdasd asdads
+  asd adsasd
+
+ignore_new_lines:
+  this is
+  just one long
+  string
