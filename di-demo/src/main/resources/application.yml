@@ -1,7 +1,17 @@
 # spring boot will look out application for yml files starting with 'application', and loads by default to spring context
 
+#https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html
+
 guru:
   jms:
     username: JMS Username
     password: somepass
     url: SomeURL
+
+
+--- # means file seperator #this can be done by creating another application-de.yml or this was
+spring:
+  profiles: de
+guru:
+  jms:
+    username: JMS Username $$$ German
