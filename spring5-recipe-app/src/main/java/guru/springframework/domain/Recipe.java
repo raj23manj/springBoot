@@ -21,7 +21,7 @@ public class Recipe {
     private String source;
     private String url;
 
-    @Lob
+    @Lob // large objects, clob , blob more that 255 characters here as blob
     private String directions;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
@@ -30,21 +30,21 @@ public class Recipe {
     @Lob // large objects, clob , blob more that 255 characters here as blob
     private Byte[] image;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    private Notes notes;
-
-    @ManyToMany()
-    @JoinTable(name = "recipe_category",
-            joinColumns = @JoinColumn(name = "recipe_id"),
-            inverseJoinColumns = @JoinColumn(name = "category_id"))
-    private Set<Category> categories =  new HashSet<>();
-
     /*
      section 8,  #143
      ORDINAL gives number for each value[1,2,3]. when added to DB, later new value added to enum in between, id will change
     * */
     @Enumerated(value = EnumType.STRING)
     private Difficulty difficulty;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    private Notes notes;
+
+    @ManyToMany
+    @JoinTable(name = "recipe_category",
+            joinColumns = @JoinColumn(name = "recipe_id"),
+            inverseJoinColumns = @JoinColumn(name = "category_id"))
+    private Set<Category> categories = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -124,6 +124,13 @@ public class Recipe {
 
     public void setNotes(Notes notes) {
         this.notes = notes;
+        notes.setRecipe(this);
+    }
+
+    public Recipe addIngredient(Ingredient ingredient){
+        ingredient.setRecipe(this);
+        this.ingredients.add(ingredient);
+        return this;
     }
 
     public Set<Ingredient> getIngredients() {
