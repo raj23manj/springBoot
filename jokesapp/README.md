@@ -109,3 +109,21 @@
   * jpa takes care of all implementation  
   * note here no Stereotype declarations for this like @ component, @service ...ect JPA inmplements it so it is avaliable in the
     Bean Container
+  * JPA has @PrePersist and @PreUpdate for automatic update timestamp properties for audit purpose, same thing in hibernate has @CreationTimestamp and @UpdateTimestamp
+  
+  # Types Of Cascade
+    * Persist
+    * Merge
+    * Refresh
+    * Remove   
+    * Detach
+    * All
+    
+  # Hibernates default persistence strategy for inheritance
+    * Single Table Inheritance -> leads to lot of unused coloms, with type colom as common  
+    * Hibernates ddl-auto property control's if any ddl operatiions hibernate will perform on start up.
+      * options for ddl-auto => none, validate(used for production to check if any attribute or table is missed), update, create, create-drop() using embeded DB
+  
+  # Files used by spring Boot to initialize the DB
+    * schema.sql
+    * data.sql
