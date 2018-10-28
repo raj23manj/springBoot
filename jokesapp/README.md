@@ -91,3 +91,11 @@
    
 # Disable Specific Spring Boot auto-configuration classes
    * Need to pass the class name to 'exclude' parameter of @EnableAutoConfiguration 
+   
+# Connect h2
+  * http://localhost:8080/h2-console
+  
+# Hibernate  
+  * By default in hibernate if did not specify cascade nothing will be mentioned   
+  * https://o7planning.org/en/11223/generate-tables-from-entity-classes-in-hibernate 
+  * http://www.techferry.com/articles/hibernate-jpa-annotations.html 
