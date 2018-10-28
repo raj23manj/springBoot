@@ -102,3 +102,10 @@
   * By default in hibernate if did not specify cascade nothing will be mentioned   
   * https://o7planning.org/en/11223/generate-tables-from-entity-classes-in-hibernate 
   * http://www.techferry.com/articles/hibernate-jpa-annotations.html 
+
+# JPA
+  * addition to spring 5, it returns an optional instead of null
+  * these dynamic queries like in rails, here they are called JPA Query methods
+  * jpa takes care of all implementation  
+  * note here no Stereotype declarations for this like @ component, @service ...ect JPA inmplements it so it is avaliable in the
+    Bean Container
