@@ -95,6 +95,9 @@
 # Connect h2
   * http://localhost:8080/h2-console
   
+# Jhipster
+  * https://start.jhipster.tech/jdl-studio/
+    
 # Hibernate  
   * By default in hibernate if did not specify cascade nothing will be mentioned   
   * https://o7planning.org/en/11223/generate-tables-from-entity-classes-in-hibernate 
