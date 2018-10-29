@@ -1,6 +1,7 @@
 package guru.springframework.domain;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
 
@@ -8,6 +9,9 @@ import javax.persistence.*;
  * Created by jt on 6/13/17.
  */
 @Data
+/* gets circular refference created due to bi-directional relationships and
+to avoid StackOverflowerror for realtionships mainly */
+@EqualsAndHashCode(exclude = {"recipe"})
 @Entity
 public class Notes {
 
@@ -22,7 +26,8 @@ public class Notes {
     private String recipeNotes;
 
 
-
+/* gets circular refference created due to bi-directional relationships and
+to avoid StackOverflowerror for realtionships mainly see here you can see */
 //    public boolean equals(final Object o) {
 //        if (o == this) return true;
 //        if (!(o instanceof Notes)) return false;

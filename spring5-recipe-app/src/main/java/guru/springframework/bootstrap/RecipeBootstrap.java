@@ -9,6 +9,7 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
+import javax.transaction.Transactional;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +33,10 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
     }
 
     @Override
+    //section 9, 173
+    /* ann error occurs, due to relationships and setting up lazy loading by JPA+Hibernate some,
+    when setting up it happens and does not, to avoid it use @Transacational to set up transaction block*/
+    @Transactional
     public void onApplicationEvent(ContextRefreshedEvent event) {
         recipeRepository.saveAll(getRecipes());
         log.debug("Loading Bootstrap Data");
