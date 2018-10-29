@@ -1,6 +1,10 @@
 # Spring Boot Jokes App
 
  This sample web app
+ 
+ # Good Links
+   * // https://stackoverflow.com/questions/19795709/understanding-upper-and-lower-bounds-on-in-java-generics
+
 
 #How to create a new project with spring initalizer
   * create new project > select spring initializer > selected dependencies
@@ -127,3 +131,26 @@
   # Files used by spring Boot to initialize the DB
     * schema.sql
     * data.sql
+    
+  # Different Repositories To Implement
+    /* package org.springframework.data.repository; Depends on when to use what usecase*/
+    * Repository (Base)
+    * CrudRepository
+    * PagingAndSortingRepository
+    * JpaRepository
+    
+  # Lombok
+    @Getter and @Setter
+    @FieldNameConstants
+    @ToString
+    @EqualsAndHashCode
+    @AllArgsConstructor, @RequiredArgsConstructor and @NoArgsConstructor
+    @Log, @Log4j, @Log4j2, @Slf4j, @XSlf4j, @CommonsLog, @JBossLog, @Flogger
+    @Data(@ToString, @EqualsAndHashCode, @Getter, @Setter and required args constructor)
+    @Builder
+    @Singular
+    @Delegate
+    @Value
+    @Accessors
+    @Wither
+    @SneakyThrows 
