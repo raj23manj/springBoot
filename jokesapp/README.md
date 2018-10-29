@@ -3,7 +3,10 @@
  This sample web app
  
  # Good Links
-   * // https://stackoverflow.com/questions/19795709/understanding-upper-and-lower-bounds-on-in-java-generics
+   * https://stackoverflow.com/questions/19795709/understanding-upper-and-lower-bounds-on-in-java-generics
+   * https://www.journaldev.com/721/java-annotations
+   * https://stackoverflow.com/questions/2265503/why-do-i-need-to-override-the-equals-and-hashcode-methods-in-java
+   * http://www.techferry.com/articles/hibernate-jpa-annotations.html
 
 
 #How to create a new project with spring initalizer
