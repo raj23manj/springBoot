@@ -157,3 +157,34 @@
     @Accessors
     @Wither
     @SneakyThrows 
+    
+  # Testing 
+    * Code under Test (testing code)
+    * Test fixture(dummy objects for tests)
+    * Unit Test
+      * testing specific code, like method in a class
+      * should not have external dependencies(no DB, spring context)
+    * Integration Test
+      * test behaviour between objects and parts of overall system
+      * can include DB, Spring COntext, message Brokers
+    * Functional Test
+      * Testing a running application, which is deployed
+      * using web driver, calling web services, send/receiving messages 
+    * TDD
+      * write tests first and the code
+    * BDD
+      * cucumber, spock, Jbehave
+    * Mock
+      * fake implementaion of a class , test double
+    * Spy
+      * override selct methods of a class   
+    * Dependencies
+      * Junit - for unit testing
+      * Spring Test and Spring Boot Test - Utilities and Integration test support for Spring Boot Applications
+      * AssertJ - assertion lib
+      * Hamcrest - matcher objects lib
+      * Mockito - mocking framework
+      * JSONassert - assertion lib for JSON
+      * JSONPath - Xpath for JSON 
+          
+        
