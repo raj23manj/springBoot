@@ -140,7 +140,7 @@
     * Repository (Base)
     * CrudRepository
     * PagingAndSortingRepository
-    * JpaRepository
+    * JpaRepository(include's All three above)
     
   # Lombok
     @Getter and @Setter
