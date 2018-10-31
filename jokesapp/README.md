@@ -186,5 +186,16 @@
       * Mockito - mocking framework
       * JSONassert - assertion lib for JSON
       * JSONPath - Xpath for JSON 
-          
+      
+      * @SpringBootTest 
+        *  bring up the complete spring context with everything loaded
+      * @DataJpaTest
+        * brings up a light weight spring context 
+         
+  # Command Objects
+    * not expose domain/models classes/objects
+    * bind web form data    
+  
+  # To ensure thread safety on multi threaded environment machines use lombok's @Synchronized
+           
         
