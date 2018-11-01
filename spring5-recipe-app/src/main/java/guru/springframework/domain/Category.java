@@ -8,7 +8,9 @@ import java.util.Set;
 /**
  * Created by jt on 6/13/17.
  */
-@Data
+//@Data
+@Getter
+@Setter
 /* gets circular refference created due to bi-directional relationships and
 to avoid StackOverflowerror for realtionships mainly */
 @EqualsAndHashCode(exclude = {"recipes"})

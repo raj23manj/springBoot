@@ -1,14 +1,14 @@
 package guru.springframework.domain;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
 
 import javax.persistence.*;
 
 /**
  * Created by jt on 6/13/17.
  */
-@Data
+@Getter
+@Setter
 /* gets circular refference created due to bi-directional relationships and
 to avoid StackOverflowerror for realtionships mainly */
 @EqualsAndHashCode(exclude = {"recipe"})
