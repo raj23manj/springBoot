@@ -197,5 +197,11 @@
     * bind web form data    
   
   # To ensure thread safety on multi threaded environment machines use lombok's @Synchronized
-           
+  
+  # @init Binder
+    * something like use to process the incoming request paramas, validating then, ex. white listing params like 
+      * permit().require() in rails, and other things
+      
+  # @ModelAttribute
+    * similar to before_filters in rails         
         
