@@ -64,13 +64,15 @@ public class RecipeController {
     // need to pass , 200 takes precedences
     @ExceptionHandler(NotFoundException.class)
     // exception handler returns a model and view, here we sa that to handle NotFoundException
-    public ModelAndView handleNotFound(){
+    public ModelAndView handleNotFound(Exception exception){
 
-        log.error("Handling not found exception");
+        //log.error("Handling not found exception");
+        log.error(exception.getMessage());
 
         ModelAndView modelAndView = new ModelAndView();
 
         modelAndView.setViewName("404error");
+        modelAndView.addObject("exception", exception);
 
         return modelAndView;
     }
