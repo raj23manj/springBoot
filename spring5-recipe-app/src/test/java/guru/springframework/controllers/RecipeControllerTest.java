@@ -78,7 +78,7 @@ public class RecipeControllerTest {
                 .contentType(MediaType.APPLICATION_FORM_URLENCODED) // it says it is a form that posts
                 .param("id", "")
                 .param("description", "some string")
-                .param("directions", "")
+                .param("directions", "aaa")
         )
                 .andExpect(status().is3xxRedirection())
                 .andExpect(view().name("redirect:/recipe/2/show"));
