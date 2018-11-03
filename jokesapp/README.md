@@ -133,7 +133,7 @@
   
   # Files used by spring Boot to initialize the DB
     * schema.sql
-    * data.sql
+    * data.sql(by default spring searches for this file)
     
   # Different Repositories To Implement
     /* package org.springframework.data.repository; Depends on when to use what usecase*/
