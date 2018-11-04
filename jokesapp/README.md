@@ -188,9 +188,9 @@
       * JSONPath - Xpath for JSON 
       
       * @SpringBootTest 
-        *  bring up the complete spring context with everything loaded
+        *  bring up the complete spring context with everything loaded(loads all beans services, controller's, no need to manually set up)
       * @DataJpaTest
-        * brings up a light weight spring context 
+        * brings up a light weight spring context(data jpa, data layer, need to setup service manually) 
          
   # Command Objects
     * not expose domain/models classes/objects
@@ -207,4 +207,7 @@
   
   # Jenv
     * https://stackoverflow.com/questions/26252591/mac-os-x-and-multiple-java-versions
-      
+  
+  # Seeding like rails, in spring boot
+    * Application context refresh(events) - not spring boot specific
+    * command line runner - spring boot specific    
