@@ -204,4 +204,7 @@
       
   # @ModelAttribute
     * similar to before_filters in rails         
-        
+  
+  # Jenv
+    * https://stackoverflow.com/questions/26252591/mac-os-x-and-multiple-java-versions
+      
