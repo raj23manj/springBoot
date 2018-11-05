@@ -211,3 +211,18 @@
   # Seeding like rails, in spring boot
     * Application context refresh(events) - not spring boot specific
     * command line runner - spring boot specific    
+    
+  # run java jar
+    * java -cp target/sumofnumbers-1.0-SNAPSHOT.jar com.rajesh.App 1 2
+  
+  # Maven
+    * mvn install
+    * mvn install -DskipTests (to skip tests)   
+    
+  # Scopes in plugins
+    * compile (default)   
+    * test
+    * provide
+    * system
+    * import
+    
