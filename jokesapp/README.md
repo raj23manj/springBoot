@@ -218,6 +218,7 @@
   # Maven
     * mvn install
     * mvn install -DskipTests (to skip tests)   
+    * mvn archetype:generate -DgroupId=com.rajesh -DartifactId=hellomaven -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
     
   # Scopes in plugins
     * compile (default)   
@@ -225,4 +226,7 @@
     * provide
     * system
     * import
-    
+   
+  # Automatic Date Update
+    * https://stackoverflow.com/questions/46504448/how-to-insert-data-with-automatic-value-to-createddate-and-updateddate-using-spr/46504581  
+    * http://techie-mixture.blogspot.com/2018/01/spring-data-jpa-auditing-auto-save.html
