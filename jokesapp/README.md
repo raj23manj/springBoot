@@ -230,3 +230,9 @@
   # Automatic Date Update
     * https://stackoverflow.com/questions/46504448/how-to-insert-data-with-automatic-value-to-createddate-and-updateddate-using-spr/46504581  
     * http://techie-mixture.blogspot.com/2018/01/spring-data-jpa-auditing-auto-save.html
+    
+  # EH Cache (Level 2 Cache)
+    * Cache provider, caches objects at session factory level  
+    * Fast And LightWeight
+    * Can be used as in memory or disk based caching(serializing and deserializing)
+    * Allows time out for an object in cache. (XML based)
