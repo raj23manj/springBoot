@@ -236,3 +236,12 @@
     * Fast And LightWeight
     * Can be used as in memory or disk based caching(serializing and deserializing)
     * Allows time out for an object in cache. (XML based)
+    * https://www.concretepage.com/spring-4/spring-4-ehcache-configuration-example-with-cacheable-annotation
+    * https://dzone.com/articles/spring-boot-with-ehcache-3-and-jsr-107
+    * https://www.youtube.com/watch?v=cWqNeANzEz0
+  
+  # Connecting to multiple DB's
+    * https://www.devglan.com/spring-boot/spring-boot-multiple-database-configuration
+    
+  # in 28 minutes
+    * http://www.springboottutorial.com/spring-boot-projects-with-code-examples    
