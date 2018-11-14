@@ -265,14 +265,30 @@
   * when archived as War, it will not even contain the apache tomcat in it, used when already existing stand alone tomcat  
     server is running an need to use it   
     
-# TomCat runnin from commad Line
+# TomCat running from commad Line
   * move to where tomcat is installed /Users/rmanjunath/Desktop/tomcat/apache-tomcat-9.0.12/bin 
   * ./startup.sh
   * ./shutdown.sh
   * or  ./catalina.sh start  ,  stop
   * if say's permission denied, then chmod a+x *.sh
   
+# Java Path on Mac Jenv
+  * /Library/Java/JavaVirtualMachines/  
+  
+# Cas Server    
+  * https://apereo.github.io/2017/03/28/cas5-gettingstarted-overlay/
+  
+# Java Uninstall
+  * https://stackoverflow.com/questions/19039752/removing-java-8-jdk-from-mac  
+  * 
   
   
   
-    
+  
+  
+  
+  
+########################################  
+  
+# Ember Link    
+  * https://gist.github.com/kristianmandrup/ae3174217f68a6a51ed5
