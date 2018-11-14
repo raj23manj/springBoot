@@ -252,6 +252,27 @@
   # Good Blog
     * http://www.appsdeveloperblog.com
     
-  # Deploying Apps
-    * mvn install (to build and compile )  
-    * mvn spring-boot:run (this command will the app in apache tomcat servlet container like rails s) 
+# Deploying Apps
+  * mvn clean (removes the already generated target folder, with compiled code)
+  * mvn install (to build and compile )  
+  * mvn spring-boot:run (this command will the app in apache tomcat servlet container like rails s)   
+    
+# Running compiler jar files from other Location
+  * java -jar mobile-app-ws-0.0.1-SNAPSHOT.jar 
+  
+# Archiving Applications as Jar/War
+  * when archived as Jar, it will even contain the apache tomcat in it, used then sharing the files to others machines 
+  * when archived as War, it will not even contain the apache tomcat in it, used when already existing stand alone tomcat  
+    server is running an need to use it   
+    
+# TomCat runnin from commad Line
+  * move to where tomcat is installed /Users/rmanjunath/Desktop/tomcat/apache-tomcat-9.0.12/bin 
+  * ./startup.sh
+  * ./shutdown.sh
+  * or  ./catalina.sh start  ,  stop
+  * if say's permission denied, then chmod a+x *.sh
+  
+  
+  
+  
+    
