@@ -216,7 +216,7 @@
     * java -cp target/sumofnumbers-1.0-SNAPSHOT.jar com.rajesh.App 1 2
   
   # Maven
-    * mvn install
+    * mvn install(compiles and builds project)
     * mvn install -DskipTests (to skip tests)   
     * mvn archetype:generate -DgroupId=com.rajesh -DartifactId=hellomaven -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
     
@@ -245,3 +245,13 @@
     
   # in 28 minutes
     * http://www.springboottutorial.com/spring-boot-projects-with-code-examples    
+    
+  # github tree like in browser
+    * https://opencollective.com/octotree
+    
+  # Good Blog
+    * http://www.appsdeveloperblog.com
+    
+  # Deploying Apps
+    * mvn install (to build and compile )  
+    * mvn spring-boot:run (this command will the app in apache tomcat servlet container like rails s) 
