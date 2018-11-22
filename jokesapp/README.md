@@ -282,10 +282,16 @@
   * https://stackoverflow.com/questions/19039752/removing-java-8-jdk-from-mac  
   * 
   
+# Aws
+  * ssh -i *.pem.txt/.pem ec2-user@dns ...  
   
+  # other way
+    * chmod 400 *.pem
+    * ssh-add
+    * ssh-add *.pem
   
-  
-  
+  # Issues for Tom cat
+    * https://stackoverflow.com/questions/38551166/403-access-denied-on-tomcat-8-manager-app-without-prompting-for-user-password 
   
   
 ########################################  
