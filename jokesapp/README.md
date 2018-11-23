@@ -133,7 +133,7 @@
   
   # Files used by spring Boot to initialize the DB
     * schema.sql
-    * data.sql
+    * data.sql(by default spring searches for this file)
     
   # Different Repositories To Implement
     /* package org.springframework.data.repository; Depends on when to use what usecase*/
@@ -188,9 +188,9 @@
       * JSONPath - Xpath for JSON 
       
       * @SpringBootTest 
-        *  bring up the complete spring context with everything loaded
+        *  bring up the complete spring context with everything loaded(loads all beans services, controller's, no need to manually set up)
       * @DataJpaTest
-        * brings up a light weight spring context 
+        * brings up a light weight spring context(data jpa, data layer, need to setup service manually) 
          
   # Command Objects
     * not expose domain/models classes/objects
@@ -204,4 +204,105 @@
       
   # @ModelAttribute
     * similar to before_filters in rails         
-        
+  
+  # Jenv
+    * https://stackoverflow.com/questions/26252591/mac-os-x-and-multiple-java-versions
+  
+  # Seeding like rails, in spring boot
+    * Application context refresh(events) - not spring boot specific
+    * command line runner - spring boot specific    
+    
+  # run java jar
+    * java -cp target/sumofnumbers-1.0-SNAPSHOT.jar com.rajesh.App 1 2
+  
+  # Maven
+    * mvn install(compiles and builds project)
+    * mvn install -DskipTests (to skip tests)   
+    * mvn archetype:generate -DgroupId=com.rajesh -DartifactId=hellomaven -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+    
+  # Scopes in plugins
+    * compile (default)   
+    * test
+    * provide
+    * system
+    * import
+   
+  # Automatic Date Update
+    * https://stackoverflow.com/questions/46504448/how-to-insert-data-with-automatic-value-to-createddate-and-updateddate-using-spr/46504581  
+    * http://techie-mixture.blogspot.com/2018/01/spring-data-jpa-auditing-auto-save.html
+    
+  # EH Cache (Level 2 Cache)
+    * Cache provider, caches objects at session factory level  
+    * Fast And LightWeight
+    * Can be used as in memory or disk based caching(serializing and deserializing)
+    * Allows time out for an object in cache. (XML based)
+    * https://www.concretepage.com/spring-4/spring-4-ehcache-configuration-example-with-cacheable-annotation
+    * https://dzone.com/articles/spring-boot-with-ehcache-3-and-jsr-107
+    * https://www.youtube.com/watch?v=cWqNeANzEz0
+  
+  # Connecting to multiple DB's
+    * https://www.devglan.com/spring-boot/spring-boot-multiple-database-configuration
+    
+  # in 28 minutes
+    * http://www.springboottutorial.com/spring-boot-projects-with-code-examples    
+    
+  # github tree like in browser
+    * https://opencollective.com/octotree
+    
+  # Good Blog
+    * http://www.appsdeveloperblog.com
+    
+# Deploying Apps
+  * mvn clean (removes the already generated target folder, with compiled code)
+  * mvn install (to build and compile )  
+  * mvn spring-boot:run (this command will the app in apache tomcat servlet container like rails s)   
+    
+# Running compiler jar files from other Location
+  * java -jar mobile-app-ws-0.0.1-SNAPSHOT.jar 
+  
+# Archiving Applications as Jar/War
+  * when archived as Jar, it will even contain the apache tomcat in it, used then sharing the files to others machines 
+  * when archived as War, it will not even contain the apache tomcat in it, used when already existing stand alone tomcat  
+    server is running an need to use it   
+    
+# TomCat running from commad Line
+  * move to where tomcat is installed /Users/rmanjunath/Desktop/tomcat/apache-tomcat-9.0.12/bin 
+  * ./startup.sh
+  * ./shutdown.sh
+  * or  ./catalina.sh start  ,  stop
+  * if say's permission denied, then chmod a+x *.sh
+  
+# Java Path on Mac Jenv
+  * /Library/Java/JavaVirtualMachines/  
+  
+# Cas Server    
+  * https://apereo.github.io/2017/03/28/cas5-gettingstarted-overlay/
+  
+# Java Uninstall
+  * https://stackoverflow.com/questions/19039752/removing-java-8-jdk-from-mac  
+  * 
+  
+# Aws
+  * ssh -i *.pem.txt/.pem ec2-user@dns ...  
+  
+  # other way
+    * chmod 400 *.pem
+    * ssh-add
+    * ssh-add *.pem
+  
+  # Issues for Tom cat
+    * https://stackoverflow.com/questions/38551166/403-access-denied-on-tomcat-8-manager-app-without-prompting-for-user-password 
+    
+    
+# Rabbit MQ(message broker)
+   * rabbitmqctl stop
+   * https://stackoverflow.com/questions/8737754/node-with-name-rabbit-already-running-but-also-unable-to-connect-to-node
+   * https://stackoverflow.com/questions/49071667/cant-enable-plugin-in-rabbitmq-3-7-3
+   * /usr/local/etc/rabbitmq/    
+   * /usr/local/sbin
+  
+  
+########################################  
+  
+# Ember Link    
+  * https://gist.github.com/kristianmandrup/ae3174217f68a6a51ed5
