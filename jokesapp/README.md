@@ -292,6 +292,14 @@
   
   # Issues for Tom cat
     * https://stackoverflow.com/questions/38551166/403-access-denied-on-tomcat-8-manager-app-without-prompting-for-user-password 
+    
+    
+# Rabbit MQ(message broker)
+   * rabbitmqctl stop
+   * https://stackoverflow.com/questions/8737754/node-with-name-rabbit-already-running-but-also-unable-to-connect-to-node
+   * https://stackoverflow.com/questions/49071667/cant-enable-plugin-in-rabbitmq-3-7-3
+   * /usr/local/etc/rabbitmq/    
+   * /usr/local/sbin
   
   
 ########################################  
