@@ -301,6 +301,8 @@
    * /usr/local/etc/rabbitmq/    
    * /usr/local/sbin
   
+# @Async  
+  * https://springbootdev.com/2017/10/02/spring-framework-asynchronous-task-execution-with-async/
   
 ########################################  
   
