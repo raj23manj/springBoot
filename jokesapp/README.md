@@ -300,9 +300,17 @@
    * https://stackoverflow.com/questions/49071667/cant-enable-plugin-in-rabbitmq-3-7-3
    * /usr/local/etc/rabbitmq/    
    * /usr/local/sbin
-  
-# @Async  
-  * https://springbootdev.com/2017/10/02/spring-framework-asynchronous-task-execution-with-async/
+    
+###### Links
+
+    # @Async  
+      * https://springbootdev.com/2017/10/02/spring-framework-asynchronous-task-execution-with-async/  
+    
+    #  Spring Boot Multiple Database Configuration
+      * https://www.devglan.com/spring-boot/spring-boot-multiple-database-configuration
+      
+    # Creating Plugin Project(MOJO)  
+      * https://dzone.com/articles/a-simple-maven-3-plugin
   
 ########################################  
   
