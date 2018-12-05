@@ -280,7 +280,32 @@
   
 # Java Uninstall
   * https://stackoverflow.com/questions/19039752/removing-java-8-jdk-from-mac  
-  * 
+
+# Microservices
+  * Bounded Context (figure out how to break build individual microservices)
+  * Configuration Management (there will be multiple instances with different env's of each app, need to configure them) 
+  * Dynamic Scale Up and Dynamic Scale Down (how many instance of each microservice should be running)
+  * Visibility (centralized logging and monitoring with )
+  * Fault tolerance
+  
+  # Spring Cloud(Finchley)
+    * Setup a Centralized server config, and spring cloud will distibute to other microservices
+    * spring cloud netflix (Dynamic Scale up and Scale Down)
+      * Eureka - Naming Server  
+        1) all micro-services will register here, 
+        2) service discover - naming service will provide urls of current instance to asking microservice
+      * Ribbon - CLient Side Load Balancing
+        1) Make sure Load is balanced easily
+      * Feign - Easier REST Clients
+        1) Used for writing easier restful clients
+    * Visibilty And Monitoring
+       1) Zipkin Distibute Tracing
+         * Spring Cloud assigns Id to requests, and is used to trace across multiple components
+       2) Netflix API Gateway (Zuul) 
+         * common functionalities like logging, security etc across microservices can be done using this
+    * Fault Tolerance
+      1) Hystrix - if a service is down, hystrix helps to configure a default response.    
+        
   
 # Aws
   * ssh -i *.pem.txt/.pem ec2-user@dns ...  
@@ -300,19 +325,59 @@
    * https://stackoverflow.com/questions/49071667/cant-enable-plugin-in-rabbitmq-3-7-3
    * /usr/local/etc/rabbitmq/    
    * /usr/local/sbin
+   
+# JAVA
+  # Exceptions
+     # https://crunchify.com/better-understanding-on-checked-vs-unchecked-exceptions-how-to-handle-exception-better-way-in-java/
+     # Unchecked Exceptions(Runtime):  
+         * But the few I have used are - IllegalAccessException , ArithmeticException, NumberFormatException and SecurityException.
+         * IllegalArgumentException, IllegalStateException, NullPointerException, IndexOutOfBoundsException,ConcurrentModificationException,
+           UnsupportedOperationException, ArrayIndexOutOfBoundsException
+           
+     # Checked Exceptions(Compile Time - this can be avoided by using throws on method, class or try catch)
+       * IOException, SQLException, DataAccessException, ClassNotFoundException, InvocationTargetException, MalformedURLException       
+  
+  # DATA-TYPES
+    * primitive: byte, short, 
+                 int, long (choose Int by default)
+                 float, double (choose double by default)
+                 char,
+                 boolean,
+    *              
+                 String
     
 ###### Links
 
     # @Async  
-      * https://springbootdev.com/2017/10/02/spring-framework-asynchronous-task-execution-with-async/  
+      * https://springbootdev.com/2017/10/02/spring-framework-asynchronous-task-execution-with-async/ 
+      * https://grokonez.com/java-integration/start-spring-async-spring-boot 
+      * https://www.devglan.com/spring-boot/spring-boot-async-task-executor
     
     #  Spring Boot Multiple Database Configuration
       * https://www.devglan.com/spring-boot/spring-boot-multiple-database-configuration
+      * https://www.baeldung.com/spring-data-jpa-multiple-databases
       
     # Creating Plugin Project(MOJO)  
       * https://dzone.com/articles/a-simple-maven-3-plugin
-  
+      
+    # Spring Cloud Data Flow
+      * https://www.javainuse.com/spring/cloud-data-flow
+      
+    # java releated
+      * https://www.baeldung.com/java-optional
+      * https://www.youtube.com/watch?v=n8if6X47KvE
+      * https://www.youtube.com/watch?v=suSdjhS03qk&index=24&list=PLqq-6Pq4lTTa9YGfyhyW2CqdtW9RtY-I3
+      * https://www.youtube.com/watch?v=6TKDjfLGVNc&list=PLIGmoZSj3zVl_GljdHUNmRNeaQWHwLf4c
+      
+    # Spring Application Events
+      * https://www.baeldung.com/spring-events
+      * https://www.baeldung.com/spring-context-events  
+              
+    # SOLID
+      *  https://springframework.guru/principles-of-object-oriented-design/
 ########################################  
   
 # Ember Link    
   * https://gist.github.com/kristianmandrup/ae3174217f68a6a51ed5
+  * https://www.youtube.com/watch?v=bhJ6YzBIoWo
+  
