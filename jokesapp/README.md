@@ -384,15 +384,29 @@
       - Constructors cannot ne synchronised
       - not use local variables if using synchronisation  
       - we need to synchronise the code that only needs to be synchronised, like the for loop(int i), this will affect performance of application
-      - Methods that can be only called inside synchronised code:
-        - wait()
-        - notify()
-        - notifyall()
+      - Methods that can be only called inside synchronised code: (Pub/Sub)
+        - wait() : 
+           - it release the locks it is holding(current thread) for the other thread to execute
+           - always needs to be called inside the loop, so that if it misses the conditions, it will go back to begining of the loop
+        - notify() :
+          - notify a particular thread
+        - notifyAll() :
+          - notify all the threads
     * Locks: Also used to avoid race conditions, it is used on statements. When one thread has a lock other threads are suspended and
       wait until lock is free  
     * Critical sections means, all the shared resources(variables) are made synchronised
     * Thread Safe, means the developer whos has developed the code has handled the synchronise section. We as a developer need not worry about thread interference  
     * Not Thread Safe, means we as a developer need to make sure synchronisation is handled for multiple threads
+    * There are some operation for which threads cannot be suspended, these are called Atomic operations that happens all at once and a thread connot be suspended while doing them, they are
+      - Reading and writting refference variables
+        ex: myobj1 = myobj2
+      - Reading and writting of primitive variables except long, double 
+        ex: int y =10; => cannot be suspended
+            Long y =10; => can be suspended 
+      - Declaring all variables as "volatile"      
+    * Collections: (lecture 249, section 15)
+      - Some collections are not thread safe
+        ex: ArrayList  
     
     
 ###### Links
