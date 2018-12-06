@@ -376,10 +376,25 @@
        // for 3 sec's, we can make it join to this(myRunnableTHread) thread, once this
        // thread execution is completed it will start anotherThread, then it will execute the code following
        //  System.out.println(ANSI_RED + "another Thread terminated, so im running again"); 
-    * When multiple threads are run with same instance(countdownclass - some work), the instances(countdownclass) 
+    * When multiple threads(bank account example) are run with same instance(countdownclass - some work), the instances(countdownclass) 
       instance variable will be shared, i,e it will allocated on the heap and shared. if the variables are local
       variables on the instances(countdownclass) it will be added to the thread's Stack      
-    * Race-Condition: when multiple thread share the same resource and write them, leads to a race condition. 
+    * Race-Condition(Thread Interference): when multiple thread share the same resource and write them, leads to a race condition.
+    * Synchronisation: To avoid race condition, we need to use synchronised methods or statements
+      - Constructors cannot ne synchronised
+      - not use local variables if using synchronisation  
+      - we need to synchronise the code that only needs to be synchronised, like the for loop(int i), this will affect performance of application
+      - Methods that can be only called inside synchronised code:
+        - wait()
+        - notify()
+        - notifyall()
+    * Locks: Also used to avoid race conditions, it is used on statements. When one thread has a lock other threads are suspended and
+      wait until lock is free  
+    * Critical sections means, all the shared resources(variables) are made synchronised
+    * Thread Safe, means the developer whos has developed the code has handled the synchronise section. We as a developer need not worry about thread interference  
+    * Not Thread Safe, means we as a developer need to make sure synchronisation is handled for multiple threads
+    
+    
 ###### Links
 
     # @Async  
