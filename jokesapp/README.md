@@ -282,14 +282,20 @@
   * https://stackoverflow.com/questions/19039752/removing-java-8-jdk-from-mac  
 
 # Microservices
-  * Bounded Context (figure out how to break build individual microservices)
+  * Bounded Context (Boundaries - figure out how to break build individual microservices)
   * Configuration Management (there will be multiple instances with different env's of each app, need to configure them) 
   * Dynamic Scale Up and Dynamic Scale Down (how many instance of each microservice should be running)
   * Visibility (centralized logging and monitoring with )
   * Fault tolerance
   
+  * Advantages
+    * Adaptation of new technologies and process(like node.js, kotlin etc)
+    * Dynamic Scaling
+    * Faster Release cycles
+  
   # Spring Cloud(Finchley)
-    * Setup a Centralized server config, and spring cloud will distibute to other microservices
+    * Setup a Centralized server config using Spring Cloud Config Server, 
+      and spring cloud will distibute to other microservices
     * spring cloud netflix (Dynamic Scale up and Scale Down)
       * Eureka - Naming Server  
         1) all micro-services will register here, 
@@ -299,12 +305,14 @@
       * Feign - Easier REST Clients
         1) Used for writing easier restful clients
     * Visibilty And Monitoring
-       1) Zipkin Distibute Tracing
-         * Spring Cloud assigns Id to requests, and is used to trace across multiple components
+       1) Zipkin & Sleuth Distibute Tracing
+         * Spring Cloud Sleuth assigns Id to requests, and is used to trace across multiple components
        2) Netflix API Gateway (Zuul) 
          * common functionalities like logging, security etc across microservices can be done using this
     * Fault Tolerance
       1) Hystrix - if a service is down, hystrix helps to configure a default response.    
+      
+      
         
   
 # Aws
@@ -345,7 +353,33 @@
                  boolean,
     *              
                  String
-    
+                 
+  # Threads/Concurrency 
+    * Application or Process refers same and has one thread, each thread can have multiple threads
+    * Each thread has it's own heap of memory space  
+    * Threads Creadted by a process shares the same resources anf files of the parent thread or process
+    * Each Thread has it's own thread stack      
+    * Every Java Application runs as a single process or thread, each process can have multiple threads. 
+      each process has a heap and each process has a  thread stack.
+    * Concurrency means, dowload some data draw on screen, then repeat.  
+    * Not allowed to start the instance of thread more than onceif needed create a sub class
+      of Thread Class and run multiple instances
+    * Two ways of creating a Thread.
+      1) Extend Thread Class and override "run()"
+      2) Make the class implement Thread Class and implement "run()" method
+    * A Thread will terminate once it returns from its run method after completing or else if it encounters a return statement  
+    * When calling start() method after overriding run method it will execute in another thread, if run() itself is called, it will
+      execute in the same thread
+    * Interrupting a thread will terminate the thread, to interrup an thread we instance of that thread from the main thread.
+    * We can make a thread to join with other thread and wake it up if it is sleeping   
+       // when a thread is put to sleep here, anotherThread instead making it to sleep
+       // for 3 sec's, we can make it join to this(myRunnableTHread) thread, once this
+       // thread execution is completed it will start anotherThread, then it will execute the code following
+       //  System.out.println(ANSI_RED + "another Thread terminated, so im running again"); 
+    * When multiple threads are run with same instance(countdownclass - some work), the instances(countdownclass) 
+      instance variable will be shared, i,e it will allocated on the heap and shared. if the variables are local
+      variables on the instances(countdownclass) it will be added to the thread's Stack      
+    * Race-Condition: when multiple thread share the same resource and write them, leads to a race condition. 
 ###### Links
 
     # @Async  
