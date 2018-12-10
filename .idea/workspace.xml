@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e19186ec-f648-421f-94cd-e2c2c04fca3e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jokesapp/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/jokesapp/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,13 +16,45 @@
     <session id="1901758029">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
-          <entry key="project.open.time.0" value="3" />
+          <entry key="project.closed" value="7" />
+          <entry key="project.open.time.0" value="4" />
+          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.23" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.opened" value="9" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="4" />
         </counts>
       </usages-collector>
     </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/di-demo/src/main/java/guru/springframework/didemo/LifeCycleDemoBean.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/di-demo/src/main/java/guru/springframework/didemo/CustomBeanPostProcessor.java">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -33,9 +65,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="1746" />
-    <option name="y" value="75" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1440" />
+    <option name="y" value="-157" />
     <option name="width" value="1362" />
     <option name="height" value="817" />
   </component>
@@ -44,9 +76,75 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane" />
       <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="sfg-pet-clinic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="John Thompson Java Course" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sfg-pet-clinic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="John Thompson Java Course" type="462c0819:PsiDirectoryNode" />
+              <item name="di-demo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sfg-pet-clinic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="John Thompson Java Course" type="462c0819:PsiDirectoryNode" />
+              <item name="di-demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sfg-pet-clinic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="John Thompson Java Course" type="462c0819:PsiDirectoryNode" />
+              <item name="di-demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sfg-pet-clinic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="John Thompson Java Course" type="462c0819:PsiDirectoryNode" />
+              <item name="di-demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sfg-pet-clinic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="John Thompson Java Course" type="462c0819:PsiDirectoryNode" />
+              <item name="di-demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="guru" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sfg-pet-clinic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="John Thompson Java Course" type="462c0819:PsiDirectoryNode" />
+              <item name="di-demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="guru" type="462c0819:PsiDirectoryNode" />
+              <item name="springframework" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sfg-pet-clinic" type="b2602c69:ProjectViewProjectNode" />
+              <item name="John Thompson Java Course" type="462c0819:PsiDirectoryNode" />
+              <item name="di-demo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="guru" type="462c0819:PsiDirectoryNode" />
+              <item name="springframework" type="462c0819:PsiDirectoryNode" />
+              <item name="didemo" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -82,16 +180,21 @@
       <workItem from="1540519839818" duration="18000" />
       <workItem from="1540534901245" duration="2000" />
       <workItem from="1540619649745" duration="10000" />
+      <workItem from="1542988520413" duration="491000" />
+      <workItem from="1543303210479" duration="165000" />
+      <workItem from="1543452800759" duration="30000" />
+      <workItem from="1543908019300" duration="26000" />
+      <workItem from="1543925600104" duration="4000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82000" />
+    <option name="totallyTimeSpent" value="798000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1746" y="75" width="1362" height="817" extended-state="0" />
+    <frame x="1680" y="155" width="1362" height="745" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25681818" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25644916" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -110,7 +213,6 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="right" id="TCPMON" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -120,6 +222,7 @@
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="right" id="Database" order="7" />
       <window_info anchor="right" id="Maven Projects" order="8" />
+      <window_info anchor="right" id="TCPMON" order="9" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -127,6 +230,24 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/di-demo/src/main/java/guru/springframework/didemo/DiDemoApplication.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/di-demo/src/main/java/guru/springframework/didemo/examplebeans/FakeDataSource.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/di-demo/src/main/java/guru/springframework/didemo/LifeCycleDemoBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/di-demo/src/main/java/guru/springframework/didemo/CustomBeanPostProcessor.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
   </component>
   <component name="masterDetails">
     <states>

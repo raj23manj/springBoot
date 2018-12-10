@@ -294,27 +294,46 @@
     * Faster Release cycles
   
   # Spring Cloud(Finchley)
+    * https://medium.com/omarelgabrys-blog/microservices-with-spring-boot-authentication-with-jwt-part-3-fafc9d7187e8
+    * https://developer.okta.com/blog/2018/02/13/secure-spring-microservices-with-oauth
+    * https://www.youtube.com/watch?v=ZIAi8sGHPII
+    
     * Setup a Centralized server config using Spring Cloud Config Server, 
       and spring cloud will distibute to other microservices
+      
     * spring cloud netflix (Dynamic Scale up and Scale Down)
-      * Eureka - Naming Server  
-        1) all micro-services will register here, 
-        2) service discover - naming service will provide urls of current instance to asking microservice
-      * Ribbon - CLient Side Load Balancing
-        1) Make sure Load is balanced easily
-      * Feign - Easier REST Clients
+        
+      * Feign - RestFul Service Cleint, makes Easier to call REST Service using Rest Template using Proxy
         1) Used for writing easier restful clients
+        
+      * Ribbon - Client Side Load Balancing
+        1) Make sure Load is balanced easily
+        
+      * Eureka - Naming Server - service discovery 
+        1) all micro-services will register here, 
+        2) service discovery - naming service will provide urls of current instance to asking microservice  
+        
     * Visibilty And Monitoring
-       1) Zipkin & Sleuth Distibute Tracing
-         * Spring Cloud Sleuth assigns Id to requests, and is used to trace across multiple components
-       2) Netflix API Gateway (Zuul) 
-         * common functionalities like logging, security etc across microservices can be done using this
+      1) Netflix API Gateway (Zuul) 
+        * common functionalities like logging, security etc across microservices can be done using this
+        * Rate Litmis(no of requests per hour or day), fault tolerant(if service goes down, should send message)
+        * Service Aggregation, an external call may many calls for one functionality, and it may contain many calls, we
+          need toaggregate it 
+       
+      2) Sleuth(assigns Id to requests, across all services) 
+        * Spring Cloud Sleuth assigns Id to requests, and is used to trace across multiple components       
+    
+      3) Zipkin(Distibute Tracing) 
+        * Consolidate all logs at one place
+                
     * Fault Tolerance
       1) Hystrix - if a service is down, hystrix helps to configure a default response.    
       
-      
-        
-  
+# To Access Environment(application-properties)
+    @Autowired
+    private Environment environment;  
+    environment.getProperty("local.server.port")    
+          
 # Aws
   * ssh -i *.pem.txt/.pem ec2-user@dns ...  
   
@@ -406,7 +425,9 @@
       - Declaring all variables as "volatile"      
     * Collections: (lecture 249, section 15)
       - Some collections are not thread safe
-        ex: ArrayList  
+        ex: ArrayList 
+    * java.util.concurrent package was introduced to run multiple threads, help dev's properly synchronise code
+         
     
     
 ###### Links
@@ -432,7 +453,7 @@
       * https://www.youtube.com/watch?v=suSdjhS03qk&index=24&list=PLqq-6Pq4lTTa9YGfyhyW2CqdtW9RtY-I3
       * https://www.youtube.com/watch?v=6TKDjfLGVNc&list=PLIGmoZSj3zVl_GljdHUNmRNeaQWHwLf4c
       
-    # Spring Application Events
+    # Spring Application Events (Advanced Spring Guru)
       * https://www.baeldung.com/spring-events
       * https://www.baeldung.com/spring-context-events  
               
