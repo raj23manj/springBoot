@@ -295,7 +295,7 @@
   
   # Spring Cloud(Finchley)
     * https://medium.com/omarelgabrys-blog/microservices-with-spring-boot-authentication-with-jwt-part-3-fafc9d7187e8
-    * https://developer.okta.com/blog/2018/02/13/secure-spring-microservices-with-oauth
+    * https://developer.okta.com/blog/2018/02/13/secure-spring-microservices-with-oauth - (https://www.youtube.com/watch?v=MY5m_s_U2H4&t=3s)
     * https://www.youtube.com/watch?v=ZIAi8sGHPII
     
     * Setup a Centralized server config using Spring Cloud Config Server, 
@@ -470,6 +470,10 @@
               
     # SOLID
       *  https://springframework.guru/principles-of-object-oriented-design/
+      
+    # SAML
+      * https://github.com/ankidaemon/SpringSecurity-LDAP-SAML-integration/blob/master/Section-3/Video-3.4/SpringSecurity-SAML-WSO2/readMe.MD
+      * https://docs.spring.io/spring-security-saml/docs/1.0.x-SNAPSHOT/reference/pdf/spring-security-saml-reference.pdf
 ########################################  
   
 # Ember Link    
