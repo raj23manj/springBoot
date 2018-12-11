@@ -325,9 +325,19 @@
     
       3) Zipkin(Distibute Tracing) 
         * Consolidate all logs at one place
+        * RABBIT_URI=amqp://localhost java -jar zipkin-server-2.11.12-exec.jar
                 
     * Fault Tolerance
-      1) Hystrix - if a service is down, hystrix helps to configure a default response.    
+      1) Hystrix - if a service is down, hystrix helps to configure a default response. 
+      
+    * Zipkin Setup
+      1) Start them in the order - Naming Server, Distributed Tracing Server, API Gateway, Calculation Service, Exchange Service
+      
+      2) Wait for a couple of minutes
+      
+      3) Run the Service that you would want to execute! (hit hte url)
+      
+      4) See Zipkin     
       
 # To Access Environment(application-properties)
     @Autowired
@@ -347,11 +357,12 @@
     
     
 # Rabbit MQ(message broker)
+   * rabbitmq-server 
+   * /usr/local/etc/rabbitmq/    
+   * /usr/local/sbin
    * rabbitmqctl stop
    * https://stackoverflow.com/questions/8737754/node-with-name-rabbit-already-running-but-also-unable-to-connect-to-node
    * https://stackoverflow.com/questions/49071667/cant-enable-plugin-in-rabbitmq-3-7-3
-   * /usr/local/etc/rabbitmq/    
-   * /usr/local/sbin
    
 # JAVA
   # Exceptions
