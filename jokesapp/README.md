@@ -438,7 +438,13 @@
       - Some collections are not thread safe
         ex: ArrayList 
     * java.util.concurrent package was introduced to run multiple threads, help dev's properly synchronise code
-         
+    * Reentrant Lock - when a thread is holding a lock and enters again it can execute
+    * Thread Pool - manages the threads for us
+      * Executor service 
+         ExecutorService executorService = Executors.newFixedThreadPool(3);
+         (new Thread(r)).start(); => ex.execute(r);
+    * ArrayBlockingQueue => Thread safe,  this is bounded and manages locks internally
+      * methods to this put, take and pee all take lock for executing     
     
     
 ###### Links
@@ -474,6 +480,12 @@
     # SAML
       * https://github.com/ankidaemon/SpringSecurity-LDAP-SAML-integration/blob/master/Section-3/Video-3.4/SpringSecurity-SAML-WSO2/readMe.MD
       * https://docs.spring.io/spring-security-saml/docs/1.0.x-SNAPSHOT/reference/pdf/spring-security-saml-reference.pdf
+      * https://www.youtube.com/watch?v=YN2DOJttEaA(Okta) - https://github.com/talk2amareswaran/Spring-Boot-SAML-and-OKTA
+      * https://www.youtube.com/watch?v=SgLQfD7c3EY&t=537s
+      * https://developer.okta.com/code/java/spring_security_saml - https://www.youtube.com/watch?v=TaZqDrwBWwA (Groovy based)
+      
+    # Angular + Spring
+      * https://developer.okta.com/blog/2017/12/04/basic-crud-angular-and-spring-boot?_ga=2.228341853.1119814729.1544412223-402971053.1542366627  
 ########################################  
   
 # Ember Link    
