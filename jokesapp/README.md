@@ -486,6 +486,13 @@
       
     # Angular + Spring
       * https://developer.okta.com/blog/2017/12/04/basic-crud-angular-and-spring-boot?_ga=2.228341853.1119814729.1544412223-402971053.1542366627  
+
+    # Spring Boot Interview
+      * http://candidjava.com/tutorial/spring-boot-interview-questions/
+      
+    # Rails
+      * https://www.wisdomjobs.com/e-university/ruby-on-rails-interview-questions.html  
+
 ########################################  
   
 # Ember Link    
