@@ -98,6 +98,9 @@
    
 # Disable Specific Spring Boot auto-configuration classes
    * Need to pass the class name to 'exclude' parameter of @EnableAutoConfiguration 
+
+# @Order
+   * https://www.baeldung.com/spring-order
    
 # Connect h2
   * http://localhost:8080/h2-console
@@ -478,15 +481,29 @@
       *  https://springframework.guru/principles-of-object-oriented-design/
       
     # SAML
-      * https://github.com/ankidaemon/SpringSecurity-LDAP-SAML-integration/blob/master/Section-3/Video-3.4/SpringSecurity-SAML-WSO2/readMe.MD
-      * https://docs.spring.io/spring-security-saml/docs/1.0.x-SNAPSHOT/reference/pdf/spring-security-saml-reference.pdf
-      * https://www.youtube.com/watch?v=YN2DOJttEaA(Okta) - https://github.com/talk2amareswaran/Spring-Boot-SAML-and-OKTA
-      * https://www.youtube.com/watch?v=SgLQfD7c3EY&t=537s
-      * https://developer.okta.com/code/java/spring_security_saml - https://www.youtube.com/watch?v=TaZqDrwBWwA (Groovy based)
+        #Okta General
+          * https://github.com/ankidaemon/SpringSecurity-LDAP-SAML-integration/blob/master/Section-3/Video-3.4/SpringSecurity-SAML-WSO2/readMe.MD
+          * https://docs.spring.io/spring-security-saml/docs/1.0.x-SNAPSHOT/reference/pdf/spring-security-saml-reference.pdf
+          * https://www.youtube.com/watch?v=YN2DOJttEaA(Okta) - https://github.com/talk2amareswaran/Spring-Boot-SAML-and-OKTA
+          * https://www.youtube.com/watch?v=SgLQfD7c3EY&t=537s
+          * https://developer.okta.com/code/java/spring_security_saml - https://www.youtube.com/watch?v=TaZqDrwBWwA (Groovy based)
+         
+        # Angular + Spring
+          * https://developer.okta.com/blog/2017/12/04/basic-crud-angular-and-spring-boot?_ga=2.228341853.1119814729.1544412223-402971053.1542366627  
+          * https://devforum.okta.com/t/angular-with-saml/990/3  
+          * https://www.youtube.com/watch?v=0rJypX70E4U => (angular)
+          * https://developer.okta.com/blog/2017/12/04/basic-crud-angular-and-spring-boot
+          * https://www.sylvainlemoine.com/2018/03/29/spring-security-saml2.0-websso-with-angular-client/
+          
+        # Okta + spring boot + Angular + Microservices
+          * https://dzone.com/articles/add-spring-security-and-okta-for-a-secure-spring-m 
+        
+        # Okta Sessions
+          * https://developer.okta.com/docs/api/resources/sessions     
+          
+        # Saml Imagenia
+          * https://blog.imaginea.com/implementing-java-single-signon-with-saml/  
       
-    # Angular + Spring
-      * https://developer.okta.com/blog/2017/12/04/basic-crud-angular-and-spring-boot?_ga=2.228341853.1119814729.1544412223-402971053.1542366627  
-
     # Spring Boot Interview
       * http://candidjava.com/tutorial/spring-boot-interview-questions/
       
@@ -498,4 +515,11 @@
 # Ember Link    
   * https://gist.github.com/kristianmandrup/ae3174217f68a6a51ed5
   * https://www.youtube.com/watch?v=bhJ6YzBIoWo
-  
+
+
+# ToDo
+  * notification server(websockets)
+  * S3
+  * Caching  
+  * Okta(saml, oauth)
+  * Microservices Zipkin authentication
