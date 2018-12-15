@@ -521,5 +521,7 @@
   * notification server(websockets)
   * S3
   * Caching  
+  * Download - https://www.youtube.com/watch?v=UQ7xnELIuq4
+  * Background Jobs
   * Okta(saml, oauth)
   * Microservices Zipkin authentication
