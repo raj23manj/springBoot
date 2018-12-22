@@ -447,7 +447,59 @@
          ExecutorService executorService = Executors.newFixedThreadPool(3);
          (new Thread(r)).start(); => ex.execute(r);
     * ArrayBlockingQueue => Thread safe,  this is bounded and manages locks internally
-      * methods to this put, take and pee all take lock for executing     
+      * methods to this put, take and pee all take lock for executing    
+      
+      
+# Maven
+  # Archetypes
+    - Maven project templating tool
+         ex mojo, java ee, maven project
+  # Snapshot
+    - when maven builds a project it will be present in jar or war file
+    -        
+  # Command Line
+    - https://maven.apache.org/guides/mini/guide-creating-archetypes.html
+    - mvn archetype:generate                                  \
+        -DarchetypeGroupId=<archetype-groupId>                \
+        -DarchetypeArtifactId=<archetype-artifactId>          \
+        -DarchetypeVersion=<archetype-version>                \
+        -DgroupId=<my.groupid>                                \
+        -DartifactId=<my-artifactId>
+    
+    - mvn archetype:generate
+        -DgroupId=[your project's group id]
+        -DartifactId=[your project's artifact id]
+        -DarchetypeArtifactId=maven-archetype-archetype    
+        
+    - Goal/Task
+        - generate
+    - Maven Co-ordinate
+        - GroupId + ArtifactId + Version   
+            - GroupId
+                - com.somedomain    
+            - ArtifactId(project name)
+                - sample  
+            - Version
+                - 1.0-snapshot 
+  # POM
+    1) General Project Info (Name,url, dev name, contributors, License details)
+    2) Build Settings (Customise MVN lifecycles, add new plugins and goals)
+    3) Build Environment (profiles are used to configure different deployment environments, ie dev, staging, prod)
+    4) POM Relationships (Modules and sub modules)
+    
+    - Parent Pom/ Super Pom
+        - <modelVersion></modelVersion>
+    - Effective Pom
+        - Super Pom + Pom    
+        
+    
+    - Packaing Types
+        - POM => Multi Module Packaging
+        - JAR
+        - WAR (without TomCat Server)
+        - <packaging>war</packaging>
+           
+          
     
     
 ###### Links
@@ -509,6 +561,9 @@
       
     # Rails
       * https://www.wisdomjobs.com/e-university/ruby-on-rails-interview-questions.html  
+      
+    # Spring Sessions
+      * https://dzone.com/articles/spring-jdbc-session    
 
 ########################################  
   
@@ -525,3 +580,8 @@
   * Background Jobs
   * Okta(saml, oauth)
   * Microservices Zipkin authentication
+  
+# Angular Deployment s3
+  * https://theinfogrid.com/tech/developers/angular/automate-deployment-of-angular-apps-using-aws-codebuild/
+  * https://medium.com/@ibliskavka/aws-angular-stack-automation-b45767bda2ec
+      
