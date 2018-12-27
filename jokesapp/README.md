@@ -498,6 +498,19 @@
         - JAR
         - WAR (without TomCat Server)
         - <packaging>war</packaging>
+        
+    - LifeCycle - can be customised
+        - Clean
+        - Build(default)
+        - Site (cration of project site documentation)
+        
+  # Plugins    
+    - configurations
+      - has optional parameters
+    - javadoc
+      - For adding documentation
+    - Surefire Plugin
+      - For running unit test cases        
            
           
     
@@ -564,7 +577,12 @@
       
     # Spring Sessions
       * https://dzone.com/articles/spring-jdbc-session    
-
+      
+    # S3  
+       * https://www.youtube.com/watch?v=UQ7xnELIuq4&t=27s 
+       * https://grokonez.com/aws/amazon-s3/amazon-s3-springboot-restapis-upload-download-file-image-to-s3
+       * https://grokonez.com/spring-framework/spring-boot/amazon-s3-springboot-restapis-list-all-files-in-s3-bucket 
+       * https://grokonez.com/java-integration/angular-6-upload-get-multipartfile-spring-boot-example 
 ########################################  
   
 # Ember Link    
