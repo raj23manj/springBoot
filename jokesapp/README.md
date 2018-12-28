@@ -583,6 +583,14 @@
        * https://grokonez.com/aws/amazon-s3/amazon-s3-springboot-restapis-upload-download-file-image-to-s3
        * https://grokonez.com/spring-framework/spring-boot/amazon-s3-springboot-restapis-list-all-files-in-s3-bucket 
        * https://grokonez.com/java-integration/angular-6-upload-get-multipartfile-spring-boot-example 
+       * https://grokonez.com/frontend/angular/angular-6/angular-6-springboot-amazon-s3-upload-download-files-images-example
+       * https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/s3/AmazonS3Client.html#getUrl-java.lang.String-java.lang.String-
+       * https://docs.aws.amazon.com/AmazonS3/latest/dev/ShareObjectPreSignedURLJavaSDK.html
+       * https://aws.amazon.com/premiumsupport/knowledge-center/s3-troubleshoot-403/
+       * https://forums.aws.amazon.com/thread.jspa?threadID=170579
+    
+    # Notifications - STOMP
+      * https://medium.com/oril/spring-boot-websockets-angular-5-f2f4b1c14cee   
 ########################################  
   
 # Ember Link    
