@@ -591,6 +591,11 @@
     
     # Notifications - STOMP
       * https://medium.com/oril/spring-boot-websockets-angular-5-f2f4b1c14cee   
+      * https://grokonez.com/spring-framework/spring-websocket/spring-boot-websocket-angular-5-client-sockjs-stomp
+      * http://newjavafaqs.blogspot.com/2018/06/web-socket-using-spring-and-stomp.html
+      * http://newjavafaqs.blogspot.com/2018/06/web-socket-using-spring-and-stomp.html
+      * https://stomp-js.github.io/guide/ng2-stompjs/2018/11/04/ng2-stomp-with-angular7.html
+      * https://grokonez.com/spring-framework/spring-websocket/spring-boot-websocket-angular-5-client-sockjs-stomp
 ########################################  
   
 # Ember Link    
