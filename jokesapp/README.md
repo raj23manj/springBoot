@@ -367,6 +367,15 @@
    * https://stackoverflow.com/questions/8737754/node-with-name-rabbit-already-running-but-also-unable-to-connect-to-node
    * https://stackoverflow.com/questions/49071667/cant-enable-plugin-in-rabbitmq-3-7-3
    
+# Spring Security 
+   * https://stackoverflow.com/questions/41770156/spring-add-custom-user-details-to-spring-security-user
+   * http://forum.spring.io/forum/spring-projects/security/122998-how-to-use-custom-userdetails-in-spring-security
+   
+   # Theory
+     * Just adding 'spring-boot-starter-security' to pom enables a basic form based security to browser with sessions, and a basic security
+     for only requests with out sessions. The default usename is 'user', password is printed on the console
+     *      
+   
 # JAVA
   # Exceptions
      # https://crunchify.com/better-understanding-on-checked-vs-unchecked-exceptions-how-to-handle-exception-better-way-in-java/
@@ -596,6 +605,9 @@
       * http://newjavafaqs.blogspot.com/2018/06/web-socket-using-spring-and-stomp.html
       * https://stomp-js.github.io/guide/ng2-stompjs/2018/11/04/ng2-stomp-with-angular7.html
       * https://grokonez.com/spring-framework/spring-websocket/spring-boot-websocket-angular-5-client-sockjs-stomp
+      
+    # Security
+      * https://www.baeldung.com/spring-security-websockets  
 ########################################  
   
 # Ember Link    
