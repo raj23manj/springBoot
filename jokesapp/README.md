@@ -367,10 +367,19 @@
    * https://stackoverflow.com/questions/8737754/node-with-name-rabbit-already-running-but-also-unable-to-connect-to-node
    * https://stackoverflow.com/questions/49071667/cant-enable-plugin-in-rabbitmq-3-7-3
    
+# Debugging
+  * https://dzone.com/articles/spring-tips-reactive-sql-data-access-with-spring-d
+  
+     
 # Spring Security 
    * https://stackoverflow.com/questions/41770156/spring-add-custom-user-details-to-spring-security-user
    * http://forum.spring.io/forum/spring-projects/security/122998-how-to-use-custom-userdetails-in-spring-security
    
+   # Get Current Logged in User(custom-user 2nd one)
+     * https://dzone.com/articles/how-to-get-current-logged-in-username-in-spring-se
+     * https://stackoverflow.com/questions/22678891/how-to-get-user-id-from-customuser-on-spring-security
+     * https://www.baeldung.com/get-user-in-spring-security
+     
    # Theory
      * Just adding 'spring-boot-starter-security' to pom enables a basic form based security to browser with sessions, and a basic security
      for only requests with out sessions. The default usename is 'user', password is printed on the console
