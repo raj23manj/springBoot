@@ -374,12 +374,28 @@
 # Spring Security 
    * https://stackoverflow.com/questions/41770156/spring-add-custom-user-details-to-spring-security-user
    * http://forum.spring.io/forum/spring-projects/security/122998-how-to-use-custom-userdetails-in-spring-security
+   * https://stackoverflow.com/questions/29479840/spring-session-and-spring-security(gives idea)
+   * https://www.baeldung.com/spring-security-authentication-provider
+   * https://www.youtube.com/watch?v=WHLmJSRrtuQ
+   * https://blog.ngopal.com.np/2017/10/10/spring-boot-with-jwt-authentication-using-redis/ (redis + security + spring)
+      * https://github.com/privatejava/spring-boot-redis-jwt
+   * https://www.baeldung.com/registration-with-spring-mvc-and-spring-security (registering new user)   
    
    # Get Current Logged in User(custom-user 2nd one)
      * https://dzone.com/articles/how-to-get-current-logged-in-username-in-spring-se
      * https://stackoverflow.com/questions/22678891/how-to-get-user-id-from-customuser-on-spring-security
      * https://www.baeldung.com/get-user-in-spring-security
+     * https://github.com/jhipster/generator-jhipster/issues/3988
+     * https://aykutakin.wordpress.com/2013/07/08/spring-security-spring-custom-authentication-provider/
+     * http://forum.spring.io/forum/spring-projects/security/99252-how-to-get-logged-user-id
+        * this.findUsersByUsername(SecurityContextHolder.get Context().getAuthentication().getName()).getSingle Result().getId() b
      
+   # Spring Sessions
+     * https://dzone.com/articles/spring-jdbc-session
+     
+   # Notification Security
+     * https://www.baeldung.com/spring-security-websockets    
+        
    # Theory
      * Just adding 'spring-boot-starter-security' to pom enables a basic form based security to browser with sessions, and a basic security
      for only requests with out sessions. The default usename is 'user', password is printed on the console
@@ -591,10 +607,7 @@
       * http://candidjava.com/tutorial/spring-boot-interview-questions/
       
     # Rails
-      * https://www.wisdomjobs.com/e-university/ruby-on-rails-interview-questions.html  
-      
-    # Spring Sessions
-      * https://dzone.com/articles/spring-jdbc-session    
+      * https://www.wisdomjobs.com/e-university/ruby-on-rails-interview-questions.html     
       
     # S3  
        * https://www.youtube.com/watch?v=UQ7xnELIuq4&t=27s 
@@ -615,8 +628,6 @@
       * https://stomp-js.github.io/guide/ng2-stompjs/2018/11/04/ng2-stomp-with-angular7.html
       * https://grokonez.com/spring-framework/spring-websocket/spring-boot-websocket-angular-5-client-sockjs-stomp
       
-    # Security
-      * https://www.baeldung.com/spring-security-websockets  
 ########################################  
   
 # Ember Link    
