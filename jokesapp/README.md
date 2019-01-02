@@ -24,6 +24,8 @@
       result into ambiguity. You can use @Scope("request") annotation above your controller to avoid such ambiguity.
   * Request & Principal
     * http://forum.spring.io/forum/spring-projects/security/95918-how-to-handle-multiple-logged-in-users 
+    * For Async: 
+      * https://www.baeldung.com/spring-security-async-principal-propagation
   * https://www.quora.com/How-do-servlets-handle-multiple-requests     
   
 # Spring Container
@@ -166,7 +168,7 @@
   * @Repository
   * @Service  
   
-# what is @ Repository used for
+# what is @Repository used for
   *  Spring will detect platform specific persistance exceptions and re-throw them as spring exceptions 
   
 # Why Should we allow spring boot maven projects to inherit from the spring boot parent pom ?
