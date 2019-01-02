@@ -9,12 +9,22 @@
    * http://www.techferry.com/articles/hibernate-jpa-annotations.html
 
 
-#How to create a new project with spring initalizer
+# How to create a new project with spring initalizer
   * create new project > select spring initializer > selected dependencies
     then usual
     
 # Ascii Art
   * http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20   
+
+# How requests work in spring 
+  * https://stackoverflow.com/questions/17235794/how-does-spring-mvc-handle-multiple-users
+  * https://stackoverflow.com/questions/7457190/how-are-threads-allocated-to-handle-servlet-request
+  * https://stackoverflow.com/questions/11139571/scope-of-a-spring-controller-and-its-instance-variables
+    * Yes, controllers in Spring-MVC are singletons. Between multiple requests your class variable get shared and might 
+      result into ambiguity. You can use @Scope("request") annotation above your controller to avoid such ambiguity.
+  * Request & Principal
+    * http://forum.spring.io/forum/spring-projects/security/95918-how-to-handle-multiple-logged-in-users 
+  * https://www.quora.com/How-do-servlets-handle-multiple-requests     
   
 # Spring Container
   * it is known as Application Context
@@ -40,7 +50,7 @@
                 new ClassPathXmlApplicationContext("applicationContext.xml");
          Coach theCoach = context.getBean("myCoach", Coach.class);       
          		
-     * <bean id="myCricketCoach" 
+     * <bean id="myCricketCoach" scope="singleton"
           		  class="com.luv2code.springdemo.CricketCoach">
           		  <!-- set up setter injection -->
           		  <property name="fortuneService" ref="myFortuneService" />
@@ -50,6 +60,7 @@
           		  <constructor-arg ref="myFortuneService" />
           		  <property name="emailAddress" value="${foo.email}" />
           		  <property name="team" value="${foo.team}" />
+          		  
            </bean> 
            
      * this is equal to for constructor-arg => CricketCoach myCricketCoach = new CricketCoach(myFortuneService)
@@ -58,7 +69,45 @@
        *  property => using setter method injection
      * Attaching string literals, ${foo.email}
        * in .xml file add =>  <context:property-placeholder location="classpath:sport.properties"/>  
+
+# Bean Scope 
+  - https://www.baeldung.com/spring-bean-scopes, 
+  - https://www.journaldev.com/21039/spring-bean-scopes,
+  - https://grokonez.com/spring-framework/spring-bean-scope-annotation-requestscope-sessionscope-applicationscope
   
+  * Singleton Scope
+    - Default is singleton 
+    - only one instance of the bean is created and the same instance will be shared with all other's. It will be cached 
+    - Be careful of making static variables and final vaiables, it will lead to race condition. Synchronisation needs to be applied which costs in performance      
+  * Prototype Scope
+    - new instance will be created every time
+  * Request Scope
+    - Scoped to an HTTP Web Request. Only Used for web apps
+  * Session scope
+    - Scoped to an HTTP Web Session. Only Used for web apps   
+  * global-session
+    - Scoped to an Global HTTP Web Session. Only Used for web apps  
+    
+# Bean Life Cycles
+  *  XML:
+       * <bean id="myCoach" 
+            		  class="com.luv2code.springdemo.TrackCoach"
+            		  init-method="doMyStartupStuff"
+            		  destroy-method="doMyCleanUpStuff">
+            		  <!-- setup constructor injection -->
+            		  <constructor-arg ref="myFortuneService" />
+             </bean>     
+  * For "prototype" scoped beans, Spring does not call the destroy method.  Gasp!  
+  * In contrast to the other scopes, Spring does not manage the complete lifecycle of a prototype bean: the container 
+    instantiates, configures, and otherwise assembles a prototype object, and hands it to the client, with no further 
+    record of that prototype instance.  
+  * Thus, although initialization lifecycle callback methods are called on all objects regardless of scope, in the case 
+    of prototypes, configured destruction lifecycle callbacks are not called. The client code must clean up prototype-scoped 
+    objects and release expensive resources that the prototype bean(s) are holding. 
+    
+
+                 
+    
 # @SpringBootApplication 
 
   * this is the main annotation
