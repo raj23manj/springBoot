@@ -16,6 +16,49 @@
 # Ascii Art
   * http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20   
   
+# Spring Container
+  * it is known as Application Context
+  * IOC
+  * DI     
+  
+# Inversion Of Control(IOC) (Object Creation Factory)
+  * Object creation, Object management
+  * objects ready with all dependencies
+
+# Dependency Injection(auto wiring)
+  * objects with dependencies requirements will be injected using DI. If a class needs a service it will be injected 
+  * Types: 
+    * Constructor Injection
+    * Setter Injection    
+
+# Bean xml configuration => spring-demo-one
+  * need to create .xml files and create beans there
+  * no annotation for auto wiring, hence pass it via constructor-arg or property value for beans
+     * for this type to work need do 
+       * //load spring configuration
+         ClassPathXmlApplicationContext context = 
+                new ClassPathXmlApplicationContext("applicationContext.xml");
+         Coach theCoach = context.getBean("myCoach", Coach.class);       
+         		
+     * <bean id="myCricketCoach" 
+          		  class="com.luv2code.springdemo.CricketCoach">
+          		  <!-- set up setter injection -->
+          		  <property name="fortuneService" ref="myFortuneService" />
+          		  <!-- set literal values -->
+          		  <!-- <property name="emailAddress" value="thebestcoach@luv2code.com" />
+          		  <property name="team" value="Royal Challengers Bangalore" /> -->
+          		  <constructor-arg ref="myFortuneService" />
+          		  <property name="emailAddress" value="${foo.email}" />
+          		  <property name="team" value="${foo.team}" />
+           </bean> 
+           
+     * this is equal to for constructor-arg => CricketCoach myCricketCoach = new CricketCoach(myFortuneService)
+     * property => myCricketCoach.setEmailAddress('thebestcoach@luv2code.com')
+     * property is the class variables and constructor-arg, these are DI instead of using auto wiring 
+       *  property => using setter method injection
+     * Attaching string literals, ${foo.email}
+       * in .xml file add =>  <context:property-placeholder location="classpath:sport.properties"/>  
+  
 # @SpringBootApplication 
 
   * this is the main annotation
