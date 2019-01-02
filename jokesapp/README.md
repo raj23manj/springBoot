@@ -379,7 +379,9 @@
    * https://www.youtube.com/watch?v=WHLmJSRrtuQ
    * https://blog.ngopal.com.np/2017/10/10/spring-boot-with-jwt-authentication-using-redis/ (redis + security + spring)
       * https://github.com/privatejava/spring-boot-redis-jwt
-   * https://www.baeldung.com/registration-with-spring-mvc-and-spring-security (registering new user)   
+   * https://www.baeldung.com/registration-with-spring-mvc-and-spring-security (registering new user)  
+   * https://www.youtube.com/playlist?list=PLTgRMOcmRb3P7yTaWigTyEmnTlCy6w6bE(Youtube Packt) 
+   * https://www.packtpub.com/application-development/spring-security-essentials
    
    
    # Get Current Logged in User(custom-user 2nd one)
@@ -392,9 +394,15 @@
         * this.findUsersByUsername(SecurityContextHolder.get Context().getAuthentication().getName()).getSingle Result().getId() b
      
    # Spring Sessions
+     * https://www.baeldung.com/manually-set-user-authentication-spring-security
      * https://dzone.com/articles/spring-jdbc-session
      * http://djeison.me/2017/10/30/spring-security-session-redis/
      * https://docs.spring.io/spring-security/site/docs/5.0.5.RELEASE/reference/htmlsingle/#what-is-authentication-in-spring-security
+     
+     # Filters
+       * https://itexpertsconsultant.wordpress.com/2015/11/26/spring-security-custom-filterchainproxy-using-java-annotation-configuration/
+       * https://stackoverflow.com/questions/41480102/how-spring-security-filter-chain-works
+       * https://www.programcreek.com/java-api-examples/?api=org.springframework.security.web.FilterChainProxy
      
    # Notification Security
      * https://www.baeldung.com/spring-security-websockets    
@@ -407,6 +415,15 @@
        
    
 # JAVA
+  # Good Links
+    * https://howtodoinjava.com/
+    
+  # Steams and Lambda
+    * https://www.youtube.com/watch?v=suSdjhS03qk&index=24&list=PLqq-6Pq4lTTa9YGfyhyW2CqdtW9RtY-I3  
+  
+  # Serialisation and deserialisation
+    * https://www.youtube.com/watch?v=n8if6X47KvE  
+    
   # Exceptions
      # https://crunchify.com/better-understanding-on-checked-vs-unchecked-exceptions-how-to-handle-exception-better-way-in-java/
      # Unchecked Exceptions(Runtime):  
@@ -656,6 +673,10 @@
       * http://newjavafaqs.blogspot.com/2018/06/web-socket-using-spring-and-stomp.html
       * https://stomp-js.github.io/guide/ng2-stompjs/2018/11/04/ng2-stomp-with-angular7.html
       * https://grokonez.com/spring-framework/spring-websocket/spring-boot-websocket-angular-5-client-sockjs-stomp
+      
+    # Controller
+      * https://studiofreya.com/2012/02/06/spring-mvc-how-to-build-a-thread-safe-controller/  
+      * https://stackoverflow.com/questions/30171027/is-spring-boot-mvc-controller-multithreaded
       
 ########################################  
   
