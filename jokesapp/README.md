@@ -374,12 +374,13 @@
 # Spring Security 
    * https://stackoverflow.com/questions/41770156/spring-add-custom-user-details-to-spring-security-user
    * http://forum.spring.io/forum/spring-projects/security/122998-how-to-use-custom-userdetails-in-spring-security
-   * https://stackoverflow.com/questions/29479840/spring-session-and-spring-security(gives idea)
+   * https://stackoverflow.com/questions/29479840/spring-session-and-spring-security(gives idea good one)
    * https://www.baeldung.com/spring-security-authentication-provider
    * https://www.youtube.com/watch?v=WHLmJSRrtuQ
    * https://blog.ngopal.com.np/2017/10/10/spring-boot-with-jwt-authentication-using-redis/ (redis + security + spring)
       * https://github.com/privatejava/spring-boot-redis-jwt
    * https://www.baeldung.com/registration-with-spring-mvc-and-spring-security (registering new user)   
+   
    
    # Get Current Logged in User(custom-user 2nd one)
      * https://dzone.com/articles/how-to-get-current-logged-in-username-in-spring-se
@@ -392,6 +393,8 @@
      
    # Spring Sessions
      * https://dzone.com/articles/spring-jdbc-session
+     * http://djeison.me/2017/10/30/spring-security-session-redis/
+     * https://docs.spring.io/spring-security/site/docs/5.0.5.RELEASE/reference/htmlsingle/#what-is-authentication-in-spring-security
      
    # Notification Security
      * https://www.baeldung.com/spring-security-websockets    
@@ -400,6 +403,8 @@
      * Just adding 'spring-boot-starter-security' to pom enables a basic form based security to browser with sessions, and a basic security
      for only requests with out sessions. The default usename is 'user', password is printed on the console
      *      
+     
+       
    
 # JAVA
   # Exceptions
@@ -420,6 +425,30 @@
                  boolean,
     *              
                  String
+                 
+  # Oops
+    *  Classes
+        * State => variables
+        * Behaviours => methods 
+               
+    *  Inhertance(interfaces => default(like instance methods) and static methods)
+      * https://medium.com/@martinomburajr/java-8-default-static-interface-methods-similar-but-different-a8dcc3460280
+      * Overloading
+        - Compile time polymorphism
+      * Overriding
+        - Runtime polymorphism
+        - @override to be used if overriding, compiler will check for signature with parent
+        - only instance methods to be can be overriden not static methods 
+        - while overriding the method or variable can't have a lower access modifier
+          - ex if parent method is protected then using private in child will throw errr, but making it public is allowed 
+        - methods that are final cnnot be overriden  
+      * Static Methods, varaibles
+        - declared using static
+        - these methods can't access instance methods and instance variables direclty
+        - these are used for operations that don't require any data from an instance of class, ex calculate discount 
+        - no access to this 
+        - static varaible shared among all objects of class
+                 
                  
   # Threads/Concurrency 
     * Application or Process refers same and has one thread, each thread can have multiple threads
@@ -647,4 +676,7 @@
 # Angular Deployment s3
   * https://theinfogrid.com/tech/developers/angular/automate-deployment-of-angular-apps-using-aws-codebuild/
   * https://medium.com/@ibliskavka/aws-angular-stack-automation-b45767bda2ec
+  
+# Jenkins
+  * https://www.youtube.com/watch?v=OwTv1aN5BUo  
       
