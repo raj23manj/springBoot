@@ -804,6 +804,7 @@
       * http://newjavafaqs.blogspot.com/2018/06/web-socket-using-spring-and-stomp.html
       * https://stomp-js.github.io/guide/ng2-stompjs/2018/11/04/ng2-stomp-with-angular7.html (angular 7 & 6)
       * https://grokonez.com/spring-framework/spring-websocket/spring-boot-websocket-angular-5-client-sockjs-stomp (with angular)
+      * https://www.youtube.com/watch?v=OK2Fn6k7pwo&t=974s
       
     # Controller
       * https://studiofreya.com/2012/02/06/spring-mvc-how-to-build-a-thread-safe-controller/  
