@@ -474,9 +474,9 @@
    * https://stackoverflow.com/questions/41770156/spring-add-custom-user-details-to-spring-security-user
    * http://forum.spring.io/forum/spring-projects/security/122998-how-to-use-custom-userdetails-in-spring-security
    * https://stackoverflow.com/questions/29479840/spring-session-and-spring-security(gives idea good one)
-   * https://www.baeldung.com/spring-security-authentication-provider
+   * https://www.baeldung.com/spring-security-authentication-provider (authentication provider)
    * https://www.youtube.com/watch?v=WHLmJSRrtuQ
-   * https://blog.ngopal.com.np/2017/10/10/spring-boot-with-jwt-authentication-using-redis/ (redis + security + spring)
+   * https://blog.ngopal.com.np/2017/10/10/spring-boot-with-jwt-authentication-using-redis/ (redis + security + spring + JWT)
       * https://github.com/privatejava/spring-boot-redis-jwt
    * https://www.baeldung.com/registration-with-spring-mvc-and-spring-security (registering new user)  
    * https://www.youtube.com/playlist?list=PLTgRMOcmRb3P7yTaWigTyEmnTlCy6w6bE(Youtube Packt) 
@@ -587,7 +587,16 @@
         - only instance methods to be can be overriden not static methods 
         - while overriding the method or variable can't have a lower access modifier
           - ex if parent method is protected then using private in child will throw errr, but making it public is allowed 
-        - methods that are final cannot be overriden     
+        - methods that are final cannot be overriden 
+        
+  # Arrays & Lists => ArrayLists
+    * Array
+        * int[] myVAr = {1,2,3};     
+        * int[] myVar = new int[1,2,3]  
+    * List
+      * Ordered Collection
+      * ArrayList<Integer> myVar = new ArrayList(); // new ArrayList<Integer>();     
+        * add, size, set(position, item) => update, remove(position), contains, indexOf(item), get(index/position) 
                    
   # Threads/Concurrency 
     * Application or Process refers same and has one thread, each thread can have multiple threads
@@ -789,12 +798,12 @@
        * https://forums.aws.amazon.com/thread.jspa?threadID=170579
     
     # Notifications - STOMP
-      * https://medium.com/oril/spring-boot-websockets-angular-5-f2f4b1c14cee   
+      * https://medium.com/oril/spring-boot-websockets-angular-5-f2f4b1c14cee (Angular 5)
       * https://grokonez.com/spring-framework/spring-websocket/spring-boot-websocket-angular-5-client-sockjs-stomp
       * http://newjavafaqs.blogspot.com/2018/06/web-socket-using-spring-and-stomp.html
       * http://newjavafaqs.blogspot.com/2018/06/web-socket-using-spring-and-stomp.html
-      * https://stomp-js.github.io/guide/ng2-stompjs/2018/11/04/ng2-stomp-with-angular7.html
-      * https://grokonez.com/spring-framework/spring-websocket/spring-boot-websocket-angular-5-client-sockjs-stomp
+      * https://stomp-js.github.io/guide/ng2-stompjs/2018/11/04/ng2-stomp-with-angular7.html (angular 7 & 6)
+      * https://grokonez.com/spring-framework/spring-websocket/spring-boot-websocket-angular-5-client-sockjs-stomp (with angular)
       
     # Controller
       * https://studiofreya.com/2012/02/06/spring-mvc-how-to-build-a-thread-safe-controller/  
