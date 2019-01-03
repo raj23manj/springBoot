@@ -114,6 +114,100 @@
   * To enable component scanning in XML configuration
      * <context:component-scan base-package="com.luv2code.springdemo"></context:component-scan> 
      
+# Spring Configuration with Java Annotations & DI
+  * Autowiring/Injections 
+    * Constructor Injection
+     -  public class TennisCoach {
+          private FortuneService fortuneService;
+          //constructor injection
+            @Autowired 
+          	public void TennisCoach(FortuneService theFortuneService) {
+          		fortuneService = theFortuneService;
+          	}
+        }
+     - As of Spring Framework 4.3, an @Autowired annotation on such a constructor is no longer necessary if the target 
+       bean only defines one constructor to begin with. However, if several constructors are available, at least one 
+       must be annotated to teach the container which one to use.  
+        	
+    * Setter Injection or as nor mal method
+     -  public class TennisCoach {
+            private FortuneService fortuneService;
+            // constructor
+            public void TennisCoach() {}
+           
+              @Autowired   //as setter
+              public void setFortuneService(FortuneService theFortuneService) {
+            		fortuneService = theFortuneService;
+              }
+              
+              //    @Autowired // as normal method
+              //	public void initFortuneService(FortuneService theFortuneService) {
+              //		System.out.println("autowiring the service");
+              //		fortuneService = theFortuneService;
+              //	} 
+            
+         }
+       
+    * Field Injection => Accomplished using Java Reflections
+      -  public class TennisCoach {
+              @Autowired
+              private FortuneService fortuneService;
+              // constructor
+              public void TennisCoach() {}   
+          }
+          
+    * Which One to use
+      - Constructor Injection is most preffered  
+      - Any one can be used, as stated in spring doc it is consistance in performance
+    
+    * Qualifiers for DI (multiple implementation of an interface and being injected)
+      * By default it will not inject any implementation, will throw error 
+        "Error creating Bean name 'name of bean Injection of autowired dependincies failed"
+        " NoUniqueBeanDefinitionException" 
+      * @Qualifier('servicename-name, beanid of class in samll')
+      
+      * Constructor Based
+        -   @Autowired
+            public TennisCoach(@Qualifier("randomFortuneService") FortuneService theFortuneService) {
+        
+                System.out.println(">> TennisCoach: inside constructor using @autowired and @qualifier");
+                
+                fortuneService = theFortuneService;
+            }  
+      
+      * Filed Injection
+        - @Qualifier("randomFortuneService") // when multiple implementations of interface is there to specify specific one
+          	private FortuneService fortuneService;  
+          	
+      * Important Note
+         * Annotations - Default Bean Names ... and the Special Case
+           
+           In general, when using Annotations, for the default bean name, Spring uses the following rule.
+           
+           If the annotation's value doesn't indicate a bean name, an appropriate name will be built based on the short name of the class (with the first letter lower-cased).
+           
+           For example:
+           
+           HappyFortuneService --> happyFortuneService
+           
+           ---
+           
+           However, for the special case of when BOTH the first and second characters of the class name are upper case, then the name is NOT converted.
+           
+           For the case of RESTFortuneService
+           
+           RESTFortuneService --> RESTFortuneService
+           
+           No conversion since the first two characters are upper case.
+           
+           Behind the scenes, Spring uses the Java Beans Introspector to generate the default bean name. Here's a screenshot of the documentation for the key method.    	     
+
+         As always, you can give explicity names to your beans.
+         
+         @Component("foo")
+         public class RESTFortuneService .... {
+             
+         }
       
 # @SpringBootApplication 
 
