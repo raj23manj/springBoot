@@ -250,6 +250,63 @@
     
     Arguments
     The method can not accept any arguments. The method should be no-arg.  
+    
+# Configuring Spring Container using Java Code
+  * create a java class and annotate as @Configuration
+  * Add component Scanning support: @ComponentScan
+  * Read Spring Java Configuration class
+  * Retrive bean from Spring Container
+  - //sportConfig.java
+    @Configuration
+    @ComponentScan("com.luv2code.springdemo") // it scans all @component in package and intializes
+    @PropertySource("classpath:sport.properties") // this also gets loaded into spring context like bean and can be accessed using @Value("${foo.email}")
+    public class SportConfig {
+    
+        // inject dependency, define bean 
+        @Bean
+        public FortuneService sadFortuneService() {
+            return new SadFortuneService();
+        }
+        
+        // define method to expose bean, method name is bean ID and inject
+        @Bean
+        public Coach swimCoach() {
+            return new SwimCoach(sadFortuneService());
+        }
+    	
+    }
+    - AnnotationConfigApplicationContext context = 
+      				new AnnotationConfigApplicationContext(SportConfig.class);
+      Coach theCoach = context.getBean("tennisCoach", Coach.class);
+      
+    -   @Bean
+        public FortuneService sadFortuneService() {
+            return new SadFortuneService();
+        }
+        
+        * This approach is taken if the class does not have stereotype annotation defined(@Component, @Service etc.), in
+          this case beans won't be created hence we need to manually add them like we do in XML, and this is the approach.
+          The classes with the annotation will be created and added into the spring container. 
+          
+    - Inject Values from properties file:
+      * @PropertySource("classpath:sport.properties") 
+      * in the class that uses these values
+        - public class SwimCoach implements Coach {
+          	
+          	private FortuneService fortuneService;
+          	
+          	@Value("${foo.email}")
+          	private String email;
+          	    
+          	@Value("${foo.team}")
+          	private String team;
+          	
+          	public SwimCoach(FortuneService theFortuneService) {
+          		fortuneService = theFortuneService;
+          	}
+        }  	     
+
+      
 
 # @SpringBootApplication 
 
