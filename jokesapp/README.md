@@ -208,7 +208,49 @@
          public class RESTFortuneService .... {
              
          }
-      
+       
+        * When Spring creates the beans it follows this general process
+          (https://www.udemy.com/spring-hibernate-tutorial/learn/v4/t/lecture/5385040?start=0)
+          1. Construct an instance of class
+          2. Inject dependencies
+          3. Set properties etc (@Value) 
+           
+# Bean Scopes With Anotations(@Scope)
+    * -   @Scope("prototype") //"singleton" is default
+          public class TennisCoach {
+                     @Autowired
+                     private FortuneService fortuneService;
+                     // constructor
+                     public void TennisCoach() {}   
+                 }
+
+# Bean Life Cycle with Annotations
+  * // bean life cycle pre and post calls
+    // init method
+    @PostConstruct
+    public void doMyStartUpStuff() {
+        System.out.println("Init tennis init bean");
+    }
+    
+    @PreDestroy
+    public void doMyCleanUpStuff() {
+        System.out.println("Destroy tennis destroy bean");
+    }
+  
+  * Access modifier
+    
+    The method can have any access modifier (public, protected, private)
+    
+    Return type
+    The method can have any return type. However, "void' is most commonly used. If you give a return type just note that
+    you will not be able to capture the return value. As a result, "void" is commonly used.
+    
+    Method name
+    The method can have any method name.
+    
+    Arguments
+    The method can not accept any arguments. The method should be no-arg.  
+
 # @SpringBootApplication 
 
   * this is the main annotation
