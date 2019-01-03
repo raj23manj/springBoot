@@ -474,7 +474,7 @@
    * https://stackoverflow.com/questions/41770156/spring-add-custom-user-details-to-spring-security-user
    * http://forum.spring.io/forum/spring-projects/security/122998-how-to-use-custom-userdetails-in-spring-security
    * https://stackoverflow.com/questions/29479840/spring-session-and-spring-security(gives idea good one)
-   * https://www.baeldung.com/spring-security-authentication-provider (authentication provider)
+   * https://www.baeldung.com/spring-security-authentication-provider (custom authentication provider)
    * https://www.youtube.com/watch?v=WHLmJSRrtuQ
    * https://blog.ngopal.com.np/2017/10/10/spring-boot-with-jwt-authentication-using-redis/ (redis + security + spring + JWT)
       * https://github.com/privatejava/spring-boot-redis-jwt
@@ -482,6 +482,13 @@
    * https://www.youtube.com/playlist?list=PLTgRMOcmRb3P7yTaWigTyEmnTlCy6w6bE(Youtube Packt) 
    * https://www.packtpub.com/application-development/spring-security-essentials
    
+   * Spring Security Course Baeldung
+     * https://www.baeldung.com/learn-spring-security-course
+   
+   * Architecture:
+     * https://springbootdev.com/2017/08/23/spring-security-authentication-architecture/ (Authentication Architecture)
+     * https://blog.imaginea.com/spring-security-architecture-part-1/
+     * https://www.dineshonjava.com/spring-security-java-based-configuration-with-example/
    
    # Get Current Logged in User(custom-user 2nd one)
      * https://dzone.com/articles/how-to-get-current-logged-in-username-in-spring-se
@@ -497,11 +504,17 @@
      * https://dzone.com/articles/spring-jdbc-session
      * http://djeison.me/2017/10/30/spring-security-session-redis/
      * https://docs.spring.io/spring-security/site/docs/5.0.5.RELEASE/reference/htmlsingle/#what-is-authentication-in-spring-security
+     * https://www.baeldung.com/spring-security-session
      
      # Filters
        * https://itexpertsconsultant.wordpress.com/2015/11/26/spring-security-custom-filterchainproxy-using-java-annotation-configuration/
        * https://stackoverflow.com/questions/41480102/how-spring-security-filter-chain-works
        * https://www.programcreek.com/java-api-examples/?api=org.springframework.security.web.FilterChainProxy
+       * Custom Filters:
+         * https://www.baeldung.com/spring-security-custom-filter
+         * https://www.baeldung.com/spring-delegating-filter-proxy
+       * How Filters are managed in spring boot
+         * https://dzone.com/articles/what-does-spring-delegatingfilterproxy-do  
      
    # Notification Security
      * https://www.baeldung.com/spring-security-websockets    
