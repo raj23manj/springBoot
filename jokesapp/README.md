@@ -62,8 +62,7 @@
           		  <property name="team" value="Royal Challengers Bangalore" /> -->
           		  <constructor-arg ref="myFortuneService" />
           		  <property name="emailAddress" value="${foo.email}" />
-          		  <property name="team" value="${foo.team}" />
-          		  
+          		  <property name="team" value="${foo.team}" />    		  
            </bean> 
            
      * this is equal to for constructor-arg => CricketCoach myCricketCoach = new CricketCoach(myFortuneService)
@@ -72,6 +71,7 @@
        *  property => using setter method injection
      * Attaching string literals, ${foo.email}
        * in .xml file add =>  <context:property-placeholder location="classpath:sport.properties"/>  
+       
 
 # Bean Scope 
   - https://www.baeldung.com/spring-bean-scopes, 
@@ -108,9 +108,13 @@
     of prototypes, configured destruction lifecycle callbacks are not called. The client code must clean up prototype-scoped 
     objects and release expensive resources that the prototype bean(s) are holding. 
     
-
-                 
-    
+# Beans => Java Annotations(IOC using annotation) (spring-demo-annotation)
+  * Annotations are meta data of class(like labels on shoe box describing the content color, size, make)
+  * Component Scan, will scan java application for annotation(@Bean, @service, etc) and register the beans in the Spring Container(Application Context)            
+  * To enable component scanning in XML configuration
+     * <context:component-scan base-package="com.luv2code.springdemo"></context:component-scan> 
+     
+      
 # @SpringBootApplication 
 
   * this is the main annotation
@@ -139,7 +143,7 @@
      
   * Declaring Bean Scope:
     * No declaration needed for singleton scope.
-    * In Java Configuration use @Scope annotaion
+    * In Java Configuration use @Scope annotation
     * In XML configuration scope is an XML attribute of the 'bean' tag   
     
 # Configurations Options For Spring Framework
@@ -553,15 +557,38 @@
         - only instance methods to be can be overriden not static methods 
         - while overriding the method or variable can't have a lower access modifier
           - ex if parent method is protected then using private in child will throw errr, but making it public is allowed 
-        - methods that are final cnnot be overriden  
+        - methods that are final cannot be overriden  
       * Static Methods, varaibles
         - declared using static
         - these methods can't access instance methods and instance variables direclty
         - these are used for operations that don't require any data from an instance of class, ex calculate discount 
         - no access to this 
         - static varaible shared among all objects of class
-                 
-                 
+        
+    * Composition
+      * "has a " relation. Car has a Engine. Computer has a motherboard
+      * modeling parts as a whole
+      * Delegation, 69 tim's course
+    
+    * Encapsulation
+      * To restrict Access to certain components, variables which is the inner workings of a class
+      * Access Modifiers - https://www.geeksforgeeks.org/access-modifiers-java/
+        * private
+        * protected
+        * public
+        * default              
+    
+    * Polymorphism
+      * Overloading
+          - Compile time polymorphism
+      * Overriding
+        - Runtime polymorphism
+        - @override to be used if overriding, compiler will check for signature with parent
+        - only instance methods to be can be overriden not static methods 
+        - while overriding the method or variable can't have a lower access modifier
+          - ex if parent method is protected then using private in child will throw errr, but making it public is allowed 
+        - methods that are final cannot be overriden     
+                   
   # Threads/Concurrency 
     * Application or Process refers same and has one thread, each thread can have multiple threads
     * Each thread has it's own heap of memory space  
