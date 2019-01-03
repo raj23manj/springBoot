@@ -26,6 +26,7 @@
     * http://forum.spring.io/forum/spring-projects/security/95918-how-to-handle-multiple-logged-in-users 
     * For Async: 
       * https://www.baeldung.com/spring-security-async-principal-propagation
+      * https://github.com/eugenp/tutorials/blob/master/spring-security-rest/src/main/java/org/baeldung/spring/SecurityJavaConfig.java
   * https://www.quora.com/How-do-servlets-handle-multiple-requests     
   
 # Spring Container
