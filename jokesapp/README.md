@@ -808,7 +808,46 @@
           - ex if parent method is protected then using private in child will throw errr, but making it public is allowed 
         - methods that are final cannot be overriden 
         
+  # Auto Boxing and Unboxing
+      * For array List and other collections Lists if we need to hold an array of integer values then we can't do this
+        - ArrayList<int> arr = new ArrayList<int>(); // compilation error Type argument cannot be primitive
+        - example of it will work, let's create a custom Int class
+          - class IntClass { // wrapper class for myValue
+              private int myValue;
+              
+              public IntClass(int myValue) {
+                  this.myValue = myValue;
+              }
+              
+              public void setMyValue(int myValue){
+                  this.myValue = myValue;
+              }
+              
+              public int getMyValue(){
+                  return myValue
+              }
+          }
+          
+           - ArrayList<IntClass> arr = new ArrayList<IntClass>();
+           - arr.add(new IntClass(23));
+      * Hence Collections can't hod primitive type directly, but can hold objects hence we need to box and unbox the primitive types.
+      * There are pre built classes for Primitive Types provided by Java 
+        - Integer 
+          - Longer Way
+              - ArrayList<Integer> arr = new ArrayList<Integer>(); 
+                - arr.add(Integer.valueOf(23)); => Auto Boxing
+                - arr.get(23).intValue(); => Unboxing
+              - adding a new value like setter, Integer.valueOf(23) => boxing
+              - like getter to get the value,  arr.get(index).intValue();
+          - Shorter Way => Java takes care of it at compile time and it converts to above boxing format
+            - Integer myVal = 23; => Auto Boxing => Integer.valueOf(23)
+            - int myInt = myVal; => Unboxing =>  myVal.intValue()    
+        - Double
+        -                 
+        
   # Arrays & Lists => ArrayLists
+    * Arrays are contiguous memory
+    * fixed time access based on index, very fast
     * Array
         * int[] myVAr = new String[10]#{1,2,3};     
         * int[] myVar = #new int[1,2,3]  
@@ -816,43 +855,11 @@
       * Ordered Collection
       * ArrayList<Integer> myVar = new ArrayList(); // new ArrayList<Integer>();     
         * add, size, set(position, item) => update, remove(position), contains, indexOf(item), get(index/position)
-        
-  # Auto Boxing and Unboxing
-    * For array List and other collections Lists if we need to hold an array of integer values then we can't do this
-      - ArrayList<int> arr = new ArrayList<int>(); // compilation error Type argument cannot be primitive
-      - example of it will work, let's create a custom Int class
-        - class IntClass { // wrapper class for myValue
-            private int myValue;
-            
-            public IntClass(int myValue) {
-                this.myValue = myValue;
-            }
-            
-            public void setMyValue(int myValue){
-                this.myValue = myValue;
-            }
-            
-            public int getMyValue(){
-                return myValue
-            }
-        }
-        
-         - ArrayList<IntClass> arr = new ArrayList<IntClass>();
-         - arr.add(new IntClass(23));
-    * Hence Collections can't hod primitive type directly, but can hold objects hence we need to box and unbox the primitive types.
-    * There are pre built classes for Primitive Types provided by Java 
-      - Integer 
-        - Longer Way
-            - ArrayList<Integer> arr = new ArrayList<Integer>(); 
-              - arr.add(Integer.valueOf(23)); => Auto Boxing
-              - arr.get(23).intValue(); => Unboxing
-            - adding a new value like setter, Integer.valueOf(23) => boxing
-            - like getter to get the value,  arr.get(index).intValue();
-        - Shorter Way => Java takes care of it at compile time and it converts to above boxing format
-          - Integer myVal = 23; => Auto Boxing => Integer.valueOf(23)
-          - int myInt = myVal; => Unboxing =>  myVal.intValue()    
-      - Double
-      -           
+  
+  # LinkedList
+    * In array list if only adding new elements and deleting elements will work better like stack without adding any new 
+      elements or deleting inbetween the list at any random position, but if a element needs to be added at specific position then
+      shuffeling the elements takes time, hence Linked list can save time   
                    
   # Threads/Concurrency 
     * Application or Process refers same and has one thread, each thread can have multiple threads
@@ -1088,4 +1095,9 @@
   
 # Jenkins
   * https://www.youtube.com/watch?v=OwTv1aN5BUo  
+
+# Data Structures
+  * when to use what
+    * http://careerdrill.com/blog/coding-interview/choosing-the-right-data-structure-to-solve-problems/  
+    * https://stackoverflow.com/questions/48442/rule-of-thumb-for-choosing-an-implementation-of-a-java-collection
       
