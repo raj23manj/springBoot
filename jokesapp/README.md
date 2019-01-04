@@ -428,6 +428,10 @@
     * Detach
     * All
     
+  # Return Association's as Json 
+    * https://www.javacodegeeks.com/2012/09/json-jackson-to-rescue.html
+    * https://www.baeldung.com/jackson-bidirectional-relationships-and-infinite-recursion  
+    
   # Hibernates default persistence strategy for inheritance
     * Single Table Inheritance -> leads to lot of unused coloms, with type colom as common  
     * Hibernates ddl-auto property control's if any ddl operatiions hibernate will perform on start up.
@@ -860,6 +864,8 @@
     * In array list if only adding new elements and deleting elements will work better like stack without adding any new 
       elements or deleting inbetween the list at any random position, but if a element needs to be added at specific position then
       shuffeling the elements takes time, hence Linked list can save time   
+      
+    * LinkedList<String> arr = new LinkedList<String>();  
                    
   # Threads/Concurrency 
     * Application or Process refers same and has one thread, each thread can have multiple threads
