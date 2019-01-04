@@ -314,6 +314,83 @@
     - Add support for Spring Component Scanning 
     - Add Support for conversion, formatting and validation
     - Configure Spring MVC View Resolver     
+    
+    
+# Controller
+  * @Restcontroller(with response body for rest) or @Controller 
+  * @RequestMapping for url mapping which is general, need to mention get, put, delete, post
+  * @GetMapping, @PostMapping
+    
+  - Get Parameters for controller
+    - using httpServlet request
+    - public String letsShoutDude(HttpServletRequest request, Model model) {
+      		String theName = request.getParameter("studentName");
+      		
+      		theName = theName.toUpperCase();
+      		
+      		String result = "Yo! " +  theName;
+      		model.addAttribute("message", result);
+      		
+      		return "helloworld";
+      		
+      	}
+    - Using @RequestParam => use to bind the incoming parameter
+      * http://appsdeveloperblog.com/requestparam-spring-mvc/
+      * methodName(@RequestParam("paramName") String theName)  => api/v1/index?page=1
+      * public String processFormVersionThree(@RequestParam("studentName") String theName, Model model) {
+        		
+        		theName = theName.toUpperCase();
+        		
+        		String result = "Hey v3! " +  theName;
+        		model.addAttribute("message", result);
+        		
+        		return "helloworld";
+        		
+        	}
+     
+    -  @RequestBody => maps the request body json to class defined in spring
+      * https://www.baeldung.com/spring-request-response-body
+      * public OperationStatusModel requestReset(@RequestBody PasswordResetRequestModel passwordResetRequestModel) {} 
+      
+    - @PathVariable => used to get the dynamic id from the url  
+      * @GetMapping("recipe/{id}/update")
+        public String updateRecipe(@PathVariable String id, Model model){
+               
+        }
+      * Using model here is like instance varaibles in rails, so that the can be accessed in templates 
+    
+    * @InitBinder(chad)    
+      - add in the controller
+        -  @InitBinder
+           	public void initBinder(WebDataBinder dataBinder) {
+           		StringTrimmerEditor stringTrimmerEditor = new StringTrimmerEditor(true);
+           		dataBinder.registerCustomEditor(String.class, stringTrimmerEditor);
+           	}
+        
+      - // add an initbinder ... to convert the trim input strings
+        // remove leading and trailing white spaces
+        // resolve issue for our validation   	
+        
+# Validations
+  * https://docs.jboss.org/hibernate/stable/validator/reference/en-US/html_single/#section-declaring-bean-constraints
+  * Adding validation to DTO is ideal
+  * Validation Rest Controller: 
+    * http://www.springboottutorial.com/spring-boot-validation-for-rest-services
+    * https://www.baeldung.com/spring-data-rest-validators  
+    * http://appsdeveloperblog.com/validate-request-body-in-restful-web-service/
+    * https://www.mkyong.com/spring-mvc/spring-rest-api-validation/
+    * https://g00glen00b.be/validating-the-input-of-your-rest-api-with-spring/  (nice way to implement errors)
+    * the BindingResult parameter must immediately after the model attribute.
+      -  @RequestMapping("/processForm")
+         public String processForm(
+                 @Valid @ModelAttribute("customer") Customer theCustomer,
+                 BindingResult theBindingResult) {
+                         
+         } 
+    * @InitBinder
+      Validating space, it gets skipped in validation to overcome use this
+      - Add preprocessing code with @InitBinder  
+      - It preprocesses each web request          	
 
 # @SpringBootApplication 
 
