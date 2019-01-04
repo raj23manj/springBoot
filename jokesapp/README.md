@@ -306,7 +306,14 @@
           	}
         }  	     
 
-      
+# Spring MVC Configuration without Spring Boot => (99/100/102 chad)
+  * Add Configurations to file WEB-INF/web.xml
+    - Configure Spring MVC Dispatcher Servlet
+    - Setup URL mappings to Spring MVC Dispatcher Servlet
+  * Add COnfigurations to file WEB-INF/spring-mvc-demo-servlet.xml
+    - Add support for Spring Component Scanning 
+    - Add Support for conversion, formatting and validation
+    - Configure Spring MVC View Resolver     
 
 # @SpringBootApplication 
 
@@ -534,6 +541,12 @@
     * https://www.concretepage.com/spring-4/spring-4-ehcache-configuration-example-with-cacheable-annotation
     * https://dzone.com/articles/spring-boot-with-ehcache-3-and-jsr-107
     * https://www.youtube.com/watch?v=cWqNeANzEz0
+    
+  # Redis Cache
+    * https://www.concretepage.com/spring-boot/spring-boot-redis-cache  
+    * https://medium.com/@MatthewFTech/spring-boot-cache-with-redis-56026f7da83a
+    * https://www.baeldung.com/spring-data-redis-tutorial
+    * https://dzone.com/articles/implementation-of-redis-in-micro-servicespring-boo
   
   # Connecting to multiple DB's
     * https://www.devglan.com/spring-boot/spring-boot-multiple-database-configuration
