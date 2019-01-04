@@ -216,14 +216,14 @@
           3. Set properties etc (@Value) 
            
 # Bean Scopes With Anotations(@Scope)
-    * -   @Scope("prototype") //"singleton" is default
-          public class TennisCoach {
-                     @Autowired
-                     private FortuneService fortuneService;
-                     // constructor
-                     public void TennisCoach() {}   
-                 }
-
+    * @Scope("prototype") //"singleton" is default
+      public class TennisCoach {
+         @Autowired
+         private FortuneService fortuneService;
+         // constructor
+         public void TennisCoach() {}   
+      }
+    * https://www.boraji.com/spring-singleton-scope-example-using-scope-annotation
 # Bean Life Cycle with Annotations
   * // bean life cycle pre and post calls
     // init method
@@ -390,7 +390,68 @@
     * @InitBinder
       Validating space, it gets skipped in validation to overcome use this
       - Add preprocessing code with @InitBinder  
-      - It preprocesses each web request          	
+      - It preprocesses each web request   
+  
+  * Regular Expressions Validations
+    - @Pattern(regexp="^[a-zA-Z0-9]{5}", message="must have 5 chars")
+      	private String postalCode; 
+  
+  * Custom Error messages chad(157)
+  
+  * Custom Validation => Custom Java Annotation => spring-Mvc-Demo
+    * in entity class
+      -   @CourseCode(value="TOPS", message="must start with TOPS")
+        //@CourseCode
+          private String courseCode;
+    * Create an Interface 
+      - @Constraint(validatedBy = CourseCodeConstraintValidator.class)
+        @Target({ ElementType.METHOD, ElementType.FIELD })
+        @Retention(RetentionPolicy.RUNTIME)
+        public @interface CourseCode {
+        	//define default course code
+        	public String value() default "LUV";
+        	
+        	// define default error message
+        	public String message() default "must start with LUV";
+        	
+        	//define default groups
+        	public Class<?>[] groups() default {};
+        	
+        	//define default payloads
+        	public Class<? extends Payload>[] payload() default {};		
+        }
+     
+    * Need to implement ConstraintValidator  
+      - public class CourseCodeConstraintValidator 
+        			implements ConstraintValidator<CourseCode, String> {
+        	
+        	private String coursePrefix;
+        	
+        	@Override
+        	public void initialize(CourseCode theCourseCode) {
+        		//theCourseCode is default value given "LUV"
+        		coursePrefix = theCourseCode.value();
+        	}
+        	
+        	@Override
+        	public boolean isValid(String theCode, ConstraintValidatorContext theConstraintValidatorContext) {
+        		// theCode is value entered on html form
+        		boolean result;
+        				
+        		if(theCode != null) {
+        			result = theCode.startsWith(coursePrefix);
+        		}
+        		else {
+        			result = true;
+        		}
+        		return result;
+        	}
+        
+        }
+      
+  
+# Spring HTTPClient-guide
+  * https://www.baeldung.com/httpclient-guide    	          	
 
 # @SpringBootApplication 
 
@@ -756,8 +817,7 @@
    * https://stackoverflow.com/questions/49071667/cant-enable-plugin-in-rabbitmq-3-7-3
    
 # Debugging
-  * https://dzone.com/articles/spring-tips-reactive-sql-data-access-with-spring-d
-  
+  * https://dzone.com/articles/spring-tips-reactive-sql-data-access-with-spring-d  
      
 # Spring Security 
    * https://stackoverflow.com/questions/41770156/spring-add-custom-user-details-to-spring-security-user
@@ -1002,7 +1062,7 @@
     * java.util.concurrent package was introduced to run multiple threads, help dev's properly synchronise code
     * Reentrant Lock - when a thread is holding a lock and enters again it can execute
     * Thread Pool - manages the threads for us
-      * Executor service 
+      * Executor service https://www.baeldung.com/httpclient-guide
          ExecutorService executorService = Executors.newFixedThreadPool(3);
          (new Thread(r)).start(); => ex.execute(r);
     * ArrayBlockingQueue => Thread safe,  this is bounded and manages locks internally
@@ -1185,4 +1245,10 @@
   * when to use what
     * http://careerdrill.com/blog/coding-interview/choosing-the-right-data-structure-to-solve-problems/  
     * https://stackoverflow.com/questions/48442/rule-of-thumb-for-choosing-an-implementation-of-a-java-collection
-      
+ 
+# Interview Questions(spring)
+  * https://d1fto35gcfffzn.cloudfront.net/academy/Spring-Professional-Certification-Study-Guide.pdf
+  * https://stackoverflow.com/questions/29074270/why-in-spring-i-am-not-allowed-to-annotate-a-final-class-with-configuration      
+  
+# Certification
+  * https://www.certification-questions.com/buy-dumps-exams/core-professional-v5.0-dumps##portfolio  
