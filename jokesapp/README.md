@@ -428,9 +428,11 @@
     * Detach
     * All
     
-  # Return Association's as Json 
+  # Return Association's as Json(Jackson Serialising and DeSerialising as Json)
+    * Converting object to Json(Serialising), converting Json to Object(De-Serialising) 
     * https://www.javacodegeeks.com/2012/09/json-jackson-to-rescue.html
-    * https://www.baeldung.com/jackson-bidirectional-relationships-and-infinite-recursion  
+    * https://www.baeldung.com/jackson-bidirectional-relationships-and-infinite-recursion
+    * https://www.baeldung.com/jackson  
     
   # Hibernates default persistence strategy for inheritance
     * Single Table Inheritance -> leads to lot of unused coloms, with type colom as common  
