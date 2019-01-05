@@ -450,9 +450,11 @@
         }
       
 # AOP (Logging & authorization, security and transactions, exception handling)
+  * spring-demo-aop, spring-demo-aop-pointcut-declarations   
   * With Spring Boot
     * https://dzone.com/articles/implementing-aop-with-spring-boot-and-aspectj
     * https://www.baeldung.com/spring-aop-annotation
+    * https://www.baeldung.com/spring-http-logging
     
   * Frameworks
     * Spring AOP (implements Aop)
@@ -475,22 +477,115 @@
       * Faster performance
       * compilr time weaving requires extra compilation step
       * AspectJ pointCut syntax can become complex 
-      
+    
+    - Declaring an AOP in Spring App, in Config file
+      @Configuration // for pure java configuration 
+      @EnableAspectJAutoProxy
+      @ComponentScan("com.lu2code.aopdemo")
+      public class DemoConfig {
+          //	@Bean
+          //	public AccountDAO accountDAO() {
+          //		return new AccountDAO();
+          //	}
+      }
+
+    - Creating an AOP
+      @Aspect
+      @Component
+      public class MyDemoLoggingAspect {
+      }  
       
   
   * Like spying on the requests  
   * Terminologies
     * Aspect
-      * module of code for cross cutting concern(logics => logging, security)
+      * module of code for cross cutting concern(logic => logging, security)
+      - public void beforeAddAccountAdvice() {
+         System.out.println("\n=====>>> Executing @Before advice on addAccount()");    
+      }	
       
     * Advice 
       * what action is taken and when it should be applied
-      
+        * Before, After returning, After Throwing, After Finally, Around
+        
+        * @Before Advice
+          - @Aspect
+            @Component
+            public class MyDemoLoggingAspect {
+            	// this is where we add all of our related advices for logging
+            	
+            	// let's start with an @Before advice
+            
+            	//@Before("execution(public void addAccount())") // pointcut expression matches any method
+            	//@Before("execution(public void com.lu2code.aopdemo.dao.AccountDAO.addAccount())") // match particular class method
+            	//@Before("execution(public void add*())") //match any with add*  (public * add*())
+                //@Before("execution(void add*())") //match any with add* with void return type
+            	//@Before("execution(* add*())")  // any
+            	
+            	// ###Arguments Type####
+                //@Before("execution(* add*(com.lu2code.aopdemo.Account))")  // specific param type
+                //@Before("execution(* add*(com.lu2code.aopdemo.Account, boolean))")
+            	//@Before("execution(* add*(com.lu2code.aopdemo.Account, ..))")
+            	//@Before("execution(* add*(..))") // any params 0 or more
+            	
+            	//###Packages###
+            	@Before("execution(* com.lu2code.aopdemo.dao.*.*(..))") // any modifier ,return type, package name, any class, any method
+            	public void beforeAddAccountAdvice() {
+            		
+            		System.out.println("\n=====>>> Executing @Before advice on addAccount()");
+            		
+            	}	
+            }
+             
     * Join Point
       * when to apply code during program execution
       
-    * PointCut
-      * A predicate expression for where advice should be applied  
+    * PointCut Expressions
+      * A predicate expression for where advice should be applied
+      * can be directly mentioned in the advices or by can be done as re-useable and apply to multiple expression  
+        * Pointcut Expression Language
+          - execution(modifiers-pattern? return-type-pattern declaring-type-pattern(classname)? method-name-pattern(param-pattern) throws-pattern?)
+          - "execution(public void com.luv2code.AccountDAO.addAccount())"
+        * Re-useable PointCut Expressions
+          - @Aspect
+            public class LuvAopExpressions {
+            	//#### point cut declarations ### for reusability
+            	@Pointcut("execution(* com.lu2code.aopdemo.dao.*.*(..))")
+            	public void forDaoPackage() {}
+
+            	// match getter methods
+            	@Pointcut("execution(* com.lu2code.aopdemo.dao.*.get*(..))")
+            	public void getter() {}
+            	
+            	// match setter methods
+            	@Pointcut("execution(* com.lu2code.aopdemo.dao.*.set*(..))")
+            	public void setter() {}
+            	
+            	// combine pointcuts: include package and exclude getter/setter
+            	@Pointcut("forDaoPackage() && !(getter() || setter())")
+            	public void forDaoPackageNoGetterSetter () {}
+            	
+            	@Before("forDaoPackageNoGetterSetter")
+            	public void beforeAddAccountAdvice() {
+                    System.out.println("\n=====>>> Executing @Before advice on addAccount()");
+                }	
+            } 
+  
+    * AOP Ordering
+        * Control the order of advices being applied
+        * manage order when same conditions are met, i.e when multiple advices are targeted for same methods the order to
+          follow
+        * when order value for the aspects is same spring takes care of it randomly
+          
+        - @Aspect
+          @Component
+          @Order(1)
+          public class MyCloudLogAsyncAspect {
+            @Before("com.lu2code.aopdemo.aspect.LuvAopExpressions.forDaoPackageNoGetterSetter()") // any modifier ,return type, package name, any class, any method
+            public void loggingToCloudAsync() {	
+                System.out.println("\n=====>>> Logging to cloud");		
+            }
+      }
       
   
   * Weaving
@@ -933,8 +1028,12 @@
      * Just adding 'spring-boot-starter-security' to pom enables a basic form based security to browser with sessions, and a basic security
      for only requests with out sessions. The default usename is 'user', password is printed on the console
      *      
-     
-       
+   
+   # Logging
+     * https://www.baeldung.com/java-logging-intro
+     * https://www.baeldung.com/slf4j-with-log4j2-logback  
+     * https://stackoverflow.com/questions/33744875/spring-boot-how-to-log-all-requests-and-responses-with-exceptions-in-single-pl
+     * https://dzone.com/articles/logging-spring-rest-apis  
    
 # JAVA
   # Good Links
