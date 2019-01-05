@@ -507,38 +507,37 @@
     * Advice 
       * what action is taken and when it should be applied
         * Before, After returning, After Throwing, After Finally, Around
-        
-        * @Before Advice
-          - @Aspect
-            @Component
-            public class MyDemoLoggingAspect {
-            	// this is where we add all of our related advices for logging
-            	
-            	// let's start with an @Before advice
-            
-            	//@Before("execution(public void addAccount())") // pointcut expression matches any method
-            	//@Before("execution(public void com.lu2code.aopdemo.dao.AccountDAO.addAccount())") // match particular class method
-            	//@Before("execution(public void add*())") //match any with add*  (public * add*())
-                //@Before("execution(void add*())") //match any with add* with void return type
-            	//@Before("execution(* add*())")  // any
-            	
-            	// ###Arguments Type####
-                //@Before("execution(* add*(com.lu2code.aopdemo.Account))")  // specific param type
-                //@Before("execution(* add*(com.lu2code.aopdemo.Account, boolean))")
-            	//@Before("execution(* add*(com.lu2code.aopdemo.Account, ..))")
-            	//@Before("execution(* add*(..))") // any params 0 or more
-            	
-            	//###Packages###
-            	@Before("execution(* com.lu2code.aopdemo.dao.*.*(..))") // any modifier ,return type, package name, any class, any method
-            	public void beforeAddAccountAdvice() {
-            		
-            		System.out.println("\n=====>>> Executing @Before advice on addAccount()");
-            		
-            	}	
-            }
              
     * Join Point
       * when to apply code during program execution
+      * Read Method arguments/parameters
+      * Display method Signature
+      * Gives info about method it is executing
+      -  @Before("com.lu2code.aopdemo.aspect.LuvAopExpressions.forDaoPackageNoGetterSetter()") // any modifier ,return type, package name, any class, any method
+         	public void beforeAddAccountAdvice(JoinPoint theJoinPoint) {	
+         		myLogger.info("\n=====>>> Executing @Before advice on addAccount()");	
+         		
+         		// display the method signature
+         		MethodSignature methodSig = (MethodSignature) theJoinPoint.getSignature();
+         		myLogger.info("\nMethod SIgnature: " + methodSig);
+         		
+         		// display method arguments
+         		
+         		Object[] args = theJoinPoint.getArgs();
+         		
+         		for(Object tempArg : args) {
+         			myLogger.info(tempArg.toString());
+         			
+         			if (tempArg instanceof Account)  {
+         				// downcast and print Account specific stuff
+         				Account theAccount = (Account) tempArg;
+         				
+         				myLogger.info("accountName :" + theAccount.getName());
+         				myLogger.info("accountLevel :" + theAccount.getLevel());
+         				
+         			}
+         		}
+         	}  
       
     * PointCut Expressions
       * A predicate expression for where advice should be applied
@@ -598,11 +597,68 @@
       
   * Advice Types
     * Before Advice => run before method
+      * @Before Advice
+          - @Aspect
+            @Component
+            public class MyDemoLoggingAspect {
+                // this is where we add all of our related advices for logging
+                
+                // let's start with an @Before advice
+            
+                //@Before("execution(public void addAccount())") // pointcut expression matches any method
+                //@Before("execution(public void com.lu2code.aopdemo.dao.AccountDAO.addAccount())") // match particular class method
+                //@Before("execution(public void add*())") //match any with add*  (public * add*())
+                //@Before("execution(void add*())") //match any with add* with void return type
+                //@Before("execution(* add*())")  // any
+                
+                // ###Arguments Type####
+                //@Before("execution(* add*(com.lu2code.aopdemo.Account))")  // specific param type
+                //@Before("execution(* add*(com.lu2code.aopdemo.Account, boolean))")
+                //@Before("execution(* add*(com.lu2code.aopdemo.Account, ..))")
+                //@Before("execution(* add*(..))") // any params 0 or more
+                
+                //###Packages###
+                @Before("execution(* com.lu2code.aopdemo.dao.*.*(..))") // any modifier ,return type, package name, any class, any method
+                public void beforeAddAccountAdvice() {
+                    
+                    System.out.println("\n=====>>> Executing @Before advice on addAccount()");
+                    
+                }	
+            }
+            
+    * After returning advice => run after method (Success Execution)
+      * Post processing data
+      * the result returned from the method executing with result need's to be sent back, hence "returning"
+      -  // add a new advice for @AfterReturning on the findAccounts method
+        @AfterReturning(
+                pointcut="execution(* com.lu2code.aopdemo.dao.AccountDAO.findAccounts(..))",
+                returning="result") // here returning should be same as param below
+        public void afterReturningFindAccountsAdvice(JoinPoint theJoinPoint, List<Account> result) {
+            
+            String method = theJoinPoint.getSignature().toShortString();
+            myLogger.info("\n ========> Executing @AfterReturning on method: " + method);
+            
+            myLogger.info("\n ========> result is: " + result);
+            
+            // post processing data
+            // convert account names to upper case
+            convertAccountNamesToUpperCase(result);
+            
+            myLogger.info("\n ========> result is: " + result);
+            
+        }
+     
+        private void convertAccountNamesToUpperCase(List<Account> result) {
+            for(Account tempAccount : result) {
+                String theUpperName = tempAccount.getName().toUpperCase();
+                tempAccount.setName(theUpperName);
+            }
+        }        
       
     * After finally Advice => run after the method(finally)
-    
-    * After returning advice => run after method (Success Execution)
+  
     * After Throwing Advice => run after method (if exception thrown)
+    
     * Around Advice => run before and after method   
 
   
