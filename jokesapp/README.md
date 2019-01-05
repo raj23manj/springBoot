@@ -449,6 +449,67 @@
         
         }
       
+# AOP (Logging & authorization, security and transactions, exception handling)
+  * With Spring Boot
+    * https://dzone.com/articles/implementing-aop-with-spring-boot-and-aspectj
+    * https://www.baeldung.com/spring-aop-annotation
+    
+  * Frameworks
+    * Spring AOP (implements Aop)
+      * runtime weaving
+      * Uses AOP in background for Security, Caching, transactions etc
+      * Using Proxy pattern
+      * only applicable to method-level
+      * can migrate to Aspectj when using @Aspect annotation
+      * Can only apply aspects to beans created by spring app context
+      * minor performance cost for aspect execution(run time weaving)
+      * Spring AOP is a light weight implementation of AOP
+      * Solves common problems in enterprise applications
+      
+    * Aspectj  (see 316 chad for good reference books)
+      * Provides complete support for AOP
+      * Rich Support for join point => method-level, Constructor, field
+      * compile-time weaving, post compile time weaving and run time
+      * supports all join points
+      * works on any pojo not just beans from app context
+      * Faster performance
+      * compilr time weaving requires extra compilation step
+      * AspectJ pointCut syntax can become complex 
+      
+      
+  
+  * Like spying on the requests  
+  * Terminologies
+    * Aspect
+      * module of code for cross cutting concern(logics => logging, security)
+      
+    * Advice 
+      * what action is taken and when it should be applied
+      
+    * Join Point
+      * when to apply code during program execution
+      
+    * PointCut
+      * A predicate expression for where advice should be applied  
+      
+  
+  * Weaving
+    * connecting aspects to target objects to create an advised object 
+    * Types
+      * Compile time weaving
+      * Load time weaving(run time)
+        * this is the slowest
+         
+      
+  * Advice Types
+    * Before Advice => run before method
+      
+    * After finally Advice => run after the method(finally)
+    
+    * After returning advice => run after method (Success Execution)
+    * After Throwing Advice => run after method (if exception thrown)
+    * Around Advice => run before and after method   
+
   
 # Spring HTTPClient-guide
   * https://www.baeldung.com/httpclient-guide    	          	
