@@ -1252,3 +1252,6 @@
   
 # Certification
   * https://www.certification-questions.com/buy-dumps-exams/core-professional-v5.0-dumps##portfolio  
+  
+# Rails Engine, Gem
+  * https://corlewsolutions.com/articles/article-126-how-to-setup-rspec-in-a-rails-engine  
