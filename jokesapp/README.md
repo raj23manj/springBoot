@@ -1005,6 +1005,158 @@
       shuffeling the elements takes time, hence Linked list can save time   
       
     * LinkedList<String> arr = new LinkedList<String>();  
+    
+  # Interfaces => https://www.baeldung.com/java-static-default-methods
+    * Class that needs to implement will be defined here used by different classes
+    * methods with definition can be defined like modules
+    * static methods with definition will be class methods
+    * default methods acts like instance methods   => https://dzone.com/articles/interface-default-methods-java
+    - public interface oldInterface {
+          public void existingMethod();
+          
+          default public void newDefaultMethod() {
+            System.out.println("New default method" " is added in interface");
+          }
+          
+          static boolean isNull() { 
+            return true;
+          }
+      }
+  
+  # Inner Classes => like compositions
+    * Nesting classes
+    * 4 types 
+      * Static Nested classes 
+        * Maninly used to associate a class with its outer class
+        * Packaged inside the outer class
+        * this class cannot access non static members of it's outer class without creating an instance of it
+        
+      * Non Static Nested Class => (Inner class) => used much
+        * importtant, the data variable used for both classes needs to be different, or else child class will shadow 
+          parent class variables
+        - public class GearBox {
+            private int maxGears;
+            private int currentGear = 0;
+            
+            GearBox(int gear) {
+              this.maxGear = gear
+            }
+            
+            // non static inner class
+            public class Gear {
+                private int gearNumber;
+                private double ratio;
+                
+                Gear(int gearNum, double ratio) {
+                  ...
+                }
+            }
+        }
+        
+        - in psvm class
+          - GearBox gb = new GearBox(6);
+          - GearBox.Gear first = gb.new Gear(1, 12.3) => using the instance of GearBox
+          - // GearBox.Gear second = new GearBox.Gear(1, 12.3) => won't work for non static inner classes
+          
+        * As a good programming practice,
+          * it will be good if we make the inner class private, and create a method to instantiate a new object of 
+            Gear box and expose it, and use it's method just like delegation in composition  
+      
+      * Local Class => not much used
+        * inner class defined inside a scope block which is a method
+        * Scope restricted to that block
+          -  see 105 pretty complex(Tim)
+        * https://www.geeksforgeeks.org/local-inner-class-java/
+        * Local Inner Classes are the inner classes that are defined inside a block. Generally, this block is a method 
+          body. Sometimes this block can be a for loop, or an if clause.Local Inner classes are not a member of any 
+          enclosing classes. They belong to the block they are defined within, due of which local inner classes cannot 
+          have any access modifiers associated with them. However, they can be marked as final or abstract. These class 
+          have access to the fields of the class enclosing it. Local inner class must be instantiated in the block they 
+          are defined in
+        
+        -  public class Outer 
+           { 
+               public int data = 10; 
+               public int getData() 
+               { 
+                   return data; 
+               } 
+               public static void main(String[] args) 
+               { 
+                   Outer outer = new Outer(); 
+                     
+                   if(outer.getData() < 20) 
+                   { 
+                       // Local inner class inside if clause 
+                       class Inner 
+                       { 
+                           public int getValue() 
+                           { 
+                               System.out.println("Inside Inner class"); 
+                               return outer.data; 
+                           } 
+                       } 
+              
+                       Inner inner = new Inner(); 
+                       System.out.println(inner.getValue()); 
+                   } 
+                   else
+                   { 
+                       System.out.println("Inside Outer class"); 
+                   } 
+               } 
+           }   
+        
+      * Anonomyous class is also a local class => used a lot in android
+        * https://www.geeksforgeeks.org/anonymous-inner-class-java/
+        * Inner class without a class name
+        * used only when one instance of the local class is required
+        - using it as interface.
+          interface Age 
+          { 
+              int x = 21; 
+              void getAge(); 
+          } 
+          
+          /* not needed */
+          class MyClass implements Age{ 
+              @Override
+              public void getAge()  
+              { 
+                  // printing the age 
+                  System.out.print("Age is "+x); 
+              } 
+          }
+          /* not needed */
+          
+          class AnonymousDemo 
+          { 
+              public static void main(String[] args) { 
+            
+                  // Myclass is hidden inner class of Age interface 
+                  // whose name is not written but an object to it  
+                  // is created. 
+                  Age oj1 = new Age() { 
+                                          @Override
+                                          public void getAge() { 
+                                               // printing  age 
+                                              System.out.print("Age is "+x); 
+                                          } 
+                                      }; 
+                  oj1.getAge(); 
+              } 
+          }
+          
+          * Difference between Normal/Regular class and Anonymous Inner class:
+            
+            * A normal class can implement any number of interfaces but anonymous inner class can implement only one 
+            interface at a time.
+            * A regular class can extend a class and implement any number of interface simultaneously. But anonymous 
+              Inner class can extend a class or can implement an interface but not both at a time.
+            * For regular/normal class, we can write any number of constructors but we cant write any constructor for 
+              anonymous Inner class because anonymous class does not have any name and while defining constructor class 
+              name and constructor name must be same. 
+         
                    
   # Threads/Concurrency 
     * Application or Process refers same and has one thread, each thread can have multiple threads
