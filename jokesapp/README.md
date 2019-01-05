@@ -1010,6 +1010,9 @@
     * Class that needs to implement will be defined here used by different classes
     * methods with definition can be defined like modules
     * static methods with definition will be class methods
+    * interfaces are contracts
+    * methods by default are public and abstract 
+    * from java 9 onwards interfaces can contain private methods 
     * default methods acts like instance methods   => https://dzone.com/articles/interface-default-methods-java
     - public interface oldInterface {
           public void existingMethod();
@@ -1155,7 +1158,40 @@
               Inner class can extend a class or can implement an interface but not both at a time.
             * For regular/normal class, we can write any number of constructors but we cant write any constructor for 
               anonymous Inner class because anonymous class does not have any name and while defining constructor class 
-              name and constructor name must be same. 
+              name and constructor name must be same.
+              
+  # Abstract Class
+    * when classes share same functionality and needs to be shared.
+    * this class cannot be instantiated
+    * can have abstract methods, wihtout implementations
+    * the subclass usually provides implementations for all of the abstract methods in its parent class. However, 
+      if it does not, then the subclass must also be declared abstract 
+    * we can declare fields that are not static and final
+    * we can define public, protected and private methods   
+    * it can extend from one parent only
+    -  
+      public abstract class Animal {
+        private String name;
+        
+        public Animal(String name) {
+          this.name = name
+        }
+        
+        public abstract void eat();
+        public abstract void breathe();
+        
+        public String getName() {
+          return name;
+        }
+      }   
+      
+  # Abstract Vs Interface
+    * Use abstract when there exists "is a" relationship like inheritance  dog is a animal 
+    * Use Interface  when there exists "can" relationship
+      - Animal -> bird and mamals
+      - bird can fly
+      - mamal -> bat can fly
+      - use interface here      
          
                    
   # Threads/Concurrency 
