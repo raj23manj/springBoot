@@ -653,13 +653,85 @@
                 String theUpperName = tempAccount.getName().toUpperCase();
                 tempAccount.setName(theUpperName);
             }
-        }        
+        }
+        
+    * After Throwing Advice => run after method (if exception thrown)
+      * Runs after exception is thrown, and post process it
+      * logging exception
+      * perform auditing
+      * we will only be intercepting the exception, however the exception will be still propagated to the calling program(method)
+        send emails, sms logic
+      * But if we need to stop propagation and handle things then we must use @Around advice  
+      - // AfterThrowing advice
+        @AfterThrowing(
+                    pointcut="execution(* com.lu2code.aopdemo.dao.AccountDAO.findAccounts(..))",
+                    throwing="theExc"
+                )
+        public void afterTHrowingFindAccountAdvice(JoinPoint theJoinPoint, Throwable theExc) {
+            String method = theJoinPoint.getSignature().toShortString();
+            myLogger.info("\n ========> Executing @AfterThrowing on method: " + method);
+            
+            myLogger.info("\n ========> THe exception is: " + theExc);
+    
+        }            
       
     * After finally Advice => run after the method(finally)
-  
-    * After Throwing Advice => run after method (if exception thrown)
+      * does not have access to exception, if needed use use @AfterThrowing
+      * works just like finally block in java, runs if success or exception or error
+      -  // After Finally, remember after runs first followed by after throwing. After runs for error or success 
+        @After("execution(* com.lu2code.aopdemo.dao.AccountDAO.findAccounts(..))")
+        public void afterFinallyFindAccountsAdvice(JoinPoint theJoinPoint) {
+            String method = theJoinPoint.getSignature().toShortString();
+            myLogger.info("\n ========> Executing @AfterFinally on method: " + method);
+        }  
     
-    * Around Advice => run before and after method   
+    * Around Advice => run before and after method  
+      * can be used to handle or stop exception 
+      - // Around Advice, happens at start and end, notice here JoinPoint is different "ProceedingJoinPoint"
+        @Around("execution(* com.lu2code.aopdemo.service.*.getFortune(..))")
+         public Object aroundGetFortune(
+                    ProceedingJoinPoint theProceedingJoinPoint 
+                ) throws Throwable {
+            
+            // print out method we are advising on
+            String method = theProceedingJoinPoint.getSignature().toShortString();
+            myLogger.info("\n ========> Executing @Around on method: " + method);
+            
+            
+            // get begin timestamp
+            long begin = System.currentTimeMillis(); 
+            
+            // execute method
+            // the ProceedingJoinPoint here is used to proceed the execution of the method that is called up, here getFortune
+            Object result = null;
+            
+             try {
+                result = theProceedingJoinPoint.proceed();
+            } catch (Exception e) {
+                //e.printStackTrace();
+                
+                // log exception
+                myLogger.info(e.getMessage());
+                
+                // give user a custom message, to calling method 
+                
+                //result = "Major Accident! But no worries, your private AOP helicopter on the way";
+                throw e;
+            }
+            
+             
+            
+            //get end timestamp
+            long end = System.currentTimeMillis();
+            
+            //compute duration and display it
+            long duration = end - begin;
+            
+            myLogger.info("\n======> Duration: " + duration/1000.0 + "seconds");
+            
+            // result consists of the calling program result returned by getFortune
+            return result;
+         }
 
   
 # Spring HTTPClient-guide
