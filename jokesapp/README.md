@@ -686,6 +686,7 @@
         }  
     
     * Around Advice => run before and after method  
+      * Rethrow Exception or ordering for this also there
       * can be used to handle or stop exception 
       - // Around Advice, happens at start and end, notice here JoinPoint is different "ProceedingJoinPoint"
         @Around("execution(* com.lu2code.aopdemo.service.*.getFortune(..))")
@@ -716,6 +717,7 @@
                 // give user a custom message, to calling method 
                 
                 //result = "Major Accident! But no worries, your private AOP helicopter on the way";
+                // rethrowing the exception
                 throw e;
             }
             
