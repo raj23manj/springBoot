@@ -1481,6 +1481,78 @@
       - mamal -> bat can fly
       - use interface here      
          
+  # Generics
+    * https://www.youtube.com/watch?v=9tHLV0u87G4
+      - public class Box<Type> {}
+      
+    * multiple type parameters   
+      - public interface pair<K, V> {
+              
+      }
+      
+      - public class OrderedPair<K,V> implements pair<K, V> {}
+      
+    * Diffrernce between U and <U> using in a method
+      -  public class Box<T> {
+             // U here mean's retuyn type
+             public U returnTypeValue() { => public String/Integer/Object returnTypeValue() {}
+             }
+             
+             // U here mean's it is 'U' type is going to be used inside the scope this method 
+              public <U> String returnTypeValue(U u) { 
+              }
+      } 
+      
+    * Bounded Type Parameter using concept of inhertance
+      * Upper Bound and Lower Bound
+        * https://stackoverflow.com/questions/19795709/understanding-upper-and-lower-bounds-on-in-java-generics   
+      
+      - public class Box<T> {
+            // we will passing a Generic Type here as a parameter, apart from the one we are passing to the class
+            // U will be any Class that extends of inherits from Number classs. String won't work here
+            public <U extends Number> String returnTypeValue(U u) { 
+            }
+        }
+        
+      - public class Box<T> {             
+              // custom class will be lowest in the inheritance chain, so anyting from parent till CustomClass only allowed
+              public <U super CustomClass> String returnTypeValue(U u) { 
+              }
+          } 
+          
+      * Super(lower Bound, lowest in the chain) Vs Extends (upper Bound Highest in the chain)
+          * Extends
+              * ? extends T means any class/interface which extends/implements T. Thus, we are referring to the children of T. 
+              Hence, T is the upper bound. The upper-most class in the inheritance hierarchy
+              
+              * Use this when we need to use getters inside the logic of the block
+              
+              - public void sumOfNumbers(list<? extends Number> numbers) {
+                double d = 0.0;
+                for(Number n : numbers) {
+                  d += n.doubleValue();
+                }
+                
+                System.out.println(d);
+              }
+              
+          * Super
+              * ? super T means any class / interface which is super of T. Thus we are referring to all the parents of T. 
+                T is thus the lower bound. The lower-most class in the inheritance hierarchy  
+              
+              * use this as generic as possible. see 43:30  
+              * Use this when we need to use setters inside the logic of the block 
+              
+               - public void sumOfNumbers(list<? extends Number> numbers) {
+                  numbers.add(1);
+                }
+        
+    * Wild Cards (making things more flexible)
+      -  public class Box<? extends Number> { 
+        // any Type(class) which extends or implements Number class/interface
+        // no inheritance hirerchical chain involved 
+      }      
+            
                    
   # Threads/Concurrency 
     * Application or Process refers same and has one thread, each thread can have multiple threads
