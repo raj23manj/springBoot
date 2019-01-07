@@ -1521,7 +1521,7 @@
           } 
           
       * Super(lower Bound, lowest in the chain) Vs Extends (upper Bound Highest in the chain)
-          * Extends
+          * Extends(used more)
               * ? extends T means any class/interface which extends/implements T. Thus, we are referring to the children of T. 
               Hence, T is the upper bound. The upper-most class in the inheritance hierarchy
               
@@ -1536,7 +1536,7 @@
                 System.out.println(d);
               }
               
-          * Super
+          * Super (used less)
               * ? super T means any class / interface which is super of T. Thus we are referring to all the parents of T. 
                 T is thus the lower bound. The lower-most class in the inheritance hierarchy  
               
@@ -1551,7 +1551,11 @@
       -  public class Box<? extends Number> { 
         // any Type(class) which extends or implements Number class/interface
         // no inheritance hirerchical chain involved 
-      }      
+      } 
+      
+  # Equals and HashCode
+    * https://howtodoinjava.com/java/basics/java-hashcode-equals-methods/         
+    * https://stackoverflow.com/questions/3563847/what-is-the-use-of-hashcode-in-java
             
                    
   # Threads/Concurrency 
