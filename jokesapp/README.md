@@ -1553,7 +1553,30 @@
       -  public class Box<? extends Number> { 
         // any Type(class) which extends or implements Number class/interface
         // no inheritance hirerchical chain involved 
-      } 
+      }
+      
+  # Static & Final
+    * Static
+        * used for creating class methods and variables
+        
+    * Static Intializers  => Static equivalent of constructors  
+        * Static blocks, can also be created these are called before the constructors
+        * will be executed once when the class is loaded 
+        - public class Test {
+          static {
+            // code here
+          }
+          
+          Test() {}
+        }
+        
+    * Final 
+        * Used for constant's
+        * Not to be modified
+        * when the class constructor is called it can be changed
+        * can be used to stop overriding methods in subclass
+         
+           
       
   # Equals and HashCode
     * https://howtodoinjava.com/java/basics/java-hashcode-equals-methods/         
@@ -1684,8 +1707,28 @@
       - For adding documentation
     - Surefire Plugin
       - For running unit test cases        
-           
+   
+  # Phases & Life Cycles
+     * clean
+       - clean:clean
+         
+     * Default
+       - process-resources
+       - compile
+       - process-test-resources
+       - test
+       - package
+       - install
+       - deploy
+       
+       * install's all the plugings under .m2 directory 
           
+     * site
+       - site:site
+       - site:deploy        
+  
+  # Customising LifeCylce
+    -  Need to dig in more      
     
     
 ###### Links
