@@ -735,6 +735,9 @@
             return result;
          }
 
+# Exceptions
+  * 
+
   
 # Spring HTTPClient-guide
   * https://www.baeldung.com/httpclient-guide    	          	
@@ -1575,6 +1578,60 @@
         * Not to be modified
         * when the class constructor is called it can be changed
         * can be used to stop overriding methods in subclass
+        
+  # Java Collections
+    * sets, maps,  queues, array list, linked list
+    
+    * Collection
+      * set(Hash-Set, Linked HashSet)
+        * SortedSet (treeSet)
+      * List
+      * Queue
+      * Deque
+      * Functions
+          * binarysearch
+          * mergeSort
+          * reverse
+          * min
+          * max
+          * swap
+          * copy => deep copy
+      
+      
+    * Comparable(compareTO) & Comparator  
+      * https://www.youtube.com/watch?v=oT973Y-IiMA
+      
+      * Comparable 
+        * natural ordering
+        * Collection.Sort(List<T> list)
+        * implement comparable, and override compareTo() for lists for comparing. Like Collection.binarysearch(), or any 
+          comparing operation, and will be classes default compare to method  
+      
+      * Comparator
+        * Collection.Sort(List<T> list, Comparator<? super T> c) 
+        * if we need to override the default logic done by comparable in the class, then use this
+        * Collections have sort alogrithms to use the and sort based on logic, this logic will be mentioned in the 
+          comparator method  
+        * Use Comparator for custom sort logic, using anonmouys class
+        - static final Comparator<Seat> Price_Order = new Comparator<Seat>() {
+          @Override
+          public int compare(Seat seat1, Seat seat2) {
+          // logic -1 is less, 0 is equal, 1 is greater
+            return -1 or 0 or 1
+          }
+        };
+        
+        - Collection.sort(seats, Theater.Price_Order)  
+        
+      * Minor Known Issue if value comparing are equal
+        * need to pass 0 if equal  
+    
+     
+    * Map
+      * SortedMap  
+      
+    * All implement collection interface   
+       
          
            
       
