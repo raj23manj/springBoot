@@ -1624,18 +1624,36 @@
         - Collection.sort(seats, Theater.Price_Order)  
         
       * Minor Known Issue if value comparing are equal
+        * ordering being inconsistent between equals
         * need to pass 0 if equal  
+        * in this case need to add additional condition for equals
     
      
-    * Map
+    * Map(Dictonaries) => {a => 'b'}, {a => [1,2,3]}
+        * HashMap and Linked HashMap => unique keys
+        * need to override HashCode
+    
       * SortedMap  
       
     * All implement collection interface   
        
-         
-           
-      
+             
   # Equals and HashCode
+    * https://www.youtube.com/watch?v=ghswNpRv2t0
+    * https://www.youtube.com/watch?v=V-vDUbK6wm0
+    
+    * equals()
+      * check if two objects are equal
+      * by default it will only check for two objects are instances of the same class 
+      * need oveeriding so we can customise
+      
+      
+    *  hashcode() 
+      * returns an integer which is the memory location of the item 
+      * helps to identify on object in an heap of objects in the memory
+      * helps in performance (searching elements)
+      * need to be unique
+      
     * https://howtodoinjava.com/java/basics/java-hashcode-equals-methods/         
     * https://stackoverflow.com/questions/3563847/what-is-the-use-of-hashcode-in-java
             
