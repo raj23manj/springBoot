@@ -735,8 +735,62 @@
             return result;
          }
 
-# Exceptions
-  * 
+# Custom Exception Handling in Spring Boot => spring-rest-demo
+
+  *  define a exception class first implementing runtime exception
+    -  public class StudentNotFoundException extends RuntimeException {
+       
+            public StudentNotFoundException(String message, Throwable cause) {
+                super(message, cause);
+                
+            }
+           
+            public StudentNotFoundException(String message) {
+                super(message);
+                
+            }
+           
+            public StudentNotFoundException(Throwable cause) {
+                super(cause);
+            
+            }
+       }
+
+  * Now Add a exception handler
+      *  @ControllerAdvice
+         * for global exception handling use the @ControllerAdvice, it is similar to interceptor/filter
+         * used when pre-process and post-process requests to controllers
+         * RealTime use of AOP
+         
+          - @ControllerAdvice
+            public class StudentRestExceptionHandler {
+                // Add an exception handler using @ExceptionHandler
+                @ExceptionHandler
+                public ResponseEntity<StudentErrorResponse> handleException(StudentNotFoundException exc) {
+                    
+                    StudentErrorResponse error = new StudentErrorResponse();
+                    error.setStatus(HttpStatus.NOT_FOUND.value());
+                    error.setMessage(exc.getMessage());
+                    error.setTimeStamp(System.currentTimeMillis());
+                    
+                    
+                    return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
+                }
+                
+                // Add another exception handler .... to catch any exception (catch all)
+                
+                @ExceptionHandler
+                public ResponseEntity<StudentErrorResponse> handleException(Exception exc) {
+                    
+                    StudentErrorResponse error = new StudentErrorResponse();
+                    error.setStatus(HttpStatus.BAD_REQUEST.value());
+                    error.setMessage(exc.getMessage());
+                    error.setTimeStamp(System.currentTimeMillis());
+                    
+                    
+                    return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+                }
+            }
 
   
 # Spring HTTPClient-guide
