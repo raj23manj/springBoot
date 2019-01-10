@@ -1,5 +1,8 @@
 # Spring Boot Jokes App
 
+# Spring Boot Documentation (must spen time and read)
+  * https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-documentation
+
  This sample web app
  
  # Good Links
@@ -792,6 +795,23 @@
                 }
             }
 
+# Actuator
+  * Monitor and Manage Application
+  * Check health of the application
+  * access application metrics
+  
+  * Endpoints => /actuautor/ ...
+    - /health => health information about app
+    - /info => info about project
+    - /auditevents => audit events for the app
+    - /beans => list of all registered beans in the spring application context
+    - /mappings => for all path mappings
+    * all end points
+      - https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#production-ready-endpoints
+    
+  * Security can be applied
+    * https://www.devglan.com/spring-security/securing-spring-boot-actuator-endpoints-with-spring-security
+    * https://dzone.com/articles/spring-boot-actuator-in-spring-boot-20  
   
 # Spring HTTPClient-guide
   * https://www.baeldung.com/httpclient-guide    	          	
@@ -1088,7 +1108,7 @@
     * Dynamic Scaling
     * Faster Release cycles
   
-  # Spring Cloud(Finchley)
+  # Spring Cloud(Finchley version)
     * https://medium.com/omarelgabrys-blog/microservices-with-spring-boot-authentication-with-jwt-part-3-fafc9d7187e8
     * https://developer.okta.com/blog/2018/02/13/secure-spring-microservices-with-oauth - (https://www.youtube.com/watch?v=MY5m_s_U2H4&t=3s)
     * https://www.youtube.com/watch?v=ZIAi8sGHPII
@@ -1182,6 +1202,9 @@
      * https://blog.imaginea.com/spring-security-architecture-part-1/
      * https://www.dineshonjava.com/spring-security-java-based-configuration-with-example/
    
+   * JWT Microservices
+     * https://medium.com/omarelgabrys-blog/microservices-with-spring-boot-authentication-with-jwt-part-3-fafc9d7187e8  
+   
    # Get Current Logged in User(custom-user 2nd one)
      * https://dzone.com/articles/how-to-get-current-logged-in-username-in-spring-se
      * https://stackoverflow.com/questions/22678891/how-to-get-user-id-from-customuser-on-spring-security
@@ -1240,8 +1263,25 @@
            UnsupportedOperationException, ArrayIndexOutOfBoundsException
            
      # Checked Exceptions(Compile Time - this can be avoided by using throws on method, class or try catch)
-       * IOException, SQLException, DataAccessException, ClassNotFoundException, InvocationTargetException, MalformedURLException       
-  
+       * IOException, SQLException, DataAccessException, ClassNotFoundException, InvocationTargetException, MalformedURLException 
+       * https://beginnersbook.com/2013/04/java-throws/      
+       -  public void myMethod() throws ArithmeticException, NullPointerException
+          {
+            // Statements that might throw an exception 
+          }
+          
+          public static void main(String args[]) { 
+            try {
+              myMethod();
+            }
+            catch (ArithmeticException e) {
+              // Exception handling statements
+            }
+            catch (NullPointerException e) {
+              // Exception handling statements
+            }
+          }
+          
   # DATA-TYPES
     * primitive: byte, short, 
                  int, long (choose Int by default)
