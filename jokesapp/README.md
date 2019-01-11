@@ -40,6 +40,10 @@
 # Inversion Of Control(IOC) (Object Creation Factory)
   * Object creation, Object management
   * objects ready with all dependencies
+  * DI via interface is highly preferred thank Concrete Classes(using the class it self directly)
+    * Allows runtime to decide implementation to inject
+    * follows interface Segregation principle of SOLID
+    * Also makes code testable
 
 # Dependency Injection(auto wiring)
   * objects with dependencies requirements will be injected using DI. If a class needs a service it will be injected 
@@ -118,6 +122,13 @@
      * <context:component-scan base-package="com.luv2code.springdemo"></context:component-scan> 
      
 # Spring Configuration with Java Annotations & DI
+
+  * DI via interface is highly preferred thank Concrete Classes(using the class it self directly)
+    * Allows runtime to decide implementation to inject
+    * follows interface Segregation principle of SOLID
+    * Also makes code testable
+    
+    
   * Autowiring/Injections 
     * Constructor Injection
      -  public class TennisCoach {
@@ -814,7 +825,21 @@
     * https://dzone.com/articles/spring-boot-actuator-in-spring-boot-20  
   
 # Spring HTTPClient-guide
-  * https://www.baeldung.com/httpclient-guide    	          	
+  * https://www.baeldung.com/httpclient-guide 
+  
+# Spring Framework context
+  * how to ge the spring context inside the framework, Section 3, 35. Jhon
+  
+  
+# JPA
+  * Hibernate, OpenJPA are implementers of this 
+  * Set of specification to be implemented
+  * ORM Tool   
+  * Criteria update, delete , Schema Generation, Validations, Queries against stored procedures  	 
+  
+  * Spring Data JPA:
+    * THis implements Repository Pattern
+             	
 
 # @SpringBootApplication 
 
@@ -904,6 +929,10 @@
    
 # Connect h2
   * http://localhost:8080/h2-console
+  * To enable, in application-properties set 'spring.h2.console.enable=true'
+  * JDBC URL: jdbc:h2:mem:testdb
+  * Username: sa
+  * Password: 
   
 # Jhipster
   * https://start.jhipster.tech/jdl-studio/
@@ -917,7 +946,7 @@
   * addition to spring 5, it returns an optional instead of null
   * these dynamic queries like in rails, here they are called JPA Query methods
   * jpa takes care of all implementation  
-  * note here no Stereotype declarations for this like @ component, @service ...ect JPA inmplements it so it is avaliable in the
+  * note here no Stereotype declarations for this like @ component, @service ...ect JPA implements it so it is avaliable in the
     Bean Container
   * JPA has @PrePersist and @PreUpdate for automatic update timestamp properties for audit purpose, same thing in hibernate has @CreationTimestamp and @UpdateTimestamp
   
@@ -1109,6 +1138,11 @@
     * Faster Release cycles
   
   # Spring Cloud(Finchley version)
+  
+    * https://howtodoinjava.com/spring-cloud/spring-boot-ribbon-eureka/
+     
+    * https://stackoverflow.com/questions/42238335/when-to-configure-zuul-routes 
+    
     * https://medium.com/omarelgabrys-blog/microservices-with-spring-boot-authentication-with-jwt-part-3-fafc9d7187e8
     * https://developer.okta.com/blog/2018/02/13/secure-spring-microservices-with-oauth - (https://www.youtube.com/watch?v=MY5m_s_U2H4&t=3s)
     * https://www.youtube.com/watch?v=ZIAi8sGHPII
@@ -1134,6 +1168,7 @@
         * Rate Litmis(no of requests per hour or day), fault tolerant(if service goes down, should send message)
         * Service Aggregation, an external call may many calls for one functionality, and it may contain many calls, we
           need toaggregate it 
+        * can be used for server side load balancing  
        
       2) Sleuth(assigns Id to requests, across all services) 
         * Spring Cloud Sleuth assigns Id to requests, and is used to trace across multiple components       
@@ -1152,7 +1187,23 @@
       
       3) Run the Service that you would want to execute! (hit hte url)
       
-      4) See Zipkin     
+      4) See Zipkin 
+    
+    * Security   
+      
+      * Architecture
+        * https://stackoverflow.com/questions/37180375/using-zuul-as-an-authentication-gateway 
+      
+      * JWT 
+        * https://www.xoriant.com/blog/product-engineering/microservices-security-using-jwt-authentication-gateway.html    
+        * https://medium.com/omarelgabrys-blog/microservices-with-spring-boot-authentication-with-jwt-part-3-fafc9d7187e8
+        * https://www.oodlestechnologies.com/blogs/Securing-Micro-Services-Using-Zuul-Gateway-Filters 
+        
+        - OAUTH
+          * https://www.youtube.com/watch?v=cKjgkNt-tFg 
+      
+      * Session
+        * https://stackoverflow.com/questions/33921375/zuul-api-gateway-authentication    
       
 # To Access Environment(application-properties)
     @Autowired
@@ -1747,10 +1798,54 @@
       * helps to identify on object in an heap of objects in the memory
       * helps in performance (searching elements)
       * need to be unique
+    
+    * when to override them
+      * You must override hashCode() in every class that overrides equals().
+      * Collections such as HashMap and HashSet use a hashcode value of an object to determine how it should be stored 
+        inside a collection, and the hashcode is used again in order to locate the object in its collection.
+      * https://stackoverflow.com/questions/2265503/why-do-i-need-to-override-the-equals-and-hashcode-methods-in-java  
       
     * https://howtodoinjava.com/java/basics/java-hashcode-equals-methods/         
     * https://stackoverflow.com/questions/3563847/what-is-the-use-of-hashcode-in-java
+    
+  # immutable classes
+    * https://www.geeksforgeeks.org/create-immutable-class-java/
+    * mmutable class means that once an object is created, we cannot change its content. In Java, all the wrapper classes (like String, Boolean, Byte, Short) and String class is immutable. We can create our own immutable class as well.
+      
+    * Following are the requirements:
+      • Class must be declared as final (So that child classes can’t be created)
+      • Data members in the class must be declared as final (So that we can’t change the value of it after object creation)
+      • A parameterized constructor
+      • Getter method for all the variables in it
+      • No setters(To not have option to change the value of the instance variable)  
+     
+    -  public final class Student 
+       { 
+           final String name; 
+           final int regNo; 
+         
+           public Student(String name, int regNo) 
+           { 
+               this.name = name; 
+               this.regNo = regNo; 
+           } 
+           public String getName() 
+           { 
+               return name; 
+           } 
+           public int getRegNo() 
+           { 
+               return regNo; 
+           } 
+       }   
             
+  # Set and HashSet
+    * No duplicates
+    * Ordered sets  
+    - Set<> demo = new HashSet<>();
+    
+  # Streams and HashMap
+    * http://www.java67.com/2017/07/how-to-sort-map-by-values-in-java-8.html  
                    
   # Threads/Concurrency 
     * Application or Process refers same and has one thread, each thread can have multiple threads
@@ -1929,6 +2024,7 @@
               
     # SOLID
       *  https://springframework.guru/principles-of-object-oriented-design/
+      * Section 3, 48-53
       
     # SAML
         #Okta General
