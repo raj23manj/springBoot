@@ -228,6 +228,39 @@
           1. Construct an instance of class
           2. Inject dependencies
           3. Set properties etc (@Value) 
+          
+# Primary Annotation for Spring Beans(@Primary) => di-demo(Jhon)
+  *  When there multiple beans of the same type which all implement the same interface, we can use this to choose which 
+     one by default to be selected
+     
+  -  @Service
+     @Primary // making it default if more beans of same impl, without others having an @primary mentioned
+     //@Profile({"en", "default"})
+     // making one profile as default, when more @Primary are there
+     public class PrimaryGreetingService implements GreetingService {
+     
+         private GreetingRepository greetingRepository;
+     
+         public PrimaryGreetingService(GreetingRepository greetingRepository) {
+             this.greetingRepository = greetingRepository;
+        }
+     }     
+     
+# Profiles
+  * Profiles are used to set at runtime which configures spring how it wires up things
+  * when run with profiles spring brings all beans marked with that profile
+  - @Service
+    //@Primary // making it default if more beans of same impl, without others having an @primary mentioned
+    @Profile({"en", "default"}) // multiple profiles it can support
+    // making one profile as default, when more @Primary are there
+    public class PrimaryGreetingService implements GreetingService {
+    
+       private GreetingRepository greetingRepository;
+    
+       public PrimaryGreetingService(GreetingRepository greetingRepository) {
+           this.greetingRepository = greetingRepository;
+      }
+    }              
            
 # Bean Scopes With Anotations(@Scope)
     * @Scope("prototype") //"singleton" is default
@@ -941,6 +974,9 @@
   * By default in hibernate if did not specify cascade nothing will be mentioned   
   * https://o7planning.org/en/11223/generate-tables-from-entity-classes-in-hibernate 
   * http://www.techferry.com/articles/hibernate-jpa-annotations.html 
+  
+  * Serialization problem
+    * https://stackoverflow.com/questions/30892298/infinite-loop-with-spring-boot-in-a-one-to-many-relation
 
 # JPA
   * addition to spring 5, it returns an optional instead of null
