@@ -323,6 +323,7 @@
          public void TennisCoach() {}   
       }
     * https://www.boraji.com/spring-singleton-scope-example-using-scope-annotation
+    
 # Bean Life Cycle with Annotations
   * // bean life cycle pre and post calls
     // init method
@@ -915,6 +916,13 @@
 # Spring Framework context
   * how to ge the spring context inside the framework, Section 3, 35. Jhon
   
+# Maven Release Plugin
+  * https://docs.spring.io/spring-boot/docs/current/maven-plugin/examples/run-profiles.html
+  * 
+  
+# Packaging Spring Boot Project
+  * https://stackoverflow.com/questions/38509511/spring-application-properties-profile-with-war-file
+  * http://websystique.com/spring-boot/spring-boot-war-deployment-example/  
   
 # JPA
   * Hibernate, OpenJPA are implementers of this 
