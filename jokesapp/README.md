@@ -115,6 +115,50 @@
     of prototypes, configured destruction lifecycle callbacks are not called. The client code must clean up prototype-scoped 
     objects and release expensive resources that the prototype bean(s) are holding. 
     
+  
+  # John Videos (section 3 => 43)
+    * process life-cycle
+      * Start-up
+          - Instantiate -> populate-properties -> call setBeanName of BeanNameAware -> call setBeanFactory of BeanFactoryAware ->
+            call SetApplicationContext of ApplicationContextAware -> PreInitializtion(Bean PostProcessors) -> afterPropertiesSet of intializing Beans
+            -> Custom Init Method -> Post Intialization(Bean Post Processors) -> Bean ready to use 
+      
+      * Shutdown  
+        - Container ShutDown -> Disposable Bean's destroy() -> Call Custom Destroy Method  
+    
+    * CallBack Interfaces
+      * spring has two interfaces you can implement for call back events
+        - IntializingBean.afterPropertiesSet() => called after properties are set
+        - DisposableBean.destroy() => called during bean destruction
+        
+    * Bean LifeCycle Annotations
+      * @PostConstruct 
+        * will be called after the bean has been constructed, but before its returned to the requesting object
+        
+      * @PreDestroy    
+        * is called just before the bean is destroyed  
+        
+    * Bean PostProcessors
+      * Gives us a means to tap into the Spring COntext life cucle and interact with the beans as they are processed
+      
+      * postProcessBeforeInitialization 
+        * called before bean initaliztion method
+      
+      * postProcessAfterInitializtion
+        * called after bean initialization 
+        
+    * https://github.com/raj23manj/springBoot/blob/master/di-demo/src/main/java/guru/springframework/didemo/CustomBeanPostProcessor.java       
+        
+    * Aware Interfaces
+      * used to access the spring Framework infrastructure
+      * These are largely used inside the framework
+      * Rarely used by developers 
+        - ApplicationContextAware => commonly used   
+        - ApplicationEventPublishAware  => can setup custom events and listen to it in the application
+        
+    * on git-hub
+    - https://github.com/raj23manj/springBoot/blob/master/di-demo/src/main/java/guru/springframework/didemo/LifeCycleDemoBean.java       
+    
 # Beans => Java Annotations(IOC using annotation) (spring-demo-annotation)
   * Annotations are meta data of class(like labels on shoe box describing the content color, size, make)
   * Component Scan, will scan java application for annotation(@Bean, @service, etc) and register the beans in the Spring Container(Application Context)            
