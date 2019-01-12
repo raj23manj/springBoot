@@ -261,6 +261,14 @@
            this.greetingRepository = greetingRepository;
       }
     }              
+     
+  * Default profiles 
+    * there is default profile available by default when no other profiles are active, and springboot at run time will use that.
+    * we can set a profile as default as below
+    - @Profile({"en", "default"}) 
+      - if 'en' is te as active profile use it, or else this will be default profile
+      - example set dev env as default profile.
+        - @Profile({"dev", "default"})
            
 # Bean Scopes With Anotations(@Scope)
     * @Scope("prototype") //"singleton" is default
