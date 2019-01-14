@@ -916,13 +916,17 @@
 # Spring Framework context
   * how to ge the spring context inside the framework, Section 3, 35. Jhon
   
-# Maven Release Plugin
-  * https://docs.spring.io/spring-boot/docs/current/maven-plugin/examples/run-profiles.html
-  * 
+# Maven Release Plugin(3 => 56 John)
+  * generate releases of artifacts
+  * Releases tags
+  
+# MultiModule Maven Builds
+  * 3 => 55  
   
 # Packaging Spring Boot Project
   * https://stackoverflow.com/questions/38509511/spring-application-properties-profile-with-war-file
   * http://websystique.com/spring-boot/spring-boot-war-deployment-example/  
+  * https://docs.spring.io/spring-boot/docs/current/maven-plugin/examples/run-profiles.html
   
 # JPA
   * Hibernate, OpenJPA are implementers of this 
