@@ -1883,11 +1883,15 @@
     * All implement collection interface   
        
              
-  # Equals and HashCode
+  # EqualsTo and HashCode
     * https://www.youtube.com/watch?v=ghswNpRv2t0
     * https://www.youtube.com/watch?v=V-vDUbK6wm0
     
-    * equals()
+    * In HashMap and HashSet there will be no duplicates(key;s in HashMapn and value's in HashSet). Two different objects
+      can have same hashing value and be put in the same bucket, when comparing it uses equalTo() method, when object same
+      values are present with same hashcode it first checks with equals then rejects
+    
+    * equalsTo()
       * check if two objects are equal
       * by default it will only check for two objects are instances of the same class 
       * need oveeriding so we can customise
