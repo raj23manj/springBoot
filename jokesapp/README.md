@@ -923,6 +923,20 @@
 # MultiModule Maven Builds
   * 3 => 55  
   
+# Using Third party plugins in spring (section 4 => chuck norris)
+  * Add to maven
+  * create a bean
+  * Autowire it  
+    
+# Component Scan
+  * 
+  - package guru.springframework.didemo;
+    @SpringBootApplication  => does a component scan from the package that is mentioned above and down
+    // package scan
+    @ComponentScan(basePackages = {"guru.springframework.didemo.services", "guru.springframework.didemo"})
+    // @ComponentScan(basePackages = {"guru"}) // this also works
+    public class DiDemoApplication {}
+  
 # Packaging Spring Boot Project
   * https://stackoverflow.com/questions/38509511/spring-application-properties-profile-with-war-file
   * http://websystique.com/spring-boot/spring-boot-war-deployment-example/  
