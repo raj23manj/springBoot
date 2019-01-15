@@ -928,14 +928,18 @@
   * create a bean
   * Autowire it  
     
-# Component Scan
-  * 
+# Component Scan (5 => 80 Jhon)
+  * Used to scan the packages and create beans
   - package guru.springframework.didemo;
     @SpringBootApplication  => does a component scan from the package that is mentioned above and down
     // package scan
     @ComponentScan(basePackages = {"guru.springframework.didemo.services", "guru.springframework.didemo"})
     // @ComponentScan(basePackages = {"guru"}) // this also works
     public class DiDemoApplication {}
+    
+# Using XML configuration in Spring Boot (5 => 81 Jhon)
+  * Jokes-app application
+  * @ImportResource("classpath:chuck-config.xml")    
   
 # Packaging Spring Boot Project
   * https://stackoverflow.com/questions/38509511/spring-application-properties-profile-with-war-file
@@ -2027,6 +2031,55 @@
     * ArrayBlockingQueue => Thread safe,  this is bounded and manages locks internally
       * methods to this put, take and pee all take lock for executing    
       
+      
+# Lambdas
+  * https://www.youtube.com/watch?v=gpIUfj3KaOc&list=PLqq-6Pq4lTTa9YGfyhyW2CqdtW9RtY-I3&index=1
+  
+  * Enable us to write functional programming
+  * enables support for parallel processing
+  * Easier to use API's and Libraries
+  
+  * lambdas are functions that does not belong to a class, and exist in Isolation and these functions can be 
+    treated as values.  
+  
+  * Scenario
+    * imagine if i class has only one menthod and i want to call it, i need to instantiate the class. Instead if
+      I could oly call or pass the method, that is where lambda's come in.
+  
+  * In Java 7
+    * https://www.youtube.com/watch?v=nL7H4F_ly_k&list=PLqq-6Pq4lTTa9YGfyhyW2CqdtW9RtY-I3&index=5
+    * we can do this by using interfaces and passing the instance of the class and calling the method
+    
+    
+  * In Java 8 using Lambdas
+    - aBlockOfCode = () -> {
+                            System.out.print("Hello world");  
+                            return null;  
+                         };
+                         
+    - doubleNumberFunction = (int a) -> a * 2; => ((int a) -> return a * 2)
+    
+    - addFunction = (int a, int b) -> a + b; 
+    
+  * Types for lambdas
+    * we can use an interface to declare lambda's
+    * But the interface should have only method as per the lambda expression
+    * we can use existing interfaces for types also
+    
+    - interface MyLambda {
+        void foo();  
+      }  
+      
+    - interface MyAdd {
+         int add(int x, int y);  
+       }                  
+  
+    - MyLambda aBlockOfCode = () -> { system.out.print("Hello") };
+    - MyAdd addFunction = (int a, int b) -> a + b;
+    
+    - aBlockOfCode.foo();
+    - addFunction.add(1, 2); => since it implements the interface, the medoth name defined can be used to call 
+        
       
 # Maven
   # Archetypes
