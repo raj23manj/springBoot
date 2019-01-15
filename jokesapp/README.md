@@ -1085,7 +1085,12 @@
   # Hibernates default persistence strategy for inheritance
     * Single Table Inheritance -> leads to lot of unused coloms, with type colom as common  
     * Hibernates ddl-auto property control's if any ddl operatiions hibernate will perform on start up.
-      * options for ddl-auto => none, validate(used for production to check if any attribute or table is missed), update, create, create-drop() using embeded DB
+      * options for ddl-auto => 
+        - none, 
+        - validate(used for production to check if any attribute or table is missed), 
+        - update, 
+        - create, 
+        - create-drop() using embeded DB
   
   # Files used by spring Boot to initialize the DB
     * schema.sql
@@ -1582,7 +1587,7 @@
           }
       }
   
-  # Inner Classes => like compositions
+  # Inner Classes / Anonomyous Class => like compositions
     * Nesting classes
     * 4 types 
       * Static Nested classes 
