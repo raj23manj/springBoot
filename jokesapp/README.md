@@ -93,10 +93,23 @@
     - new instance will be created every time
   * Request Scope
     - Scoped to an HTTP Web Request. Only Used for web apps
+    - A single instance per http request, only valid in the context of web-aware Spring Application-Context
   * Session scope
-    - Scoped to an HTTP Web Session. Only Used for web apps   
+    - Scoped to an HTTP Web Session. Only Used for web apps 
+    - A Single instance per http session, only valid in the context of web-aware Spring Application-Context    
   * global-session
-    - Scoped to an Global HTTP Web Session. Only Used for web apps  
+    - Scoped to an Global HTTP Web Session. Only Used for web apps 
+    - A single Instance per Global Session. Typically used in a portlet Context. only valid in the context of web-aware Spring Application-Context     
+    - Not Used Much, legacy code.
+  * Application
+    - bean is scoped to the lifecycle of Servlet Context.  only valid in the context os web-aware 
+  * WebSocket
+    - Scopes a Single Bean definition to the lifecycle of a WebSocket. Only Valid in the Context of web-aware Spring Application-Context 
+  * Custom Scope 
+    - Spring Scopes are Extensible, and we can define our own Scope by implementing spring's 'Scope' Interface
+    
+  * Note
+    - We cannot override the built in singelton and prototype scopes    
     
 # Bean Life Cycles
   *  XML:
@@ -953,18 +966,18 @@
   * Criteria update, delete , Schema Generation, Validations, Queries against stored procedures  	 
   
   * Spring Data JPA:
-    * THis implements Repository Pattern
+    * This implements Repository Pattern
              	
 
 # @SpringBootApplication 
 
   * this is the main annotation
   * this includes automatically
-    * @Configuration
-    * @EnableAutoConfiguration
-    * @ComponentScan
+    * @Configuration - declares class as spring configuration
+    * @EnableAutoConfiguration - Enables auto configuration
+    * @ComponentScan - scans for components in current package and child packages
     
-# command-line      
+# command-line (section 5 - 84 john)     
 
    * mvn spring-boot:help -Ddetail=true
    * mvn spring-boot:run -Drun.arguments=--debug
@@ -1092,8 +1105,76 @@
         - create, 
         - create-drop() using embeded DB
         
+  # injecting other dependencies in the config class (section 5 => 82)
+    - @Configuration
+      public class GreetingServiceConfig {
+      //    Mentioning only like this takes the only implementation of that service and inject's if multiple ones
+      //    are there then use qualifier
+      //    @Bean
+      //    GreetingServiceFactory greetingServiceFactory(GreetingRepository repository) {
+      //        return  new GreetingServiceFactory(repository);
+      //    }
+      
+          @Bean
+          GreetingServiceFactory greetingServiceFactoryCreate(@Qualifier("greetingRepositoryImpl")GreetingRepository repository) {
+              return  new GreetingServiceFactory(repository);
+          }
+      /* greetingServiceFactory is the class name intialzied in bean container from line 23, and is not the
+       * method name on line 22 */
+          @Bean
+          @Primary
+          @Profile({"default", "en"})
+          GreetingService primaryGreetingService(GreetingServiceFactory greetingServiceFactory){
+              return greetingServiceFactory.createGreetingService("en");
+      }
+     }        
+        
   # Loading intial data in spring boot
-    * https://www.baeldung.com/spring-boot-data-sql-and-schema-sql      
+    * https://www.baeldung.com/spring-boot-data-sql-and-schema-sql  
+    
+  # Load up Data on start up
+    * (section 5, 87 jhon)
+    * CommandLineRunner (pet clinic project)
+      * when implementing this interface, on loading the spring context, spring will run the menthod
+      - @Component
+        public class DataLoader implements CommandLineRunner {
+        
+            private final OwnerService ownerService;
+            private final VetService vetService;
+            private final PetTypeService petTypeService;
+            private final SpecialtyService specialtyService;
+            private final VisitService visitService;
+        
+            @Autowired // need not required to mention
+            public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService,
+                              SpecialtyService specialtyService, VisitService visitService) {
+                this.ownerService = ownerService;
+                this.vetService = vetService;
+                this.petTypeService = petTypeService;
+                this.specialtyService = specialtyService;
+                this.visitService = visitService;
+            }
+        
+            //    public DataLoader() {
+        //        ownerService = new OwnerServiceMap();
+        //        vetService = new VetServiceMap();
+        //    }
+        
+            // when spring context is up, it will run this method
+            @Override
+            public void run(String... args) throws Exception {
+                /* if we add JPA rerunning this will populate data again and again in DB to avoid it */
+                int count = petTypeService.findAll().size();
+        
+                if (count == 0 ){
+                    loadData();
+                }
+            }
+        }
+    * applicationContext     
+    
+  # Generate Schema file
+    * https://shekhargulati.com/2018/01/09/programmatically-generating-database-schema-with-hibernate-5/   
   
   # Files used by spring Boot to initialize the DB
     * schema.sql
@@ -1515,7 +1596,7 @@
           - ex if parent method is protected then using private in child will throw errr, but making it public is allowed 
         - methods that are final cannot be overriden 
         
-  # data.sq Boxing and Unboxing
+  # Boxing and Unboxing
       * For array List and other collections Lists if we need to hold an array of integer values then we can't do this
         - ArrayList<int> arr = new ArrayList<int>(); // compilation error Type argument cannot be primitive
         - example of it will work, let's create a custom Int class
