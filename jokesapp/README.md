@@ -1091,6 +1091,9 @@
         - update, 
         - create, 
         - create-drop() using embeded DB
+        
+  # Loading intial data in spring boot
+    * https://www.baeldung.com/spring-boot-data-sql-and-schema-sql      
   
   # Files used by spring Boot to initialize the DB
     * schema.sql
@@ -1512,7 +1515,7 @@
           - ex if parent method is protected then using private in child will throw errr, but making it public is allowed 
         - methods that are final cannot be overriden 
         
-  # Auto Boxing and Unboxing
+  # data.sq Boxing and Unboxing
       * For array List and other collections Lists if we need to hold an array of integer values then we can't do this
         - ArrayList<int> arr = new ArrayList<int>(); // compilation error Type argument cannot be primitive
         - example of it will work, let's create a custom Int class
