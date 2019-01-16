@@ -1566,7 +1566,7 @@
   # Good Links
     * https://howtodoinjava.com/
     
-  # Steams and Lambda
+  # Streams and Lambda
     * https://www.youtube.com/watch?v=suSdjhS03qk&index=24&list=PLqq-6Pq4lTTa9YGfyhyW2CqdtW9RtY-I3  
   
   # Serialisation and deserialisation
@@ -2224,10 +2224,52 @@
   
     - MyLambda aBlockOfCode = () -> { system.out.print("Hello") };
     - MyAdd addFunction = (int a, int b) -> a + b;
+    - // an anonnomouys class
+      MyAdd innerClassMyAdd = new MyAdd() {  // => see video 9 Java Brains
+        public int add(int x, int y) {
+          System.out.print(x, y);
+        }
+      }
     
     - aBlockOfCode.foo();
-    - addFunction.add(1, 2); => since it implements the interface, the medoth name defined can be used to call 
-        
+    - addFunction.add(1, 2); => since it implements the interface, the method name defined can be used to call 
+    - innerClassMyAdd.add(1,2); 
+  
+  * Type Inference
+    * used to figure out the type of lambdas belong to.
+    * Looking at the interface method definition, java will also understand the type of method passed
+    -  interface StringLambda {
+        int getLength(String s);
+      }
+      
+      StringLambda myLambda = (s) -> s.length // => (String s) => return s.length();
+      myLambda.getLength('Hello');
+  
+  * Runnable Using Lambdas => Threads
+    * Doing in Inner class way
+      - Thread myThread = new Thread(new Runnable() { // Runnable is a interface
+            @Override
+            public void run() {
+                    System.out.println("Printed Inside Runnable");
+            }
+       }) 
+       
+       myThread.run();        
+    
+    * Doing in Lambda Way
+    - Thread myThread = new Thread(() ->  System.out.println("Printed Inside Runnable"); )
+      myThread.run();
+  
+  * Functional Interface
+    * For a Lambda Type we need one interface with only one abstract method with it's signature
+    * We can create one in the normal way, but if in future a developer comes and changes it will cause problems. To 
+      avoid this we mark it as "@FunctionalInterface", and it will enforce. This is optional
+    - @FunctionalInterface
+      public interface Greeting {
+        public void perform();
+      } 
+      
+    
       
 # Maven
   # Archetypes
