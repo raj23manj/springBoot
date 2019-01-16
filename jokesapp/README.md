@@ -469,7 +469,9 @@
            //        @PropertySource("classpath:jms.properties")
            //})
       
-      * YAML      
+      * YAML (di-demo)    
+        *  spring boot will pick up application.yml
+        
         
 # Spring MVC Configuration without Spring Boot => (99/100/102 chad)
   * Add Configurations to file WEB-INF/web.xml
