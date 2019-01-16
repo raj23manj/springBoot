@@ -420,35 +420,57 @@
         } 
     
     - External Properties (section 6, jhon)  
-      - @Configuration
-        // bring in the file
-        @PropertySource("classpath:datasource.properties")
-        //@PropertySource({"classpath:datasource.properties", "classpath:jms.properties"})
-        //@PropertySources({
-        //        @PropertySource("classpath:datasource.properties"),
-        //        @PropertySource("classpath:jms.properties")
-        //})
-        public class PropertyConfig { 
-            // this will get into the spring context and get it as externalised property
-            @Value("${guru.username}")
-            String user;
-        
-            @Value("${guru.password}")
-            String password;
-        
-            @Value("${guru.dburl}")
-            String url;
+      * Using properties file
+          - @Configuration
+            // bring in the file
+            @PropertySource("classpath:datasource.properties")
+            //@PropertySource({"classpath:datasource.properties", "classpath:jms.properties"})
+            //@PropertySources({
+            //        @PropertySource("classpath:datasource.properties"),
+            //        @PropertySource("classpath:jms.properties")
+            //})
+            public class PropertyConfig { 
+                // this will get into the spring context and get it as externalised property
+                @Value("${guru.username}")
+                String user;
             
-            //    @Bean
-            //    // this will match/wire up the properties from the properties file to attributes
-            //   // this going to be reading the file 
-                 // this will go out and scan for property files and enable us to use @Value annotation
-            //    public static PropertySourcesPlaceholderConfigurer properties() {
-            //        PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer = new PropertySourcesPlaceholderConfigurer();
-            //        return propertySourcesPlaceholderConfigurer;
-            //    }
-          }   	     
-
+                @Value("${guru.password}")
+                String password;
+            
+                @Value("${guru.dburl}")
+                String url;
+                
+                //    @Bean
+                //    // this will match/wire up the properties from the properties file to attributes
+                //   // this going to be reading the file 
+                     // this will go out and scan for property files and enable us to use @Value annotation
+                //    public static PropertySourcesPlaceholderConfigurer properties() {
+                //        PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer = new PropertySourcesPlaceholderConfigurer();
+                //        return propertySourcesPlaceholderConfigurer;
+                //    }
+              }   	
+      
+      * Using System(os level) Properties (Environment) => (Section 6, 95 Jhon) 
+        * Using Intellij, we can set it in the system environment variable as we do in production          
+        * Setting in the GURU_USERNAME(OS level) => guru.username(Application level)
+        * OS level property has high precedence that property values
+        * other way of getting ENV variable into the Application
+          - public class PropertyConfig {
+            
+                    @Autowired
+                    Environment env;
+                    
+                   system.out.println(env.getProperty("USERNAME"));
+            }
+      * Multiple Property Files (6, 96 jhon)
+        *  @PropertySource({"classpath:datasource.properties", "classpath:jms.properties"})
+           //@PropertySources({
+           //        @PropertySource("classpath:datasource.properties"),
+           //        @PropertySource("classpath:jms.properties")
+           //})
+      
+      * YAML      
+        
 # Spring MVC Configuration without Spring Boot => (99/100/102 chad)
   * Add Configurations to file WEB-INF/web.xml
     - Configure Spring MVC Dispatcher Servlet
@@ -1210,7 +1232,10 @@
   # Files used by spring Boot to initialize the DB
     * schema.sql
     * data.sql(by default spring searches for this file)
-    
+  
+  # CORS Global Configuration
+    * https://stackoverflow.com/questions/32319396/cors-with-spring-boot-and-angularjs-not-working
+    * https://www.baeldung.com/spring-cors  
     
   # Different Repositories To Implement
     /* package org.springframework.data.repository; Depends on when to use what usecase*/
