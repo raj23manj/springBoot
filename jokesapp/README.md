@@ -417,13 +417,43 @@
           	public SwimCoach(FortuneService theFortuneService) {
           		fortuneService = theFortuneService;
           	}
-        }  	     
+        } 
+    
+    - External Properties (section 6, jhon)  
+      - @Configuration
+        // bring in the file
+        @PropertySource("classpath:datasource.properties")
+        //@PropertySource({"classpath:datasource.properties", "classpath:jms.properties"})
+        //@PropertySources({
+        //        @PropertySource("classpath:datasource.properties"),
+        //        @PropertySource("classpath:jms.properties")
+        //})
+        public class PropertyConfig { 
+            // this will get into the spring context and get it as externalised property
+            @Value("${guru.username}")
+            String user;
+        
+            @Value("${guru.password}")
+            String password;
+        
+            @Value("${guru.dburl}")
+            String url;
+            
+            //    @Bean
+            //    // this will match/wire up the properties from the properties file to attributes
+            //   // this going to be reading the file 
+                 // this will go out and scan for property files and enable us to use @Value annotation
+            //    public static PropertySourcesPlaceholderConfigurer properties() {
+            //        PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer = new PropertySourcesPlaceholderConfigurer();
+            //        return propertySourcesPlaceholderConfigurer;
+            //    }
+          }   	     
 
 # Spring MVC Configuration without Spring Boot => (99/100/102 chad)
   * Add Configurations to file WEB-INF/web.xml
     - Configure Spring MVC Dispatcher Servlet
     - Setup URL mappings to Spring MVC Dispatcher Servlet
-  * Add COnfigurations to file WEB-INF/spring-mvc-demo-servlet.xml
+  * Add Configurations to file WEB-INF/spring-mvc-demo-servlet.xml
     - Add support for Spring Component Scanning 
     - Add Support for conversion, formatting and validation
     - Configure Spring MVC View Resolver     
@@ -1174,11 +1204,13 @@
     * applicationContext     
     
   # Generate Schema file
+    * Section 18, 318 jhon
     * https://shekhargulati.com/2018/01/09/programmatically-generating-database-schema-with-hibernate-5/   
   
   # Files used by spring Boot to initialize the DB
     * schema.sql
     * data.sql(by default spring searches for this file)
+    
     
   # Different Repositories To Implement
     /* package org.springframework.data.repository; Depends on when to use what usecase*/
