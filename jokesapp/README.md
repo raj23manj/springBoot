@@ -1103,6 +1103,13 @@
    * mvn spring-boot:help -Ddetail=true
    * mvn spring-boot:run -Drun.arguments=--debug
      * intellij next to hammer/run btn > click onit > Edit Configurations > enable debug is same as above
+     
+   * mvn spring-boot:run
+   * mvn spring-boot:run -Drun.arguments="--spring.profiles.active=dev"  
+   * mnv clean
+   * mvn install
+   * mvn clean package -P prod => target/ .war or .jar
+   
 
 # Bean Scope
   * Commonly used in Singleton and Prototype 
