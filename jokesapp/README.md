@@ -1019,6 +1019,7 @@
   * http://websystique.com/spring-boot/spring-boot-war-deployment-example/  
   * https://docs.spring.io/spring-boot/docs/current/maven-plugin/examples/run-profiles.html
   * https://www.baeldung.com/spring-profiles
+  http://www.java2novice.com/spring-boot/profile-based-properties/
   
 # JPA
   * Hibernate, OpenJPA are implementers of this 
