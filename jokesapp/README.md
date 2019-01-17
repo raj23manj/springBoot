@@ -1597,6 +1597,15 @@
      * https://www.callicoder.com/spring-boot-log4j-2-example/
      * https://springframework.guru/using-log4j-2-spring-boot/
      * https://logging.apache.org/log4j/log4j-2.7/manual/configuration.html
+     * https://dzone.com/articles/log4j-2-configuration-using-properties-file
+     * https://stackoverflow.com/questions/48941104/use-spring-boot-application-properties-in-log4j2-xml
+     * https://howtodoinjava.com/log4j2/log4j2-properties-example/
+     * https://docs.spring.io/spring-boot/docs/current/reference/html/howto-logging.html
+     * https://www.mkyong.com/logging/logback-set-log-file-name-programmatically/
+     
+     * Default Spring logging
+       * https://howtodoinjava.com/spring-boot/logging-application-properties/
+       * https://howtodoinjava.com/spring-boot2/spring-boot2-log4j2-properties/
    
 # JAVA
   # Good Links
