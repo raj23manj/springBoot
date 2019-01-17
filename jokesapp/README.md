@@ -479,6 +479,9 @@
       * Setting Properties with profiles
         * Section 6, 101  
         
+      * @ConfigurationProperties
+        * https://www.baeldung.com/configuration-properties-in-spring-boot  
+        
 # Spring MVC Configuration without Spring Boot => (99/100/102 chad)
   * Add Configurations to file WEB-INF/web.xml
     - Configure Spring MVC Dispatcher Servlet
@@ -1590,6 +1593,8 @@
      * https://www.baeldung.com/slf4j-with-log4j2-logback  
      * https://stackoverflow.com/questions/33744875/spring-boot-how-to-log-all-requests-and-responses-with-exceptions-in-single-pl
      * https://dzone.com/articles/logging-spring-rest-apis  
+     * https://stackoverflow.com/questions/41293847/how-to-create-log-files-in-spring-boot
+     * https://www.callicoder.com/spring-boot-log4j-2-example/
    
 # JAVA
   # Good Links
