@@ -1264,6 +1264,7 @@
   # CORS Global Configuration
     * https://stackoverflow.com/questions/32319396/cors-with-spring-boot-and-angularjs-not-working
     * https://www.baeldung.com/spring-cors  
+    * sergey section 29
         
   # Lombok
     @Getter and @Setter
