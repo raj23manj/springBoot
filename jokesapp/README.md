@@ -293,7 +293,7 @@
   -  @Service
      @Primary // making it default if more beans of same impl, without others having an @primary mentioned
      //@Profile({"en", "default"})
-     // making one profile as default, when more @Primary are there
+     // making one profile as default, when more @Primary are there => wrong
      public class PrimaryGreetingService implements GreetingService {
      
          private GreetingRepository greetingRepository;
@@ -1014,10 +1014,11 @@
   * Jokes-app application
   * @ImportResource("classpath:chuck-config.xml")    
   
-# Packaging Spring Boot Project
+# Packaging Spring Boot Project & Profule
   * https://stackoverflow.com/questions/38509511/spring-application-properties-profile-with-war-file
   * http://websystique.com/spring-boot/spring-boot-war-deployment-example/  
   * https://docs.spring.io/spring-boot/docs/current/maven-plugin/examples/run-profiles.html
+  * https://www.baeldung.com/spring-profiles
   
 # JPA
   * Hibernate, OpenJPA are implementers of this 
