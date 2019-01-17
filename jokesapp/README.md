@@ -472,6 +472,12 @@
       * YAML (di-demo)    
         *  spring boot will pick up application.yml
         
+      * Property Hirearchy used by spring
+        * https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html
+        * both application.properties and application.yml are at equal Hirearchy. Hence one will overrirde the other
+          
+      * Setting Properties with profiles
+        * Section 6, 101  
         
 # Spring MVC Configuration without Spring Boot => (99/100/102 chad)
   * Add Configurations to file WEB-INF/web.xml
