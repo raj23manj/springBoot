@@ -1595,6 +1595,8 @@
      * https://dzone.com/articles/logging-spring-rest-apis  
      * https://stackoverflow.com/questions/41293847/how-to-create-log-files-in-spring-boot
      * https://www.callicoder.com/spring-boot-log4j-2-example/
+     * https://springframework.guru/using-log4j-2-spring-boot/
+     * https://logging.apache.org/log4j/log4j-2.7/manual/configuration.html
    
 # JAVA
   # Good Links
