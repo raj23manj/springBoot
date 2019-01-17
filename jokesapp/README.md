@@ -469,7 +469,7 @@
            //        @PropertySource("classpath:jms.properties")
            //})
       
-      * YAML (di-demo)    
+      * YAML(di-demo)    
         *  spring boot will pick up application.yml
         
       * Property Hirearchy used by spring
@@ -1027,8 +1027,67 @@
   
   * Spring Data JPA:
     * This implements Repository Pattern
+    
+  # Different Repositories To Implement
+    /* package org.springframework.data.repository; Depends on when to use what usecase*/
+    * Repository (Base)
+    * CrudRepository
+    * PagingAndSortingRepository
+    * JpaRepository(include's All three above)
              	
-
+  # Hibernate  
+    * By default in hibernate if did not specify cascade nothing will be mentioned   
+    * https://o7planning.org/en/11223/generate-tables-from-entity-classes-in-hibernate 
+    * http://www.techferry.com/articles/hibernate-jpa-annotations.html 
+    
+    * Serialization problem
+      * https://stackoverflow.com/questions/30892298/infinite-loop-with-spring-boot-in-a-one-to-many-relation
+  
+  # JPA
+    * addition to spring 5, it returns an optional instead of null
+    * these dynamic queries like in rails, here they are called JPA Query methods
+    * jpa takes care of all implementation  
+    * note here no Stereotype declarations for this like @ component, @service ...ect JPA implements it so it is avaliable in the
+      Bean Container
+    * JPA has @PrePersist and @PreUpdate for automatic update timestamp properties for audit purpose, 
+    * same thing in hibernate has @CreationTimestamp and @UpdateTimestamp => (section 8, 136 10:44)
+      - https://stackoverflow.com/questions/42366763/hibernate-creationtimestamp-updatetimestamp-for-calendar
+    
+    # Types Of Cascade
+      * Persist
+      * Merge
+      * Refresh
+      * Remove   
+      * Detach
+      * All
+      
+    # Return Association's as Json(Jackson Serialising and DeSerialising as Json / Marshalling and Unmarshalling)
+      * Converting object to Json(Serialising), converting Json to Object(De-Serialising) 
+      * https://www.javacodegeeks.com/2012/09/json-jackson-to-rescue.html
+      * https://www.baeldung.com/jackson-bidirectional-relationships-and-infinite-recursion
+      * https://www.baeldung.com/jackson  
+      
+    # Hibernates default persistence strategy for inheritance
+      * Single Table Inheritance -> leads to lot of unused colomns, with type colomn as common  
+      * Hibernates ddl-auto property control's if any ddl operatiions hibernate will perform on start up.
+        * options for ddl-auto => 
+          - none, 
+          - validate(used for production to check if any attribute or table is missed), 
+          - update, 
+          - create, 
+          - create-drop() using embeded DB
+          
+  # Section 8, jhon
+    * JDL-Studio for data modeling
+    * Data Source Intialization(8, 146)
+      * via import.sql by hibernate
+      * via data.sql(recommended), data-${platform}.sql and schema.sql
+      *  
+    
+  # Complex Json Return nested
+    * https://www.youtube.com/watch?v=TWOzV8H5Kfc
+    * https://vladmihalcea.com/the-best-way-to-map-a-many-to-many-association-with-extra-columns-when-using-jpa-and-hibernate/     
+          
 # @SpringBootApplication 
 
   * this is the main annotation
@@ -1072,7 +1131,7 @@
     * @Controller
     * @Service
     * @Component
-    * @Repositiory  
+    * @Repository  
     
 # Annotaion used to declare a Spring Component inside Java configuration class
   * @Bean    
@@ -1088,7 +1147,8 @@
   * @Service  
   
 # what is @Repository used for
-  *  Spring will detect platform specific persistance exceptions and re-throw them as spring exceptions 
+  * Spring will detect platform specific persistance exceptions and re-throw them as spring exceptions 
+  * this can be used to set the class as a repository, if there is no implementation og 'Crud or JPA' repository
   
 # Why Should we allow spring boot maven projects to inherit from the spring boot parent pom ?
   * This allows the project to inherit curated dependencies which are known to be compatible  
@@ -1124,47 +1184,7 @@
   
 # Jhipster
   * https://start.jhipster.tech/jdl-studio/
-    
-# Hibernate  
-  * By default in hibernate if did not specify cascade nothing will be mentioned   
-  * https://o7planning.org/en/11223/generate-tables-from-entity-classes-in-hibernate 
-  * http://www.techferry.com/articles/hibernate-jpa-annotations.html 
-  
-  * Serialization problem
-    * https://stackoverflow.com/questions/30892298/infinite-loop-with-spring-boot-in-a-one-to-many-relation
-
-# JPA
-  * addition to spring 5, it returns an optional instead of null
-  * these dynamic queries like in rails, here they are called JPA Query methods
-  * jpa takes care of all implementation  
-  * note here no Stereotype declarations for this like @ component, @service ...ect JPA implements it so it is avaliable in the
-    Bean Container
-  * JPA has @PrePersist and @PreUpdate for automatic update timestamp properties for audit purpose, same thing in hibernate has @CreationTimestamp and @UpdateTimestamp
-  
-  # Types Of Cascade
-    * Persist
-    * Merge
-    * Refresh
-    * Remove   
-    * Detach
-    * All
-    
-  # Return Association's as Json(Jackson Serialising and DeSerialising as Json / Marshalling and Unmarshalling)
-    * Converting object to Json(Serialising), converting Json to Object(De-Serialising) 
-    * https://www.javacodegeeks.com/2012/09/json-jackson-to-rescue.html
-    * https://www.baeldung.com/jackson-bidirectional-relationships-and-infinite-recursion
-    * https://www.baeldung.com/jackson  
-    
-  # Hibernates default persistence strategy for inheritance
-    * Single Table Inheritance -> leads to lot of unused coloms, with type colom as common  
-    * Hibernates ddl-auto property control's if any ddl operatiions hibernate will perform on start up.
-      * options for ddl-auto => 
-        - none, 
-        - validate(used for production to check if any attribute or table is missed), 
-        - update, 
-        - create, 
-        - create-drop() using embeded DB
-        
+          
   # injecting other dependencies in the config class (section 5 => 82)
     - @Configuration
       public class GreetingServiceConfig {
@@ -1244,14 +1264,7 @@
   # CORS Global Configuration
     * https://stackoverflow.com/questions/32319396/cors-with-spring-boot-and-angularjs-not-working
     * https://www.baeldung.com/spring-cors  
-    
-  # Different Repositories To Implement
-    /* package org.springframework.data.repository; Depends on when to use what usecase*/
-    * Repository (Base)
-    * CrudRepository
-    * PagingAndSortingRepository
-    * JpaRepository(include's All three above)
-    
+        
   # Lombok
     @Getter and @Setter
     @FieldNameConstants
