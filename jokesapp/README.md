@@ -631,6 +631,10 @@
     * https://dzone.com/articles/implementing-aop-with-spring-boot-and-aspectj
     * https://www.baeldung.com/spring-aop-annotation
     * https://www.baeldung.com/spring-http-logging
+    * https://www.javadevjournal.com/spring/log-incoming-requests-spring/
+    * https://gist.github.com/int128/e47217bebdb4c402b2ffa7cc199307ba
+    * http://slackspace.de/articles/log-request-body-with-spring-boot/
+    * https://www.baeldung.com/spring-boot-add-filter
     
   * Frameworks
     * Spring AOP (implements Aop)
