@@ -2551,3 +2551,6 @@
   
 # Rails Engine, Gem
   * https://corlewsolutions.com/articles/article-126-how-to-setup-rspec-in-a-rails-engine  
+  
+# Installing Java
+  * https://stackoverflow.com/questions/24342886/how-to-install-java-8-on-mac  
