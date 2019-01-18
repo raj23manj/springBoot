@@ -634,9 +634,13 @@
     * https://www.javadevjournal.com/spring/log-incoming-requests-spring/
     * https://gist.github.com/int128/e47217bebdb4c402b2ffa7cc199307ba
     * http://slackspace.de/articles/log-request-body-with-spring-boot/
-    * https://www.baeldung.com/spring-boot-add-filter
-    * https://www.javadevjournal.com/spring-boot/spring-boot-add-filter/ (good)
-    * https://stackoverflow.com/questions/19825946/how-to-add-a-filter-class-in-spring-boot (good)
+    
+    * Using Filters
+      * https://www.baeldung.com/spring-boot-add-filter
+      * https://www.javadevjournal.com/spring-boot/spring-boot-add-filter/ (good)
+      * https://stackoverflow.com/questions/19825946/how-to-add-a-filter-class-in-spring-boot (good)
+    
+    * http://www.makeinjava.com/logging-aspect-restful-web-service-using-spring-aop-log-requests-responses/
     
   * Frameworks
     * Spring AOP (implements Aop)
