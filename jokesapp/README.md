@@ -2314,7 +2314,32 @@
         public void perform();
       } 
       
+  * More Lambda Features(15, 16)
+    * java.utils.functions  => has pre-defined functions for common use  
+    * https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html  
+  
+  * Exception Handling in Lambdas
+    *  17 , 18
+    *  using try/catch in the lambda itself
+  
+  * Closures in Lambdas
+    * 19 
+    * the way variables can be accessed in the scope of a function and the lambda
     
+  * this reference in lambdas
+    * 20  
+   
+  * Method Reference and Collections => little complex
+    * 21 
+    * Alternate way of writing lambdas
+    * if arguments passed via the lambda and the params accepted by the function being called we can use this
+    - public class Test{   
+        Thread t = new Thread(() -> printMessage());//  => new Thread(Test::printMessage)
+        public static void printMessage() {
+          System.out.println("Hello");
+        }  
+      }
+       
       
 # Maven
   # Archetypes
@@ -2397,7 +2422,7 @@
        - site:site
        - site:deploy        
   
-  # Customising LifeCylce
+  # Customising LifeCycle
     -  Need to dig in more      
     
     
@@ -2485,6 +2510,9 @@
     # Controller
       * https://studiofreya.com/2012/02/06/spring-mvc-how-to-build-a-thread-safe-controller/  
       * https://stackoverflow.com/questions/30171027/is-spring-boot-mvc-controller-multithreaded
+      
+# Jshell like irb shell
+  * https://javabrains.io/courses/java_jshellbasics/      
       
 ########################################  
   
