@@ -2554,3 +2554,7 @@
   
 # Installing Java
   * https://stackoverflow.com/questions/24342886/how-to-install-java-8-on-mac  
+
+# Java Types
+  * https://www.ibm.com/support/knowledgecenter/en/SSEPGG_11.1.0/com.ibm.db2.luw.apdv.java.doc/src/tpc/imjcc_rjvjdata.html   
+  
