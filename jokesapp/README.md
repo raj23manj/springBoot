@@ -2349,8 +2349,81 @@
           System.out.println("Hello");
         }  
       }
-       
+  
+  * Java Iterations
+    * 22
+    * External Iterators(sequentional and ordered)
+      - for(int i=0; i< array.size; i++) { System.out.println(array.get(i)) }
+      - for(Person p : array) { System.out.println(p) }
       
+    * internal Iterators in java 8, this runs in multiple threads, not ordered
+      - array.forEach((p) -> System.out.println(p))
+      
+# Java Streams
+  * http://www.java67.com/2014/04/java-8-stream-examples-and-tutorial.html
+  * http://www.java67.com/2017/07/how-to-sort-map-by-values-in-java-8.html
+  * https://www.youtube.com/watch?v=6TKDjfLGVNc&list=PLIGmoZSj3zVl_GljdHUNmRNeaQWHwLf4c
+  * https://www.baeldung.com/java-inifinite-streams
+  
+  * 23
+  * stream is like a conveyer belt, converts the array to one, and each expression attached is like one mechanic/department 
+    does a job . 
+  * need to add a terminla operation, like count, collect, forEach etc      
+    - people.stream()
+            .filter(p -> System.println(p))
+            .forEach(p -> System.println(p))   
+            .count(); 
+  * Streams can be used with multi threads, each expression can handle section of the data.
+    - people.parallelStream()
+            .filter(p -> System.println(p))
+            .forEach(p -> System.println(p))   
+            .count();
+            
+  * https://www.youtube.com/watch?v=6TKDjfLGVNc&list=PLIGmoZSj3zVl_GljdHUNmRNeaQWHwLf4c
+    
+    * Ways' of Obtaining Streams
+    
+      - List<String> list = {'listval1', 'listval2', 'listval3'}; // assume data is this
+        Map<String, String> map = {'mapkey1' => "mapvalue1", 'mapkey2' => "mapvalue2", 'mapkey3' => "mapvalue3" }
+      
+      * From List => Array
+        - list.stream().forEach(p -> System.println(p)); 
+        
+      * obtain stream from map using entrySet() => HashMap
+        - map.entrySet().stream().forEach(p -> System.println(p));
+      
+      * obtain stream from map using keySet() => HashMap keys
+         - map.keySet().stream().forEach(p -> System.println(p));  
+      
+      * obtain stream from map using values() => HashMap values
+         - map.values().stream().forEach(p -> System.println(p));  
+      
+      * obtain a stream from a string using chars()
+        - "1234556asds".chars().forEach(p -> System.println(p));
+        
+      * obtain a stream using string using split()
+        - java.util.stream.Stream;
+          Stream.of("A,B,C,D".split(",")).forEach(p -> System.println(p));
+      
+      * obtain stream from array
+        - Integer[] array = {0,1,2,3,4,5}
+          Stream.of(array).forEach(p -> System.println(p));
+      
+      * obtain stream of values  
+        - Stream.of("one", "two").forEach(p -> System.println(p));
+      
+      * obtain a stream from function generate
+        - Stream.generate(() -> {return Math.random();}).limit(20).forEach(p -> System.println(p));
+      
+      * obtain a stream from function iterate
+        - Stream.iterate(0,i -> i + 1).limit(20).forEach(p -> System.println(p));
+      
+      * obtain stream from builder
+        - Stream.builder().add("1").add("2").build().forEach(p -> System.println(p));
+      
+      * obtain stream from another stream                
+        -  list.stream().distinct().limit(2).sorted().forEach(p -> System.println(p))
+                    
 # Maven
   # Archetypes
     - Maven project templating tool
