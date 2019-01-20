@@ -1080,6 +1080,8 @@
       * Converting object to Json(Serialising), converting Json to Object(De-Serialising) 
       * https://www.javacodegeeks.com/2012/09/json-jackson-to-rescue.html
       * https://www.baeldung.com/jackson-bidirectional-relationships-and-infinite-recursion
+      
+    # Jackson Json  
       * https://www.baeldung.com/jackson  
       
     # Hibernates default persistence strategy for inheritance
@@ -1091,6 +1093,40 @@
           - update, 
           - create, 
           - create-drop() using embeded DB
+  
+  # Spring Data
+    * removes the old way of configuring and boiler plate code      
+    * Intially we used to do and write all the logic in DaoImpl
+      - EmployeeDao -> EmployeeDaoImpl -> EntityManager(mapping) -> DriverManagerSource(DBConnection)
+    * Spring Data gives us  now pre defined repositories interface
+      - EmployeeRepository(CRUD Repository) -> Employee(Entity)
+      
+  # Creating an Entity(bharat), Repository, Configure DataSource
+    - Section4 -> productData    
+  
+  # Generators(Id Generations) 
+    * section 5 => Bharat
+    * Types
+      * GenerationType.AUTO
+        * Persistence Provider like hibernate has to check the underlying DB which kind of PK ID generation Strategy 
+          does it support. It can be either one of IDENTITY or SEQUENCE or TABLE
+           
+      * GenerationType.IDENTITY
+        * Persistence Provider will rely on the PK auto-increment and db should also be configured to it.
+      
+      * GenerationType.SEQUENCE (Sequence => create custom value to generate the PK like ORACLE)
+        * Need to tell the Persistence Provider which sequence to use
+      
+      * GenerationType.TABLE
+        * A special table is used, the Persistence Provider will generate a value and put it in this table as a column
+          and use that column as PK in the actual table we use
+        * whene creating a new record, it will generate a new value base on the special table and put in the actual table  
+        * idgenerators project has an example of this
+      
+      -  @Id
+         @GeneratedValue(strategy=GenerationType.IDENTITY)
+         private int id;
+        
           
   # Section 8, jhon
     * JDL-Studio for data modeling
@@ -1337,6 +1373,8 @@
         *  bring up the complete spring context with everything loaded(loads all beans services, controller's, no need to manually set up)
       * @DataJpaTest
         * brings up a light weight spring context(data jpa, data layer, need to setup service manually) 
+    * Creating seperate profile foe running testcases
+      *  https://stackoverflow.com/questions/45200126/spring-boot-junit-run-all-unit-tests-for-multiple-profiles    
          
   # Command Objects
     * not expose domain/models classes/objects
