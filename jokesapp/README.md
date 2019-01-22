@@ -1042,6 +1042,8 @@
   
   * Spring Data JPA:
     * This implements Repository Pattern
+  
+  * https://docs.spring.io/spring-data/jpa/docs/2.1.4.RELEASE/reference/html/#jpa.query-methods  
     
   # Different Repositories To Implement
     /* package org.springframework.data.repository; Depends on when to use what usecase*/
@@ -2471,7 +2473,9 @@
           Arrays.aslist(objectArray).foeEach(object -> System.out.println((Person)object.getId())) 
     
     * groupingBy, partitioningBy, counting       
-      * for grouping and partitioning     
+      * for grouping and partitioning
+      
+    * toList, toCollection collectors  
                     
 # Maven
   # Archetypes
