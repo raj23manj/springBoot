@@ -2461,6 +2461,17 @@
       
       * obtain stream from another stream                
         -  list.stream().distinct().limit(2).sorted().forEach(p -> System.println(p))
+        
+    * map, forEach, filter, toArray 
+      * toArray types
+        - Person[] personArray = persons.stream().toArray(Person[]::new);
+          Arrays.aslist(personArray).forEach(person -> System.out.println(person.getId()));
+          
+        - Object[] objectArray = persons.stream().toArray();
+          Arrays.aslist(objectArray).foeEach(object -> System.out.println((Person)object.getId())) 
+    
+    * groupingBy, partitioningBy, counting       
+      * for grouping and partitioning     
                     
 # Maven
   # Archetypes
