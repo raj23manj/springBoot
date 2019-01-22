@@ -2476,6 +2476,8 @@
       * for grouping and partitioning
       
     * toList, toCollection collectors  
+       * toList 
+         - List<Person> list = persons.stream().filter()
                     
 # Maven
   # Archetypes
