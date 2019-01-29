@@ -1431,6 +1431,12 @@
     * https://medium.com/@MatthewFTech/spring-boot-cache-with-redis-56026f7da83a
     * https://www.baeldung.com/spring-data-redis-tutorial
     * https://dzone.com/articles/implementation-of-redis-in-micro-servicespring-boo
+    * https://stackoverflow.com/questions/34201135/spring-redis-read-configuration-from-application-properties-file
+    * https://stackoverflow.com/questions/51818137/spring-boot-2-converting-duration-java-8-application-properties
+    * https://github.com/cristianprofile/spring-data-redis-lettuce
+    * https://howtodoinjava.com/spring-boot2/spring-boot-cache-example/
+    * https://stackoverflow.com/questions/34893279/spring-data-redis-expire-key
+    * https://aggarwalarpit.wordpress.com/2017/01/25/setting-ttl-for-cacheable-spring/
   
   # Connecting to multiple DB's
     * https://www.devglan.com/spring-boot/spring-boot-multiple-database-configuration
@@ -2696,3 +2702,6 @@
 # Java Types
   * https://www.ibm.com/support/knowledgecenter/en/SSEPGG_11.1.0/com.ibm.db2.luw.apdv.java.doc/src/tpc/imjcc_rjvjdata.html   
   
+# Redis UI
+  * https://app.redsmin.com/
+  * my gmail id  
