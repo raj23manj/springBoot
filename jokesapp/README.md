@@ -2715,3 +2715,14 @@
   
 # Hibernate
   * http://docs.jboss.org/hibernate/orm/5.4/userguide/html_single/Hibernate_User_Guide.html#pc  
+  
+# Jenkins
+  * https://stackoverflow.com/questions/39794811/jenkins-does-not-start-on-macos-10-12-sierra
+  * https://www.youtube.com/watch?v=Bi5Gl2O5d0s
+  * https://stackoverflow.com/questions/6959327/how-to-stop-jenkins-installed-on-mac-snow-leopard
+  * Commands
+    http://localhost:8080/exit
+    http://localhost:8080/restart
+    http://localhost:8080/reload  
+    start: brew services start jenkins
+    restart: brew services restart jenkins
