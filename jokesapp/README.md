@@ -1658,6 +1658,8 @@
      * https://howtodoinjava.com/log4j2/log4j2-properties-example/
      * https://docs.spring.io/spring-boot/docs/current/reference/html/howto-logging.html
      * https://www.mkyong.com/logging/logback-set-log-file-name-programmatically/
+     * https://examples.javacodegeeks.com/enterprise-java/log4j/log4j-writing-different-log-files-example/
+     * https://dzone.com/articles/logging-with-log4j-in-java
      
      * Default Spring logging
        * https://howtodoinjava.com/spring-boot/logging-application-properties/
@@ -2705,3 +2707,11 @@
 # Redis UI
   * https://app.redsmin.com/
   * my gmail id  
+  
+# For Table specific schema
+  * @Table(schema = "dbo")  
+  * Entity listeners and Callback methods
+  * @EntityListeners(class=Audit.class)
+  
+# Hibernate
+  * http://docs.jboss.org/hibernate/orm/5.4/userguide/html_single/Hibernate_User_Guide.html#pc  
