@@ -1027,12 +1027,12 @@
   * Jokes-app application
   * @ImportResource("classpath:chuck-config.xml")    
   
-# Packaging Spring Boot Project & Profule
+# Packaging Spring Boot Project & Profile
   * https://stackoverflow.com/questions/38509511/spring-application-properties-profile-with-war-file
   * http://websystique.com/spring-boot/spring-boot-war-deployment-example/  
   * https://docs.spring.io/spring-boot/docs/current/maven-plugin/examples/run-profiles.html
   * https://www.baeldung.com/spring-profiles
-  http://www.java2novice.com/spring-boot/profile-based-properties/
+  * http://www.java2novice.com/spring-boot/profile-based-properties/
   
 # JPA
   * Hibernate, OpenJPA are implementers of this 
@@ -2726,3 +2726,6 @@
     http://localhost:8080/reload  
     start: brew services start jenkins
     restart: brew services restart jenkins
+    
+  * Pipeline
+    * https://www.youtube.com/watch?v=s73nhwYBtzE  
