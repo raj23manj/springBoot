@@ -2731,4 +2731,7 @@
     * https://www.youtube.com/watch?v=s73nhwYBtzE  
   
   * Deploy to Tomcat
-    * https://www.youtube.com/watch?v=OwTv1aN5BUo  
+    * https://www.youtube.com/watch?v=OwTv1aN5BUo 
+    
+# Github as Maven Repo
+  * https://dzone.com/articles/using-github-as-maven-repository     
