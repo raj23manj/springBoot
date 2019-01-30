@@ -2733,5 +2733,17 @@
   * Deploy to Tomcat
     * https://www.youtube.com/watch?v=OwTv1aN5BUo 
     
+  * Install jenkins as java
+    * https://www.blazemeter.com/blog/how-to-install-jenkins-on-the-apache-tomcat-server  
+    
 # Github as Maven Repo
   * https://dzone.com/articles/using-github-as-maven-repository     
+  
+# Deployment
+  * https://www.baeldung.com/tomcat-deploy-war  
+  * https://stackoverflow.com/questions/46341886/deploy-jar-file-using-jenkins
+  * https://www.youtube.com/watch?v=uCleiJw40Kw
+  * https://www.youtube.com/channel/UCdpxocfI1dJ7J7eOr3dxQlA
+  
+# Setup Tomcat on EC2
+  * https://www.youtube.com/watch?v=m21nFreFw8A  
