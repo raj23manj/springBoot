@@ -2729,3 +2729,6 @@
     
   * Pipeline
     * https://www.youtube.com/watch?v=s73nhwYBtzE  
+  
+  * Deploy to Tomcat
+    * https://www.youtube.com/watch?v=OwTv1aN5BUo  
