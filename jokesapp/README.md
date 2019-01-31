@@ -2493,7 +2493,8 @@
       * Collectors.toCollection(ArrayList::new)
         - ArrayList<Person> list = persons.stream().filter(p -> p.getCountry().equals("US")).collect(Collectors.toCollection(() -> new ArrayList<Person>());  // Collectors.toCollection(ArrayList::new) 
       
-      * Collectors.toCollection(Vector::new), Collectors.toCollection(HashSet::new), Collectors.toCollection(Stack::new)        
+      * Collectors.toCollection(Vector::new), Collectors.toCollection(HashSet::new), Collectors.toCollection(Stack::new) 
+         Vector<Person> list ,     HashSet<Person> list , Stack<Person> list   
 # Maven
   # Archetypes
     - Maven project templating tool
