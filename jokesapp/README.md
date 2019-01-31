@@ -2478,15 +2478,22 @@
           Arrays.aslist(personArray).forEach(person -> System.out.println(person.getId()));
           
         - Object[] objectArray = persons.stream().toArray();
-          Arrays.aslist(objectArray).foeEach(object -> System.out.println((Person)object.getId())) 
+          Arrays.aslist(objectArray).forEach(object -> System.out.println((Person)object.getId())) 
     
     * groupingBy, partitioningBy, counting       
       * for grouping and partitioning
       
-    * toList, toCollection collectors  
-       * toList 
-         - List<Person> list = persons.stream().filter()
-                    
+    * toList, toCollection collectors  => https://www.youtube.com/watch?v=Z_uFZfYxICw&index=4&list=PLIGmoZSj3zVl_GljdHUNmRNeaQWHwLf4c
+      * Collectors.toList() 
+        - List<Person> list = persons.stream().filter(p -> p.getCountry().equals("US")).collect(Collectors.toList());
+         
+      * Collectors.toSet()  
+        - Set<Person> list = persons.stream().filter(p -> p.getCountry().equals("US")).collect(Collectors.toSet());
+       
+      * Collectors.toCollection(ArrayList::new)
+        - ArrayList<Person> list = persons.stream().filter(p -> p.getCountry().equals("US")).collect(Collectors.toCollection(() -> new ArrayList<Person>());  // Collectors.toCollection(ArrayList::new) 
+      
+      * Collectors.toCollection(Vector::new), Collectors.toCollection(HashSet::new), Collectors.toCollection(Stack::new)        
 # Maven
   # Archetypes
     - Maven project templating tool
@@ -2744,6 +2751,8 @@
   * https://stackoverflow.com/questions/46341886/deploy-jar-file-using-jenkins
   * https://www.youtube.com/watch?v=uCleiJw40Kw
   * https://www.youtube.com/channel/UCdpxocfI1dJ7J7eOr3dxQlA
+  * https://www.youtube.com/watch?v=a_AOTn7FQUM => ssh
+  * https://www.youtube.com/watch?v=l9lSW5sQbvc  => telugu
   
 # Setup Tomcat on EC2
   * https://www.youtube.com/watch?v=m21nFreFw8A  
