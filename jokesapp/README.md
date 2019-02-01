@@ -2757,3 +2757,69 @@
   
 # Setup Tomcat on EC2
   * https://www.youtube.com/watch?v=m21nFreFw8A  
+  
+# AES
+ import java.io.UnsupportedEncodingException;
+ import java.net.URLDecoder;
+ import java.net.URLEncoder;
+ import java.security.InvalidKeyException;
+ import java.security.NoSuchAlgorithmException;
+ import java.util.Base64;
+ 
+ import javax.crypto.BadPaddingException;
+ import javax.crypto.Cipher;
+ import javax.crypto.IllegalBlockSizeException;
+ import javax.crypto.NoSuchPaddingException;
+ import javax.crypto.spec.SecretKeySpec;
+ 
+ import org.slf4j.Logger;
+ import org.slf4j.LoggerFactory;
+ 
+
+ -  public class AESEncryptionDecryption {
+    	private static final Logger LOGGER = LoggerFactory.getLogger(AESEncryptionDecryption.class);
+    	private AESEncryptionDecryption() {
+    
+    	}
+    	
+    	public static String encryptStringToBase64(String data) throws UnsupportedEncodingException, IllegalBlockSizeException, BadPaddingException  {
+    		String encrypted = "";
+    		Cipher cipher = getCipher(Cipher.ENCRYPT_MODE);
+    		if(cipher != null) {
+    			byte[] encVal = cipher.doFinal(data.getBytes());
+    			encrypted = Base64.getEncoder().encodeToString(encVal);
+    			encrypted = URLEncoder.encode( encrypted, StringConstants.UTF_FORMAT );
+    		}
+    		return encrypted;
+    
+    	}
+    	
+    	public static String decrypt(String encryptedData) throws UnsupportedEncodingException, IllegalBlockSizeException, BadPaddingException{
+    		encryptedData = URLDecoder.decode(encryptedData, StringConstants.UTF_FORMAT);
+    		byte[] decValue = StringConstants.EMPTY_STRING.getBytes();
+    		byte[] decordedValue = Base64.getDecoder().decode(encryptedData);
+    		Cipher cipher = getCipher(Cipher.DECRYPT_MODE);
+    		if(cipher != null) {
+    			decValue = cipher.doFinal(decordedValue);
+    		}
+    		return new String(decValue);
+    	}
+    
+    	private static Cipher getCipher(int mode) {
+    		Cipher cipher = null;
+    		try {
+    			byte[] keybyte = StringConstants.ANE_ENCRYPTION_KEY.getBytes(StringConstants.UTF_FORMAT);
+    			SecretKeySpec secretKey = new SecretKeySpec(keybyte, StringConstants.AES);
+    			cipher = Cipher.getInstance(StringConstants.ALGO);
+    			cipher.init(mode, secretKey);
+    
+    		} 
+    		catch (NoSuchAlgorithmException | NoSuchPaddingException | InvalidKeyException | UnsupportedEncodingException exception) {
+    			LOGGER.error(exception.getMessage());
+    		} 
+    		return cipher;
+    	}
+    }  
+    
+# Transactions
+  * https://examples.javacodegeeks.com/enterprise-java/hibernate/hibernate-transaction-example/    
