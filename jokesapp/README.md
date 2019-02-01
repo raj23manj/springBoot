@@ -2828,3 +2828,103 @@
     
 # Transactions
   * https://examples.javacodegeeks.com/enterprise-java/hibernate/hibernate-transaction-example/    
+  
+# WebConfig
+  -  @Override
+     	protected void configure(HttpSecurity http) throws Exception {
+     		http.csrf().disable()
+     				// make sure we use stateless session; session won't be used to store user's
+     				// state.
+     				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
+     				// handle an authorized attempts
+     				.exceptionHandling()
+     				.authenticationEntryPoint((req, rsp, e) -> rsp.sendError(HttpServletResponse.SC_UNAUTHORIZED)).and()
+     				.addFilterAfter(new JwtTokenAuthenticationFilter(jwtConfig), UsernamePasswordAuthenticationFilter.class)
+     				// authorization requests config
+     				//
+     				.authorizeRequests()
+     //		.antMatchers(HttpMethod.OPTIONS).permitAll()
+     				.antMatchers("/security/login", "/security/consume", "/security/logOut").permitAll()
+     //		.antMatchers("/admin/**").hasAuthority("ADMIN")
+     //		.antMatchers("/api/**").hasAuthority("ANALYST")
+     				// Any other request must be authenticated
+     				.anyRequest().authenticated();
+     		http.headers().frameOptions().disable();
+     		http.cors();
+     
+     	}
+     
+     	@Bean
+     	public CorsConfigurationSource corsConfigurationSource() {
+     		final CorsConfiguration configuration = new CorsConfiguration();
+     		configuration.setAllowedOrigins(ImmutableList.of("*"));
+     		configuration.setAllowedMethods(ImmutableList.of("HEAD", "GET", "POST", "PUT", "DELETE", "PATCH"));
+     		// setAllowCredentials(true) is important, otherwise:
+     		// The value of the 'Access-Control-Allow-Origin' header in the response must
+     		// not be the wildcard '*' when the request's credentials mode is 'include'.
+     		configuration.setAllowCredentials(true);
+     		// setAllowedHeaders is important! Without it, OPTIONS preflight request
+     		// will fail with 403 Invalid CORS request
+     		configuration.setAllowedHeaders(ImmutableList.of("Authorization", "Cache-Control", "Content-Type"));
+     		final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+     		source.registerCorsConfiguration("/**", configuration);
+     		return source;
+     	}  
+     	
+# Authorization
+  -  public class JwtTokenAuthenticationFilter extends OncePerRequestFilter {
+     	private static final Logger LOGGER = (Logger) LogManager.getLogger(JwtTokenAuthenticationFilter.class);
+     
+     	private final JwtConfig jwtConfig;
+     
+     	public JwtTokenAuthenticationFilter(JwtConfig jwtConfig) {
+     		this.jwtConfig = jwtConfig;
+     	}
+     
+     	@Override
+     	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
+     			throws ServletException, IOException {
+     
+     		// 1. get the authentication header. Tokens are supposed to be passed in the
+     		// authentication header
+     		String header = request.getHeader(jwtConfig.header);
+     		// 2. validate the header and check the prefix
+     		if (header == null || !header.startsWith(jwtConfig.prefix)) {
+     			chain.doFilter(request, response); // If not valid, go to the next filter.
+     			return;
+     		}
+     		// 3. remove the prefix and get token
+     		String token = header.replace(jwtConfig.prefix + StringConstants.SPACE, StringConstants.EMPTY_STRING);
+     
+     		try { // exceptions might be thrown in creating the claims if for example the token is
+     				// expired
+     
+     			// 4. Validate the token
+     			Claims claims = Jwts.parser().setSigningKey(jwtConfig.secret.getBytes()).parseClaimsJws(token).getBody();
+     			String username = claims.get(StringConstants.EMAIL_STRING).toString();
+     			if (username != null) {
+     				@SuppressWarnings("unchecked")
+     				// List<String> authorities = (List<String>)
+     				// claims.get(StringConstants.ROLES_STRING);
+     				// LOGGER.debug("Authorities from Claims {}", claims);
+     				UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(username, null, new ArrayList<>());
+     				SecurityContextHolder.getContext().setAuthentication(auth);
+     			}
+     
+     		} catch (ExpiredJwtException exception) {
+     			// In case of failure. Make sure it's clear; so guarantee user won't be
+     			// authenticated
+     			LOGGER.debug("Token expired for user ");
+     			LOGGER.debug("Security exception trace: {}", exception);
+     			response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+     			SecurityContextHolder.clearContext();
+     		}
+     
+     		// go to the next filter in the filter chain
+     		chain.doFilter(request, response);
+     	}
+     
+     }
+     
+# Logger
+  * LoggerFactory.getLogger(JwtTokenAuthenticationFilter.class);          	
