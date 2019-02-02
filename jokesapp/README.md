@@ -1128,7 +1128,24 @@
       -  @Id
          @GeneratedValue(strategy=GenerationType.IDENTITY)
          private int id;
-        
+  
+  # Spring Data Finders  Section6 -> productData     
+    * https://github.com/raj23manj/Hibernate_Basiscs/blob/master/productdata/src/main/java/com/rajesh/springdata/product/repos/ProductRepository.java
+    
+  # Pagigng And Sorting section7 -> productData
+    * https://github.com/raj23manj/Hibernate_Basiscs/blob/master/productdata/src/test/java/com/rajesh/springdata/product/ProductdataApplicationTests.java 
+    * implement sort and pageable classes provided by spring data and pass them to methods, hibernate will take care of the rest
+  
+  # JPQL(Java persistence Query Language) -> jpqlandnativesql
+    * https://github.com/raj23manj/Hibernate_Basiscs/blob/master/jpqlandnativesql/src/main/java/com/rajesh/springdata/jpqlandnativesql/repos/StudentRepository.java
+    * to write jpql, we use the domain class names and properties of the domain calss in th query.
+    -  // @Query means it is only read operations
+       @Query("from Student") // equal to select * from
+       List<Student> findAllStudents(Pageable pageable); 
+       
+    - @Modifying // from spring data tells spring that it is modifying delete/update/insert
+      @Query("delete from Student where firstName=:firstName")
+      void deleteStudentsByFirstName(@Param("firstName") String firstName);   
           
   # Section 8, jhon
     * JDL-Studio for data modeling
