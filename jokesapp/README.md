@@ -2827,7 +2827,10 @@
     }  
     
 # Transactions
-  * https://examples.javacodegeeks.com/enterprise-java/hibernate/hibernate-transaction-example/    
+  * https://examples.javacodegeeks.com/enterprise-java/hibernate/hibernate-transaction-example/  
+  
+# Google => Guava
+  * https://github.com/google/guava/wiki/OrderingExplained#creation    
   
 # WebConfig
   -  @Override
