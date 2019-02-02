@@ -1146,6 +1146,14 @@
     - @Modifying // from spring data tells spring that it is modifying delete/update/insert
       @Query("delete from Student where firstName=:firstName")
       void deleteStudentsByFirstName(@Param("firstName") String firstName);   
+  
+  # Paging and Sorting with JPQL 
+    - Section 9 -> jpqlandnativesql
+  
+  # Native SQL Query
+    - Section 10 -> jpqlandnativesql 
+    
+  # Inheritance Mapping   
           
   # Section 8, jhon
     * JDL-Studio for data modeling
