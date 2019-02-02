@@ -1151,16 +1151,51 @@
     - Section 9 -> jpqlandnativesql
   
   # Native SQL Query
-    - Section 10 -> jpqlandnativesql 
+    * Section 10 -> jpqlandnativesql
+    -  @Query(value="select * from student  where fname=:fname", nativeQuery=true) 
+       List<Student> findByFirstNameNQ(@Param("fname") String firstName); 
     
-  # Inheritance Mapping   
+  # Inheritance Mapping  Section 11 -> hibernateinheritance
+    * Types:
+      * SINGLE_TABLE
+      * TABLE_PER_CLASS 
+      * JOINED
+      
+      * Example
+        * Payment 
+          * Card
+          * Check
+          
+    * SINGLE_TABLE(STI)
+      * Need a type column in the table to diffrentiate
+        - @Inheritance, @DiscriminatorColumn => Parent Class
+          - @DiscriminatorColumn(name="pmode", discriminatorType=DiscriminatorType.STRING) // type column in table
+            public abstract class Payment {
+            }
+        - @DiscriminatorValue => Child class
+          - @DiscriminatorValue("cc")
+            public class CreditCard extends Payment{
+            }
+            
+          - @DiscriminatorValue("ch")
+              public class Check extends Payment{
+              }  
+    
+    * TABLE_PER_CLASS 
+      * Keeps Seperate table's for all
+      * improves performance, Not recommended, as it violates nomalization. Keeps colomns repeated in each child tables
+      - @Inheritance(strategy=InheritanceType.TABLE_PER_CLASS) => parent     
+      
+    * JOINED (most used inheritance type)
+      * Keeps Seperate table's for all with PK and FK 
+      - @Inheritance(strategy=InheritanceType.JOINED) // most used inheritance type
+      - @PrimaryKeyJoinColumn(name="id") => child 
           
   # Section 8, jhon
     * JDL-Studio for data modeling
     * Data Source Intialization(8, 146)
       * via import.sql by hibernate
-      * via data.sql(recommended), data-${platform}.sql and schema.sql
-      *  
+      * via data.sql(recommended), data-${platform}.sql and schema.sql 
     
   # Complex Json Return nested
     * https://www.youtube.com/watch?v=TWOzV8H5Kfc
