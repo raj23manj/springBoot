@@ -2930,4 +2930,9 @@
      }
      
 # Logger
-  * LoggerFactory.getLogger(JwtTokenAuthenticationFilter.class);          	
+  * LoggerFactory.getLogger(JwtTokenAuthenticationFilter.class);      
+  
+# Query JPQL
+  - @Query(value = NamedQueries."Inner joined Queries, nativeQuery = true)
+    public List<Map<String,Object>> getDosingDetailsForForecast(@Param("forecastId") Long forecastId);  
+      	
