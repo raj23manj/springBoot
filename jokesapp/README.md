@@ -1190,6 +1190,19 @@
       * Keeps Seperate table's for all with PK and FK 
       - @Inheritance(strategy=InheritanceType.JOINED) // most used inheritance type
       - @PrimaryKeyJoinColumn(name="id") => child 
+      
+  # Component Mapping(Embbedable) -> Section12 -> componentmapping
+    - public class Employee {  // parent
+      	@Id
+      	private int id;
+      	private String name;
+      	
+      	@Embedded
+       private Address address;
+      }
+      
+    - @Embeddable // child class
+      public class Address {}  
           
   # Section 8, jhon
     * JDL-Studio for data modeling
