@@ -1252,19 +1252,61 @@
       - @OneToOne(mappedBy="person")
         private License license; 
         
-    * Hibernate Caching Mechanism(EH caching) -> Section 15 ->  
+    * Hibernate Caching Mechanism(EH caching) -> Section 16 ->  productdata
       * There two levels of cache  - 134  
         * Session - Level1 
           * Each client has a hibernate session, and uses it to Query DB
           * Each client has it's own Cache
           * come's in by default
-          
+          * to make Level 1 caching to work we need to mark the method as @Transactional on the method
+          * example 135
+          * show's how to use entityManager in spring boot => 136
+          * Evict -> remove an object from cache  
+            * To remove from level1 cache => 136
+            - @Autowired EntityManager entityManager => (javax.persistence.EntityManager)
+              
+              @Transactional
+              // below code in a method
+              Session session = entityManager.unwrap(Session.class);
+              Product p = repository.findOne(1);
+              repository.findOne(1);
+              session.evict(p);
+              repository.findOne(1);
+               
         * SessionFactory - Level2
           * Session Factory is used to create multiple Sessions
           * has a common cache, and all sessions uses this cache
           * A Shared cache
           * EhCache/Redsi Cache
           
+        * Properties For Cahcing => 139
+          - spring.jpa.properties.hibernate.cache.use_second_level_cache=true => Enabling second level cache
+            spring.jpa.properties.javax.persistence.sharedCache.mode=ALL => mentioning that all should use shared cache
+            
+        * Cache Concurrency Strategy => 141
+          * impacts the way caching is done in our application
+          * READ_ONLY
+            * used when the entites never change, only used in a read only applications
+            - @Cache(usage=CacheConcurrencyStrategy.READ_ONLY) 
+            * https://github.com/raj23manj/Hibernate_Basiscs/blob/master/productdata/src/main/java/com/rajesh/springdata/product/entities/Product.java
+            
+          * NONSTRICT_READ_WRITE
+            * updates the cache only when a transaction completely commints the data to the database
+            * Non-consistent data exist's, when two users access the same data, when one is updating and other is viewing.
+            
+          * READ_WRITE
+            * if consistenty needed, like having locks in DB use this
+            * in the same case mentioned above, when one user is updating a lock is added. When the other user makes a request see's the soft lock in cache
+              goes to the DB directly and fetches
+            
+          
+          * TRANSACTIONAL    
+            * Rarely used
+            * Used for distributed caching
+          
+        * EhCache(Inmemory/disk)
+          * 137 - 143
+                   
         * Redis Cache  
           - pom.xml
             -  <dependency>
