@@ -1208,6 +1208,22 @@
       
     - @Embeddable // child class
       public class Address {}  
+      
+  # RelationsShips in Hibernate -> Section13 -> associations
+    * OneToMany => this is always lazy by default
+      - @OneToMany(mappedBy="customer", cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+        private List<PhoneNumber> numbers; 
+        
+      - @ManyToOne
+        @JoinColumn(name="customer_id")
+        private Customer customer;  
+             
+    * Cascading => 108
+      * PERSIST => Vave/Insert Child also when parent is is Saved
+      * MERGE => Update/Insert Child also when parent is Saved/Updated
+      * REMOVE => Delete Child also when parent is Deleted  
+      * REFRESH => Refresh the parent object will automatically refresh child aobject
+      * DETACH => Detach the parent object will automatically detach child object
           
   # Section 8, jhon
     * JDL-Studio for data modeling
