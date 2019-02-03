@@ -1224,6 +1224,12 @@
       * REMOVE => Delete Child also when parent is Deleted  
       * REFRESH => Refresh the parent object will automatically refresh child aobject
       * DETACH => Detach the parent object will automatically detach child object
+      * ALL => DOES ALL of the above
+      
+    * LAZY & EAGER Loading (see from 111 to 115)
+      * Earger => there is a join query and mapped to parent and chile objects. Json will be created automatically
+        * https://www.baeldung.com/jackson-bidirectional-relationships-and-infinite-recursion (jackson mapping)
+      
           
   # Section 8, jhon
     * JDL-Studio for data modeling
