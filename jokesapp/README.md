@@ -1070,7 +1070,7 @@
     * same thing in hibernate has @CreationTimestamp and @UpdateTimestamp => (section 8, 136 10:44)
       - https://stackoverflow.com/questions/42366763/hibernate-creationtimestamp-updatetimestamp-for-calendar
     
-    # Types Of Cascade
+    # Types Of Cascade => https://www.baeldung.com/hibernate-save-persist-update-merge-saveorupdate
       * Persist
       * Merge
       * Refresh
@@ -1190,6 +1190,9 @@
       * Keeps Seperate table's for all with PK and FK 
       - @Inheritance(strategy=InheritanceType.JOINED) // most used inheritance type
       - @PrimaryKeyJoinColumn(name="id") => child 
+     
+    * Implicit and explicit polymorphism 
+      - http://docs.jboss.org/hibernate/orm/5.4/userguide/html_single/Hibernate_User_Guide.html#entity-inheritance-polymorphism
       
   # Component Mapping(Embbedable) -> Section12 -> componentmapping
     - public class Employee {  // parent
@@ -3008,4 +3011,7 @@
 # Query JPQL
   - @Query(value = NamedQueries."Inner joined Queries, nativeQuery = true)
     public List<Map<String,Object>> getDosingDetailsForForecast(@Param("forecastId") Long forecastId);  
-      	
+
+# Redirect From Controller
+  - httpServletResponse.setHeader(StringConstants.LOCATION_STRING, redirectUrl);
+    httpServletResponse.setStatus(302);      	
