@@ -1070,14 +1070,16 @@
     * same thing in hibernate has @CreationTimestamp and @UpdateTimestamp => (section 8, 136 10:44)
       - https://stackoverflow.com/questions/42366763/hibernate-creationtimestamp-updatetimestamp-for-calendar
     
-    # Types Of Cascade => https://www.baeldung.com/hibernate-save-persist-update-merge-saveorupdate
+    # Types Of Cascade 
       * Persist
       * Merge
       * Refresh
       * Remove   
       * Detach
       * All
-      
+      * https://www.baeldung.com/hibernate-save-persist-update-merge-saveorupdate
+      * https://www.journaldev.com/3481/hibernate-session-merge-vs-update-save-saveorupdate-persist-example
+    
     # Return Association's as Json(Jackson Serialising and DeSerialising as Json / Marshalling and Unmarshalling)
       * Converting object to Json(Serialising), converting Json to Object(De-Serialising) 
       * https://www.javacodegeeks.com/2012/09/json-jackson-to-rescue.html
