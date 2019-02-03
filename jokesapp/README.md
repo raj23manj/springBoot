@@ -1228,8 +1228,127 @@
       
     * LAZY & EAGER Loading (see from 111 to 115)
       * Earger => there is a join query and mapped to parent and chile objects. Json will be created automatically
-        * https://www.baeldung.com/jackson-bidirectional-relationships-and-infinite-recursion (jackson mapping)
-      
+      * https://www.baeldung.com/jackson-bidirectional-relationships-and-infinite-recursion (jackson mapping)
+    
+    * MantToMany -> Section 14 -> associations 
+      - @ManyToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+        @JoinTable(name="programmers_projects", 
+        			   joinColumns=@JoinColumn(name="programmer_id", referencedColumnName="id"), 
+        			   inverseJoinColumns=@JoinColumn(name="project_id", referencedColumnName="id"))
+        private Set<Project> projects;
+        
+      - //@ManyToMany(cascade=CascadeType.ALL)
+        //	@JoinTable(name="programmers_projects", 
+        //			   joinColumns=@JoinColumn(name="project_id", referencedColumnName="id"), 
+        //			   inverseJoinColumns=@JoinColumn(name="programmer_id", referencedColumnName="id"))
+        @ManyToMany(mappedBy="projects") // it already defined so no need of above one, even that can done
+        private Set<Programmer> programmers;  
+        
+    * OneToOne -> Section 15 -> associations 
+      - @OneToOne(cascade=CascadeType.ALL)
+        @JoinColumn(name="person_id")
+        private Person person;
+        
+      - @OneToOne(mappedBy="person")
+        private License license; 
+        
+    * Hibernate Caching Mechanism(EH caching) -> Section 15 ->  
+      * There two levels of cache  - 134  
+        * Session - Level1 
+          * Each client has a hibernate session, and uses it to Query DB
+          * Each client has it's own Cache
+          * come's in by default
+          
+        * SessionFactory - Level2
+          * Session Factory is used to create multiple Sessions
+          * has a common cache, and all sessions uses this cache
+          * A Shared cache
+          * EhCache/Redsi Cache
+          
+        * Redis Cache  
+          - pom.xml
+            -  <dependency>
+                  <groupId>org.springframework.boot</groupId>
+                  <artifactId>spring-boot-starter-data-redis</artifactId>
+                  <exclusions>
+                    <exclusion>
+                     <groupId>io.lettuce</groupId>
+                     <artifactId>lettuce-core</artifactId>
+                    </exclusion>
+                  </exclusions>		    
+                </dependency>		
+                <dependency>
+                  <groupId>redis.clients</groupId>
+                  <artifactId>jedis</artifactId>
+                </dependency> 
+                
+            - Redis Config
+              -  import java.time.Duration;
+                 
+                 import org.springframework.boot.autoconfigure.data.redis.RedisProperties;
+                 import org.springframework.context.annotation.Bean;
+                 import org.springframework.context.annotation.Configuration;
+                 import org.springframework.context.annotation.Primary;
+                 import org.springframework.data.redis.cache.RedisCacheConfiguration;
+                 import org.springframework.data.redis.connection.RedisStandaloneConfiguration;
+                 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
+                 import org.springframework.data.redis.core.RedisTemplate;
+                 import org.springframework.data.redis.repository.configuration.EnableRedisRepositories;
+                 import org.springframework.data.redis.serializer.GenericToStringSerializer;
+                 
+                 @Configuration
+                 @EnableRedisRepositories
+                 public class RedisConfig {
+                 
+                     @Bean
+                     public JedisConnectionFactory jedisConnectionFactory() {
+                         RedisProperties properties = redisProperties();
+                         RedisStandaloneConfiguration configuration = new RedisStandaloneConfiguration();
+                         configuration.setHostName(properties.getHost());
+                         configuration.setPort(properties.getPort());
+                 
+                         return new JedisConnectionFactory(configuration);
+                     }
+                 
+                     @Bean
+                     public RedisTemplate<String, Object> redisTemplate() {
+                         final RedisTemplate<String, Object> template = new RedisTemplate<>();
+                         template.setConnectionFactory(jedisConnectionFactory());
+                         template.setValueSerializer(new GenericToStringSerializer<>(Object.class));
+                         return template;
+                     }
+                 
+                     @Bean
+                     @Primary
+                     public RedisProperties redisProperties() {
+                         return new RedisProperties();
+                     }
+                 
+                     @Bean
+                     public RedisCacheConfiguration cacheConfiguration() {
+                 	 	RedisCacheConfiguration cacheConfig = RedisCacheConfiguration.defaultCacheConfig()
+                 	 	  .entryTtl(Duration.ofSeconds(600))
+                 	 	  .disableCachingNullValues();	
+                 	 	return cacheConfig;
+                     }
+                 }   
+                 
+              * Controller
+                -  @Cacheable(value= "processRunCache", key= "#root.methodName")
+                   @RequestMapping(method=RequestMethod.GET, value="/api/listAllRuns")
+              
+              * Entities
+                * enable serialisation
+                - public class Process implements Serializable {}
+              
+              * Enable Caching
+                - @EnableCaching
+    
+    * Default Fetch Types
+      OneToMany: LAZY
+      ManyToOne: EAGER
+      ManyToMany: LAZY
+      OneToOne: EAGER      
           
   # Section 8, jhon
     * JDL-Studio for data modeling
