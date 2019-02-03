@@ -1390,7 +1390,46 @@
       OneToMany: LAZY
       ManyToOne: EAGER
       ManyToMany: LAZY
-      OneToOne: EAGER      
+      OneToOne: EAGER    
+    
+    * Transaction Management -> Section17 -> transactionmanagement 
+    
+      * ACID Properties => 144
+        * Atomicity
+          * Either all the queries execute or nothing will execute(Rollback)
+          
+        * Consistency  
+          * At the end of transactions DBshould be in a consistent state, meaning if credit and debit is happening transaction
+            money sould be added to the one account and removed from another account
+            
+        * Isolation
+          * If multiple queries are running in the transaction, each should happen in isolation without interferring other queries
+        
+        * Durability    
+          * once transaction are completed, the data should stay in the DB 
+          
+      * Transaction Management Component 
+        * Transactional App (Commit/Rollback) -> Transactional Manager/Transaction Co-oridinator -> Resource Manager(JBDC/Hibernate/orms) -> DB 
+        
+      * Code
+        - @Transactional // this dose transaction management
+          	public void transfer(int amount) {
+          		BankAccount obama = repository.findById(1).get();	
+          		obama.setBal(obama.getBal() - amount);
+          		repository.save(obama);
+          		
+          		if(true) {
+          			throw new RuntimeException();
+          		}
+          		
+          		
+          		BankAccount trump = repository.findById(2).get();		
+          		trump.setBal(trump.getBal() + amount);
+          		repository.save(trump);
+          }  
+          
+    * Save and Retrive Files in DB -> Section 18
+      * saving a pdf/image etc using BLOB      
           
   # Section 8, jhon
     * JDL-Studio for data modeling
