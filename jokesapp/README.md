@@ -1451,7 +1451,7 @@
   
   # Interceptors And Events 
     * http://docs.jboss.org/hibernate/orm/5.4/userguide/html_single/Hibernate_User_Guide.html#events     
-    * https://www.boraji.com/hibernate-5-event-listener-example    
+    * https://www.boraji.com/hibernate-5-event-listener-example => good one    
     
     * Interceptors
       * The org.hibernate.Interceptor interface provides callbacks from the session to the application, allowing the application to inspect 
@@ -1582,7 +1582,10 @@
         
       * to exclude default listeners
         * @ExcludeDefaultListeners
-          @ExcludeSuperclassListeners  
+          @ExcludeSuperclassListeners 
+          
+      * Register and Handle Event's using java config
+        * https://www.boraji.com/hibernate-5-event-listener-example      
         
   # Section 8, jhon
     * JDL-Studio for data modeling
