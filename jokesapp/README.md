@@ -3404,6 +3404,7 @@
     public List<Map<String,Object>> getDosingDetailsForForecast(@Param("forecastId") Long forecastId);  
 
 # Redirect From Controller
+  - public static final String LOCATION_STRING = "Location";
   - httpServletResponse.setHeader(StringConstants.LOCATION_STRING, redirectUrl);
     httpServletResponse.setStatus(302); 
     
