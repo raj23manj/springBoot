@@ -2955,6 +2955,13 @@
     * allMatch Stream => https://www.youtube.com/watch?v=1a4CUPVR8m4&list=PLIGmoZSj3zVl_GljdHUNmRNeaQWHwLf4c&index=5
       * returns whether all elements of this stream match the provided predicate, even if one fails it breaks.
         - persons.stream().allMatch(p -> {return p.getCountry().equals("US")});
+        
+    * noneMatch, anyMatch
+      * noneMatch
+        - persons.stream().noneMatch(p -> p.getCountry().equals("US"));   
+        
+      * anyMatch
+        - persons.stream().anyMatch(p -> p.getCountry().equals("US"));     
          
 # Maven
   # Archetypes
