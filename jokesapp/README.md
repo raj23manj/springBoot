@@ -3074,6 +3074,7 @@
     # Spring Application Events (Advanced Spring Guru)
       * https://www.baeldung.com/spring-events
       * https://www.baeldung.com/spring-context-events  
+      * Publish/Subscribe pattern
               
     # SOLID
       *  https://springframework.guru/principles-of-object-oriented-design/
