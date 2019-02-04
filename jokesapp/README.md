@@ -365,6 +365,9 @@
     The method can not accept any arguments. The method should be no-arg.  
     
 # Configuring Spring Container using Java Code
+  * in properties file
+   * api.host=localhost
+   * ane.authentication.url=https://${ane.host}/login/AuthenticationCheck?tok= 
   * create a java class and annotate as @Configuration
   * Add component Scanning support: @ComponentScan
   * Read Spring Java Configuration class
@@ -3402,4 +3405,6 @@
 
 # Redirect From Controller
   - httpServletResponse.setHeader(StringConstants.LOCATION_STRING, redirectUrl);
-    httpServletResponse.setStatus(302);      	
+    httpServletResponse.setStatus(302); 
+    
+         	
