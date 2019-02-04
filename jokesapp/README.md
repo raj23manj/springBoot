@@ -1429,8 +1429,161 @@
           }  
           
     * Save and Retrive Files in DB -> Section 18
-      * saving a pdf/image etc using BLOB      
-          
+      * saving a pdf/image etc using BLOB  
+      
+  # Flushing => http://docs.jboss.org/hibernate/orm/5.4/userguide/html_single/Hibernate_User_Guide.html#pc-filter-join-table
+    * the process of synchronizing the state of the persistence context with the underlying datbase
+    * the flush operations take every entity state change and transalte it to an INSER, UPDATE or DELETE
+    * Flush Modes
+      * ALWAYS
+        * The ALWAYS is only available with the native Session API.
+        * The ALWAYS flush mode triggers a persistence context flush even when executing a native SQL query against the Session API.
+      
+      * AUTO 
+        * Default Hibernate uses this mode
+        
+      * COMMIT
+        * When executing a JPQL query, the persistence context is only flushed when the current running transaction is committed.
+        
+      * MANUAL   
+        * Both the EntityManager and the Hibernate Session define a flush() method that, when called, triggers a manual flush.
+          Hibernate also provides a MANUAL flush mode so the persistence context can only be flushed manually. 
+  
+  # Interceptors And Events 
+    * http://docs.jboss.org/hibernate/orm/5.4/userguide/html_single/Hibernate_User_Guide.html#events     
+    * https://www.boraji.com/hibernate-5-event-listener-example    
+    
+    * Interceptors
+      * The org.hibernate.Interceptor interface provides callbacks from the session to the application, allowing the application to inspect 
+        and/or manipulate properties of a persistent object before it is saved, updated, deleted or loaded. 
+        
+      -  public static class LoggingInterceptor extends EmptyInterceptor {
+         	@Override
+         	public boolean onFlushDirty( // => Note this
+         		Object entity,
+         		Serializable id,
+         		Object[] currentState,
+         		Object[] previousState,
+         		String[] propertyNames,
+         		Type[] types) {
+         			LOGGER.debugv( "Entity {0}#{1} changed from {2} to {3}",
+         				entity.getClass().getSimpleName(),
+         				id,
+         				Arrays.toString( previousState ),
+         				Arrays.toString( currentState )
+         			);
+         			return super.onFlushDirty( entity, id, currentState,
+         				previousState, propertyNames, types
+         		);
+         	}
+         }  
+        
+    * Native Event System
+      *  If you have to react to particular events in the persistence layer, you can also use the Hibernate event architecture. 
+         The event system can be used in place of or in addition to interceptors.
+         
+    * JPA Callbacks => http://docs.jboss.org/hibernate/orm/5.4/userguide/html_single/Hibernate_User_Guide.html#events-declarative-security
+      * @PrePersist
+        * Executed before the entity manager persist operation is actually executed or cascaded. This call is synchronous with the persist operation.
+        
+      * @PreRemove 
+        * Executed before the entity manager remove operation is actually executed or cascaded. This call is synchronous with the remove operation.
+        
+      * @PostPersist 
+        * Executed after the entity manager persist operation is actually executed or cascaded. This call is invoked after the database INSERT is executed.
+        
+      * @PostRemove
+        * Executed after the entity manager remove operation is actually executed or cascaded. This call is synchronous with the remove operation.
+        
+      * @PreUpdate
+        * Executed before the database UPDATE operation.
+        
+      * @PostUpdate
+        * Executed after the database UPDATE operation.
+        
+      * @PostLoad 
+        * Executed after an entity has been loaded into the current persistence context or an entity has been refreshed.   
+        
+      * There are two available approaches defined for specifying callback handling:
+        * The first approach is to annotate methods on the entity itself to receive notifications of a particular entity lifecycle event(s).
+        * The second is to use a separate entity listener class. An entity listener is a stateless class with a no-arg constructor. 
+          The callback annotations are placed on a method of this class instead of the entity class. The entity listener class is then 
+          associated with the entity using the javax.persistence.EntityListeners annotation    
+        
+        -  @Entity
+           @EntityListeners( LastUpdateListener.class )
+           public static class Person {
+           
+           	@Id
+           	private Long id;
+           
+           	private String name;
+           
+           	private Date dateOfBirth;
+           
+           	@Transient  // @Transient annotation is used to indicate that a field is not to be persisted in the database, https://stackoverflow.com/questions/2154622/why-does-jpa-have-a-transient-annotation
+           	private long age;
+           
+           	private Date lastUpdate;
+           
+           	public void setLastUpdate(Date lastUpdate) {
+           		this.lastUpdate = lastUpdate;
+           	}
+           
+           	/**
+           	 * Set the transient property at load time based on a calculation.
+           	 * Note that a native Hibernate formula mapping is better for this purpose.
+           	 */
+           	@PostLoad
+           	public void calculateAge() {
+           		age = ChronoUnit.YEARS.between( LocalDateTime.ofInstant(
+           				Instant.ofEpochMilli( dateOfBirth.getTime()), ZoneOffset.UTC),
+           			LocalDateTime.now()
+           		);
+           	}
+           }
+           
+           public static class LastUpdateListener {
+           
+           	@PreUpdate
+           	@PrePersist
+           	public void setLastUpdate( Person p ) {
+           		p.setLastUpdate( new Date() );
+           	}
+           }
+           
+    * Default entity listeners  => see the example has good one 
+      * http://docs.jboss.org/hibernate/orm/5.4/userguide/html_single/Hibernate_User_Guide.html#events-declarative-security     
+      * The JPA specification allows you to define a default entity listener which is going to be applied for every entity in 
+        that particular system. Default entity listeners can only be defined in XML mapping files.    
+        
+      - public class DefaultEntityListener {
+        
+            public void onPersist(Object entity) {
+                if ( entity instanceof BaseEntity ) {
+                    BaseEntity baseEntity = (BaseEntity) entity;
+                    baseEntity.setCreatedOn( now() );
+                }
+            }
+        
+            public void onUpdate(Object entity) {
+                if ( entity instanceof BaseEntity ) {
+                    BaseEntity baseEntity = (BaseEntity) entity;
+                    baseEntity.setUpdatedOn( now() );
+                }
+            }
+        
+            private Timestamp now() {
+                return Timestamp.from(
+                    LocalDateTime.now().toInstant( ZoneOffset.UTC )
+                );
+            }
+        }  
+        
+      * to exclude default listeners
+        * @ExcludeDefaultListeners
+          @ExcludeSuperclassListeners  
+        
   # Section 8, jhon
     * JDL-Studio for data modeling
     * Data Source Intialization(8, 146)
