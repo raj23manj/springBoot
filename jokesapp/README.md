@@ -3231,6 +3231,9 @@
   * https://www.youtube.com/watch?v=m21nFreFw8A  
   
 # AES
+  - https://examples.javacodegeeks.com/core-java/util/base64/java-8-base64-encoding-example/
+  - https://stackoverflow.com/questions/10759392/java-aes-encryption-and-decryption
+  
  import java.io.UnsupportedEncodingException;
  import java.net.URLDecoder;
  import java.net.URLEncoder;
@@ -3267,10 +3270,11 @@
     	}
     	
     	public static String decrypt(String encryptedData) throws UnsupportedEncodingException, IllegalBlockSizeException, BadPaddingException{
-    		encryptedData = URLDecoder.decode(encryptedData, StringConstants.UTF_FORMAT);
-    		byte[] decValue = StringConstants.EMPTY_STRING.getBytes();
-    		byte[] decordedValue = Base64.getDecoder().decode(encryptedData);
-    		Cipher cipher = getCipher(Cipher.DECRYPT_MODE);
+    		//encryptedData = URLDecoder.decode(encryptedData, StringConstants.UTF_FORMAT);
+            byte[] e64bytes = StringUtils.getBytesUtf8(encryptedData); 
+            byte[] decValue = StringConstants.EMPTY_STRING.getBytes();
+            byte[] decordedValue = Base64.getDecoder().decode(e64bytes);
+            Cipher cipher = getCipher(Cipher.DECRYPT_MODE);
     		if(cipher != null) {
     			decValue = cipher.doFinal(decordedValue);
     		}
@@ -3341,7 +3345,7 @@
      		return source;
      	}  
      	
-# Authorization
+# Authorization  
   -  public class JwtTokenAuthenticationFilter extends OncePerRequestFilter {
      	private static final Logger LOGGER = (Logger) LogManager.getLogger(JwtTokenAuthenticationFilter.class);
      
