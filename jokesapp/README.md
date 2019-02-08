@@ -3432,4 +3432,56 @@
     	
 # when you are redirecting from spring boot in FE -> Angular
   * need to replace the window location itself, because it redirects from there
-  *  window.location.href = `${this.baseURL}security/login`; // localhost:4200/security/login  	         	
+  *  window.location.href = `${this.baseURL}security/login`; // localhost:4200/security/login 
+  
+# Spring Security Role Based Method Based
+  * https://www.devglan.com/spring-security/jwt-role-based-authorization
+  * https://www.baeldung.com/role-and-privilege-for-spring-security-registration
+  * https://www.youtube.com/watch?v=GgVlI4zbUUI
+  * http://www.svlada.com/jwt-token-authentication-with-spring-boot/   	
+  * https://stackoverflow.com/questions/43253707/spring-boot-how-make-a-user-role-managing-with-jwt
+  
+# Spring Env Configuration
+  - @Configuration
+  public class SpringConfiguration{
+  	@Profile("dev")
+  	static class SpringConfigurationDev {
+  
+  		@Bean
+  		public static PropertySourcesPlaceholderConfigurer propertyPlaceholderConfigurer() {
+  			String propertiesFilename = "app-dev.properties";
+  			PropertySourcesPlaceholderConfigurer configurer = new PropertySourcesPlaceholderConfigurer();
+  			configurer.setLocation(new ClassPathResource(propertiesFilename));
+  			return configurer;
+  		}
+  	}
+  
+  	@Profile("local")
+  	static class SpringConfigurationLocal {
+  
+  		@Bean
+  		public static PropertySourcesPlaceholderConfigurer propertyPlaceholderConfigurer() {
+  			String propertiesFilename = "app-local.properties";
+  			PropertySourcesPlaceholderConfigurer configurer = new PropertySourcesPlaceholderConfigurer();
+  			configurer.setLocation(new ClassPathResource(propertiesFilename));
+  			return configurer;
+  		}
+  	}
+}           	
+
+# setting authorities for role base access .
+  * need to set the authorithies after validation of token in authorization file
+  - 	// 4. Validate the token
+    			Claims claims = Jwts.parser()
+    					.setSigningKey(StringConstants.JWT_SECRET.getBytes())
+    					.parseClaimsJws(token)
+    					.getBody();
+    			String username = claims.get(StringConstants.EMAIL_STRING).toString();
+    			if(username != null) {
+    				@SuppressWarnings("unchecked")
+    				List<String> authorities = (List<String>) claims.get(StringConstants.ROLES_STRING);
+    				LOGGER.debug("Authorities from Claims {}", claims);
+    				UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(
+    						username, null, authorities.stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList()));
+    				SecurityContextHolder.getContext().setAuthentication(auth);
+    			}
