@@ -3488,3 +3488,11 @@
     						username, null, authorities.stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList()));
     				SecurityContextHolder.getContext().setAuthentication(auth);
     			}
+
+
+# Java Linting (Code quality like robocop for rails)
+ * sonar
+
+# Cpverage report
+  * jacoco 
+ 
