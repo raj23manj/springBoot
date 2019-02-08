@@ -3496,3 +3496,22 @@
 # Cpverage report
   * jacoco 
  
+# Sample controller
+  - @GetMapping(value = "/logOut")
+    @ResponseBody
+    public void logout(HttpServletRequest request, HttpServletResponse httpServletResponse) {
+        LOGGER.debug("inside logout");
+        String queryString = request.getQueryString();
+        String jwtToken = userService.getAnETokenFromDB(queryString);
+        String callBackURL = externalURLs.aneCallBackUrl;
+        if(jwtToken.isEmpty()) {
+            LOGGER.debug("user not found in DB");
+        }
+        userService.deleteByToken(jwtToken);
+        LOGGER.debug(callBackURL);
+        String token = generateToken.createToken(callBackURL);
+        String redirectUrl = externalURLs.aneLogoutUrl + token;
+        LOGGER.debug("logout redirect url {}", redirectUrl);
+        httpServletResponse.setHeader(StringConstants.LOCATION_STRING, redirectUrl);
+        httpServletResponse.setStatus(302);
+    } 
