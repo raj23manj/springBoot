@@ -3434,14 +3434,9 @@
   * need to replace the window location itself, because it redirects from there
   *  window.location.href = `${this.baseURL}security/login`; // localhost:4200/security/login 
   
-# Spring Security Role Based Method Based
-  * https://www.devglan.com/spring-security/jwt-role-based-authorization
-  * https://www.baeldung.com/role-and-privilege-for-spring-security-registration
-  * https://www.youtube.com/watch?v=GgVlI4zbUUI
-  * http://www.svlada.com/jwt-token-authentication-with-spring-boot/   	
-  * https://stackoverflow.com/questions/43253707/spring-boot-how-make-a-user-role-managing-with-jwt
-  
+
 # Spring Env Configuration
+  - https://dzone.com/articles/spring-core-diving-into-the-propertyplaceholdercon
   - @Configuration
   public class SpringConfiguration{
   	@Profile("dev")
@@ -3469,6 +3464,14 @@
   	}
 }           	
 
+
+# Spring Security Role Based Method Based
+  * https://www.devglan.com/spring-security/jwt-role-based-authorization
+  * https://www.baeldung.com/role-and-privilege-for-spring-security-registration
+  * https://www.youtube.com/watch?v=GgVlI4zbUUI
+  * http://www.svlada.com/jwt-token-authentication-with-spring-boot/   	
+  * https://stackoverflow.com/questions/43253707/spring-boot-how-make-a-user-role-managing-with-jwt
+  
 # setting authorities for role base access .
   * need to set the authorithies after validation of token in authorization file
   - 	// 4. Validate the token
