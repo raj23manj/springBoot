@@ -3515,3 +3515,7 @@
         httpServletResponse.setHeader(StringConstants.LOCATION_STRING, redirectUrl);
         httpServletResponse.setStatus(302);
     } 
+    
+    
+# Custom Serializer 
+ * https://www.concretepage.com/jackson-api/jackson-custom-serializer    
