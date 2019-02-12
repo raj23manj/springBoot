@@ -3400,6 +3400,31 @@
      
      }
      
+# LogOut
+  * https://www.mkyong.com/java/how-to-get-http-request-header-in-java/
+  - @GetMapping(value = "/logOut")
+    @ResponseBody
+    public void logout(HttpServletRequest request, HttpServletResponse httpServletResponse) {
+        LOGGER.debug("inside logout");
+        String queryString = request.getQueryString();
+        String jwtToken = userService.getAnETokenFromDB(queryString);
+        
+        String[] queryString = (request.getHeader("Authorization").split(" "));
+        String jwtToken = userService.getAnETokenFromDB(queryString[1]);
+        
+        String callBackURL = externalURLs.aneCallBackUrl;
+        if(jwtToken.isEmpty()) {
+            LOGGER.debug("user not found in DB");
+        }
+        userService.deleteByToken(jwtToken);
+        LOGGER.debug(callBackURL);
+        String token = generateToken.createToken(callBackURL);
+        String redirectUrl = externalURLs.aneLogoutUrl + token;
+        LOGGER.debug("logout redirect url {}", redirectUrl);
+        httpServletResponse.setHeader(StringConstants.LOCATION_STRING, redirectUrl);
+        httpServletResponse.setStatus(302);
+    }     
+     
 # Logger
   * LoggerFactory.getLogger(JwtTokenAuthenticationFilter.class);      
   
