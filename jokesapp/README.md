@@ -3155,6 +3155,7 @@
   * Background Jobs
   * Okta(saml, oauth)
   * Microservices Zipkin authentication
+ 
   
 # Angular Deployment s3
   * https://theinfogrid.com/tech/developers/angular/automate-deployment-of-angular-apps-using-aws-codebuild/
