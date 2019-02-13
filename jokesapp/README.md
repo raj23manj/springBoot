@@ -3080,7 +3080,7 @@
       * Publish/Subscribe pattern
               
     # SOLID
-      *  https://springframework.guru/principles-of-object-oriented-design/
+      * https://springframework.guru/principles-of-object-oriented-design/
       * Section 3, 48-53
       
     # SAML
@@ -3549,3 +3549,6 @@
 # Microservices
   * https://dzone.com/users/230813/sivaprasad.html 
   * https://developer.okta.com/blog/2017/06/15/build-microservices-architecture-spring-boot
+  
+# Jackson
+  * https://www.youtube.com/watch?v=hq8Im5FRMgM&index=8&list=PLjXUjSTUHs0TQl-W-B5u-d6acs23Y-1te  
