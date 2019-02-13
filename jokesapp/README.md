@@ -1914,7 +1914,7 @@
   * mvn install (to build and compile )  
   * mvn spring-boot:run (this command will the app in apache tomcat servlet container like rails s)   
     
-# Running compiler jar files from other Location
+# Running compiler jar/war files from other Location
   * java -jar mobile-app-ws-0.0.1-SNAPSHOT.jar 
   
 # Archiving Applications as Jar/War
@@ -2642,7 +2642,7 @@
     
   # immutable classes
     * https://www.geeksforgeeks.org/create-immutable-class-java/
-    * mmutable class means that once an object is created, we cannot change its content. In Java, all the wrapper classes (like String, Boolean, Byte, Short) and String class is immutable. We can create our own immutable class as well.
+    * immutable class means that once an object is created, we cannot change its content. In Java, all the wrapper classes (like String, Boolean, Byte, Short) and String class is immutable. We can create our own immutable class as well.
       
     * Following are the requirements:
       • Class must be declared as final (So that child classes can’t be created)
@@ -3544,3 +3544,7 @@
     
 # Custom Serializer 
  * https://www.concretepage.com/jackson-api/jackson-custom-serializer    
+ 
+# Microservices
+  * https://dzone.com/users/230813/sivaprasad.html 
+  * https://developer.okta.com/blog/2017/06/15/build-microservices-architecture-spring-boot
