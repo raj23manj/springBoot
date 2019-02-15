@@ -3557,4 +3557,10 @@
     - https://stackoverflow.com/questions/38279782/what-is-the-json-view-class-in-jackson-and-how-does-it-work
     - http://techtraits.com/programming/2011/08/13/implementing-jackson-views.html
     - https://grokonez.com/json/use-jsonview-serializede-serialize-customize-json-format-java-object => (what i want)
+    - https://stackoverflow.com/questions/23260464/how-to-serialize-using-jsonview-with-nested-objects
+    - http://www.studytrails.com/java/json/java-jackson-serialization-list/
+    - http://www.makeinjava.com/convert-list-objects-tofrom-json-java-jackson-objectmapper-example/
+    
+    * list of objects readValue
+      - https://stackoverflow.com/questions/6349421/how-to-use-jackson-to-deserialise-an-array-of-objects
   
