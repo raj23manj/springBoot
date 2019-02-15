@@ -3552,3 +3552,9 @@
   
 # Jackson
   * https://www.youtube.com/watch?v=hq8Im5FRMgM&index=8&list=PLjXUjSTUHs0TQl-W-B5u-d6acs23Y-1te  
+  * Json View to filter attributes:
+    - https://medium.com/@_neha_kumari/jackson-jsonview-for-serialising-and-deserialising-object-a54005c875c0 
+    - https://stackoverflow.com/questions/38279782/what-is-the-json-view-class-in-jackson-and-how-does-it-work
+    - http://techtraits.com/programming/2011/08/13/implementing-jackson-views.html
+    - https://grokonez.com/json/use-jsonview-serializede-serialize-customize-json-format-java-object => (what i want)
+  
