@@ -3564,3 +3564,8 @@
     * list of objects readValue
       - https://stackoverflow.com/questions/6349421/how-to-use-jackson-to-deserialise-an-array-of-objects
   
+  * https://www.baeldung.com/jackson-field-serializable-deserializable-or-not => making fields private and using setters and getters    
+      
+# Ubuntu Server Setup 
+  * https://www.youtube.com/watch?v=26ipmonPmRw      
+  
