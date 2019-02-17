@@ -3565,7 +3565,12 @@
       - https://stackoverflow.com/questions/6349421/how-to-use-jackson-to-deserialise-an-array-of-objects
   
   * https://www.baeldung.com/jackson-field-serializable-deserializable-or-not => making fields private and using setters and getters    
+  
+  * Issue with bidirectional
+    - https://stackoverflow.com/questions/22615317/serialize-bi-directional-jpa-entities-to-json-with-jackson
+    - https://stackoverflow.com/questions/53863697/jsongenerationexception-when-serializing-nested-object-using-custom-serializer-i
       
 # Ubuntu Server Setup 
   * https://www.youtube.com/watch?v=26ipmonPmRw      
+  
   
