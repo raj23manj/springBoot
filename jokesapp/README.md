@@ -3573,6 +3573,7 @@
   * Issue with bidirectional
     - https://stackoverflow.com/questions/22615317/serialize-bi-directional-jpa-entities-to-json-with-jackson
     - https://stackoverflow.com/questions/53863697/jsongenerationexception-when-serializing-nested-object-using-custom-serializer-i
+    - https://grokonez.com/json/resolve-json-infinite-recursion-problems-working-jackson => good one
       
 # Ubuntu Server Setup 
   * https://www.youtube.com/watch?v=26ipmonPmRw      
