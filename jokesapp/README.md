@@ -3207,22 +3207,25 @@
     
   * Pipeline
     * https://www.youtube.com/watch?v=s73nhwYBtzE  
+    * https://medium.com/@weblab_tech/how-to-publish-artifacts-in-jenkins-f021b17fde71
   
   * Deploy to Tomcat
     * https://www.youtube.com/watch?v=OwTv1aN5BUo 
     * https://www.youtube.com/watch?v=j5D8SLxn6YA
+    * https://www.youtube.com/watch?v=jfM1GiTOHSc
     
   * Install jenkins as java
     * https://www.blazemeter.com/blog/how-to-install-jenkins-on-the-apache-tomcat-server  
      
-
-# Deployment
+  # Deployment
   * https://www.baeldung.com/tomcat-deploy-war  
   * https://stackoverflow.com/questions/46341886/deploy-jar-file-using-jenkins
   * https://www.youtube.com/watch?v=uCleiJw40Kw
   * https://www.youtube.com/channel/UCdpxocfI1dJ7J7eOr3dxQlA
   * https://www.youtube.com/watch?v=a_AOTn7FQUM => ssh/jenkins
   * https://www.youtube.com/watch?v=l9lSW5sQbvc  => telugu
+  * https://wiki.jenkins.io/display/JENKINS/Publish+Over+SSH+Plugin
+  
   
     
 # Github as Maven Repo
@@ -3576,4 +3579,55 @@
   
 # Tomcat Paths
   * /usr/share/tomcat8 
-  * /var/lib/tomcat8 => logs, cache   
+  * /var/lib/tomcat8 => logs, cache  
+  
+# Jenkins
+  * normal project, need to try with maven
+  
+  * Created a sub-directory
+    * under source code management
+      * git 
+        * add additional behaviours
+          *  checkout a subdirectort
+          
+    name of directory => applicationname-stage/applicationName
+    
+  * pre-build 
+    cd applicationname-stage
+    zip -r applicationName.zip applicationName
+    mv applicationName.zip ../
+    ls -lrth
+    
+  * post build
+    * send build artifact over ssh
+    * source file name: *.zip
+    
+    * this file will be sent over
+    * then your commands
+      pwd
+      cd /opt/builds/git
+      mv applicationName.zip applicationname-stage/
+      cd applicationname-stage
+      pwd 
+      ls -lrt
+      
+      sudo rm -rf applicationName
+      
+      unzip applicationName.zip
+      
+      sudo rm applicationName.zip
+      ls -rlt
+      
+      cd applicationName/
+      mvn clean package -P QA
+      
+      sudo systemctl stop tomcat8
+      
+      sudo cp applicationNameAPI-0.0.1-SNAPSHOT.war /var/lib/tomcat8/webapps/applicationNameAPI.war
+      
+      sudo systemctl start tomcat8
+      sudo systemctl status tomcat8
+      
+      cd /var/lib/tomcat8/webapps
+      
+      ls -lrth    
