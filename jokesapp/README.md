@@ -3161,9 +3161,6 @@
   * https://theinfogrid.com/tech/developers/angular/automate-deployment-of-angular-apps-using-aws-codebuild/
   * https://medium.com/@ibliskavka/aws-angular-stack-automation-b45767bda2ec
   
-# Jenkins
-  * https://www.youtube.com/watch?v=OwTv1aN5BUo  
-
 # Data Structures
   * when to use what
     * http://careerdrill.com/blog/coding-interview/choosing-the-right-data-structure-to-solve-problems/  
@@ -3213,21 +3210,25 @@
   
   * Deploy to Tomcat
     * https://www.youtube.com/watch?v=OwTv1aN5BUo 
+    * https://www.youtube.com/watch?v=j5D8SLxn6YA
     
   * Install jenkins as java
     * https://www.blazemeter.com/blog/how-to-install-jenkins-on-the-apache-tomcat-server  
-    
-# Github as Maven Repo
-  * https://dzone.com/articles/using-github-as-maven-repository     
-  
+     
+
 # Deployment
   * https://www.baeldung.com/tomcat-deploy-war  
   * https://stackoverflow.com/questions/46341886/deploy-jar-file-using-jenkins
   * https://www.youtube.com/watch?v=uCleiJw40Kw
   * https://www.youtube.com/channel/UCdpxocfI1dJ7J7eOr3dxQlA
-  * https://www.youtube.com/watch?v=a_AOTn7FQUM => ssh
+  * https://www.youtube.com/watch?v=a_AOTn7FQUM => ssh/jenkins
   * https://www.youtube.com/watch?v=l9lSW5sQbvc  => telugu
   
+    
+# Github as Maven Repo
+  * https://dzone.com/articles/using-github-as-maven-repository     
+  
+
 # Setup Tomcat on EC2
   * https://www.youtube.com/watch?v=m21nFreFw8A  
   
