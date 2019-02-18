@@ -3575,4 +3575,4 @@
   
 # Tomcat Paths
   * /usr/share/tomcat8 
-  * /var/lib/tomcat8 => logs, cache  
+  * /var/lib/tomcat8 => logs, cache   
