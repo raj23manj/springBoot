@@ -3573,4 +3573,6 @@
 # Ubuntu Server Setup 
   * https://www.youtube.com/watch?v=26ipmonPmRw      
   
-  
+# Tomcat Paths
+  * /usr/share/tomcat8 
+  * /var/lib/tomcat8 => logs, cache  
