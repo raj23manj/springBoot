@@ -1896,6 +1896,13 @@
     * https://howtodoinjava.com/spring-boot2/spring-boot-cache-example/
     * https://stackoverflow.com/questions/34893279/spring-data-redis-expire-key
     * https://aggarwalarpit.wordpress.com/2017/01/25/setting-ttl-for-cacheable-spring/
+    * https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+    * https://github.com/cristianprofile/spring-data-redis-lettuce/blob/master/src/main/java/com/cromero/redis/configuration/RedisConfiguration.java -> lettuce
+    * https://chartio.com/resources/tutorials/how-to-get-all-keys-in-redis/ => get keys and values in redis
+    * https://www.tutorialspoint.com/redis/keys_ttl.htm
+    * https://docs.spring.io/spring-data/redis/docs/2.2.0.M1/reference/html/#reference
+    * https://grokonez.com/spring-framework/spring-data/spring-data-redis-example-spring-boot-redis-example
+    * https://redis.io/commands/del
   
   # Connecting to multiple DB's
     * https://www.devglan.com/spring-boot/spring-boot-multiple-database-configuration
@@ -1951,7 +1958,8 @@
     * Faster Release cycles
     
   * Zuul Gateway
-    - https://howtodoinjava.com/spring-cloud/spring-cloud-api-gateway-zuul/  
+    - https://howtodoinjava.com/spring-cloud/spring-cloud-api-gateway-zuul/
+    - https://www.xoriant.com/blog/product-engineering/microservices-security-using-jwt-authentication-gateway.html  
   
   # Spring Cloud(Finchley version)
   
@@ -1959,7 +1967,7 @@
      
     * https://stackoverflow.com/questions/42238335/when-to-configure-zuul-routes 
     
-    * https://medium.com/omarelgabrys-blog/microservices-with-spring-boot-authentication-with-jwt-part-3-fafc9d7187e8
+    * https://medium.com/omarelgabrys-blog/microservices-with-spring-boot-authentication-with-jwt-part-3-fafc9d7187e8 => microservice security
     * https://developer.okta.com/blog/2018/02/13/secure-spring-microservices-with-oauth - (https://www.youtube.com/watch?v=MY5m_s_U2H4&t=3s)
     * https://www.youtube.com/watch?v=ZIAi8sGHPII
     
