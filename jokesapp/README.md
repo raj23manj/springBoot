@@ -1949,6 +1949,9 @@
     * Adaptation of new technologies and process(like node.js, kotlin etc)
     * Dynamic Scaling
     * Faster Release cycles
+    
+  * Zuul Gateway
+    - https://howtodoinjava.com/spring-cloud/spring-cloud-api-gateway-zuul/  
   
   # Spring Cloud(Finchley version)
   
@@ -3636,3 +3639,7 @@
       cd /var/lib/tomcat8/webapps
       
       ls -lrth    
+      
+      
+# Spring Boot Integrations Examples
+  * https://grokonez.com/java-integration-tutorial      
