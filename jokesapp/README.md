@@ -3205,6 +3205,10 @@
     start: brew services start jenkins
     restart: brew services restart jenkins
     
+  * How To Setup
+    - https://medium.com/@MaciejNajbar/setup-jenkins-for-private-repository-9060f54eeac9
+    - https://wiki.jenkins.io/display/JENKINS/Publish+Over+SSH+Plugin
+     
   * Pipeline
     * https://www.youtube.com/watch?v=s73nhwYBtzE  
     * https://medium.com/@weblab_tech/how-to-publish-artifacts-in-jenkins-f021b17fde71
@@ -3582,7 +3586,7 @@
   * /usr/share/tomcat8 
   * /var/lib/tomcat8 => logs, cache  
   
-# Jenkins
+# Jenkins Code Setup
   * normal project, need to try with maven
   
   * Created a sub-directory
