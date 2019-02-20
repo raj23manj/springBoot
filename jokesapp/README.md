@@ -3651,3 +3651,7 @@
       
 # Spring Boot Integrations Examples
   * https://grokonez.com/java-integration-tutorial      
+  
+# Set Env for deployment
+  * https://stackoverflow.com/questions/15814497/setting-spring-profile-variable  
+  
