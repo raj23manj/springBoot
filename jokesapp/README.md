@@ -2027,7 +2027,30 @@
           * https://www.youtube.com/watch?v=cKjgkNt-tFg 
       
       * Session
-        * https://stackoverflow.com/questions/33921375/zuul-api-gateway-authentication    
+        * https://stackoverflow.com/questions/33921375/zuul-api-gateway-authentication   
+        
+    * In Depth explanations
+      * Spring cloud config server (package => config server)
+        * Used for keeping a centralized different env properties for the applications
+        * spring-microservices => 57      
+        * spring-cloud-config-server folder
+        * https://github.com/raj23manj/spring-microservices/blob/master/git_localconfig_repo_files/limits-service.properties
+        * to make the config server to work we need to add 
+          - @EnableConfigServer
+        * we can access it from url to test  
+      
+      * Important on configurations on client service => 65
+        * need to add spring cloud config client, it will connect to the config server
+        *  based on the application name set below it will pick up the properties, and the profile
+        * when using the spring cloud config server, the client which uses it should rename the application.properties to
+          "bootstrap.properties". This file should have the name of its current application and the spring cloud config server
+          uri. The below should be present on the client service(limits service), this will call automatically 
+            - spring.cloud.config.uri=http://localhost:8888 
+              spring.application.name=limits-service
+              spring.profiles.active=qa
+        
+        * if new properties are updated and pushed to git, need to restart the services.      
+
       
 # To Access Environment(application-properties)
     @Autowired
