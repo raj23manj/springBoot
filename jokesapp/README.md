@@ -1976,11 +1976,21 @@
       
     * spring cloud netflix (Dynamic Scale up and Scale Down)
         
-      * Feign - RestFul Service Cleint, makes Easier to call REST Service using Rest Template using Proxy
+      * Feign - RestFul Service Cleint, makes Easier to call REST Service using Rest Template using Proxy => 77
         1) Used for writing easier restful clients
+        * it makes a proxy call 
+        * to enable @EnableFeignClients
+        * to interact with client
+          - @FeignClient(name="currency-exchange-service", url="localhost:8000")
+          - see currency-exchange-serivice proxy
         
-      * Ribbon - Client Side Load Balancing
-        1) Make sure Load is balanced easily
+      * Ribbon - Client Side Load Balancing => 78 & 79
+        1) Make sure Load is balanced easily, between the multiple instance of a particular service
+        * use this on the calling service 
+          - @RibbonClient(name="currency-exchange-service")
+          * Use to register all the instances of the service to be called that is running on, from the calling service
+            * eureka handles this for us, a naming server, ribbon asks eureka what all instances of currency exchange are running and it gets back, hten ribbon invokes the appropriate service 
+            - currency-exchange-service.ribbon.listOfServers=http://localhost:8000,http://localhost:8001  
         
       * Eureka - Naming Server - service discovery 
         1) all micro-services will register here, 
@@ -2040,8 +2050,8 @@
         * we can access it from url to test  
       
       * Important on configurations on client service => 65
-        * need to add spring cloud config client, it will connect to the config server
-        *  based on the application name set below it will pick up the properties, and the profile
+        * need to add spring cloud config client(for all client services), it will connect to the config server
+        * based on the application name set below it will pick up the properties, and the profile
         * when using the spring cloud config server, the client which uses it should rename the application.properties to
           "bootstrap.properties". This file should have the name of its current application and the spring cloud config server
           uri. The below should be present on the client service(limits service), this will call automatically 
