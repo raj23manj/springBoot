@@ -2049,7 +2049,7 @@
               spring.application.name=limits-service
               spring.profiles.active=qa
         
-        * if new properties are updated and pushed to git, need to restart the services.      
+        * if new properties are updated and pushed to git, need to restart the services. we can automate this      
 
       
 # To Access Environment(application-properties)
