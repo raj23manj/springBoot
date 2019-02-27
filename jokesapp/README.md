@@ -2071,24 +2071,40 @@
             }
           - pre/post/error filters
           - interception logic  
+      
+      2) Zipkin(Distibute Tracing system) & sleuth(Distibute Tracing) 
+        * add it to zuul application
+        * Consolidate all logs from all the services and put it in a rabbit mq and send it to the zipkin server 
+        
        
-      2) Sleuth(assigns Id to requests, across all services) 
-        * Spring Cloud Sleuth assigns Id to requests, and is used to trace across multiple components       
-    
-      3) Zipkin(Distibute Tracing) 
-        * Consolidate all logs at one place
-        * RABBIT_URI=amqp://localhost java -jar zipkin-server-2.11.12-exec.jar
+        * Sleuth(assigns Id to requests, across all services) 
+          * Spring Cloud Sleuth assigns Id to requests, and is used to trace across multiple components   
+          * need to add it to services and zuul app
+            - spring-cloud-starter-sleuth  
+          * to intercept all requests     
+            * create a sampler, in zuul application and the services that implements sleuth
+            - @Bean
+             	public Sampler defaultSampler() {
+             		return Sampler.ALWAYS_SAMPLE;
+             	}
+          * for one request(which might contain call to other services from one service like nested), there will be same id assigned by
+            sleuth, and it automatically takes care of it   
+          * we can check this id individually on the server logs, it is difficult to maintain hence use zipkin  	
+             	
+        * Zipkin => 93
+          * need to install rabbit mq
+          * download zipkin server
+          * localhost:9411
+          * RABBIT_URI=amqp://localhost java -jar zipkin-server-2.11.12-exec.jar    => make zipkin listen to rabbit mq
+          * used to centralize all the request with the id's assigned by sleuth to one place, a centralized dashboard  	     
                 
     * Fault Tolerance
       1) Hystrix - if a service is down, hystrix helps to configure a default response. 
       
-    * Zipkin Setup
-      1) Start them in the order - Naming Server, Distributed Tracing Server, API Gateway, Calculation Service, Exchange Service
-      
-      2) Wait for a couple of minutes
-      
-      3) Run the Service that you would want to execute! (hit hte url)
-      
+    * Microservice Setup
+      1) Start them in the order - Naming Server, Distributed Tracing Server, API Gateway, Calculation Service, Exchange Service      
+      2) Wait for a couple of minutes      
+      3) Run the Service that you would want to execute! (hit hte url)     
       4) See Zipkin 
     
     * Security   
