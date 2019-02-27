@@ -1975,6 +1975,27 @@
       and spring cloud will distibute to other microservices
       
     * spring cloud netflix (Dynamic Scale up and Scale Down)
+    
+      * Spring cloud config server (package => config server)
+          * Used for keeping a centralized different env properties for the applications
+          * spring-microservices => 57      
+          * spring-cloud-config-server folder
+          * https://github.com/raj23manj/spring-microservices/blob/master/git_localconfig_repo_files/limits-service.properties
+          * to make the config server to work we need to add 
+            - @EnableConfigServer
+          * we can access it from url to test  
+        
+        * Important on configurations on client service => 65
+          * need to add spring cloud config client(for all client services), it will connect to the config server
+          * based on the application name set below it will pick up the properties, and the profile
+          * when using the spring cloud config server, the client which uses it should rename the application.properties to
+            "bootstrap.properties". This file should have the name of its current application and the spring cloud config server
+            uri. The below should be present on the client service(limits service), this will call automatically 
+              - spring.cloud.config.uri=http://localhost:8888 
+                spring.application.name=limits-service
+                spring.profiles.active=qa
+          
+          * if new properties are updated and pushed to git, need to restart the services. we can automate this   
         
       * Feign - RestFul Service Cleint, makes Easier to call REST Service using Rest Template using Proxy => 77
         1) Used for writing easier restful clients
@@ -1986,17 +2007,43 @@
         
       * Ribbon - Client Side Load Balancing => 78 & 79
         1) Make sure Load is balanced easily, between the multiple instance of a particular service
+        * in pom set spring-cloud-starter-netflix-ribbon in the service client which (currency-conversion-service)
         * use this on the calling service 
           - @RibbonClient(name="currency-exchange-service")
           * Use to register all the instances of the service to be called that is running on, from the calling service
             * eureka handles this for us, a naming server, ribbon asks eureka what all instances of currency exchange are running and it gets back, hten ribbon invokes the appropriate service 
             - currency-exchange-service.ribbon.listOfServers=http://localhost:8000,http://localhost:8001  
         
-      * Eureka - Naming Server - service discovery 
+      * Eureka - Naming Server - service discovery & service registration => 82
         1) all micro-services will register here, 
-        2) service discovery - naming service will provide urls of current instance to asking microservice  
+        2) service discovery - naming service will provide urls of current instance to asking microservice 
+        * Things to do in a service client that want's to register to eureka
+            * need to add in pom 
+              - spring-cloud-starter-netflix-eureka-client
+            * enable the discovery client 
+              - @EnableDiscoveryClient  
+            * using this in the service that want's to register with the naming server
+              - eureka.client.service-url.default-zone=http://localhost:8761/eureka 
+              
+            * Distributing calls using eureka & ribbon => 84
+              * eureka handles this for us, a naming server, ribbon asks eureka what all instances of currency exchange are running and it gets back, hten ribbon invokes the appropriate service 
+              - #currency-exchange-service.ribbon.listOfServers=http://localhost:8000,http://localhost:8001   
+              - for registration, it uses the application name we specify during registration with eureka "spring.application.name=currency-exchange-service"
+                and use this same "spring.application.name" in the feign and ribbon to discover it. 
+                
+                - @FeignClient(name="currency-exchange-service") 
+                - @RibbonClient(name="currency-exchange-service")
         
-    * Visibilty And Monitoring
+        * Eureka application setup
+          - eureka server
+          - config client => to have configuration in config server
+          - @EnableEurekaServer
+          * in application-properties
+            - spring.application.name=netflix-eureka-naming-server
+            - eureka.client.register-with-eureka=false => to avoid the this application to register itself
+            - eureka.client.fetch-registry=false => to avoid fetching a registry
+        
+    * Visibilty, Monitoring, Gateway
       1) Netflix API Gateway (Zuul) 
         * common functionalities like logging, security etc across microservices can be done using this
         * Rate Litmis(no of requests per hour or day), fault tolerant(if service goes down, should send message)
@@ -2039,27 +2086,7 @@
       * Session
         * https://stackoverflow.com/questions/33921375/zuul-api-gateway-authentication   
         
-    * In Depth explanations
-      * Spring cloud config server (package => config server)
-        * Used for keeping a centralized different env properties for the applications
-        * spring-microservices => 57      
-        * spring-cloud-config-server folder
-        * https://github.com/raj23manj/spring-microservices/blob/master/git_localconfig_repo_files/limits-service.properties
-        * to make the config server to work we need to add 
-          - @EnableConfigServer
-        * we can access it from url to test  
-      
-      * Important on configurations on client service => 65
-        * need to add spring cloud config client(for all client services), it will connect to the config server
-        * based on the application name set below it will pick up the properties, and the profile
-        * when using the spring cloud config server, the client which uses it should rename the application.properties to
-          "bootstrap.properties". This file should have the name of its current application and the spring cloud config server
-          uri. The below should be present on the client service(limits service), this will call automatically 
-            - spring.cloud.config.uri=http://localhost:8888 
-              spring.application.name=limits-service
-              spring.profiles.active=qa
-        
-        * if new properties are updated and pushed to git, need to restart the services. we can automate this      
+         
 
       
 # To Access Environment(application-properties)
