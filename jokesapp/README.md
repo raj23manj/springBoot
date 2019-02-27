@@ -2020,7 +2020,7 @@
         * After setting up everything need to restart all services and eureka server and wait for 60 secs
         * Things to do in a service client that want's to register to eureka
             * need to add in pom 
-              - spring-cloud-starter-netflix-eureka-client
+              - spring-cloud-starter-netflix-eureka-client/eureka discovery
             * enable the discovery client 
               - @EnableDiscoveryClient  
             * using this in the service that want's to register with the naming server
@@ -2051,6 +2051,26 @@
         * Service Aggregation, an external call may many calls for one functionality, and it may contain many calls, we
           need toaggregate it 
         * can be used for server side load balancing  
+        
+        * Setup Zuul Server => 87, 88
+          - zuul, eureka discovery
+          - @EnableZuulProxy
+          
+        * Url Routing wihtout zuul routes setup using application name => 89
+          - http://localhost:8765/{application-name}/{uri}  
+          
+        * For Feign interaction with other service, instead of doing it direcltly we need to do via zuul
+          - remove this @FeignClient(name="currency-exchange-service")  
+          - @FeignClient(name="netflix-zuul-api-gateway-server") // feign will interact with the zuul server and get the api from naming server  
+            @GetMapping("/currency-exchange-service/currency-exchange/from/{from}/to/{to}")
+        
+        * Logging via zuul
+          * log requests going through zuul  
+          - https://github.com/raj23manj/spring-microservices/blob/master/netflix-zuul-api-gateway-server/src/main/java/com/in28minutes/microservices/netflixzuulapigatewayserver/ZuulLoggingFilter.java
+          - public class ZuulLoggingFilter extends ZuulFilter{ 
+            }
+          - pre/post/error filters
+          - interception logic  
        
       2) Sleuth(assigns Id to requests, across all services) 
         * Spring Cloud Sleuth assigns Id to requests, and is used to trace across multiple components       
