@@ -2017,6 +2017,7 @@
       * Eureka - Naming Server - service discovery & service registration => 82
         1) all micro-services will register here, 
         2) service discovery - naming service will provide urls of current instance to asking microservice 
+        * After setting up everything need to restart all services and eureka server and wait for 60 secs
         * Things to do in a service client that want's to register to eureka
             * need to add in pom 
               - spring-cloud-starter-netflix-eureka-client
