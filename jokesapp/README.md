@@ -2080,7 +2080,7 @@
       2) Zipkin(Distibute Tracing system) & sleuth(Distibute Tracing) 
         * add it to zuul application
         * Consolidate all logs from all the services and put it in a rabbit mq and send it to the zipkin server 
-        
+        * https://dzone.com/articles/spring-cloud-amp-spring-bootimplementing-zipkin-se
        
         * Sleuth(assigns Id to requests, across all services) 
           * Spring Cloud Sleuth assigns Id to requests, and is used to trace across multiple components   
@@ -2125,6 +2125,8 @@
         * once we add all the right dependencies, spring will auto configure all for us, seeing an rabbit-mq dependency in the class path, it will automatically configure    
                     
     * Fault Tolerance => 103
+      - https://www.baeldung.com/spring-cloud-netflix-hystrix
+      - https://howtodoinjava.com/spring-cloud/spring-hystrix-circuit-breaker-tutorial/
       1) Hystrix - if a service is down, hystrix helps to configure a default response. 
       * if the service is down it need's respond back to the other service that it is down so that the other service which is dependent on it
         can handle it
