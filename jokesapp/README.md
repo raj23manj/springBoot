@@ -2117,6 +2117,12 @@
       * use "spring-rabbit" to connect the services to rabbit mq
       * diable the security for actuators
       * hit the url "/actuator/bus-refresh" => in this case on limits service, this will refresh all instances of limits service
+      
+      * how it works
+        * on the start-up of the services all the instace's register with the rabbit-mq bus
+        * if there is a chnage in the config server, and hit the refresh url on any one of the instances will create a event to refresh other instances on the cloud
+          bus, and the cloud bus will propogate this to all the instances
+        * once we add all the right dependencies, spring will auto configure all for us, seeing an rabbit-mq dependency in the class path, it will automatically configure    
                     
     * Fault Tolerance
       1) Hystrix - if a service is down, hystrix helps to configure a default response. 
