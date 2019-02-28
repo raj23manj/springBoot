@@ -1996,9 +1996,11 @@
                 spring.profiles.active=qa
           
           * if new properties are updated and pushed to git, need to restart the services. we can automate this 
-          * there is a refresh link to do, in the service which uses config server like limits service, need actuator => 100
+          * there is a refresh link to do without restarting service, in the service which uses config server like limits service, need actuator => 100
             - disable the security on the actuators end-points
             - localhost:8080/actuator/refresh 
+          * if multiple instances of the service are running, then we need to indivudually hit the url one by one, to avoid this and make one call
+            so that all instances get refreshed, we need to use spring-cloud-bus  
         
       * Feign - RestFul Service Cleint, makes Easier to call REST Service using Rest Template using Proxy => 77
         1) Used for writing easier restful clients
@@ -2106,7 +2108,16 @@
             - spring-cloud-starter-sleuth-zipkin => used for giving sleuth id's in the format zipkin accepts	     
             - spring-cloud-bus-amqp(for old version of spring boot) => spring-rabbit(new version of spring boot)
               * https://www.udemy.com/microservices-with-spring-boot-and-spring-cloud/learn/v4/t/lecture/12451184?start=0
-                
+              
+    * Spring-Cloud-Bus => 102
+      * we can use rabbit mq, kafka multiple options available
+      * if multiple instances of the service are running, then we need to indivudually hit the url one by one, to avoid this and make one call
+        so that all instances get refreshed, we need to use spring-cloud-bus     
+      * issue with finchely implementing with spring boot 2.0.2+ => 101
+      * use "spring-rabbit" to connect the services to rabbit mq
+      * diable the security for actuators
+      * hit the url "/actuator/bus-refresh" => in this case on limits service, this will refresh all instances of limits service
+                    
     * Fault Tolerance
       1) Hystrix - if a service is down, hystrix helps to configure a default response. 
       
