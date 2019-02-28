@@ -2124,8 +2124,16 @@
           bus, and the cloud bus will propogate this to all the instances
         * once we add all the right dependencies, spring will auto configure all for us, seeing an rabbit-mq dependency in the class path, it will automatically configure    
                     
-    * Fault Tolerance
+    * Fault Tolerance => 103
       1) Hystrix - if a service is down, hystrix helps to configure a default response. 
+      * if the service is down it need's respond back to the other service that it is down so that the other service which is dependent on it
+        can handle it
+      * need to add this to service
+        - spring-cloud-starter-netflix-hystrix
+        - @EnableHystrix
+        * and on all the controller method need to add
+          - @HystrixCommand(fallbackMethod="fallbackRetrieveConfiguration")
+        
       
     * Microservice Setup
       1) Start them in the order - Naming Server, Distributed Tracing Server, API Gateway, Calculation Service, Exchange Service      
