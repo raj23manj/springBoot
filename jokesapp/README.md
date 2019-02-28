@@ -1995,7 +1995,10 @@
                 spring.application.name=limits-service
                 spring.profiles.active=qa
           
-          * if new properties are updated and pushed to git, need to restart the services. we can automate this   
+          * if new properties are updated and pushed to git, need to restart the services. we can automate this 
+          * there is a refresh link to do, in the service which uses config server like limits service, need actuator => 100
+            - disable the security on the actuators end-points
+            - localhost:8080/actuator/refresh 
         
       * Feign - RestFul Service Cleint, makes Easier to call REST Service using Rest Template using Proxy => 77
         1) Used for writing easier restful clients
@@ -2093,10 +2096,16 @@
              	
         * Zipkin => 93
           * need to install rabbit mq
-          * download zipkin server
+          * download zipkin server, and make zipkin listen to rabbit mq
           * localhost:9411
           * RABBIT_URI=amqp://localhost java -jar zipkin-server-2.11.12-exec.jar    => make zipkin listen to rabbit mq
-          * used to centralize all the request with the id's assigned by sleuth to one place, a centralized dashboard  	     
+          * used to centralize all the request with the id's assigned by sleuth to one place, a centralized dashboard  
+          
+          * now make the services to put the messages to rabbit mq => 98
+            * we need to add dependencies to the services
+            - spring-cloud-starter-sleuth-zipkin => used for giving sleuth id's in the format zipkin accepts	     
+            - spring-cloud-bus-amqp(for old version of spring boot) => spring-rabbit(new version of spring boot)
+              * https://www.udemy.com/microservices-with-spring-boot-and-spring-cloud/learn/v4/t/lecture/12451184?start=0
                 
     * Fault Tolerance
       1) Hystrix - if a service is down, hystrix helps to configure a default response. 
@@ -3752,3 +3761,11 @@
 # Set Env for deployment
   * https://stackoverflow.com/questions/15814497/setting-spring-profile-variable  
   
+# Refractoring
+  * https://refactoring.com/catalog/
+
+# Principles
+  * http://wiki.c2.com/?YouArentGonnaNeedIt
+  
+# Rest Response Codes
+  * https://restfulapi.net/http-status-codes/      
