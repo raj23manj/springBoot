@@ -2159,7 +2159,8 @@
       * Session
         * https://stackoverflow.com/questions/33921375/zuul-api-gateway-authentication   
         
-         
+# Micro Services 2.1.1
+  * Setting up all services first => section 3    
 
       
 # To Access Environment(application-properties)
@@ -3800,4 +3801,6 @@
 # Demo Queries
 public class RunFormQueries {
     public static final String UPDATE_RUN_CALCULATIONS  = "UPDATE process_run SET run_name = :run_name, notes = :notes, process_state_id = :process_state_id WHERE id = :run_id";        
-  }  
+  } 
+  
+   
