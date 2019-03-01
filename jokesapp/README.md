@@ -3795,4 +3795,9 @@
   * http://wiki.c2.com/?YouArentGonnaNeedIt
   
 # Rest Response Codes
-  * https://restfulapi.net/http-status-codes/      
+  * https://restfulapi.net/http-status-codes/
+  
+# Demo Queries
+public class RunFormQueries {
+    public static final String UPDATE_RUN_CALCULATIONS  = "UPDATE process_run SET run_name = :run_name, notes = :notes, process_state_id = :process_state_id WHERE id = :run_id";        
+  }  
