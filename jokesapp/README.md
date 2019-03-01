@@ -50,6 +50,7 @@
   * Types: 
     * Constructor Injection
     * Setter Injection    
+    * Property Injection
 
 # Bean xml configuration => spring-demo-one
   * need to create .xml files and create beans there
@@ -102,14 +103,14 @@
     - A single Instance per Global Session. Typically used in a portlet Context. only valid in the context of web-aware Spring Application-Context     
     - Not Used Much, legacy code.
   * Application
-    - bean is scoped to the lifecycle of Servlet Context.  only valid in the context os web-aware 
+    - bean is scoped to the lifecycle of Servlet Context. only valid in the context of web-aware 
   * WebSocket
     - Scopes a Single Bean definition to the lifecycle of a WebSocket. Only Valid in the Context of web-aware Spring Application-Context 
   * Custom Scope 
     - Spring Scopes are Extensible, and we can define our own Scope by implementing spring's 'Scope' Interface
     
   * Note
-    - We cannot override the built in singelton and prototype scopes    
+    - We cannot override the built in singleton and prototype scopes    
     
 # Bean Life Cycles
   *  XML:
@@ -152,12 +153,12 @@
         * is called just before the bean is destroyed  
         
     * Bean PostProcessors
-      * Gives us a means to tap into the Spring COntext life cucle and interact with the beans as they are processed
+      * Gives us a means to tap into the Spring COntext life cycle and interact with the beans as they are processed
       
       * postProcessBeforeInitialization 
-        * called before bean initaliztion method
+        * called before bean initialization method
       
-      * postProcessAfterInitializtion
+      * postProcessAfterInitialization
         * called after bean initialization 
         
     * https://github.com/raj23manj/springBoot/blob/master/di-demo/src/main/java/guru/springframework/didemo/CustomBeanPostProcessor.java       
@@ -180,7 +181,7 @@
      
 # Spring Configuration with Java Annotations & DI
 
-  * DI via interface is highly preferred thank Concrete Classes(using the class it self directly)
+  * DI via interface is highly preferred than Concrete Classes(using the class it self directly)
     * Allows runtime to decide implementation to inject
     * follows interface Segregation principle of SOLID
     * Also makes code testable
@@ -200,7 +201,7 @@
        bean only defines one constructor to begin with. However, if several constructors are available, at least one 
        must be annotated to teach the container which one to use.  
         	
-    * Setter Injection or as nor mal method
+    * Setter Injection or as normal method
      -  public class TennisCoach {
             private FortuneService fortuneService;
             // constructor
@@ -255,7 +256,7 @@
            
            In general, when using Annotations, for the default bean name, Spring uses the following rule.
            
-           If the annotation's value doesn't indicate a bean name, an appropriate name will be built based on the short name of the class (with the first letter lower-cased).
+           If the annotation's value dosen't indicate a bean name, an appropriate name will be built based on the short name of the class (with the first letter lower-cased).
            
            For example:
            
@@ -496,7 +497,7 @@
     
     
 # Controller
-  * @Restcontroller(with response body for rest) or @Controller 
+  * @RestController(with response body for rest) or @Controller 
   * @RequestMapping for url mapping which is general, need to mention get, put, delete, post
   * @GetMapping, @PostMapping
     
@@ -1067,7 +1068,7 @@
     * addition to spring 5, it returns an optional instead of null
     * these dynamic queries like in rails, here they are called JPA Query methods
     * jpa takes care of all implementation  
-    * note here no Stereotype declarations for this like @ component, @service ...ect JPA implements it so it is avaliable in the
+    * note here no Stereotype declarations for this like @component, @service ...ect JPA implements it so it is avaliable in the
       Bean Container
     * JPA has @PrePersist and @PreUpdate for automatic update timestamp properties for audit purpose, 
     * same thing in hibernate has @CreationTimestamp and @UpdateTimestamp => (section 8, 136 10:44)
@@ -1222,7 +1223,7 @@
         private Customer customer;  
              
     * Cascading => 108
-      * PERSIST => Vave/Insert Child also when parent is is Saved
+      * PERSIST => Save/Insert Child also when parent is is Saved
       * MERGE => Update/Insert Child also when parent is Saved/Updated
       * REMOVE => Delete Child also when parent is Deleted  
       * REFRESH => Refresh the parent object will automatically refresh child aobject
@@ -1230,7 +1231,7 @@
       * ALL => DOES ALL of the above
       
     * LAZY & EAGER Loading (see from 111 to 115)
-      * Earger => there is a join query and mapped to parent and chile objects. Json will be created automatically
+      * Earger => there is a join query and mapped to parent and child objects. Json will be created automatically
       * https://www.baeldung.com/jackson-bidirectional-relationships-and-infinite-recursion (jackson mapping)
     
     * MantToMany -> Section 14 -> associations 
@@ -1302,7 +1303,6 @@
             * in the same case mentioned above, when one user is updating a lock is added. When the other user makes a request see's the soft lock in cache
               goes to the DB directly and fetches
             
-          
           * TRANSACTIONAL    
             * Rarely used
             * Used for distributed caching
@@ -2064,7 +2064,7 @@
         * Url Routing wihtout zuul routes setup using application name => 89
           - http://localhost:8765/{application-name}/{uri}  
           
-        * For Feign interaction with other service, instead of doing it direcltly we need to do via zuul
+        * For Feign interaction with other service, instead of doing it directly we need to do via zuul
           - remove this @FeignClient(name="currency-exchange-service")  
           - @FeignClient(name="netflix-zuul-api-gateway-server") // feign will interact with the zuul server and get the api from naming server  
             @GetMapping("/currency-exchange-service/currency-exchange/from/{from}/to/{to}")
@@ -2111,7 +2111,7 @@
               
     * Spring-Cloud-Bus => 102
       * we can use rabbit mq, kafka multiple options available
-      * if multiple instances of the service are running, then we need to indivudually hit the url one by one, to avoid this and make one call
+      * if multiple instances of the service are running, then we need to individually hit the url one by one, to avoid this and make one call
         so that all instances get refreshed, we need to use spring-cloud-bus     
       * issue with finchely implementing with spring boot 2.0.2+ => 101
       * use "spring-rabbit" to connect the services to rabbit mq
