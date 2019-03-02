@@ -3803,4 +3803,12 @@ public class RunFormQueries {
     public static final String UPDATE_RUN_CALCULATIONS  = "UPDATE process_run SET run_name = :run_name, notes = :notes, process_state_id = :process_state_id WHERE id = :run_id";        
   } 
   
+# New Project Setup
+  * new packages:
+    * models
+    * dao
+    * controllers
+    * services   
+      * service-interface
+      * service impl of the interface
    
