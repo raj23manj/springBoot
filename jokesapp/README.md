@@ -2760,6 +2760,8 @@
     * https://www.youtube.com/watch?v=ghswNpRv2t0
     * https://www.youtube.com/watch?v=V-vDUbK6wm0
     
+    * https://www.youtube.com/watch?v=Nr56SlbMed4 => good
+    
     * In HashMap and HashSet there will be no duplicates(key;s in HashMapn and value's in HashSet). Two different objects
       can have same hashing value and be put in the same bucket, when comparing it uses equalTo() method, when object same
       values are present with same hashcode it first checks with equals then rejects
