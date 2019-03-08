@@ -1038,6 +1038,9 @@
   * https://www.baeldung.com/spring-profiles
   * http://www.java2novice.com/spring-boot/profile-based-properties/
   
+# Setting Spring Profiles
+  *  https://stackoverflow.com/questions/22757318/different-property-variable-for-local-and-prod-environment-spring 
+  
 # JPA
   * Hibernate, OpenJPA are implementers of this 
   * Set of specification to be implemented
@@ -2161,7 +2164,9 @@
         * https://stackoverflow.com/questions/33921375/zuul-api-gateway-authentication   
         
 # Micro Services 2.1.1
-  * Setting up all services first => section 3    
+  * Setting up all services first => section 3 
+  
+  * Configure git to hold the properties     
 
       
 # To Access Environment(application-properties)
