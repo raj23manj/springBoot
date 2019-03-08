@@ -2320,7 +2320,7 @@
         * State => variables
         * Behaviours => methods 
                
-    *  Inhertance(interfaces => default(like instance methods) and static methods)
+    *  Inheritance(interfaces => default(like instance methods) and static methods)
       * https://medium.com/@martinomburajr/java-8-default-static-interface-methods-similar-but-different-a8dcc3460280
       * Overloading
         - Compile time polymorphism
@@ -2441,7 +2441,7 @@
     * Nesting classes
     * 4 types 
       * Static Nested classes 
-        * Maninly used to associate a class with its outer class
+        * Mainly used to associate a class with its outer class
         * Packaged inside the outer class
         * this class cannot access non static members of it's outer class without creating an instance of it
         
@@ -2574,7 +2574,7 @@
   # Abstract Class
     * when classes share same functionality and needs to be shared.
     * this class cannot be instantiated
-    * can have abstract methods, wihtout implementations
+    * can have abstract methods, without implementations
     * the subclass usually provides implementations for all of the abstract methods in its parent class. However, 
       if it does not, then the subclass must also be declared abstract 
     * we can declare fields that are not static and final
@@ -2617,7 +2617,7 @@
       
     * Diffrernce between U and <U> using in a method
       -  public class Box<T> {
-             // U here mean's retuyn type
+             // U here mean's return type
              public U returnTypeValue() { => public String/Integer/Object returnTypeValue() {}
              }
              
@@ -2626,19 +2626,19 @@
               }
       } 
       
-    * Bounded Type Parameter using concept of inhertance
+    * Bounded Type Parameter using concept of inheritance
       * Upper Bound and Lower Bound
         * https://stackoverflow.com/questions/19795709/understanding-upper-and-lower-bounds-on-in-java-generics   
       
       - public class Box<T> {
             // we will passing a Generic Type here as a parameter, apart from the one we are passing to the class
-            // U will be any Class that extends of inherits from Number classs. String won't work here
+            // U will be any Class that extends of inherits from Number class. String won't work here
             public <U extends Number> String returnTypeValue(U u) { 
             }
         }
         
       - public class Box<T> {             
-              // custom class will be lowest in the inheritance chain, so anyting from parent till CustomClass only allowed
+              // custom class will be lowest in the inheritance chain, so anything from parent till CustomClass only allowed
               public <U super CustomClass> String returnTypeValue(U u) { 
               }
           } 
