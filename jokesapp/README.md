@@ -89,7 +89,7 @@
   * Singleton Scope
     - Default is singleton 
     - only one instance of the bean is created and the same instance will be shared with all other's. It will be cached 
-    - Be careful of making static variables and final vaiables, it will lead to race condition. Synchronisation needs to be applied which costs in performance      
+    - Be careful of making static variables and final variables, it will lead to race condition. Synchronisation needs to be applied which costs in performance      
   * Prototype Scope
     - new instance will be created every time
   * Request Scope
@@ -665,7 +665,7 @@
       * supports all join points
       * works on any pojo not just beans from app context
       * Faster performance
-      * compilr time weaving requires extra compilation step
+      * compiler time weaving requires extra compilation step
       * AspectJ pointCut syntax can become complex 
     
     - Declaring an AOP in Spring App, in Config file
@@ -866,7 +866,7 @@
         }            
       
     * After finally Advice => run after the method(finally)
-      * does not have access to exception, if needed use use @AfterThrowing
+      * does not have access to exception, if needed use @AfterThrowing
       * works just like finally block in java, runs if success or exception or error
       -  // After Finally, remember after runs first followed by after throwing. After runs for error or success 
         @After("execution(* com.lu2code.aopdemo.dao.AccountDAO.findAccounts(..))")
@@ -1138,7 +1138,7 @@
   # Spring Data Finders  Section6 -> productData     
     * https://github.com/raj23manj/Hibernate_Basiscs/blob/master/productdata/src/main/java/com/rajesh/springdata/product/repos/ProductRepository.java
     
-  # Pagigng And Sorting section7 -> productData
+  # Paging And Sorting section7 -> productData
     * https://github.com/raj23manj/Hibernate_Basiscs/blob/master/productdata/src/test/java/com/rajesh/springdata/product/ProductdataApplicationTests.java 
     * implement sort and pageable classes provided by spring data and pass them to methods, hibernate will take care of the rest
   
@@ -1652,10 +1652,10 @@
     * @Component
     * @Repository  
     
-# Annotaion used to declare a Spring Component inside Java configuration class
+# Annotation used to declare a Spring Component inside Java configuration class
   * @Bean    
  
-# Annotaion used to access Spring Bean Lifecycle
+# Annotation used to access Spring Bean Lifecycle
   * @PostConstruct
   * @PreDestroy  
   
@@ -1728,7 +1728,7 @@
       }
      }        
         
-  # Loading intial data in spring boot
+  # Loading initial data in spring boot
     * https://www.baeldung.com/spring-boot-data-sql-and-schema-sql  
     
   # Load up Data on start up
@@ -1859,6 +1859,7 @@
     
   # run java jar
     * java -cp target/sumofnumbers-1.0-SNAPSHOT.jar com.rajesh.App 1 2
+    * java -jar *.jar
   
   # Maven
     * mvn install(compiles and builds project)
@@ -1929,7 +1930,7 @@
   * when archived as War, it will not even contain the apache tomcat in it, used when already existing stand alone tomcat  
     server is running an need to use it   
     
-# TomCat running from commad Line
+# TomCat running from command Line
   * move to where tomcat is installed /Users/rmanjunath/Desktop/tomcat/apache-tomcat-9.0.12/bin 
   * ./startup.sh
   * ./shutdown.sh
