@@ -2166,8 +2166,52 @@
 # Micro Services 2.1.1
   * Setting up all services first => section 3 
   
-  * Configure git to hold the properties     
+  * Configure git to hold the properties  
+  * server side config
+  - <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-config-server</artifactId>
+    </dependency>   
+    
+  * Client Side Config
+  - <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-config</artifactId>
+    </dependency>    
+    
+    # properties need to connect to the config server
+    spring.profiles.active=dev
+    spring.application.name=currency-conversion-service
+    spring.cloud.config.uri=http://localhost:500
+    
+  * for both client and server
+  - <properties>
+        <java.version>1.8</java.version>
+        <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
+    </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+     </dependencyManagement> 
+     
+     <repositories>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/milestone</url>
+        </repository>
+    </repositories> 
 
+# Override application properties if not want to set
+  * https://stackoverflow.com/questions/52373541/spring-cloud-config-server-user-id-and-password-to-connect-to-github
+  * java -jar config-server.jar --spring.cloud.config.server.git.username=xxx --spring.cloud.config.server.git.password=xxx
       
 # To Access Environment(application-properties)
     @Autowired
