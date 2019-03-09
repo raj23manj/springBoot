@@ -2164,73 +2164,91 @@
         * https://stackoverflow.com/questions/33921375/zuul-api-gateway-authentication   
         
 # Micro Services 2.1.1
-  * Setting up all services first => section 3 
-  
-  * Configure git to hold the properties  
-  * server side config
-  - <dependency>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-config-server</artifactId>
-    </dependency>   
-    
-  * Client Side Config
-  - <dependency>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-starter-config</artifactId>
-    </dependency>    
-    
-    # properties need to connect to the config server in bootstrap.properties
-    spring.profiles.active=dev
-    #spring.application.name=currency-conversion-service => to be same as folder in git/or like ranga rao explains
-    spring.application.name=currency-conversion 
-    spring.cloud.config.uri=http://localhost:500
-    
-  * for both client and server
-  - <properties>
-        <java.version>1.8</java.version>
-        <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
-    </properties>
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-     </dependencyManagement> 
-     
-     <repositories>
-        <repository>
-            <id>spring-milestones</id>
-            <name>Spring Milestones</name>
-            <url>https://repo.spring.io/milestone</url>
-        </repository>
-    </repositories> 
-    
-  # dynamically refresh the properties files
-    * using actuator/refresh
-    * there was issue
-    
-  # Secure the Properties values
-    * spring supports symmetric and assymmetric encryption
-      * symmetric => shared secret
-          * the default jcs policy files bundled with jre need to replace inbuilt jre security policy, has restriction for country by country, so with oracles unlimited crypto graphic policy open source one
-          * download from oracle corporation   
-      * assymmetric => public and private key
-      
-    * Since the properties are coming as json, we need to encrypt or decrypt the properties    
-    * passworddb: {cipher} akdjhskdhash
-    * things to do for encryption
-      - use the secret key on client and config server for encryption and decryption
-      - spring.cloud.config.server.encrypt.enabled=false => to show the decrypted password on config server
 
-    * Override application properties if not want to set in properties file
-      * https://stackoverflow.com/questions/52373541/spring-cloud-config-server-user-id-and-password-to-connect-to-github
-      * java -jar config-server.jar --spring.cloud.config.server.git.username=xxx --spring.cloud.config.server.git.password=xxx
+  * Config Client
+      * Setting up all services first => section 3 
+      
+      * Configure git to hold the properties  
+      * server side config
+      - <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-config-server</artifactId>
+        </dependency>   
+        
+      * Client Side Config
+      - <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>    
+        
+        # properties need to connect to the config server in bootstrap.properties
+        spring.profiles.active=dev
+        #spring.application.name=currency-conversion-service => to be same as folder in git/or like ranga rao explains
+        spring.application.name=currency-conversion 
+        spring.cloud.config.uri=http://localhost:500
+        
+      * for both client and server
+      - <properties>
+            <java.version>1.8</java.version>
+            <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
+        </properties>
+        <dependencyManagement>
+            <dependencies>
+                <dependency>
+                    <groupId>org.springframework.cloud</groupId>
+                    <artifactId>spring-cloud-dependencies</artifactId>
+                    <version>${spring-cloud.version}</version>
+                    <type>pom</type>
+                    <scope>import</scope>
+                </dependency>
+            </dependencies>
+         </dependencyManagement> 
+         
+         <repositories>
+            <repository>
+                <id>spring-milestones</id>
+                <name>Spring Milestones</name>
+                <url>https://repo.spring.io/milestone</url>
+            </repository>
+        </repositories> 
+        
+      # dynamically refresh the properties files
+        * using actuator/refresh
+        * there was issue
+        
+      # Secure the Properties values
+        * spring supports symmetric and assymmetric encryption
+          * symmetric => shared secret
+              * the default jcs policy files bundled with jre need to replace inbuilt jre security policy, has restriction for country by country, so with oracles unlimited crypto graphic policy open source one
+              * download from oracle corporation   
+          * assymmetric => public and private key
           
+        * Since the properties are coming as json, we need to encrypt or decrypt the properties    
+        * passworddb: {cipher} akdjhskdhash
+        * things to do for encryption
+          - use the secret key on client and config server for encryption and decryption
+          - spring.cloud.config.server.encrypt.enabled=false => to show the decrypted password on config server
+    
+        * Override application properties if not want to set in properties file
+          * https://stackoverflow.com/questions/52373541/spring-cloud-config-server-user-id-and-password-to-connect-to-github
+          * java -jar config-server.jar --spring.cloud.config.server.git.username=xxx --spring.cloud.config.server.git.password=xxx
+          
+  * Service discovery(eureka)
+    * Eureka Client & Server
+    * OpenFeign
+    * Ribbon Client Load Balancer  
+    
+    * uses
+      * it abstracts the physical IP's of the instance's on the client and maintains on the eureka server,
+        the client can access it using the service discovery by its service name
+      * if one of the instances is down it will take care of rerouting the requests to other instances  
+      * All the services registered will send regular heart beats to the eureka client to make sure it is up and running
+      * There will be one instance on eureka server running, if it fails entire architecture fails, to avoid this we can have 
+        another one step as back up (cluster of load balancer). It increases the cost and complexcity. In this case each instance
+        interact with each other to check if it is down or up and share the service lookup state with each other, if a node in the cluster fails
+        peer nodes make sure they are active and running 
+      *            
+              
 # To Access Environment(application-properties)
     @Autowired
     private Environment environment;  
