@@ -2399,6 +2399,12 @@
               /flight-schedule/**: "flight-schedule",
               /currency-conversion/**: "currency-conversion"
             }
+            
+      3) Manual Custom routes  
+         * need to set properties 
+         - zuul.routes.greeting-service.serviceId=greet
+           zuul.routes.greeting-service.path=/greet/**
+           zuul.routes.greeting-service.url=http://localhost:9999    
          
       * properties
         * add custom routes mapping to service-name
@@ -2407,11 +2413,11 @@
           - zuul.ignored-services=currency-conversion
         * use to set prefix for the route, flights/cc/**
           - zuul.prefix=/flights
-        *
+        * Setting a id for the service 
           - zuul.routes.greeting-service.serviceId=greet
-        *
+        * setting custom manual route
           - zuul.routes.greeting-service.path=/greet/**
-        *
+        * setting manual location
           - zuul.routes.greeting-service.url=http://localhost:9999
 
             
