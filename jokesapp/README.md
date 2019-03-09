@@ -2314,7 +2314,28 @@
         * eureka client uses ribbon to the registry from eureka server with all the instances of registere client's locally and with that
           eureka client gives us a method to find an application by name
           -  import com.netflix.discovery.shared.Application;
-             Application app = eurekaClient.getApplication("currency-conversion");        
+             Application app = eurekaClient.getApplication("currency-conversion");  
+      
+      * Using Ribbon Load Balancer
+        * Eureka client uses ribbon as load balancer, we can manually do this by usi a annotation @LoadBalanced on a RestTemplate as bean, which behind uses ribbon load 
+          balancer by intercepting the requests 
+        * By default when requesting with the service-name, ribbon resolves it automatically  and gives chances to all other services 
+        * Ribbon does a round robbin among all the instances to keep it efficient  
+        
+        - in the bootstrap class(@SpringBootApplication) add, making the rest template aware of load balancer client
+          @LoadBalanced
+          	@Bean
+          	public RestTemplate getRestTemplate() {
+          		return new RestTemplate();
+          	}
+            
+            
+          in controller, using service name ribbon resolves by load balancing
+          ResponseEntity<CurrencyConversionVO> responseEntity = restTemplate.getForEntity(
+          					"http://currency-conversion/api/v1/from/{from}/to/{to}", CurrencyConversionVO.class,
+          					urlPathVariables);
+          					
+                   
 # To Access Environment(application-properties)
     @Autowired
     private Environment environment;  
