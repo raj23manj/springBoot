@@ -2355,6 +2355,7 @@
         * https://github.com/OpenFeign/feign/wiki/Custom-error-handling  
         * https://github.com/OpenFeign/feign-annotation-error-decoder
         * https://stackoverflow.com/questions/38786207/netflix-feign-propagate-status-and-exception-through-microservices
+        * https://cloud.spring.io/spring-cloud-netflix/multi/multi_spring-cloud-feign.html
             
 # To Access Environment(application-properties)
     @Autowired
