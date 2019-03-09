@@ -2310,7 +2310,11 @@
         * when multiple instances are running, the client request are not sent to both eureka instances, when requesting for a registry eureka sends
           only one registry of the node, this is sharing attribute of the cluster to register both the instances  
             
-              
+      * Consuming the api exposed by the provider after registering with eureka
+        * eureka client uses ribbon to the registry from eureka server with all the instances of registere client's locally and with that
+          eureka client gives us a method to find an application by name
+          -  import com.netflix.discovery.shared.Application;
+             Application app = eurekaClient.getApplication("currency-conversion");        
 # To Access Environment(application-properties)
     @Autowired
     private Environment environment;  
