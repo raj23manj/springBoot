@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b24c273d-07f5-43b0-9949-5e842c2c3bfc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="b24c273d-07f5-43b0-9949-5e842c2c3bfc" name="Default Changelist" comment="updated read me">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jokesapp/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/jokesapp/README.md" afterDir="false" />
     </list>
@@ -41,13 +39,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="md" value="8314" />
+          <entry key="md" value="9902" />
           <entry key="txt" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="8314" />
+          <entry key="Markdown" value="9902" />
           <entry key="PLAIN_TEXT" value="15" />
         </counts>
       </usages-collector>
@@ -59,28 +57,10 @@
         <entry file="file://$PROJECT_DIR$/jokesapp/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="205">
-                <caret line="2357" column="90" selection-start-line="2357" selection-start-column="90" selection-end-line="2357" selection-end-column="90" />
+              <first_editor relative-caret-position="372">
+                <caret line="2389" column="10" selection-start-line="2389" selection-start-column="10" selection-end-line="2389" selection-end-column="10" />
               </first_editor>
               <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Downloads/Section-5-code/flight-fare/src/main/java/com/course/ms/flightFare/feginClients/CurrencyConversionServiceProxy.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="10" column="34" lean-forward="true" selection-start-line="9" selection-end-line="10" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Downloads/Section-5-code/flight-fare/src/main/java/com/course/ms/flightFare/controllers/FlightFareController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
             </state>
           </provider>
         </entry>
@@ -106,8 +86,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="81" />
-    <option name="y" value="121" />
+    <option name="x" value="153" />
+    <option name="y" value="110" />
     <option name="width" value="1168" />
     <option name="height" value="745" />
   </component>
@@ -134,6 +114,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552139337192" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -246,11 +227,18 @@
       <option name="project" value="LOCAL" />
       <updated>1552127717398</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="updated read me">
+      <created>1552128922680</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1552128922680</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="81" y="121" width="1168" height="745" extended-state="0" />
+    <frame x="0" y="155" width="1168" height="745" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.20457797" />
@@ -315,13 +303,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="updated read me" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Downloads/Section-5-code/flight-fare/src/main/java/com/course/ms/flightFare/feginClients/CurrencyConversionServiceProxy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="10" column="34" lean-forward="true" selection-start-line="9" selection-end-line="10" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Downloads/Section-5-code/flight-fare/src/main/java/com/course/ms/flightFare/controllers/FlightFareController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="313">
@@ -329,12 +310,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/Downloads/Section-5-code/flight-fare/src/main/java/com/course/ms/flightFare/feginClients/CurrencyConversionServiceProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="10" column="34" lean-forward="true" selection-start-line="9" selection-end-line="10" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/jokesapp/README.md">
       <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="205">
-            <caret line="2357" column="90" selection-start-line="2357" selection-start-column="90" selection-end-line="2357" selection-end-column="90" />
+          <first_editor relative-caret-position="372">
+            <caret line="2389" column="10" selection-start-line="2389" selection-start-column="10" selection-end-line="2389" selection-end-column="10" />
           </first_editor>
           <second_editor />
         </state>

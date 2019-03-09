@@ -2356,6 +2356,53 @@
         * https://github.com/OpenFeign/feign-annotation-error-decoder
         * https://stackoverflow.com/questions/38786207/netflix-feign-propagate-status-and-exception-through-microservices
         * https://cloud.spring.io/spring-cloud-netflix/multi/multi_spring-cloud-feign.html
+        
+    * Zuul Gateway(logging, authentication, routing)  
+      * Zuul Service Gateway
+      * Routing
+      - <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
+        </dependency>
+      
+      * @EnableZuulProxy, in application bootsrap class  
+        * this adds zuul level proxy filters and integration capabilities for eureka service discovery
+      
+      * If we do not want to use zuul provided routing filters and eureka discovery and implement our own then we need to add
+        * @EnableZuulServer
+        
+      * Zuul gateway is a reverse proxy, it accepts the request from clients and forwards it to the services and does manupliations inbetween as well  
+      
+      * the actuator on the zuul, on hitting the get routes url, it hits the eureka server and gets a json payload of the routes, this has the details of the
+        routes managed by Zuul  
+      
+      * Zuul has 3 mechanisms to route to the services
+        * 1) if any routes are not configured  explicitly, then it uses the service discovery to resovle the incoming requests
+        * 2) Another way is to configure routes explictly which at the end are shared with the consumers and use service discovery engine to resolve the physical
+             location
+        * 3) last way is to define routes and map it to the static URL's, instead of using discovery engine 
+        
+      
+      * 1) Automatic discovery of routes using eureka 
+        * Zuul server has eureka client that talks to the Eureka server and gets the registry 
+        * when we hit /currency-conversion/api/v1/from/USD/to/INR, zuul takes "currency-conversion" from the url, checks it with the regitry it has
+          if it finds an mapping in Json, it will take that name and call eureka to resolve it to the actual location, and constructs the url 
+          and sends it
+      
+      * properties
+        *
+          - zuul.routes.currency-conversion=/cc/**
+        *  
+          - zuul.ignored-services=currency-conversion
+        *
+          - zuul.prefix=/flights
+        *
+          - zuul.routes.greeting-service.serviceId=greet
+        *
+          - zuul.routes.greeting-service.path=/greet/**
+        *
+          - zuul.routes.greeting-service.url=http://localhost:9999
+
             
 # To Access Environment(application-properties)
     @Autowired
