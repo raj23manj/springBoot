@@ -2302,6 +2302,14 @@
         * Self-Preservation
           * a feature to minimize the registry inconsistency between the servers. If eureka server does not recieve consecutive heart beats then it will mark,
             as dead or expire it from registry when they don't recieve beyond a certain threshold
+    
+      * Setting up of clusters of Eureka Services
+        * each eureka node instance in a cluster is a client for it's peer and need to register itself, for this we need to add a vaild peer eureka
+          instance server URL
+        * all the services will register will all the nodes of eureka servers in the cluster automatically 
+        * when multiple instances are running, the client request are not sent to both eureka instances, when requesting for a registry eureka sends
+          only one registry of the node, this is sharing attribute of the cluster to register both the instances  
+            
               
 # To Access Environment(application-properties)
     @Autowired
