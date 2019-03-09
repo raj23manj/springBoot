@@ -2179,9 +2179,10 @@
         <artifactId>spring-cloud-starter-config</artifactId>
     </dependency>    
     
-    # properties need to connect to the config server
+    # properties need to connect to the config server in bootstrap.properties
     spring.profiles.active=dev
-    spring.application.name=currency-conversion-service
+    #spring.application.name=currency-conversion-service => to be same as folder in git/or like ranga rao explains
+    spring.application.name=currency-conversion 
     spring.cloud.config.uri=http://localhost:500
     
   * for both client and server
@@ -2208,11 +2209,28 @@
             <url>https://repo.spring.io/milestone</url>
         </repository>
     </repositories> 
-
-# Override application properties if not want to set
-  * https://stackoverflow.com/questions/52373541/spring-cloud-config-server-user-id-and-password-to-connect-to-github
-  * java -jar config-server.jar --spring.cloud.config.server.git.username=xxx --spring.cloud.config.server.git.password=xxx
+    
+  # dynamically refresh the properties files
+    * using actuator/refresh
+    * there was issue
+    
+  # Secure the Properties values
+    * spring supports symmetric and assymmetric encryption
+      * symmetric => shared secret
+          * the default jcs policy files bundled with jre need to replace inbuilt jre security policy, has restriction for country by country, so with oracles unlimited crypto graphic policy open source one
+          * download from oracle corporation   
+      * assymmetric => public and private key
       
+    * Since the properties are coming as json, we need to encrypt or decrypt the properties    
+    * passworddb: {cipher} akdjhskdhash
+    * things to do for encryption
+      - use the secret key on client and config server for encryption and decryption
+      - spring.cloud.config.server.encrypt.enabled=false => to show the decrypted password on config server
+
+    * Override application properties if not want to set in properties file
+      * https://stackoverflow.com/questions/52373541/spring-cloud-config-server-user-id-and-password-to-connect-to-github
+      * java -jar config-server.jar --spring.cloud.config.server.git.username=xxx --spring.cloud.config.server.git.password=xxx
+          
 # To Access Environment(application-properties)
     @Autowired
     private Environment environment;  
