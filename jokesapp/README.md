@@ -2247,7 +2247,27 @@
         another one step as back up (cluster of load balancer). It increases the cost and complexcity. In this case each instance
         interact with each other to check if it is down or up and share the service lookup state with each other, if a node in the cluster fails
         peer nodes make sure they are active and running 
-      *            
+    
+    * Eureka Server - server side setup     
+      * select Eureka-server from components
+      * whenever we run a eureka server, it assumes that it is a node and is a part of a cluster, so it needs to register itself to other
+        node. If there is only one instance running then we need to make sure it does not register's with itself
+        - eureka.client.register-with-eureka=false/true
+      * when the client is running it tries to fetch a local registry from the eureka server to speed up the process if multiple nodes of eureka
+        are present in the cluster, as we have one we can disable it
+        - eureka.client.fetch-registry=false
+      * Once the eureka server is up and clients register, it takes adefault of 30 secs to wait before it appears on the dashboard. The reason for 
+        this is the client after registering tries to give a heart beat at an interval of 10s for three time, and the eureka sever verifies it 
+        once it is successful it shows up on the dashboard, and then singnals that this service can be used. In development phase we can reduce this
+        time to 5 secs
+        - eureka.server.wait-time-in-ms-when-sync-empty=5
+      * when the eureka service starts up, it tries to fetch the registry information from the other nodes(peer nodes) it cluster aswell, it tries for 5 times  
+        - eureka.server.registry-sync-retries=3
+      * when eureka starts up, it starts thread to replicate the states with the peer discovery nodes. So that all the nodes in the cluster can be at the
+        same place to share the information the consumers
+        - eureka.server.max-threads-for-peer-replication=0  
+      * @EnableEurekaServer tells application that it is service discovery application
+          
               
 # To Access Environment(application-properties)
     @Autowired
