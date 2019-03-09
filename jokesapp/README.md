@@ -2335,7 +2335,27 @@
           					"http://currency-conversion/api/v1/from/{from}/to/{to}", CurrencyConversionVO.class,
           					urlPathVariables);
           					
-                   
+      * Using Feign          
+        * To abstract rest based calls to other services
+        * We need define an interface and annotate it with spiring cloud annotaions, to map what eureka based service ribbon will invoke. It is
+          the responsibilty of the spring cloud framework now to generate a proxy calls on the fly, that will be used to invoke a targeted  service.
+        * on the client service which uses feign to make calls, we need to declare them all under same packages so that it contains all thw feign client 
+          proxies
+        * the interface should have same method signature as the actual call, to proxy it with same path as well          
+        * with degin proxy we need to do "@PathVariable("from")", it does not bind automatically  
+        - @FeignClient(name = "currency-conversion")
+          @RequestMapping(value = "/api/v1")
+          public interface CurrencyConversionServiceProxy {
+          	@GetMapping(value = "/from/{from}/to/{to}")
+          	public CurrencyConversionVO convertCurrency(@PathVariable("from") String from, @PathVariable("to") String to);
+          }   
+        
+        * when using fegin client it throws only feginexception for any error situation, but if we need application specific exception  
+          it can be done by our own implementation of error decoder that is available using feign.builder.errordecoder
+        * https://github.com/OpenFeign/feign/wiki/Custom-error-handling  
+        * https://github.com/OpenFeign/feign-annotation-error-decoder
+        * https://stackoverflow.com/questions/38786207/netflix-feign-propagate-status-and-exception-through-microservices
+            
 # To Access Environment(application-properties)
     @Autowired
     private Environment environment;  
