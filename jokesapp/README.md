@@ -2375,6 +2375,8 @@
       
       * the actuator on the zuul, on hitting the get routes url, it hits the eureka server and gets a json payload of the routes, this has the details of the
         routes managed by Zuul  
+        
+      * if any of the client service is down, eureka will not retunr any routes for that service  
       
       * Zuul has 3 mechanisms to route to the services
         * 1) if any routes are not configured  explicitly, then it uses the service discovery to resovle the incoming requests
@@ -2389,12 +2391,21 @@
           if it finds an mapping in Json, it will take that name and call eureka to resolve it to the actual location, and constructs the url 
           and sends it
       
+      2) This method is used when we want to shorten the service-name, or use a different name for the routes and map it to the existing service 
+         in eureka. But when the currency-conversion service is down, we won't get key-value pair for it, but "/cc/**" will be there, coz it is on zuul
+        - zuul.routes.currency-conversion=/cc/**
+          - the name after routes is taken from after hitting actuator/routes, the key
+            {
+              /flight-schedule/**: "flight-schedule",
+              /currency-conversion/**: "currency-conversion"
+            }
+         
       * properties
-        *
+        * add custom routes mapping to service-name
           - zuul.routes.currency-conversion=/cc/**
-        *  
+        *  after doing the previous step, to remove entry of default one use this
           - zuul.ignored-services=currency-conversion
-        *
+        * use to set prefix for the route, flights/cc/**
           - zuul.prefix=/flights
         *
           - zuul.routes.greeting-service.serviceId=greet
