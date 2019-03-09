@@ -2419,6 +2419,45 @@
           - zuul.routes.greeting-service.path=/greet/**
         * setting manual location
           - zuul.routes.greeting-service.url=http://localhost:9999
+          
+      * Zuul Filters
+        * 3 types of filters are present in zuul
+          * Pre Filters (Authentication Filters)
+            * Can implement auhtentication and authorization
+          * Route Filters
+            * invoked after pre filters, but just before the request is sent to the destination service
+            * best place for making decision based dynamic routing 
+            * example, if we have two versions of a service, if we want to route 30-70 ratio, it can be done here 
+          * Post Filters (Response Audit Filters) 
+            * this filter is invoked when the response from service is done and ready to respond with response to the client  
+            * we can override the response here
+            * perform auditing here
+            
+        * Implementation of Authentication filter
+          * to implement ZuulFilter - Base Abstract Class this we need override the methods
+            * filterType() => to classify type of filter - pre, post, route
+            * filterOrder() => to define the execution order of the filter
+            * shouldFilter() => is the filter active or not
+            * run() => write the filter logic
+            
+    # Microservice security
+      * https://github.com/spring-cloud/spring-cloud-netflix/issues/162 
+      
+      Our target architecture is several small microservices, Eureka as service registry and Zuul as edge servers.
+      We using JWT-based auth mechanism.
+      The question is - how to organize auth? Use custom-written Zuul Filters on Edge or auth and pass plain requests to downstream servers or use Spring Security on the front-door and use Zuul only for routing?
+      Or pass JWT token to downstream servers and write some custom stuff for each service?
+      
+      Client sends POST /api/login request to Zuul
+      Zuul sees that this request does not contain JWT token in header
+      Zuul redirects request to Auth server
+      Downstream perform auth and in successful case responses with Token
+      Zuul returns token to client
+      Client uses this token in following requests
+      When client sends request with JWT token Zuul figures out this and parsed it. It is able to parse since the secret key is also stored on Zuul.
+      Zuul parses token and break it into several fields - user id and role.
+      Zuul sets custom headers
+      All downstream services use custom filter who takes user id and role from headers and transforms it into Spring Security auth object or whatever.           
 
             
 # To Access Environment(application-properties)
