@@ -2267,7 +2267,41 @@
         same place to share the information the consumers
         - eureka.server.max-threads-for-peer-replication=0  
       * @EnableEurekaServer tells application that it is service discovery application
-          
+      
+    * Eureka Client Configuration
+      * @EnableEurekaClient
+      * dependency
+        -<dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+      * Properties Setup
+        * Location of the eureka server, the required service contacts for resolution of the  service physical location
+          - eureka.client.service-url.defaultZone=http://localhost:8001/eureka
+        * tells the current service which behaves like a client for eureka, need to register with eureka server 
+          - eureka.client.register-with-eureka=true
+        * to cache the registry of the eureka service locally, so that for every request call it can look up this cache and not hit the eureka server.
+          This cache refresh's periodically. Optimises the performance
+          - eureka.client.fetch-registry=true
+        * this property is used not display the entry of the client on eureka server Dashboard it goes down after defined seconds
+          - eureka.server.eviction-interval-timer-in-ms=15000
+        * when the service comes online and sends a heart beat without registration, it recieves back response as "not found" from the server, the client
+          then tries itself to register which takes 30 sec's by default and can be controlled, this is the reason why there is delay in the dashboard of the 
+          client entry registry. best not change it from 30 or reduce it, self-preservation presumes that heartbeats are at interval of 30 secs, it change it to
+          3 sec's, then self-preservation gets affected
+          - eureka.instance.leaseRenewalIntervalInSeconds=30
+        * if a service shuts down or gets killed, it immediately does not remove the entry instead eureka server sends 3 consecutive missing heart beats, 
+          and after 90 sec's it marks as dead and deletes the entry from the registry
+          - eureka.instance.leaseExpirationDurationInSeconds=90
+        * how the instance will be displayed on the dashboard, format
+          - eureka.instance.instance-id=${spring.application.name}:${server.port}
+        * tell the service to register with eureka servers with IP address instead of host names. In container environment this is best as hostname is randomly
+          assigned and dns name is not available for container based deployment
+          - eureka.instance.prefer-ip-address=true
+  
+        * Self-Preservation
+          * a feature to minimize the registry inconsistency between the servers. If eureka server does not recieve consecutive heart beats then it will mark,
+            as dead or expire it from registry when they don't recieve beyond a certain threshold
               
 # To Access Environment(application-properties)
     @Autowired
