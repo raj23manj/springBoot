@@ -2545,8 +2545,36 @@
           			})
           			
             * coresize => used to set the number of core threads needs to be available for the processing at the max
-            * maxQueueSize => quesize to hold the requests if thread is not available 			  
-              
+            * maxQueueSize => quesize to hold the requests if thread is not available 	
+            
+      * How Hystrix works behind the scene
+        * if a request is failing contineously to serve, Hystrix monitors it if fails beyond a threshold limit, if it stops making requests
+          to service for a certain point of time, in order to give service the time to recover or to resume if down and forward the request to fallback path
+          to serve the request if implemented this process is called short circuit. This is the characteristics os a Circuit breaker       
+        * The Monitoring is controlled by three properties 
+          * Time Window   	
+            * it is used by hystrix to observer how often the service call is having the problem 
+          * Number of service call  
+            * There is threshold for service call number, to identify how many calls are getting failed	  
+          * Failure Rate
+            * There is threshold of failure rate that defines whether circuit should be open or not, default is 10 sec. 
+          * When first call gets failed, hystrix starts monitoring
+            for next 10 secs, if for the next 10 sec the number of request coming to the system remains lower then the configured number of service call, it 
+            does not take action regarding circuit trip. But if it crosses the limit next it checks how many calls are getting failed, if the failure ratio
+            crosses the configured failure rate, then hystrix open the circuit the and fail fast the circuit call. 
+          * when the circuit is open it does mean it open all the time, after opening it checks if the failed service is resumed or working fine again, this
+            checking is done in a periodic interval      
+      
+      * Customization properties
+        * For Time Window
+          - hystrix.command.getFlightsKey.metrics.rollingStats.timeInMilliseconds=15000
+        * It denotes the number of calls that must occur in the observation window, in above mentioned 15 sec time window 
+          - hystrix.command.getFlightsKey.circuitBreaker.requestVolumeThreshold=10
+        * The % of calls that must fail during the observation window due to exception or timeout
+          - hystrix.command.getFlightsKey.circuitBreaker.errorThresholdPercentage=50
+        * Time window aftre which hystrix will check if service is working, to close the circuit
+          - hystrix.command.getFlightsKey.circuitBreaker.sleepWindowInMilliseconds=6
+        
        
 # To Access Environment(application-properties)
     @Autowired
