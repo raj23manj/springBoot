@@ -2574,8 +2574,44 @@
           - hystrix.command.getFlightsKey.circuitBreaker.errorThresholdPercentage=50
         * Time window aftre which hystrix will check if service is working, to close the circuit
           - hystrix.command.getFlightsKey.circuitBreaker.sleepWindowInMilliseconds=6
+  
+  * Distributed Tracing(Sleuth, Zipkin, Hystrix dashboard, Turbine Stream)
+    * Sleuth
+      * implements distributed tracing solution
+      * responsible for generating tracing ID, and handles the complexcities in tracing and the propagation as well
+      * it adds the tracing information to slf4j mapped diagonistic context(mvc), so that the information can be further sent to a aggregator 
+        for further analysis at a central place   
+      * it has good implementation with zipkin tracing system and publish the tracing information to zipkin  
+    
+    * Zipkin server & UI
+      * it is a distributed tracing system, helps record timing, meta data of operations executed in the microservice architecture and give a visual
+        representation to the users for the actions across the system 
         
+    * Hysrix Dashboard & Turbine
+      * used to monitor the hystrix metrics, when the @hystrixCommand is introduced into the service it publishes metrics to the operational events using
+        turbine streams which hystrix dashboard consume and display it on the dashboard. 
+        
+    * Implementation       
+       * Sleuth
+       - <!-- Sleuth Client -->
+         <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-sleuth</artifactId>
+         </dependency>
+       * Sleuth will inspect all the incoming services for the tracing information, and will inject it if it is not present for logging purpose.
+       * it also maintains propogation of this ID when forwards the requests to dowstream service calls.
        
+    * Output
+      * Format: servicename - TraceID - Trace span ID - Boolean Variable
+        * TraceID will be same for all the services
+        * Trace Span ID will be generated for every service call
+        * boolean variable represents whether the trace information has been sent to zipkin server or not
+        
+        - example:
+          zuul-service-gateway,d17b49e4256dff07,d17b49e4256dff07,false
+          flight-fare,d17b49e4256dff07,48f210561e30f115,false   
+          currency-conversion,d17b49e4256dff07,61c62da6ecc8e7be,false
+         
 # To Access Environment(application-properties)
     @Autowired
     private Environment environment;  
@@ -4229,3 +4265,7 @@ public class RunFormQueries {
   
 # Basic's Of Spring 
   * https://www.baeldung.com/inversion-control-and-dependency-injection-in-spring   
+
+# Class Path in Spring Boot
+  * maven-dependencies folder
+  * adding dependencies to pom will add all the jars to class path  
