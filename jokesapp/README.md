@@ -2530,6 +2530,23 @@
           - public List<Flight> buildFallbackFlights(String from, String to) {}   
           * reduce the time aswell 
             - hystrix.command.getFlightsKey.execution.isolation.thread.timeoutInMilliseconds=3000
+            
+      * Bulk Head Strategy
+        * By default when we annotate our bootstrap class with @EnableCircuitBreaker, Hystrix on the start up of the service creates a thread
+          pool and all the calls to the method which are annotated with @HystrixCommand are processed by a thread in the thread pool, so when we have 
+          multiple functionalities defined in our service which are again dependent on other down stream services and we have annotated the functionalities
+          with @HystrixCommand and calls to all the functionalites will be severved by the threads in the same thread pool. 
+        * Let's assume one of the dependent service is not performing well, so can block the threads of the thread pool which can affect other functionalities 
+          due to unavailability of the threads. Bulk head Strategy comes to rescue, we can place remote service calls to its own thread pool with a configuration
+          of number of thread, usage etc so that bad performing services should not affect other service calls to avoid sysem degradation and crash at last 
+        - @HystrixCommand(commandKey="getFlightsKey", fallbackMethod="buildFallbackFlights", threadPoolKey="getFlightsThreadPool",
+          			threadPoolProperties= {
+          					@HystrixProperty(name="coreSize", value="1"), @HystrixProperty(name="maxQueueSize", value="2")
+          			})
+          			
+            * coresize => used to set the number of core threads needs to be available for the processing at the max
+            * maxQueueSize => quesize to hold the requests if thread is not available 			  
+              
        
 # To Access Environment(application-properties)
     @Autowired
