@@ -2491,6 +2491,28 @@
            part 
         * Each service  will be assigned to a thread   
         * Hystrix provides an option of processing of the services in multiple thread pools
+        
+      * implementation on the service
+        - <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+          </dependency>  
+        * in bootstrap class
+          - @EnableCircuitBreaker => tell to enable hystrx circuit breakers for the service 
+          
+      * @HystrixCommand
+        * we use this annotation to wrap the method which has potentially a risky functionality in it, for example a call for the DB or
+          a call over the network 
+        * During the deployment time, when spring finds this annotation, it generates a proxy and wraps this method to take control of its execution
+          by one of the thread managed by one of the threads managed by the thread pool hystrix        
+        * whenever a call is made, hystrix expects a responce within a second range, if not it throws the Hystrix runtime exception expalning the
+          time out
+        * It tell to wait for 7s and the hystrix property for it is  
+        - @HystrixCommand(commandProperties = {
+          			@HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "7000") })  
+        * List of properties
+          * https://github.com/Netflix/Hystrix/wiki/Configuration#introduction  			
+            
   
        
 # To Access Environment(application-properties)
