@@ -2433,7 +2433,7 @@
             * we can override the response here
             * perform auditing here
             
-        * Implementation of Authentication filter => section 6, 40
+        * Implementation of filters => section 6, 40
           * to implement ZuulFilter - Base Abstract Class this we need override the methods
             * filterType() => to classify type of filter - pre, post, route
             * filterOrder() => to define the execution order of the filter
@@ -2442,6 +2442,18 @@
           * Predecoration Filter - ServiceId, in ZuulFilter
             * // this service-id will be only set after pre-decoration filter
               Object serviceId = ctx.get("serviceId");  
+              
+        * Zuul Routing filters  section 6, 42    
+          * Zuul comes up with its own routing logic, and it achieves this using
+            * SimpleHostRoutingFilter
+            * RibbonRoutingFilter
+            * when using this filter and trying to send the current request to a new request, then
+              we need to discard the current route request. To do that,
+                //disable SimpleHostRoutingFilter
+                ctx.setRouteHost(null);
+                
+                //disable RibbonRouting Filter
+                ctx.remove(serviceId); 
             
     # Microservice security
       * https://github.com/spring-cloud/spring-cloud-netflix/issues/162 
