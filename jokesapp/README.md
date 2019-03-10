@@ -2476,7 +2476,8 @@
       Zuul sets custom headers
       All downstream services use custom filter who takes user id and role from headers and transforms it into Spring Security auth object or whatever.           
 
-  * Resiliency (Hystrix, Circuit breaker)     
+  * Resiliency (Hystrix, Circuit breaker)   
+    * https://github.com/Netflix/Hystrix/wiki/Configuration#circuitBreaker.sleepWindowInMilliseconds  
     * Circuit Breaker
       * This makes sure that client will not call to service that is failing  repeatedly or responding poorly, to have rich user experience
       * Hystrix Closely monitor's each service call and if calls get failed frequently, it fails fast to close the circuit, 
@@ -2637,7 +2638,14 @@
               * used to set the URL of zipkin running server
                 - #Not mandatory; this is the default value
                 - spring.zipkin.baseUrl=http://localhost:9411  
-         
+            
+            * need to download and install rabbit mq(see below for rabbit mq), and set zipkin to listen to it and restart zipkin    
+              - RABBIT_URI=amqp://localhost java -jar zipkin-server-2.11.12-exec.jar
+              - RABBIT_URI=amqp://localhost java -jar zipkin.jar
+              
+              
+              
+              
 # To Access Environment(application-properties)
     @Autowired
     private Environment environment;  
@@ -2662,6 +2670,7 @@
    * rabbitmqctl stop
    * https://stackoverflow.com/questions/8737754/node-with-name-rabbit-already-running-but-also-unable-to-connect-to-node
    * https://stackoverflow.com/questions/49071667/cant-enable-plugin-in-rabbitmq-3-7-3
+   
    
 # Debugging
   * https://dzone.com/articles/spring-tips-reactive-sql-data-access-with-spring-d  
