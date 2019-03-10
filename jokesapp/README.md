@@ -2516,8 +2516,10 @@
               * https://github.com/Netflix/Hystrix/wiki/Configuration#introduction
               
       * Property Based
-        *           			
-            
+        * set the command properties as key value pair or use method name in the propery file to set the values          			
+        - hystrix.command.getFlightsKey.execution.isolation.thread.timeoutInMilliseconds=3000
+          #hystrix.command.getFLights.execution.isolation.thread.timeoutInMilliseconds=3000 => not good, methods name might be same in other class
+    
   
        
 # To Access Environment(application-properties)
