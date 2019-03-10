@@ -2643,9 +2643,40 @@
               - RABBIT_URI=amqp://localhost java -jar zipkin-server-2.11.12-exec.jar
               - RABBIT_URI=amqp://localhost java -jar zipkin.jar
               
-              
-              
-              
+       * Hystrix Dashboard and Turbine cluster  
+         * Hystrix Dashboard
+           * used to monitor the metrics 
+           
+         * Turbine Stream                  
+           * Used to monitor real time metrics using 
+           * this is the one which aggregates the data from the servers and to a real stream
+           
+         * Setup up hystrix server dashboard
+           * dependencies
+             - <dependency>
+                    <groupId>org.springframework.cloud</groupId>
+                    <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>org.springframework.cloud</groupId>
+                    <artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>org.springframework.cloud</groupId>
+                    <artifactId>spring-cloud-starter-netflix-turbine</artifactId>
+                </dependency>
+             * in bootstrap class add,
+                - @EnableHystrixDashboard => for showing dashboard
+                  @EnableTurbine =>  aggregating the data into the turbine stream, so that data from different services can be collected 
+                                     to a single place, this is mandatory because dashboard can show data only when we some data in the central
+                                     place      
+             * Properties
+               * used to define the service, for which we want to collect the metrics
+                 - turbine.app-config=flight-schedule
+               *  takes the expression to create a turbine cluster
+                 - turbine.cluster-name-expression=new String("default")               
+         
+             
 # To Access Environment(application-properties)
     @Autowired
     private Environment environment;  
