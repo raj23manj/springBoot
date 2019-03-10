@@ -2520,7 +2520,16 @@
         - hystrix.command.getFlightsKey.execution.isolation.thread.timeoutInMilliseconds=3000
           #hystrix.command.getFLights.execution.isolation.thread.timeoutInMilliseconds=3000 => not good, methods name might be same in other class
     
-  
+      * Fallback Strategy
+        * This is the right way in doing hystrix, we should not increase the time, but if it takes more time we need to implement
+          a fallback method to respond back to the client with alternate response 
+        * the reason for interruption might be due to some exception, error in service or due to interruption by hystrix command to service
+          calling thread due to delay in the response by the service 
+        * The fall back method defined should have the same signature of the actual calling method.
+          - public List<Flight> getFLights(String from, String to){};
+          - public List<Flight> buildFallbackFlights(String from, String to) {}   
+          * reduce the time aswell 
+            - hystrix.command.getFlightsKey.execution.isolation.thread.timeoutInMilliseconds=3000
        
 # To Access Environment(application-properties)
     @Autowired
