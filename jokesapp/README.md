@@ -2593,24 +2593,50 @@
         
     * Implementation       
        * Sleuth
-       - <!-- Sleuth Client -->
-         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-sleuth</artifactId>
-         </dependency>
-       * Sleuth will inspect all the incoming services for the tracing information, and will inject it if it is not present for logging purpose.
-       * it also maintains propogation of this ID when forwards the requests to dowstream service calls.
+           - <!-- Sleuth Client -->
+             <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-sleuth</artifactId>
+             </dependency>
+           * Sleuth will inspect all the incoming services for the tracing information, and will inject it if it is not present for logging purpose.
+           * it also maintains propogation of this ID when forwards the requests to dowstream service calls.
        
-    * Output
-      * Format: servicename - TraceID - Trace span ID - Boolean Variable
-        * TraceID will be same for all the services
-        * Trace Span ID will be generated for every service call
-        * boolean variable represents whether the trace information has been sent to zipkin server or not
-        
-        - example:
-          zuul-service-gateway,d17b49e4256dff07,d17b49e4256dff07,false
-          flight-fare,d17b49e4256dff07,48f210561e30f115,false   
-          currency-conversion,d17b49e4256dff07,61c62da6ecc8e7be,false
+          * Output
+              * Format: servicename - TraceID - Trace span ID - Boolean Variable
+                * TraceID will be same for all the services
+                * Trace Span ID will be generated for every service call
+                * boolean variable represents whether the trace information has been sent to zipkin server or not
+                
+                - example:
+                  zuul-service-gateway,d17b49e4256dff07,d17b49e4256dff07,false
+                  flight-fare,d17b49e4256dff07,48f210561e30f115,false   
+                  currency-conversion,d17b49e4256dff07,61c62da6ecc8e7be,false
+                  
+       * Zipkin Server
+          * we can't do like eureka server a seperate server
+          * helps us view the transactional flow across the services visually  
+          * it shows the time taken for a transaction, and breaking down individually how long each service took 
+          * There is issue with setting up of zipkin server, we need to do it by set it up using this
+            https://zipkin.io/pages/quickstart.html (Running from source) or the java one
+          * it runs on port http://localhost:9411/zipkin/          
+          
+          * on the client service
+            - <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-zipkin</artifactId>
+            </dependency> 
+            
+            * zipkin uses amqp to process the traces, recieve the traces from services. SO we need it to be running
+            * properties to set on client
+              *
+                - ribbon.readTimeout=60000
+              * by default no span id is sent to zipkin server can be seen only in log. This property allows us to define
+                the probability of sending traces to Zipkin server. Value is from 1-100, 100 means send every sample to zipkin 
+                  
+                - spring.sleuth.sampler.probability=100
+              * used to set the URL of zipkin running server
+                - #Not mandatory; this is the default value
+                - spring.zipkin.baseUrl=http://localhost:9411  
          
 # To Access Environment(application-properties)
     @Autowired
