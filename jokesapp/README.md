@@ -2476,7 +2476,23 @@
       Zuul sets custom headers
       All downstream services use custom filter who takes user id and role from headers and transforms it into Spring Security auth object or whatever.           
 
-            
+  * Resiliency (Hystrix, Circuit breaker)     
+    * Circuit Breaker
+      * This makes sure that client will not call to service that is failing  repeatedly or responding poorly, to have rich user experience
+      * Hystrix Closely monitor's each service call and if calls get failed frequently, it fails fast to close the circuit, 
+        then it opens the circuit to source for alternate source of data, hystrix checks if the calls to service is working and if
+        it does it closes the circuit to normal path for service execution
+        
+      * Fallback Approach
+        * implements another source for data  
+        
+      * Bulk Head Approach  
+        * This approach seggregates the service calls into multiple thread pools, to ensure that degredation of the system will affect the execution
+           part 
+        * Each service  will be assigned to a thread   
+        * Hystrix provides an option of processing of the services in multiple thread pools
+  
+       
 # To Access Environment(application-properties)
     @Autowired
     private Environment environment;  
