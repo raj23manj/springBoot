@@ -2433,15 +2433,20 @@
             * we can override the response here
             * perform auditing here
             
-        * Implementation of Authentication filter
+        * Implementation of Authentication filter => section 6, 40
           * to implement ZuulFilter - Base Abstract Class this we need override the methods
             * filterType() => to classify type of filter - pre, post, route
             * filterOrder() => to define the execution order of the filter
             * shouldFilter() => is the filter active or not
             * run() => write the filter logic
+          * Predecoration Filter - ServiceId, in ZuulFilter
+            * // this service-id will be only set after pre-decoration filter
+              Object serviceId = ctx.get("serviceId");  
             
     # Microservice security
       * https://github.com/spring-cloud/spring-cloud-netflix/issues/162 
+      * pass jwt between microservices
+        * https://keyholesoftware.com/2016/06/20/json-web-tokens-with-spring-cloud-microservices/
       
       Our target architecture is several small microservices, Eureka as service registry and Zuul as edge servers.
       We using JWT-based auth mechanism.
@@ -4110,4 +4115,6 @@ public class RunFormQueries {
     * services   
       * service-interface
       * service impl of the interface
-   
+  
+# Basic's Of Spring 
+  * https://www.baeldung.com/inversion-control-and-dependency-injection-in-spring   
