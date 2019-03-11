@@ -2477,7 +2477,11 @@
       All downstream services use custom filter who takes user id and role from headers and transforms it into Spring Security auth object or whatever.           
 
   * Resiliency (Hystrix, Circuit breaker)   
-    * https://github.com/Netflix/Hystrix/wiki/Configuration#circuitBreaker.sleepWindowInMilliseconds  
+    * https://github.com/Netflix/Hystrix/wiki/Configuration#circuitBreaker.sleepWindowInMilliseconds 
+    * https://dzone.com/articles/microservices-part-4-spring-cloud-circuit-breaker 
+    * multiple apps on hystrix
+      * https://github.com/Netflix/Hystrix/issues/117
+      * https://exampledriven.wordpress.com/2016/07/05/spring-cloud-hystrix-example/ => this worked
     * Circuit Breaker
       * This makes sure that client will not call to service that is failing  repeatedly or responding poorly, to have rich user experience
       * Hystrix Closely monitor's each service call and if calls get failed frequently, it fails fast to close the circuit, 
@@ -2680,7 +2684,10 @@
                *  takes the expression to create a turbine cluster
                  - turbine.cluster-name-expression=new String("default")               
          
-             
+  # What is Microservices
+    * 
+    
+               
 # To Access Environment(application-properties)
     @Autowired
     private Environment environment;  
