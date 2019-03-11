@@ -4342,7 +4342,16 @@ public class RunFormQueries {
   
 # Basic's Of Spring 
   * https://www.baeldung.com/inversion-control-and-dependency-injection-in-spring   
+  * https://dzone.com/articles/the-springbootapplication-annotation-example-in-ja
 
 # Class Path in Spring Boot
   * maven-dependencies folder
-  * adding dependencies to pom will add all the jars to class path  
+  * adding dependencies to pom will add all the jars to class path 
+  * https://www.journaldev.com/2389/java-8-features-with-examples
+  * http://eherrera.net/ocpj8-notes/04-lambda-built-in-functional-interfaces
+  
+# OOPS(EIPA)
+  * Encapsulation
+  * Inheritance
+  * Polymorphism
+  * Abstraction   
