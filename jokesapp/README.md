@@ -2643,13 +2643,17 @@
               - RABBIT_URI=amqp://localhost java -jar zipkin-server-2.11.12-exec.jar
               - RABBIT_URI=amqp://localhost java -jar zipkin.jar
               
-       * Hystrix Dashboard and Turbine cluster  
+       * Hystrix Dashboard and Turbine cluster 
+         * https://dzone.com/articles/spring-cloud-with-turbine 
          * Hystrix Dashboard
            * used to monitor the metrics 
            
          * Turbine Stream                  
            * Used to monitor real time metrics using 
            * this is the one which aggregates the data from the servers and to a real stream
+         
+         * Hystrix dashboard would figure out the instances of the cluster using Eureka, source the Hystrix stream from each instance and 
+           aggregate it into the Turbine stream
            
          * Setup up hystrix server dashboard
            * dependencies
