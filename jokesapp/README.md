@@ -3502,8 +3502,73 @@
     - @FunctionalInterface
       public interface Greeting {
         public void perform();
-      } 
+      }
       
+    * Java gives built functional interfaces for specific purposes
+      * predicate
+        * A predicate is a statement that may be true or false depending on the values of its variables. 
+          It can be thought of as a function that returns a value that is either true or false
+          - Predicate<String> isALongWord = t -> t.length() > 10;   
+      
+      * Consumer   
+        * This functional interface represents an operation that accepts a single input argument and returns no result. 
+        The real outcome is the side-effects it produces. Since it's a functional interface, you can pass a lambda 
+        expression wherever a Consumer is expected.
+          - class Product {
+              private double price = 0.0;
+            
+              public void setPrice(double price) {
+                this.price = price;
+              }
+            
+              public void printPrice() {
+                System.out.println(price);
+              }
+            }
+            
+            public class Test {
+              public static void main(String[] args) {
+                Consumer<Product> updatePrice = p -> p.setPrice(5.9);
+                Product p = new Product();
+                updatePrice.accept(p);
+                p.printPrice();
+              }
+            }
+            
+      * Function
+        * This functional interface represents a function that accepts one argument and produces a result. 
+          One use, for example, it's to convert or transform from one object to another. Since it's a functional interface, 
+          you can pass a lambda expression wherever a Function is expected.
+          -  public class Test {
+               public static void main(String[] args) {
+                 int n = 5;
+                 modifyTheValue(n, val-> val + 10);
+                 modifyTheValue(n, val-> val * 100);
+               }
+             
+               static void modifyValue(int v, Function<Integer, Integer> function){
+                 int result = function.apply(v);
+                 System.out.println(newValue);
+               }
+             
+             }
+             
+      * Supplier
+        *  This functional interface does the opposite of the Consumer, it takes no arguments but it returns some value. 
+           It may return different values when it is being called more than once. Since it's a functional interface, 
+           you can pass a lambda expression wherever a Supplier is expected.   
+           -  public class Program {
+                  public static void main(String[] args) {
+                      int n = 3;
+                      display(() -> n + 10);
+                      display(() -> n + 100);
+                  }
+              
+                  static void display(Supplier<Integer> arg) {
+                      System.out.println(arg.get());
+                  }
+              }  
+            
   * More Lambda Features(15, 16)
     * java.utils.functions  => has pre-defined functions for common use  
     * https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html  
