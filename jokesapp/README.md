@@ -3722,6 +3722,77 @@
   
   # Customising LifeCycle
     -  Need to dig in more      
+
+################### Testing
+
+ * Helps maintain bug free code
+ * Helps to modularise code
+
+ # Concepts 
+  * Unit Tests
+    * Designed for specific sections of code
+    * should be very fast
+    * should not have external dependencies(no DB, no web service calls, no spring context)
+  
+  * Integration Tests
+    * If need test behaviour between objects to see interaction
+    * can include spring context, message broker etc ...
+    * slower in running than unit tests
+    
+  * Functional Tests
+    * Means testing a running application
+    * Functional touch points are tested (using web driver, calling web services, sending/receiving messages)   
+  
+  * Importance 
+    * write major of test cases as unit
+    * then integration tests
+    * functional tests 
+    
+  * Agile Testing Methods
+    * TDD
+      * write tests first, code to fix tests, refractor coe to cleanup, improve
+    * BDD(cucumber)   
+      * similar to TDD
+      * describe the excepted behaviour of software
+      * often expressed as: when/then; given/when/then
+      
+  * Testing components
+    * Mocks
+      * a fake implementation of a class used for testing
+      * a test double for dependent objects - like datasource
+      * can provide expected response
+      * can verify expected interactions
+      
+    * Spy    
+      * like a mock, but a real object is used
+      * mocks completely replace expected object
+      * spys are wrappers, but with real objects inside
+  
+  * Junit Tests
+    * Use Assertions
+      * https://junit.org/junit5/docs/5.0.1/api/org/junit/jupiter/api/Assertions.html
+    * using junit 5
+    * a test method will be annotated as @Test
+      - @Test
+        void getBar(){}    
+    * when the junit test runner will know this is test method and will pick this class and run it  
+    
+  * Common Testing Frameworks (all used together)
+    * Junit 4/5 by Jupiter
+    * mockito
+    * Spring MVC Test
+      * used for testing controllers
+      * provide mock servlet environment
+    * Rest-assured
+      * used for testing restful web services
+      * can be used with spring mock mvc  
+    * Selenium
+      * Functional test, browser level
+      
+  * CI vs CD(continuous deployment) vs CD(continuous delivery)    
+    * CI => running test immediately after commit
+    * CD => deployment after test succeeds, build artifacts after CI tests run and deploy
+    * CD(delivery) => process of automatically delivering changes directly to production 
     
     
 ###### Links
@@ -4200,7 +4271,7 @@
 # Java Linting (Code quality like robocop for rails)
  * sonar
 
-# Cpverage report
+# Coverage report
   * jacoco 
  
 # Sample controller
@@ -4355,3 +4426,9 @@ public class RunFormQueries {
   * Inheritance
   * Polymorphism
   * Abstraction   
+  
+# Get user ID
+   https://stackoverflow.com/questions/50803727/spring-with-jwt-auth-get-current-user  
+   
+   
+  
