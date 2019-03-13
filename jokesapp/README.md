@@ -3858,8 +3858,35 @@
     * CI => running test immediately after commit
     * CD => deployment after test succeeds, build artifacts after CI tests run and deploy
     * CD(delivery) => process of automatically delivering changes directly to production 
+  
+  * Commands to run test
+    * https://www.codejava.net/testing/junit-test-suite-example-how-to-create-and-run-test-suite-in-command-line-and-eclipse
+    * https://www.eclipse.org/community/eclipse_newsletter/2017/october/article5.php
+    * https://stackoverflow.com/questions/2235276/how-to-run-junit-test-cases-from-the-command-line
+    * Commands
+      - mvn clean test
+      * Or you can run a particular test as below
+     
+      - mvn clean test -Dtest=your.package.TestClassName
+      - mvn clean test -Dtest=your.package.TestClassName#particularMethod
+      * If you would like to see the stack trace (if any) in the console instead of report files in the 
+        target\surefire-reports folder, set the user property surefire.useFile to false. For example:
+     
+      - mvn clean test -Dtest=your.package.TestClassName -Dsurefire.useFile=false
+  
+  * Example's  
+    * https://github.com/springframeworkguru/tdd-by-example 
     
+    * Project setup for testing section 3, 15
+      * Degenerate Objects
+        * create new instance of class when testing
+          - Dollar product = five.times(2);
+            assertEquals(10, product.amount);
+            product = five.times(3);
+            assertEquals(15, product.amount);
     
+    * Branch mappings
+      -  section 3 => mcmoney
 ###### Links
 
     # @Async  
