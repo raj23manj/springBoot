@@ -2459,6 +2459,7 @@
       * https://github.com/spring-cloud/spring-cloud-netflix/issues/162 
       * pass jwt between microservices
         * https://keyholesoftware.com/2016/06/20/json-web-tokens-with-spring-cloud-microservices/
+        * https://stackoverflow.com/questions/47362618/spring-cloud-zuul-pass-jwt-downstream  
       
       Our target architecture is several small microservices, Eureka as service registry and Zuul as edge servers.
       We using JWT-based auth mechanism.
