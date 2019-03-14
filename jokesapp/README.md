@@ -3885,8 +3885,13 @@
             product = five.times(3);
             assertEquals(15, product.amount);
     
-    * Branch mappings
-      -  section 3 => mcmoney
+      * Equality for All
+        * checking if two objects are equal, by overriding Equals method
+        - assertEquals(), assertNotEquals
+        
+  * Important tips
+    * to display the object attributes, override toString method in the class. 
+            
 ###### Links
 
     # @Async  
@@ -4364,7 +4369,11 @@
  * sonar
 
 # Coverage report
-  * jacoco 
+  * jacoco
+  * https://thepracticaldeveloper.com/2016/02/06/test-coverage-analysis-for-your-spring-boot-app/ 
+  * EclEmma (Powered by jacoco)
+    * https://dzone.com/articles/java-code-coverage-in-eclipse
+    * https://www.eclemma.org/userdoc/index.html
  
 # Sample controller
   - @GetMapping(value = "/logOut")
