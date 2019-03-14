@@ -4531,6 +4531,8 @@ public class RunFormQueries {
   
 # Get user ID
    https://stackoverflow.com/questions/50803727/spring-with-jwt-auth-get-current-user  
-   
+
+# Get Headers from request
+  * https://stackoverflow.com/questions/19556039/how-to-get-access-to-http-header-information-in-spring-mvc-rest-controller/19556081   
    
   
