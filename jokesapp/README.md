@@ -3892,6 +3892,27 @@
         
   * Important tips
     * to display the object attributes, override toString method in the class. 
+    
+  * Section 4, Junit 5 setup
+    * Major annotations in Junit
+      * @Test => marks a method as a test method
+      * @ParameterizedTest => marks the method as parameterized test
+      * @RepeatedTest => Repeat test N times
+      * @TestFactory => Test Factory method for dynamic tests
+      * @TestInstance => used to configure test instance lifecycle  
+      * @TestTemplate => creates a template to be used by multiple test cases
+      * @DisplayName => Human friendly name for test
+      * @BeforeEach => Method to run before each test
+      * @AfterEach => Method to run after each testcase
+      * @BeforeAll => Static method to run before all test cases in current class 
+      * @AfterAll => Static method to run after all test cases in current class 
+      * @Nested => Creates a nested test class
+      * @Tag => declares tags for filtering tests
+      * @Disabled => disable test or test class
+      * @ExtendWith => used to register with extensions
+      
+    * Test Life Cycle
+      * @BeforeAll => @BeforeEach => @Test => @AfterEach => @AfterAll  
             
 ###### Links
 
@@ -4535,4 +4556,5 @@ public class RunFormQueries {
 # Get Headers from request
   * https://stackoverflow.com/questions/19556039/how-to-get-access-to-http-header-information-in-spring-mvc-rest-controller/19556081   
    
-  
+# Design patterns
+  * https://springframework.guru/gang-of-four-design-patterns/  
