@@ -3913,7 +3913,55 @@
       
     * Test Life Cycle
       * @BeforeAll => @BeforeEach => @Test => @AfterEach => @AfterAll  
+      
+  * Section 5
+    * assertions
+      * JUnit Assertions
+        * branch
+          * assertion - section 5, 47 
+          * groupedassertion - 48
+            * assertAll() => grouped assertions 
+            - assertAll("Person Properties",
+                                        () -> assertEquals("Joe", owner.getFirstName(), "First Name Did not Match"),
+                                        () -> assertEquals("Buck", owner.getLastName()))  
+          * Dependent assertions - 49
+            * assertAll("Properties Test",
+            -  () -> assertAll("Person Properties",
+                          () -> assertEquals("Joe", owner.getFirstName(), "First Name Did not Match"),
+                          () -> assertEquals("Buck", owner.getLastName())),
+                  () -> assertAll("Owner Properties",
+                          () -> assertEquals("Key West", owner.getCity(), "City Did Not Match"),
+                          () -> assertEquals("1231231234", owner.getTelephone())
+                  ));
+                  
+          * Skipping Tests - 50
+            * @Disabled
+              @Test
+              void findByLastName() {}
+          
+          * Display Name - 51
+            * @DisplayName("Test Proper View name is returned for index page")
+              @Test
+              void index() {}                
+          
+          * Expected exceptions - 52
+            *  assertThrows(ValueNotFoundException.class, () -> { controller.oopsHandler(); });  
             
+          * TimeOut - 53
+            * assertTimeout(Duration.ofMillis(100), () -> {
+                          Thread.sleep(5000);
+              
+                          System.out.println("I got here");
+                      }); => runs in on the same thread and waits until it finishes
+            *  assertTimeoutPreemptively()   => junit runs it on different thread, and fails it          
+          
+          * Junit Assumptions - 54
+            * assumeTrue("GURU".equalsIgnoreCase("GURU"));
+          
+          * Conditional Junit Execution - 55
+            *  @EnabledOnOs(OS.MAC), @EnabledOnJre(JRE.JAVA_8), @EnabledIfEnvironmentVariable(named = "USER", matches = "jt") 
+            
+              
 ###### Links
 
     # @Async  
