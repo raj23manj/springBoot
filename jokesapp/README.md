@@ -4002,7 +4002,40 @@
                   System.out.println(testInfo.getDisplayName() + ": " + repetitionInfo.getCurrentRepetition());
           
               }      
+          
+          * JUnit parameterized Tests - 70
+            * <dependency>
+                  <groupId>org.junit.jupiter</groupId>
+                  <artifactId>junit-jupiter-params</artifactId>
+                  <version>${junit-platform.version}</version>
+              </dependency>      
+              
+              @ParameterizedTest
+              @ValueSource(strings = {"Spring", "Framework", "Guru"})
+              void testValueSource(String val) {
+                  System.out.println(val);
+              }
+              
+            * Display Name - 71
+               * @DisplayName("Value Source Test")
+                @ParameterizedTest(name = "{displayName} - [{index}] {arguments}")
+                @ValueSource(strings = {"Spring", "Framework", "Guru"})
+                void testValueSource(String val) {}
                 
+            * Enum - 72 
+              * public enum OwnerType {
+                
+                    INDIVIDUAL, COMPANY
+                }
+              
+                DisplayName("Enum Source Test")
+                @ParameterizedTest(name = "{displayName} - [{index}] {arguments}")
+                @EnumSource(OwnerType.class)
+                void enumTest(OwnerType ownerType) {
+                    System.out.println(ownerType);
+                }  
+                
+            * CSV Source - 73        
               
 ###### Links
 
