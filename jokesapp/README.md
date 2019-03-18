@@ -3961,6 +3961,48 @@
           * Conditional Junit Execution - 55
             *  @EnabledOnOs(OS.MAC), @EnabledOnJre(JRE.JAVA_8), @EnabledIfEnvironmentVariable(named = "USER", matches = "jt") 
             
+          * AssertJ alternate library for assertion - 56
+            *  
+          
+          * Tagging and filtering - 62  
+            * @Tag("model"), @Tag("controllers")
+          
+          * Nested Tests - 63
+            * @Nested  
+            
+          * JUnit test interfaces - 64
+            * @Tag("controllers")
+              public interface ControllerTests {
+              }
+              
+              class IndexControllerTest implements ControllerTests{}
+              
+          * JUnit Default methods - 65
+            * @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+              @Tag("controllers")
+              public interface ControllerTests {
+              
+                  @BeforeAll
+                  default void beforeAll(){
+                      System.out.println("Lets do something here");
+                  }
+              }
+          
+          * Repeated Test - 66 
+            * @RepeatedTest(value = 10, name = "{displayName} : {currentRepetition} - {totalRepetitions}")
+              @DisplayName("My Repeated Test")
+              @Test
+              void myRepeatedTest() {
+                //todo - impl
+              } 
+          
+          * JUnit Test Dependency Injection - 67
+            * @RepeatedTest(5)
+              void myRepeatedTestWithDI(TestInfo testInfo, RepetitionInfo repetitionInfo) {  // TestReporter
+                  System.out.println(testInfo.getDisplayName() + ": " + repetitionInfo.getCurrentRepetition());
+          
+              }      
+                
               
 ###### Links
 
