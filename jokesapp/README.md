@@ -4035,8 +4035,64 @@
                     System.out.println(ownerType);
                 }  
                 
-            * CSV Source - 73        
-              
+            * CSV Source(List) - 73 
+              *     @DisplayName("CSV Input Test")
+                    @ParameterizedTest(name = "{displayName} - [{index}] {arguments}")
+                    @CsvSource({
+                            "FL, 1, 1",
+                            "OH, 2, 2",
+                            "MI, 3, 1"
+                    })
+                    void csvInputTest(String stateName, int val1, int val2) {
+                        System.out.println(stateName + " = " + val1 + ":" + val2);
+                    }
+                    
+            * CSV Input File - 74
+              *  @DisplayName("CSV From File Test")
+                 @ParameterizedTest(name = "{displayName} - [{index}] {arguments}")
+                 @CsvFileSource(resources = "/input.csv", numLinesToSkip = 1)
+                 void csvFromFileTest(String stateName, int val1, int val2) {
+                     System.out.println(stateName + " = " + val1 + ":" + val2);
+                 } 
+                 
+            * Parameterized Tests - Methods - 75
+              *     @DisplayName("Method Provider Test")
+                    @ParameterizedTest(name = "{displayName} - [{index}] {arguments}")
+                    @MethodSource("getargs")
+                    void fromMethodTest(String stateName, int val1, int val2) {
+                        System.out.println(stateName + " = " + val1 + ":" + val2);
+                    }
+                
+                    static Stream<Arguments> getargs() {
+                        return Stream.of(
+                                Arguments.of("FL", 5, 1),
+                                Arguments.of("OH", 2, 8),
+                                Arguments.of("MI", 3, 5));
+                    }                   
+            
+            * Custom Args provider - 76
+              *     @DisplayName("Custom Provider Test")
+                    @ParameterizedTest(name = "{displayName} - [{index}] {arguments}")
+                    @ArgumentsSource(CustomArgsProvider.class)
+                    void fromCustomProviderTest(String stateName, int val1, int val2) {
+                        System.out.println(stateName + " = " + val1 + ":" + val2);
+                    }
+                    
+                    public class CustomArgsProvider implements ArgumentsProvider {
+                        @Override
+                        public Stream<? extends Arguments> provideArguments(ExtensionContext extensionContext) throws Exception {
+                            return Stream.of(
+                                    Arguments.of("FL", 7, 10),
+                                    Arguments.of("OH", 11, 42),
+                                    Arguments.of("MI", 44, 77));
+                        }
+                    }
+                    
+            * Junit Extensions -  78
+              * @ExtendWith(TimingExtension.class)
+                class PetTypeSDJpaServiceIT {}       
+            
+        * Test Execution - Section 7       
 ###### Links
 
     # @Async  
