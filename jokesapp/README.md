@@ -4092,7 +4092,9 @@
               * @ExtendWith(TimingExtension.class)
                 class PetTypeSDJpaServiceIT {}       
             
-        * Test Execution - Section 7       
+        * Test Execution - Section 7  (circle CI Badge/Maven Surefire/ Maven Fail safe)  
+          * maven surefire => <!-- used for running unit test for maven-->
+          * maven failsafe =>  <!-- used for running integration test and has logics-->
 ###### Links
 
     # @Async  
