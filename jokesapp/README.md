@@ -4229,9 +4229,43 @@
           
                   verify(specialtyRepository).delete(any(Speciality.class)); => in delete is the argument matcher
                   verify(specialtyRepository).findById(anyLong());
-              }     
-               
-    
+              } 
+              
+      * BDD Mockito - Section 10
+        * Given - Setup of the text
+        * When - Action of the test - ie when the method is called
+        * Then - Verification of expected results             
+        
+        * BDD Mockito - 117
+          *  @Test
+            void findByIdBddTest() {
+                Speciality speciality = new Speciality();
+        
+                given(specialtyRepository.findById(1L)).willReturn(Optional.of(speciality));
+        
+                Speciality foundSpecialty = service.findById(1L);
+        
+                assertThat(foundSpecialty).isNotNull();
+        
+                verify(specialtyRepository).findById(anyLong());
+            }    
+                   
+        * BDD verification in mockito - 118
+          * @Test
+            void findByIdBddTest() {
+                //given
+                Speciality speciality = new Speciality();
+                given(specialtyRepository.findById(1L)).willReturn(Optional.of(speciality));
+        
+                //when
+                Speciality foundSpecialty = service.findById(1L);
+        
+                //then
+                assertThat(foundSpecialty).isNotNull();
+                then(specialtyRepository).should().findById(anyLong());
+                then(specialtyRepository).shouldHaveNoMoreInteractions();
+            } 
+        
 ###### Links
 
     # @Async  
