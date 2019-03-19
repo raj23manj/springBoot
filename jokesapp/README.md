@@ -4910,3 +4910,8 @@ public class RunFormQueries {
    
 # Design patterns
   * https://springframework.guru/gang-of-four-design-patterns/  
+  
+# Audit Aware Interface
+  * https://www.baeldung.com/database-auditing-jpa
+  * https://springbootdev.com/2018/03/13/spring-data-jpa-auditing-with-createdby-createddate-lastmodifiedby-and-lastmodifieddate/  
+  * https://thoughts-on-java.org/persist-creation-update-timestamps-hibernate/
