@@ -4094,7 +4094,144 @@
             
         * Test Execution - Section 7  (circle CI Badge/Maven Surefire/ Maven Fail safe)  
           * maven surefire => <!-- used for running unit test for maven-->
-          * maven failsafe =>  <!-- used for running integration test and has logics-->
+          * maven failsafe 83(important) =>  <!-- used for running integration test and has logics-->
+            * <plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-failsafe-plugin</artifactId>
+                  <version>2.22.0</version>
+                  <configuration>
+                      <argLine>
+                          --illegal-access=permit
+                      </argLine>
+                  </configuration>
+                  <executions>
+                      <execution>
+                      <!-- important -->
+                          <goals>
+                              <goal>integration-test</goal>
+                              <goal>verify</goal>
+                          </goals>
+                      </execution>
+                  </executions>
+              </plugin>
+              
+          * Reporting surefireTest - 84
+           
+        * Mockito - Section 9  
+          * Test doubles for classes for fast and light weight test
+          * works well with Dependency Injection
+          * Types of mocks
+            * Dummy - object used just to get code to compile
+            * Fake - An Object that has an implementation, but not production ready
+            * Stub - An Object with pre-defined answers to method calls
+            * Mock - An Object with pre-defined answers to method calls, and has expectations of executions. Can throw an
+              exception if an unexpected invocation is detected
+            * spy - in mockito spies are Mock like wrappers around the actual object  
+          
+          * Important Terminology
+            * Verify - used to verify number of times a mocked method has been called
+            * Argument Matcher - Matches a  rguments passed to Mocked Method & will allow or disallow
+            * Argument Captor - captures arguments passed to a Mocked method
+            
+          * Annotations
+            * @Mock => intialise a mock
+            * @Spy
+            * @injectMocks => tells mockito to create an instance of this and inject it
+            * @Captor  
+          
+          * Maven dependencies and setup - 102
+          
+          * Inline Mocks - 103
+            * import static org.mockito.Mockito.mock;
+              @Test
+              void testInlineMock() {
+                  Map mapMock = mock(Map.class);
+          
+                  assertEquals(mapMock.size(), 0);
+              }
+          
+          * Mocks with Annotations - 104
+            * @Mock
+              Map<String, Object> mapMock;
+          
+              @BeforeEach
+              void setUp() {
+                  MockitoAnnotations.initMocks(this);
+              }
+          
+              @Test
+              void testMock() {
+                  mapMock.put("keyvalue", "foo");
+              }
+              
+          * Junit Mockito Extension - 105
+            *  @ExtendWith(MockitoExtension.class) => instead of using setup method above short cut
+               public class JUnitExtensionTest {
+               
+                   @Mock
+                   Map<String, Object> mapMock;
+               
+                   @Test
+                   void testMock() {
+                       mapMock.put("keyvalue", "foo");
+                   }
+               } 
+               
+          * Injecting Mocks with Mockito - 106
+            * @ExtendWith(MockitoExtension.class)
+              class SpecialitySDJpaServiceTest {
+              
+                  @Mock => intialise a mock
+                  SpecialtyRepository specialtyRepository;
+              
+                  @InjectMocks => tells mockito to create an instance of this and inject it
+                  SpecialitySDJpaService service;
+              
+                  @Test
+                  void deleteById() {
+                      service.deleteById(1l);
+                  }
+              
+                  @Test
+                  void testDelete() {
+                      service.delete(new Speciality());
+                  }
+              }   
+              
+          * Verify Mock Interactions(like spy) - 107
+            *  specialtyRepository => mocked object, 
+               verify(specialtyRepository, times(2)).deleteById(1l);  => verify if it calling twice 
+               verify(specialtyRepository, atLeastOnce()).deleteById(1l);  => atleast once it has to be called
+               verify(specialtyRepository, atMost(5)).deleteById(1l); => max of 5 times it can be called           
+               verify(specialtyRepository, never()).deleteById(5L); => never called with that ID
+               
+          * Returning Values for mockito - 110
+            *  @Test
+               void findByIdTest() {
+                   Speciality speciality = new Speciality();
+           
+                   when(specialtyRepository.findById(1L)).thenReturn(Optional.of(speciality));
+           
+                   Speciality foundSpecialty = service.findById(1L);
+           
+                   assertThat(foundSpecialty).isNotNull();
+           
+                   verify(specialtyRepository).findById(1L);
+           
+               }
+               
+          * Argument Matcher - 111
+            * @Test
+              void testDeleteByObject() {
+                  Speciality speciality = new Speciality();
+          
+                  service.delete(speciality);
+          
+                  verify(specialtyRepository).delete(any(Speciality.class)); => in delete is the argument matcher
+                  verify(specialtyRepository).findById(anyLong());
+              }     
+               
+    
 ###### Links
 
     # @Async  
