@@ -4546,8 +4546,24 @@
          
       * https://github.com/springframeworkguru/tb2g-testing-spring/commit/855b7be5ed90d414de44fba85800d1eabfbe756b  
       
-    *   
-        
+  * Spring MVC Test - section 14
+    * mock servlet 
+    *  Provides Servlet API Mock objects to mock the web environment
+      * MockHttpServletRequest - Mock of Java’s HttpServletRequest
+      * MockHttpServletResponse - Mock of Java’s HttpServletResponse
+      * DispatcherServlet - Requests are routed through Spring MVC’s DispatcherServlet  
+    * Standalone Setup
+      * Very light weight - Ideal for unit tests
+      * Tests one controller at a time
+      * Allows for testing of controller requests and responses
+    * WebAppContext Setup
+      * Loads larger context of Spring Configuration
+      * Tests many controllers - per configuration
+      * Allows for testing of application config    
+    * Spring MVC Test uses a “fluent” API via several static imports
+      * MockMvcRequestBuilders.* - Builds request
+      * MockMvcResultMatchers.* - Create assertions against response
+      * MockMvcBuilders.* - Configure and build an instance of MockMvc.   
       
 # set up test profile with h2 
   * https://www.baeldung.com/spring-testing-separate-data-source               
