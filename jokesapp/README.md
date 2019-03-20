@@ -4416,7 +4416,42 @@
              
           * https://github.com/springframeworkguru/tb2g-bdd-mockito/commit/558a9e26e3fdc267320a8142ea0d309af52500ee    
 
-        
+      * Testing With Spring Framework - section 12
+        * Things inside of spring
+          * Environment - mock environment and properties Source
+          * JNDI - Mock of JNDI lookup
+          * Servlet API - For Testing of web environment
+          * Spring Web Reactive - Testing of reactive web environment
+          * Spring MVC Test - ofr testing controller interactions
+            * MockHttpServletRequest - Mock implementation of request/response
+            * MockHttpSession - Mock of Http Session
+            * ModelAndViewAssert - assertion utilities
+            
+          * Spring Framework Testing Annotations
+            * @BootstrapWith - Class-level annotation to configure how the test context is bootstrapped
+            * @ContextConfiguration - Class-level annotation to configure the application context
+            * @WebAppConfigurtation - Class-level annotation to configure a web application context
+            * @ContextHiearchy - Class-level annotation to set multiple @ContextConfigurations
+            * @ActiveProfiles - Class-level annotation to set active profiles for test
+            * @TestPropertySource - Class-level annotation to set property sources for test
+            * @DirtiesContext - Class or method level annotation which tells Spring to re-load context after
+              test - (slows down your tests)
+            * @TestExecutionListeners - Used to configure test execution listeners
+            * @Commit - Class or method level annotation to commit action of test to database.
+            * @Rollback - Class or method level annotation to rollback action of test from database.
+            * @BeforeTransaction - run a method which returns void before a transaction is started
+            * @AfterTransaction - run a method which returns void after a transaction has completed   
+            * @Sql - Used to configure SQL scripts to run before a test
+            * @SqlConfig - Configuration for the parsing of SQL scripts
+            * @SqlGroup - Configure a grouping of SQL scripts 
+          * Junit 5 Testing Annotations
+            * @SpringJUnitConfig - Combines @ContextConfiguration with
+              @ExtendWith(SpringExtension.class) to configure the Spring Context for the test
+            * @SpringJUnitWebConfig - Combines @ContextConfiguration and @WebAppConfiguration with
+              @ExtendWith(SpringExtension.class) to configure the Spring Context for the test
+            * @EnabledIf - Conditional execution of test
+            * @DisabledIf - Conditional execution of test
+          
 ###### Links
 
     # @Async  
