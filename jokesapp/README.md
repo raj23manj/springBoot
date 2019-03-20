@@ -4451,6 +4451,106 @@
               @ExtendWith(SpringExtension.class) to configure the Spring Context for the test
             * @EnabledIf - Conditional execution of test
             * @DisabledIf - Conditional execution of test
+        
+        * Example assignment to test code - 139
+          * https://github.com/springframeworkguru/tb2g-testing-spring/commit/c933eb2c08a657b315165894b193a0feccb696f4
+          
+    * Spring Framework Testing Context - section 13
+      * Junit 4
+          * @RunWith(SpringRunner.class)
+            // telling the configuration classes
+            @ContextConfiguration(classes = {BaseConfig.class, LaurelConfig.class})
+            public class HearingInterpreterTest {
+            
+                @Autowired
+                HearingInterpreter hearingInterpreter;
+            
+                @Test
+                public void whatIheard() {
+                    String word = hearingInterpreter.whatIheard();
+            
+            
+                    assertEquals("Laurel", word);
+                }
+            }      
+      
+      * Junit 5
+        * @SpringJUnitConfig(classes = {BaseConfig.class, LaurelConfig.class})
+          class HearingInterpreterLaurelTest {
+          
+              @Autowired
+              HearingInterpreter hearingInterpreter;
+          
+              @Test
+              void whatIheard() {
+                  String word = hearingInterpreter.whatIheard();
+          
+                  assertEquals("Laurel", word);
+              }
+          } 
+          
+    * Using Inner Class Configuration - 150
+      * @SpringJUnitConfig(classes = HearingInterpreterInnerClassTest.TestConfig.class)
+        class HearingInterpreterInnerClassTest {
+        
+            @Configuration
+            static class TestConfig {
+        
+                @Bean
+                HearingInterpreter hearingInterpreter(){
+                    return new HearingInterpreter(new LaurelWordProducer());
+                }
+            }
+        
+            @Autowired
+            HearingInterpreter hearingInterpreter;
+        
+            @Test
+            void whatIheard() {
+                String word = hearingInterpreter.whatIheard();
+        
+                assertEquals("Laurel", word);
+            }
+        }   
+        
+    * Using Component Scans - 151
+      * @SpringJUnitConfig(classes = HearingInterpreterComponentScanTest.TestConfig.class)
+        class HearingInterpreterComponentScanTest {
+        
+            @Configuration
+            @ComponentScan("org.springframework.samples.petclinic.sfg")
+            static class TestConfig {
+        
+            }
+        
+            @Autowired
+            HearingInterpreter hearingInterpreter;
+        
+            @Test
+            void whatIheard() {
+                String word = hearingInterpreter.whatIheard();
+        
+                assertEquals("Laurel", word);
+            }
+        }   
+        
+    * Setting Active Profiles for Tests - 152
+      * @ActiveProfiles("base-test")
+      * https://github.com/springframeworkguru/tb2g-testing-spring/commit/f64c820d4473d296f0eeb0ab07bdd26c0e376238 
+      
+    * Spring Test Properties - 153
+      * @TestPropertySource("classpath:yanny.properties")
+        @ActiveProfiles("externalized")
+        @SpringJUnitConfig(classes = PropertiesTest.TestConfig.class)
+        public class PropertiesTest {}
+         
+      * https://github.com/springframeworkguru/tb2g-testing-spring/commit/855b7be5ed90d414de44fba85800d1eabfbe756b  
+      
+    *   
+        
+      
+# set up test profile with h2 
+  * https://www.baeldung.com/spring-testing-separate-data-source               
           
 ###### Links
 
@@ -5102,3 +5202,6 @@ public class RunFormQueries {
   * https://springbootdev.com/2018/03/13/spring-data-jpa-auditing-with-createdby-createddate-lastmodifiedby-and-lastmodifieddate/  
   * https://thoughts-on-java.org/persist-creation-update-timestamps-hibernate/
   * https://www.programmingmitra.com/2017/02/automatic-spring-data-jpa-auditing-saving-CreatedBy-createddate-lastmodifiedby-lastmodifieddate-automatically.html
+
+# Good tutorial about Hibernate
+  * https://thoughts-on-java.org/tutorials/  
