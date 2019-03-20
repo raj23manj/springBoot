@@ -4265,6 +4265,157 @@
                 then(specialtyRepository).should().findById(anyLong());
                 then(specialtyRepository).shouldHaveNoMoreInteractions();
             } 
+            
+        * Advanced Mockito - section 11
+          
+          * Throwing Exceptions - 124
+            * @Test
+              void testDoThrow() {
+                  doThrow(new RuntimeException("boom")).when(specialtyRepository).delete(any());
+          
+                  assertThrows(RuntimeException.class, () -> specialtyRepository.delete(new Speciality()));
+          
+                  verify(specialtyRepository).delete(any());
+              }
+          
+              @Test
+              void testFindByIDThrows() {
+                  given(specialtyRepository.findById(1L)).willThrow(new RuntimeException("boom"));
+          
+                  assertThrows(RuntimeException.class, () -> service.findById(1L));
+          
+                  then(specialtyRepository).should().findById(1L);
+              }
+          
+              @Test
+              void testDeleteBDD() {
+                  willThrow(new RuntimeException("boom")).given(specialtyRepository).delete(any());
+          
+                  assertThrows(RuntimeException.class, () -> specialtyRepository.delete(new Speciality()));
+          
+                  then(specialtyRepository).should().delete(any());
+              }
+              
+        * Java 8 lambda Argument Matchers - 125
+          * https://github.com/springframeworkguru/tb2g-bdd-mockito/commit/2222a0212b089061555a04ef54fa177d502cc9e6      
+          * @Mock(lenient = true) => when using argThat to set it to leninent
+            SpecialtyRepository specialtyRepository;
+            @Test
+            void testSaveLambda() {
+                //given
+                final String MATCH_ME = "MATCH_ME";
+                Speciality speciality = new Speciality();
+                speciality.setDescription(MATCH_ME);
+        
+                Speciality savedSpecialty = new Speciality();
+                savedSpecialty.setId(1L);
+        
+                //need mock to only return on match MATCH_ME string
+                given(specialtyRepository.save(argThat(argument -> argument.getDescription().equals(MATCH_ME)))).willReturn(savedSpecialty);
+        
+                //when
+                Speciality returnedSpecialty = service.save(speciality);
+        
+                //then
+                assertThat(returnedSpecialty.getId()).isEqualTo(1L);
+            }
+        
+            @Test
+            void testSaveLambdaNoMatch() {
+                //given
+                final String MATCH_ME = "MATCH_ME";
+                Speciality speciality = new Speciality();
+                speciality.setDescription("Not a match");
+        
+                Speciality savedSpecialty = new Speciality();
+                savedSpecialty.setId(1L);
+        
+                //need mock to only return on match MATCH_ME string
+                given(specialtyRepository.save(argThat(argument -> argument.getDescription().equals(MATCH_ME)))).willReturn(savedSpecialty);
+        
+                //when
+                Speciality returnedSpecialty = service.save(speciality);
+        
+                //then
+                assertNull(returnedSpecialty);
+            }        
+        * Mockito Argument Captors - 128
+          * @Test
+            void processFindFormWildcardString() {
+                //given
+                Owner owner = new Owner(1l, "Joe", "Buck");
+                List<Owner> ownerList = new ArrayList<>();
+                final ArgumentCaptor<String> captor = ArgumentCaptor.forClass(String.class);
+                given(ownerService.findAllByLastNameLike(captor.capture())).willReturn(ownerList);
+        
+                //when
+                String viewName = controller.processFindForm(owner, bindingResult, null);
+        
+                //then
+                assertThat("%Buck%").isEqualToIgnoringCase(captor.getValue());
+            }
+        
+            @Test
+            void processFindFormWildcardStringAnnotation() {
+                //given
+                Owner owner = new Owner(1l, "Joe", "Buck");
+                List<Owner> ownerList = new ArrayList<>();
+                given(ownerService.findAllByLastNameLike(stringArgumentCaptor.capture())).willReturn(ownerList);
+        
+                //when
+                String viewName = controller.processFindForm(owner, bindingResult, null);
+        
+                //then
+                assertThat("%Buck%").isEqualToIgnoringCase(stringArgumentCaptor.getValue());
+            } 
+            
+        * Mockito Answer - 129
+          * https://github.com/springframeworkguru/tb2g-bdd-mockito/commit/051ce2c7f0e16ed291e4519e8c4d714063d41482      
+          * @BeforeEach
+            void setUp() {
+                given(ownerService.findAllByLastNameLike(stringArgumentCaptor.capture()))
+                        .willAnswer(invocation -> {
+                    List<Owner> owners = new ArrayList<>();
+        
+                    String name = invocation.getArgument(0);
+        
+                    if (name.equals("%Buck%")) {
+                        owners.add(new Owner(1l, "Joe", "Buck"));
+                        return owners;
+                    } else if (name.equals("%DontFindMe%")) {
+                        return owners;
+                    } else if (name.equals("%FindMe%")) {
+                        owners.add(new Owner(1l, "Joe", "Buck"));
+                        owners.add(new Owner(2l, "Joe2", "Buck2"));
+                        return owners;
+                    }
+        
+                    throw new RuntimeException("Invalid Argument");
+                });
+            }
+        * Verify order of interactions - 130
+          * to test the sequence of the calls
+          * InOrder inOrder = inOrder(ownerService, model);
+            inOrder.verify(ownerService).findAllByLastNameLike(anyString());
+            inOrder.verify(model).addAttribute(anyString(), anyList());    
+        
+        * Verify interactions within specified time - 131
+          * to check timeouts
+          * then(specialtyRepository).should(timeout(100).times(2)).deleteById(1L);
+                }
+        
+        * Verify zero or no more interactions - 132
+          *  inOrder.verify(model, times(1)).addAttribute(anyString(), anyList());
+             verifyNoMoreInteractions(ownerService);
+             verifyZeroInteractions(model); 
+             
+        * Using Mockito Spies - 133
+          * @Spy //@Mock
+            PetMapService petService;  
+            given(petService.findById(anyLong())).willCallRealMethod(); //.willReturn(pet);
+             
+          * https://github.com/springframeworkguru/tb2g-bdd-mockito/commit/558a9e26e3fdc267320a8142ea0d309af52500ee    
+
         
 ###### Links
 
