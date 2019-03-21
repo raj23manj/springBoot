@@ -4849,7 +4849,106 @@
         O/P: we are in the producer...
              consumer method.....
              Again producer method
-             
+    
+    * Producer and Consumer - 15
+      * Important: 
+        * if any code present after notify(), in this case there is a while loop, so only when it hits wait(), it will transfer
+          control to the other thread
+      * class Processor {
+        
+        	private List<Integer> list = new ArrayList<>();
+        	private final int LIMIT = 5;
+        	private final int BOTTOM = 0;
+        	private final Object lock = new Object();
+        	private int value = 0;
+        	
+        	public void producer() throws InterruptedException {
+        
+        		synchronized (lock) {
+        			
+        			while(true) {
+        				
+        				if( list.size() == LIMIT ) {
+        					System.out.println("Waiting for removing items from the list...");
+        					lock.wait();
+        				} else {
+        					System.out.println("Adding: "+value);
+        					list.add(value);
+        					value++;
+        					lock.notify();
+        				}
+        				
+        				Thread.sleep(500);
+        			}
+        		}
+        	}
+        
+        	public void consumer() throws InterruptedException {
+        
+        		synchronized (lock) {
+        			
+        			while(true) {
+        				
+        				if( list.size() == BOTTOM ) {
+        					System.out.println("Waiting for adding items to the list...");
+        					lock.wait();
+        				} else {
+        					System.out.println("Removed: "+list.remove(--value));
+        					lock.notify();
+        				}
+        				
+        				Thread.sleep(500);
+        			}
+        			
+        		}
+        		
+        	}
+        }
+        
+        public class App {
+        
+        	static Processor processor = new Processor();
+        
+        	public static void main(String[] args) {
+        
+        		Thread t1 = new Thread(new Runnable() {
+        			public void run() {
+        				try {
+        					processor.producer();
+        				} catch (InterruptedException e) {
+        					e.printStackTrace();
+        				}
+        			}
+        		});
+        
+        		Thread t2 = new Thread(new Runnable() {
+        			public void run() {
+        				try {
+        					processor.consumer();
+        				} catch (InterruptedException e) {
+        					e.printStackTrace();
+        				}
+        			}
+        		});
+        
+        		t1.start();
+        		t2.start();
+        	}
+        }
+      o/p: Adding: 0
+           Adding: 1
+           Adding: 2
+           Adding: 3
+           Adding: 4
+           waiting for items to be removed
+           Removing: 4
+           Removing: 3
+           Removing: 2
+           Removing: 1
+           Removing: 0
+           Waiting for adding items to the list...
+           .   
+           ......(infinife loop)       
         
 ###### Links
 
