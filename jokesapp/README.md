@@ -4734,8 +4734,8 @@
     * Synchronized Blocks(avoid class intrensic locks) - 13
       * when using "synchronized" on the methods as show below, java add's an class intrensic lock to App class, which means when two threads are started at the
         same time, when thread 1 is accessing count1 then thread2 cannot access count2 variable because the "synchronized" is present on both hte methods and
-        making thread 1 to complete and adding an "Intrnsic lock", this makes performance slower, to avoid this, see below example   
-      * public class App {
+        making thread 1 to complete and adding an "Intrensic lock", this makes performance slower, to avoid this, see below example   
+      * public class App { // wait & notify refer here
         
         	private static int count1 = 0;
         	private static int count2 = 0;
@@ -4759,7 +4759,7 @@
             private static Object lock2 = new Object();
             
             public  static void add() {
-               synchronized(lock1) {  // synchronized(App.class) => this again makes java to apply internsic lock, hence a better solution create new Object and apply on them
+               synchronized(lock1) {  //  synchronized(this) || synchronized(App.class) => this again makes java to apply internsic lock, hence a better solution create new Object and apply on them
                 count1++;
                } 
             }
@@ -4771,8 +4771,86 @@
             }
        } 
        
-       
-     
+    * Wait & Notify & NotifyAll- 14
+      * wait() => wait for infinite time, so say wait(10000)
+      * wait() can be called only in a synchronized block 
+      * when the thread comes across wait(10000ms), it goes to wait until another thread comes, when it does come it hand's over the intrensic lock on the class
+        to that thread so that it can take control and execute on the same object(Processor), once it is done it can notify other threads that it is done and other threads can take
+        control again ang continue execution, that is waiting for the lock on the same object(Processor)
+      * this scenario comes because if the all the methods are synchronized, then it is case of one thread has to wait while other thread completes fully,
+        see above example. To avoid this we use the "better approach" or use wait() and notify(). When thread1 starts execution it acquires lock, then waits after
+        thread2 starts see's synchronized methods and wait's but instead because of the wait() in thread1 it gets the lock by transferring and continues.
+      
+      * Notify & NotifyAll
+        *  notifies all the threads that is waiting for this lock on the same object that is "Processor" 
+          
+        * class Processor {
+          	
+          	public void produce() throws InterruptedException {
+          		
+          		synchronized (this) {
+          			System.out.println("We are in the producer method...");
+          			wait(10000);
+          			System.out.println("Again producer method...");
+          		}
+          	}
+          	
+          	public void consume() throws InterruptedException {
+          		
+          		Thread.sleep(1000);
+          		
+          		synchronized (this) {
+          			System.out.println("Consumer method...");
+          			notify(); //
+          			//notifyAll();  // notifies all the threads that is waiting for this lock on the same object that is "Processor"
+          			Thread.sleep(3000);  // keeping this it won't immediatedly notify, but wait until 3000 then only notify
+          		}
+          	}
+          }
+          
+          public class App {
+          	
+          	public static void main(String[] args) {
+          
+          		Processor processor = new Processor();
+          		
+          		Thread t1 = new Thread(new Runnable() {
+          			public void run() {
+          				try {
+          					processor.produce();
+          				} catch (InterruptedException e) {
+          					e.printStackTrace();
+          				}
+          			}
+          		});
+          		
+          		Thread t2 = new Thread(new Runnable() {
+          			public void run() {
+          				try {
+          					processor.consume();
+          				} catch (InterruptedException e) {
+          					e.printStackTrace();
+          				}
+          			}
+          		});
+          		
+          		t1.start();
+          		t2.start();
+          		
+          		try {
+          			t1.join();
+          			t2.join();
+          		} catch (InterruptedException e) {
+          			e.printStackTrace();
+          		}
+          	}
+          } 
+        
+        O/P: we are in the producer...
+             consumer method.....
+             Again producer method
+             
+        
 ###### Links
 
     # @Async  
