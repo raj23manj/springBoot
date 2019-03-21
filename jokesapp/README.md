@@ -4609,8 +4609,13 @@
           .andExpect(model().attributeHasFieldErrors("owner", "telephone"))
           .andExpect(view().name("owners/createOrUpdateOwnerForm"));    
  
+    * Testing with SPring Boot - section 15
+      * @SpringBootTest - will enable spring context 
+      * see 172
+ 
 # API Testing
   * https://examples.javacodegeeks.com/core-java/junit/junit-example-rest-web-services/
+  * https://thepracticaldeveloper.com/2017/07/31/guide-spring-boot-controller-tests/
         
 # set up test profile with h2 
   * https://www.baeldung.com/spring-testing-separate-data-source               
