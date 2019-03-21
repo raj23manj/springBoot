@@ -4618,7 +4618,40 @@
   * https://thepracticaldeveloper.com/2017/07/31/guide-spring-boot-controller-tests/
         
 # set up test profile with h2 
-  * https://www.baeldung.com/spring-testing-separate-data-source               
+  * https://www.baeldung.com/spring-testing-separate-data-source   
+  
+
+# Multi Threading
+  * Processes & Threads - section 2
+    * Creating a process is costly, but a thread is cheap
+    * A thread is light weight process. 
+    * A process can have any number of threads, these threads the share the same resources (memory etc) as that of the process that created it.
+    * Thing a java microservices application, each application is a process that can create threads.
+    * A thread is used to execute a block of code, threads can communicate with each other(IPC - inter process communication)
+  
+    * Benefits
+    * do several things at the same time
+    * improve performance
+    * better utilization  
+    
+    * Disadvantages
+    * threads manipulate data located on the same memory area -> need to synchronize 
+    * hard to detect errors
+    * expensive operations 
+      * pass data between threads using callable and future
+      * switching between threads cpu save local data, pointers of the current thread and loads the data of other thread 
+    
+    * Threads Life Cycle
+    * stages 
+      * new - when we instantiate a new thread it is in this state, until start() is called
+      * runnable
+      * running - threads stars executing it's tasks
+      * waiting - when a thread is waiting for another thread to finish its task. When other thread signals, it starts executing again (wait() & sleep())
+      * dead - after the thread finishes it's tasks    
+      
+  * Basic Multithreading - section 3
+    * 
+                      
           
 ###### Links
 
