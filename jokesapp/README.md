@@ -4707,7 +4707,22 @@
 
       * it's slower.
     
-    * Deadlocks - 11      
+    * Deadlocks & Livelocks - 11     
+      * Deadlocks is a situation in which two or more competing actions are each waiting for the other to finish, and thus neither does.
+        * examples: 
+          * Databases: deadlocks happens when two processes each within it's own transaction updates two rows of information but in the opposite order.
+            For example, process A updates row 1 then row 2, in the same time frame Process B updates row 2 and then row 1
+      
+      * LiveLocks
+        * A thread often acts in response to the action of another thread.
+        * if the other thread's action is also a response to the action of the another thread, this is live lock.
+        * LiveLocked threads are unable to make further progress. However, the threads are not blocked, they are simply too busy responding to each other
+          to resume work.
+        * Example:
+          * like two people attempting to pass each other in a narrow corridor. A moves to his left to let B pass, but in response B moves to his right to let
+            A pass. Hence blocking
+           
+     
 ###### Links
 
     # @Async  
