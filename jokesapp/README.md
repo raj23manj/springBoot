@@ -4652,7 +4652,7 @@
   * Basic Multithreading - section 3
     * Sequential Processing - 6
     * 7 & 8 how to create threads
-    * Join
+    * Join - 9
       * waits for this thread to die.
       * t1.join() -> if a t1 thread is running then calling this the main thread will wait until t1 is dead to continue execution
       * 	Runner1 t1 = new Runner1();
@@ -4670,8 +4670,44 @@
         		
         		System.out.println("Finished the tasks..."); -> if we want this to be displayed at the end then use join(), if not it will print first only
         
-                      
+    * Volatile - 10
+      * There is a main memory "RAM", each thread1(cache + CPU1), thread2(cache + CPU2) are processors which have their own cache that keep
+        local variables stored for better performance. Now if there is a variable that need's to be shared along with notifying its value changed
+        between the threads we can use a Volatile variable, which will be stored on the "RAM". This variable will be shared between threads, when
+        thread changes it's value other threads get notified of it's changes so that the value remains consistent between the threads.                 
+      
+      * IMPORTANT
+        * not only sharing between thread's, if a variable is present in a runnable thread, it stores in the cache associated with thread only.
+        * class Worker implements Runnable {
           
+          	private boolean isTerminated = false; // => making this volatile, private volatile boolean isTerminated; stores it in the Main memory
+          	
+          	public void run() {
+          		
+          		while(!isTerminated) {
+          			
+          			System.out.println("Hello from worker class...");
+          			
+          			try {
+          				Thread.sleep(300);
+          			} catch (InterruptedException e) {
+          				e.printStackTrace();
+          			}
+          		}
+          	}
+          
+          	public boolean isTerminated() {
+          		return isTerminated;
+          	}
+          
+          	public void setTerminated(boolean isTerminated) {
+          		this.isTerminated = isTerminated;
+          	}
+          }
+
+      * it's slower.
+    
+    * Deadlocks - 11      
 ###### Links
 
     # @Async  
