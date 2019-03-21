@@ -4850,7 +4850,7 @@
              consumer method.....
              Again producer method
     
-    * Producer and Consumer - 15
+    * Producer and Consumer with wait and notify - 15
       * Important: 
         * if any code present after notify(), in this case there is a while loop, so only when it hits wait(), it will transfer
           control to the other thread
@@ -4948,7 +4948,15 @@
            Removing: 0
            Waiting for adding items to the list...
            .   
-           ......(infinife loop)       
+           ......(infinife loop)    
+           
+    * Locks(Re-entrant Lock) - 16
+      * it has the same behaviour as the "Synchronized approach", with some additional features
+      * new ReentrantLock(boolean fairnessParameters)
+        - if fairnessParameters is set to true, the longest waiting thread will get the lock   
+        - if fairnessParameters is set to false, there is no access order, leads to thread starvation    
+      * we have to use try-catch block when doig critical section that may throw exceptions
+      * we call unlock() in the finally block()      
         
 ###### Links
 
