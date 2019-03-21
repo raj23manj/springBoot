@@ -4650,7 +4650,26 @@
       * dead - after the thread finishes it's tasks    
       
   * Basic Multithreading - section 3
-    * 
+    * Sequential Processing - 6
+    * 7 & 8 how to create threads
+    * Join
+      * waits for this thread to die.
+      * t1.join() -> if a t1 thread is running then calling this the main thread will wait until t1 is dead to continue execution
+      * 	Runner1 t1 = new Runner1();
+        		Runner2 t2 = new Runner2();
+        		
+        		t1.start();
+        		t2.start();
+        		
+        		try {
+        			t1.join();
+        			//t2.join();
+        		} catch (InterruptedException e) {
+        			e.printStackTrace();
+        		}
+        		
+        		System.out.println("Finished the tasks..."); -> if we want this to be displayed at the end then use join(), if not it will print first only
+        
                       
           
 ###### Links
