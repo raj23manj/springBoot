@@ -4721,7 +4721,57 @@
         * Example:
           * like two people attempting to pass each other in a narrow corridor. A moves to his left to let B pass, but in response B moves to his right to let
             A pass. Hence blocking
-           
+            
+    * Synchronized - 12
+      * we should make sure the threads are going to wait for each other to finish the given task on the variables.
+      * assume counter = 0, two threads accessing same counter, when thread one access it, it is 0 and increments it to 1, in the mean time when thread
+        two access the counter it also still at 0 where as it should be 1 incremented, but in the time thread one set's the value to the counter, thread 2
+        reads and goes and the cycle repeats, we get wrong outputs  
+      * public static synchronized void increment() {
+        		++counter;
+        	}  
+             
+    * Synchronized Blocks(avoid class intrensic locks) - 13
+      * when using "synchronized" on the methods as show below, java add's an class intrensic lock to App class, which means when two threads are started at the
+        same time, when thread 1 is accessing count1 then thread2 cannot access count2 variable because the "synchronized" is present on both hte methods and
+        making thread 1 to complete and adding an "Intrnsic lock", this makes performance slower, to avoid this, see below example   
+      * public class App {
+        
+        	private static int count1 = 0;
+        	private static int count2 = 0;
+        	
+        	public synchronized static void add() {
+        		count1++;
+        	}
+        	
+        	public synchronized static void addAgain() {
+        		count2++;
+        	}
+       }
+       
+      * Better approach
+        public class App {
+                
+            private static int count1 = 0;
+            private static int count2 = 0;
+            
+            private static Object lock1 = new Object();
+            private static Object lock2 = new Object();
+            
+            public  static void add() {
+               synchronized(lock1) {  // synchronized(App.class) => this again makes java to apply internsic lock, hence a better solution create new Object and apply on them
+                count1++;
+               } 
+            }
+            
+            public synchronized static void addAgain() {
+            synchronized(lock2) {  // synchronized(App.class) 
+                count2++;
+               }
+            }
+       } 
+       
+       
      
 ###### Links
 
