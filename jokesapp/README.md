@@ -4563,8 +4563,55 @@
     * Spring MVC Test uses a “fluent” API via several static imports
       * MockMvcRequestBuilders.* - Builds request
       * MockMvcResultMatchers.* - Create assertions against response
-      * MockMvcBuilders.* - Configure and build an instance of MockMvc.   
+      * MockMvcBuilders.* - Configure and build an instance of MockMvc. 
       
+    * Spring Mock mvc stand alone - 159
+      * MockMvc mockMvc;
+        @BeforeEach
+            void setUp() {
+                vetsList.add(new Vet());
+        
+                given(clinicService.findVets()).willReturn(vetsList);
+        
+                mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
+            }
+        @Test
+        void testControllerShowVetList() throws Exception {
+            mockMvc.perform(get("/vets.html"))
+                .andExpect(status().isOk())
+                .andExpect(model().attributeExists("vets"))
+                .andExpect(view().name("vets/vetList"));
+        }  
+      
+      * Form Params - 163
+        *   mockMvc.perform(get("/owners")
+           .param("lastName", "Dont find ME!"))
+           .andExpect(status().isOk())
+           .andExpect(view().name("owners/findOwners"));
+      
+      * Post Form - 166
+        *  mockMvc.perform(post("/owners/new")
+          .param("firstName", "Jimmy")
+          .param("lastName", "Buffett")
+          .param("Address", "123 Duval St ")
+          .param("city", "Key West")
+          .param("telephone", "3151231234"))
+          .andExpect(status().is3xxRedirection());
+          
+      * Validation Errors - 167
+        * mockMvc.perform(post("/owners/new")
+          .param("firstName", "Jimmy")
+          .param("lastName", "Buffett")
+          .param("city", "Key West"))
+          .andExpect(status().isOk())
+          .andExpect(model().attributeHasErrors("owner"))
+          .andExpect(model().attributeHasFieldErrors("owner", "address"))
+          .andExpect(model().attributeHasFieldErrors("owner", "telephone"))
+          .andExpect(view().name("owners/createOrUpdateOwnerForm"));    
+ 
+# API Testing
+  * https://examples.javacodegeeks.com/core-java/junit/junit-example-rest-web-services/
+        
 # set up test profile with h2 
   * https://www.baeldung.com/spring-testing-separate-data-source               
           
