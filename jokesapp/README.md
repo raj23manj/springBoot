@@ -5070,7 +5070,13 @@
         O/P: Producer method .....
              Consumer Method .....
              Producer method again...
-             
+    
+    * Locks & Synchronization - 18
+      * A re-entrant lock has the same basic behaviour as we have seen for synchronized blocks, but with additional features
+      * using re-entrant lock, we can make a lock fair, prevent thread starvation, Synchronized blocks are unfair by default
+      * we can check whether the given lock is held or not using re-entrant lock     
+      * we can get the list of threads waiting for the given lock with re-entrant locks
+      * Synchronized blocks are nicer, we do not need the try-catch-finally block  
         
 ###### Links
 
