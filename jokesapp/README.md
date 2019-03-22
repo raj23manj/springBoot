@@ -5078,7 +5078,8 @@
       * we can get the list of threads waiting for the given lock with re-entrant locks
       * Synchronized blocks are nicer, we do not need the try-catch-finally block
       
-    * Semaphores - 19
+    * Semaphores - 19 & 20
+      * semaphores are thread safe be default
       * Semaphores are variables or ADT(abstract data types) that are used for controlling access to a common resource 
       * important in OS
       * It has a record of how many units of a particular resource are available. It wait's until a unit of the resource becomes
@@ -5102,7 +5103,64 @@
         * mutexes may provide priority inversion safety. if the mutex knows its current owner, it is possible to promote the priority of the owner
           whenever a higher priority tasks starts waiting on the mutex
         * mutex can provide deletion safety   
-         
+        
+        * semaphore maintains a set of permits
+           	- acquire() -> if a permit is available then takes it
+           	- release() -> adds a permit		
+            * Semaphore just keeps a count of the number available
+            * new Semaphore(int permits, boolean fair) !!!  fair => prevent thread starvation
+            
+        * enum Downloader { // singleton
+          	
+          	INSTANCE;  // thread safe
+          	
+          	private Semaphore semaphore = new Semaphore(5, true);
+          	
+          	public void downloadData() {
+          		
+          		try {
+          			semaphore.acquire();
+          			download();
+          		} catch (InterruptedException e) {
+          			e.printStackTrace();
+          		} finally {
+          			semaphore.release();
+          		}
+          		
+          	}
+          
+          	private void download() {
+          		System.out.println("Downloading data from the web...");
+          		try {
+          			Thread.sleep(2000);
+          		} catch (InterruptedException e) {
+          			e.printStackTrace();
+          		}
+          	}
+          }
+          
+          public class App {
+          
+          	public static void main(String[] args) {
+          
+          		ExecutorService executorService = Executors.newCachedThreadPool();
+          		
+          		for(int i=0;i<12;i++) { // 12 threads,
+          			executorService.execute(new Runnable() {
+          				public void run() {
+          					Downloader.INSTANCE.downloadData();
+          				}
+          			});
+          		}
+          		
+          	}
+          }
+          
+          o/p:   Downloading data from the web... (x 12 times but 5 first the 5 then 2)  
+          
+    * Executors - 21
+      *         
+            
 ###### Links
 
     # @Async  
