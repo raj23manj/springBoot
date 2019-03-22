@@ -5478,7 +5478,35 @@
            }        
                 
     * Delay Queue - 26
-      *         
+         * This is an unbounded BlockingQueue of objects that implement the Delayed
+         * interface
+         * 
+         * - DelayQueue keeps the elements internally until a certain delay has expired
+         * 
+         * - an object can only be taken from the queue when its delay has expired !!! -
+         * 
+         * We cannot place null items in the queue - The queue is sorted so that the
+         * object at the head has a delay that has expired for the longest time.
+         * 
+         * If no delay has expired, then there is no head element and poll( ) will
+         * return null
+         * 
+         * size() return the count of both expired and unexpired items !!!    
+            
+    * Priority Queue - 27
+         * It implements the BlockingQueue interface
+         * 
+         * 	- unbounded concurrent queue
+         * 	- it uses the same ordering rules as the java.util.PriorityQueue class -> have to implement the C0mparable interface
+         * 			The comparable interface will determine what will the order in the queue
+         * 
+         * 			The priority can be the same compare() == 0 case
+         * 
+         *  - no null items !!!
+         
+    * Concurrent maps - 28
+      *      
+               
 ###### Links
 
     # @Async  
