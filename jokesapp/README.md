@@ -4952,11 +4952,125 @@
            
     * Locks(Re-entrant Lock) - 16
       * it has the same behaviour as the "Synchronized approach", with some additional features
+      * ReentrantLock is an implementation of Lock interface
       * new ReentrantLock(boolean fairnessParameters)
         - if fairnessParameters is set to true, the longest waiting thread will get the lock   
         - if fairnessParameters is set to false, there is no access order, leads to thread starvation    
-      * we have to use try-catch block when doig critical section that may throw exceptions
+      * we have to use try-catch block when doing critical section that may throw exceptions
       * we call unlock() in the finally block()      
+      * in this type of lock's we can unlock the lock from anyother methods, that is an additional feature of this locks
+      * we can lock in it many times, but we need to unlock in the same number of times.
+      *  public class App {
+         
+         	private static int counter = 0;
+         	private static Lock lock = new ReentrantLock();
+         	
+         	public static void increment(){
+         		lock.lock();
+         		try{
+         		    for(int i=0;i<1000;i++){
+                      counter++;
+                    }
+         		} finally {
+         		    lock.unlock();
+         		}		
+         	}
+         	
+         	// in this type of lock's we can unlock the lock from anyother methods, that is an additional feature of this locks
+         	//public static void add() {
+         	//  lock.unlock();
+         	//}
+         	
+         	public static void main(String[] args) {
+         		
+         		Thread t1 = new Thread(new Runnable() {
+         			public void run() {
+         				increment();
+         			}
+         		});
+         		
+         		Thread t2 = new Thread(new Runnable() {
+         			public void run() {
+         				increment();
+         			}
+         		});
+         		
+         		t1.start();
+         		t2.start();
+         		
+         		try {
+         			t1.join();
+         			t2.join();
+         		} catch (InterruptedException e) {
+         			e.printStackTrace();
+         		}
+         		
+         		System.out.println(counter); 		
+         	}
+         }
+         O/P: 2000
+         
+    * Producer Consumer with Locks - 17
+      * here when using re-entrant locks, instead of using wait and notity, re-entrant locks gives, await() and signal() methods from 
+        Condition condition = lock.newCondition();
+      * class Worker {
+        	
+        	private Lock lock = new ReentrantLock();
+        	private Condition condition = lock.newCondition();
+        	//private List<Integer> list = new ArrayList<>();
+        	
+        	public void produce() throws InterruptedException {
+        		lock.lock();
+        		System.out.println("Producer method...");
+        		condition.await();
+        		System.out.println("Producer method again...");
+        	}
+        	
+        	public void consume() throws InterruptedException {
+        		lock.lock();
+        		Thread.sleep(2000);
+        		System.out.println("Consumer method...");
+        		Thread.sleep(3000);
+        		condition.signal();
+        		lock.unlock();
+        	}
+        }
+        
+        public class App {
+        
+        	public static void main(String[] args) {
+        		
+        		final Worker worker = new Worker();
+        		
+        		Thread t1 = new Thread(new Runnable() {
+        			public void run() {
+        				try {
+        					worker.produce();
+        				} catch (InterruptedException e) {
+        					e.printStackTrace();
+        				}
+        			}
+        		});
+        		
+        		Thread t2 = new Thread(new Runnable() {
+        			public void run() {
+        				try {
+        					worker.consume();
+        				} catch (InterruptedException e) {
+        					e.printStackTrace();
+        				}
+        			}
+        		});
+        		
+        		t1.start();
+        		t2.start();
+        		
+        	}
+        }   
+        O/P: Producer method .....
+             Consumer Method .....
+             Producer method again...
+             
         
 ###### Links
 
