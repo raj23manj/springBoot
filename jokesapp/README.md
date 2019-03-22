@@ -5253,7 +5253,7 @@
         }
 
   * Concurrent Collections - section 4
-    * Latch - 23
+    * CountDownLatch - 23
       * This is used to synchronize one or more tasks by forcing them to wait for the completion of a set of operations being performed by other tasks
         // * 		- You give an initial count to a CountDownLatch object, and any task that calls await()
         // * 				on that object will block until the count reaches zero
@@ -5316,7 +5316,101 @@
         		executorService.shutdown(); 
         	}
         }
-        
+    
+    * Cyclic Barrier - 24
+      * Latch --> multiple threads can wait for each other
+         *
+         * A CyclicBarrier is used in situations where you want to create a group of
+         * tasks to perform work in parallel + wait until they are all finished before
+         * moving on to the next step -> something like join() -> something like
+         * CountDownLatch
+         * 
+         * CountDownLatch: one-shot event CyclicBarrier: it can be reused over and over
+         * again
+         * 
+         * + cyclicBarrier has a barrier action: a runnable, that will run automatically
+         * when the count reaches 0 !!
+         * 
+         * new CyclicBarrier(N) -> N threads will wait for each other
+         *
+         * WE CAN NOT REUSE LATCHES BUT WE CAN REUSE CyclicBarriers --> reset() !!!
+         
+         * class Worker implements Runnable {
+           
+           	private int id;
+           	private Random random;
+           	private CyclicBarrier cyclicBarrier;
+           
+           	public Worker(int id, CyclicBarrier cyclicBarrier) {
+           		this.cyclicBarrier = cyclicBarrier;
+           		this.random = new Random();
+           		this.id = id;
+           	}
+           
+           	@Override
+           	public void run() {
+           		doWork();
+           	}
+           
+           	private void doWork() {
+           		System.out.println("Thread with ID " + id + " starts the task...");
+           		try {
+           			Thread.sleep(random.nextInt(3000));
+           		} catch (InterruptedException e) {
+           			e.printStackTrace();
+           		}
+           
+           		System.out.println("Thread with ID " + id + " finished...");
+           
+           		try {
+           			cyclicBarrier.await(); // when the counter reaches zero, it calls the run method passed to the "CyclicBarrier"
+           			System.out.println("After await..."); // once after the CyclicBarrier run method is called, then each thread continues it's execution
+           		} catch (InterruptedException | BrokenBarrierException e) {
+           			e.printStackTrace();
+           		}
+           	}
+           
+           	public String toString() { return ""+this.id; };
+           }
+           
+           public class App {
+           
+           	public static void main(String[] args) {
+           
+           		ExecutorService executorService = Executors.newFixedThreadPool(5);
+           		CyclicBarrier barrier = new CyclicBarrier(5, new Runnable() {
+           			
+           			@Override
+           			public void run() {
+           				System.out.println("We are able to use the trained neural network...");
+           			}
+           		});
+           		
+           		for(int i=0;i<5;++i)
+           			executorService.execute(new Worker(i+1, barrier));
+           		
+           		executorService.shutdown();
+           	}
+           }
+           O/P: Thread with ID 1 starts the task...
+                Thread with ID 3 starts the task...
+                Thread with ID 2 starts the task...
+                Thread with ID 4 starts the task...
+                Thread with ID 5 starts the task...
+                Thread with ID 2 finished...
+                Thread with ID 1 finished...
+                Thread with ID 4 finished...
+                Thread with ID 3 finished...
+                Thread with ID 5 finished...
+                We are able to use the trained neural network...
+                After await...
+                After await...
+                After await...
+                After await...
+                After await...
+                
+                
+            
 ###### Links
 
     # @Async  
