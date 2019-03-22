@@ -4621,7 +4621,7 @@
   * https://www.baeldung.com/spring-testing-separate-data-source   
   
 
-# Multi Threading
+# Multi Threading - https://github.com/raj23manj/multithreading
   * Processes & Threads - section 2
     * Creating a process is costly, but a thread is cheap
     * A thread is light weight process. 
@@ -5494,6 +5494,7 @@
          * size() return the count of both expired and unexpired items !!!    
             
     * Priority Queue - 27
+         * BlockingQueue<String> queue = new PriorityBlockingQueue<>();
          * It implements the BlockingQueue interface
          * 
          * 	- unbounded concurrent queue
@@ -5505,7 +5506,18 @@
          *  - no null items !!!
          
     * Concurrent maps - 28
-      *      
+      * using a thread safe hashmap => private ConcurrentMap<String, Integer> map;
+      * see the example      
+      * other collections => Collections.synchronized*
+      
+    * Exchanger - 29
+         *  With the help of Exchanger -> two threads can exchange objects
+         * 
+         * exchange() -> exchanging objects is done via one of the two exchange()
+         * methods
+         * 
+         * For example: genetic algorithms, training neural networks
+         * using exchanger, one thread is going to add and other thread also should add, this is how exchanger works  
                
 ###### Links
 
