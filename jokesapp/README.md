@@ -5517,7 +5517,13 @@
          * methods
          * 
          * For example: genetic algorithms, training neural networks
-         * using exchanger, one thread is going to add and other thread also should add, this is how exchanger works  
+         * using exchanger, one thread is going to add and other thread also should add, this is how exchanger works
+         
+# Using callable in controllers
+  * https://grokonez.com/java-integration/work-spring-callable-controller  
+  * https://stackoverflow.com/questions/45823737/how-to-parallel-execute-multiple-database-calls-using-spring     
+  * https://niels.nu/blog/2016/spring-async-rest.html    
+  * https://stackoverflow.com/questions/41971999/elegant-way-to-run-parallel-threads-in-spring-4
                
 ###### Links
 
