@@ -5318,7 +5318,8 @@
         }
     
     * Cyclic Barrier - 24
-      * Latch --> multiple threads can wait for each other
+         * https://vmlens.com/articles/examples_cyclicBarrier/, need to add reset() in finally block
+         * Latch --> multiple threads can wait for each other
          *
          * A CyclicBarrier is used in situations where you want to create a group of
          * tasks to perform work in parallel + wait until they are all finished before
