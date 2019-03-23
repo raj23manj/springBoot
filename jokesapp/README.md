@@ -4626,7 +4626,7 @@
     * Creating a process is costly, but a thread is cheap
     * A thread is light weight process. 
     * A process can have any number of threads, these threads the share the same resources (memory etc) as that of the process that created it.
-    * Thing a java microservices application, each application is a process that can create threads.
+    * Think a java microservices application, each application is a process that can create threads.
     * A thread is used to execute a block of code, threads can communicate with each other(IPC - inter process communication)
   
     * Benefits
@@ -5518,6 +5518,26 @@
          * 
          * For example: genetic algorithms, training neural networks
          * using exchanger, one thread is going to add and other thread also should add, this is how exchanger works
+         
+  * Parallel Algorithms - Section 8
+    * Types of Algorithms
+      * Sequential - execute task one after the other
+      * Parallel - execute different tasks with different processors and combine the results
+      
+    * Difference between concurrent and parallel
+      * Parallel(multi core processor) - execute different tasks with different processors and combine the results
+      * Concurrent(single processor) - it makes time sharing between the threads which is slower than simple sequential 
+        implementation, one thread at a given time
+    
+    * Disadvantages   
+      * inter communication between threads slows down the while merging the results. In-case of small data sets this will fails
+        if larger data sets it will be faster. Example: merge sort
+      * Load Balance: we have to make sure that we split the work evenly amongst the processors.
+        example: to find prime numbers from 0-1000, if we split for 2 threads a subset of 0 - 500 and 501 - 1000, the thread1 might finish
+        before thread2 and wait, wasting the computation time.
+    
+         
+      
          
 # Using callable in controllers
   * https://grokonez.com/java-integration/work-spring-callable-controller  
