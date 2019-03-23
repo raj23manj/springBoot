@@ -5536,7 +5536,15 @@
         example: to find prime numbers from 0-1000, if we split for 2 threads a subset of 0 - 500 and 501 - 1000, the thread1 might finish
         before thread2 and wait, wasting the computation time.
     
-         
+  * Fork-Join Framework - section 9
+    * concrete implementation for parallel execution       
+    * this framework helps to make an algorithm parallel
+    * Divide and conquer algorithms
+    * we do not have to bother about low level synchronizations or locks
+    * A larger task -> it can be divided into smaller ones + the subsolutions can be combined
+    * important subtasks have to be independent in order to be executed in parallel
+    * so the main concept -> fork-join framework breaks the tasks into smaller subtasks until these suntasks are simple enough to solve without further 
+      breakups
       
          
 # Using callable in controllers
