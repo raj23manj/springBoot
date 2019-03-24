@@ -5552,6 +5552,48 @@
   * https://stackoverflow.com/questions/45823737/how-to-parallel-execute-multiple-database-calls-using-spring     
   * https://niels.nu/blog/2016/spring-async-rest.html    
   * https://stackoverflow.com/questions/41971999/elegant-way-to-run-parallel-threads-in-spring-4
+  
+# Algorithm Analysis
+  * Complexity  
+    * Space : how much memory an algorithm needs
+    * Time : how much time an algorithm needs, this is more widely concentrated as memory is cheap now a days.
+      * we consider number of steps, it is generic, machine independent
+      * we need algorithms where the running times are linear or sub-linear
+      
+      * Linear example: O(N)
+        sorting 10 items: 1ms  , as i/p increases, time taken also is double the first iteration
+        sorting 20 items: 2ms
+        sorting 100 items: 10ms
+        
+        O(N^2) Quadratic time complexity:
+        sorting 10 items: 1ms  , as i/p increases, time taken also increases n^2 to the first one
+        sorting 20 items: 4ms
+        sorting 100 items: 100ms
+    
+    * Big O  => basically loops in programming   
+    * Big Omega
+    * Big Theta
+    
+    * Algorithms running Time - section 8(listing time in best order top to bottom)
+      * O(1) => constant time complexity and best
+        * example: number is even or odd, swap two elements
+      * O(logN) => logarithmic complexity
+        * Discarding half array in every iteration
+        * finding an arbitrary item in a sorted array(binary search)
+        * check whether there is a  cycle in a graph
+      * O(N) => linear time complexity
+        * finding the max or min value in the array of numbers
+      * O(N*logN) => linearithmic complexity , this is the threshold beyond this is bad
+        * merge sort, quicksort, heapsort.
+        * finding closest pair of points with divide and conquer method
+      * O(n^k) , k > 1 polinomial
+        * bubble sort, insertion sort, where k =2, quadratic
+      * O(c^n), exponential, c is a constant
+        * tower of hanoi, calculating numbers with recursive manner, travelling salesman problem
+      * O(n!) factorial complexity, and worst 
+        * 
+      
+      
                
 ###### Links
 
