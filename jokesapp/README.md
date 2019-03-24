@@ -5545,7 +5545,18 @@
     * important subtasks have to be independent in order to be executed in parallel
     * so the main concept -> fork-join framework breaks the tasks into smaller subtasks until these suntasks are simple enough to solve without further 
       breakups
-      
+    * methods used in this framework
+      * fork(): Asynchrounously execute the given task in the pool. We can call this on RecursiveAction or RecursiveTask<T>
+      * join(): returns the result of the computation when it's done, and waits for the task to be done
+      * invoke(): execute the given task + return its result upon completion 
+      * invokeAll(leftSubtask, rightSubtask); forks the tasks and puts it in the fork pool
+  
+  * MapReduce - section 10
+    * we can make the given algorithm parallel
+      * map: splits the original dataset
+      * shuffel&sort: all th data is re-arranged for the next step to run in parallel. It makes sure that items with the 
+        same keys will get to the same reducer   
+      * combines the final results   
          
 # Using callable in controllers
   * https://grokonez.com/java-integration/work-spring-callable-controller  
