@@ -1055,6 +1055,9 @@
   # Different Repositories To Implement
     /* package org.springframework.data.repository; Depends on when to use what usecase*/
     * Repository (Base)
+      @Repository: This is also a spring-framework's annotation. When you annotate a class @Repository, 
+      spring container understands it's a DAO class and translates all unchecked exceptions (thrown from DAO methods) 
+      into Spring DataAccessException. DAO class is the class where you write methods to perform operations over db.
     * CrudRepository
     * PagingAndSortingRepository
     * JpaRepository(include's All three above)
