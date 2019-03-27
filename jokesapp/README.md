@@ -4625,7 +4625,7 @@
   
 
 # Multi Threading - https://github.com/raj23manj/multithreading
-  * Impelements Runnable vs Extending thread class
+  * Implements Runnable vs Extending thread class
     * When we extend Thread class, we can’t extend any other class even we require and When we implement Runnable, 
       we can save a space for our class to extend any other class in future or now.
       When we extend Thread class, each of our thread creates unique object and associate with it. 
