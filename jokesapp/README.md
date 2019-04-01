@@ -6270,3 +6270,20 @@ public class RunFormQueries {
 
 # Good tutorial about Hibernate
   * https://thoughts-on-java.org/tutorials/  
+  
+# Docker
+  * it creates a linux VM and runs on the OS
+  * Commands - Section 2, L-13
+    * creating and running an container from the image
+      - docker run <image-name>
+        * docker run <image-name> = docker create <image-name> + docker start <container-ID>
+    * Override command during start up or run an command after startup of container after it is created
+      - docker run <image-name> command!   
+    * To list all the running containers on machine
+      - docker ps
+    * To List all the container that had been run
+      - docker ps --all
+    * Container Lifecycle
+      - docker run <image-name> = docker create <image-name> + docker start <container-ID>   
+      * need to use docker start -a <container-ID>   => -a watches the container for o/p and prints it to console
+      
