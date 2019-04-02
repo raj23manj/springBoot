@@ -6270,6 +6270,10 @@ public class RunFormQueries {
 
 # Good tutorial about Hibernate
   * https://thoughts-on-java.org/tutorials/  
+
+# All Basics of Spring
+  * https://www.javatpoint.com/ioc-container
+  * https://www.javatpoint.com/jpa-interview-questions 
   
 # Docker
   * it creates a linux VM and runs on the OS
