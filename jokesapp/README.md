@@ -6282,8 +6282,37 @@ public class RunFormQueries {
     * To list all the running containers on machine
       - docker ps
     * To List all the container that had been run
-      - docker ps --all
+      - docker ps --all || docker ps
+    * To delete all the stopped containers, it will take up space
+      - docker system prune  
+    * To stop a running container, started using create and start
+      - docker stop <container-id> || docker kill <container-id>  
+        * stop => sends a "SIGTERM" signal to the process to shut down by giving it some time to do some clean up, like saving a  file, emit a message etc.
+                  if in 10 sec's it does not stop process will fall back to "kill"
+        * kill => sends a "SIGKILL" signal to the process to tell it shut down right now
     * Container Lifecycle
       - docker run <image-name> = docker create <image-name> + docker start <container-ID>   
       * need to use docker start -a <container-ID>   => -a watches the container for o/p and prints it to console
+      * if we forget to use "-a" we can use => docker logs <container-id>
       
+    * Executing commands in running Containers
+      - docker exec -it <container-id> <command>
+        * it allows us to provide input to the container
+        * example:
+          * first run : docker run redis
+          * to access cli : docker exec -it xxxx redis-cli
+      * Purpose of -it flag (-i => to attch the STDIN to the terminal, -t => to show pretty text output)
+        * Each process or container which is running has three standard channels
+          * STDIN => -it
+          * STDOUT  => -a flag or logs
+          * STDERR  => similar to stdout, uses STDOUT to throw error    
+    
+    * Get Shell or Terminal Access to the required container
+      - docker exec -it <container-id> sh     
+      * different command process bash, powershell, zsh, sh
+      
+    * Start Container with Shell terminal
+      - docker run -it <image-name> sh
+      
+    * when starting two different containers of same image, the containers have their own space for files other things, so when we create a 
+      a file in container1 of a image, it won't be reflected on the other container2    
