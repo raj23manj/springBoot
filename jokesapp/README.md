@@ -3102,7 +3102,7 @@
               name and constructor name must be same.
               
   # Abstract Class
-    * when classes share same functionality and needs to be shared.
+    * when implementaions has to hidden from users, make only those abstract methods and let child classes implement it.
     * this class cannot be instantiated
     * can have abstract methods, without implementations
     * the subclass usually provides implementations for all of the abstract methods in its parent class. However, 
