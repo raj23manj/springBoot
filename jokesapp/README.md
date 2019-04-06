@@ -6320,3 +6320,38 @@ public class RunFormQueries {
       
     * when starting two different containers of same image, the containers have their own space for files other things, so when we create a 
       a file in container1 of a image, it won't be reflected on the other container2    
+      
+  * Building Custom Images Through Docker Server - Section -3
+    * Creating Docker Images - 27
+      1) we need to create a docker configuration file which is a plain text, this configuration defines how our container behaves.  
+      2) then we pass it to the docker client(docker cli)  
+      3) the docker client gives the text file it to the docker server and this does the heavy lifting, to build a usable image
+      
+    * Flow
+      * we need to specify a base image -> run some commands to install additional programs -> specify a command to run on container setup 
+    
+    * Docker File Tear Down
+      * new to create a docker file with name "Dockerfile" without any extension
+      * Tear Down
+        
+        instructions telling  |   Argument to the      
+         what Docker Server   |     instructions
+            to do             |
+            
+            FROM                  alpine
+            RUN                   apk add --update redis  
+            CMD                   ["redis-server"]
+            
+      * From location of the file where it is stored, run
+        - docker build .
+        - docker run <image-id> => image-id => o/p by running previous command      
+        
+      * Tagging Image (instead of using image id to run everytime we can tag like redis-server or helloworld)
+        - docker build -t <tagname> <specify the directory of file/folder to use for build>
+          example: docker build -t stephengrider/redis:latest  .
+          
+          - rajdiv23/redis:latest  
+            yourdockerid / repo or project name(anything) : version
+            
+          * TO run
+            - docker run  rajdiv23/redis 
