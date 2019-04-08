@@ -6371,4 +6371,9 @@ public class RunFormQueries {
       * if folder not present it will be automatically created for us
       
     * Rebuilds
-      *     
+      * making sure only specific files are built
+      
+  * Intro to Docker Compose
+    * used to issue multiple commands more quickly
+    * Command 
+      - docker-compose       
