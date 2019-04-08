@@ -6355,3 +6355,20 @@ public class RunFormQueries {
             
           * TO run
             - docker run  rajdiv23/redis 
+            
+  * Making Real Projects with Docker - Section 4
+    * To copy files from local file system(Hard drive) to the container's file system 
+      - COPY <path to folder to copy from on *your machine* relative to build text> <Place to copy stuff to inside *the container*>    
+        - COPY ./ ./    
+        
+    * To map local machine port to the container port - Port Forwarding
+      - docker run -p <port of local machine>:<port inside container> <image-id>     
+        - docker run -p 8080:8080 rajdiv23/simpleweb => localhost:8080/
+        - docker run -p 5000:8080 rajdiv23/simpleweb => localhost:5000/
+        
+    * Specifying the directory to put all copy all the files into
+      - WORKDIR /usr/app => any following command will be executed relative to this path in the container 
+      * if folder not present it will be automatically created for us
+      
+    * Rebuilds
+      *     
