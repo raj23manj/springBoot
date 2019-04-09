@@ -6377,3 +6377,28 @@ public class RunFormQueries {
     * used to issue multiple commands more quickly
     * Command 
       - docker-compose       
+    * When using docker compose and creating multiple containers, they would be created on the same network and communication between those containers
+      would become easy. To reffer the service to be used on the same container, for example a redis-server, we need to mention the name provided in the
+      YAML file to the host property of the container that want's to use it. Section 5, 53
+    * Commands to run:
+      - docker run <myimage> => docker-compose up
+      
+      * Rebuild
+        - docker build .          | =>  docker-compose up --build
+          docker run <myimage>    | =>   
+    
+      * Launch in background
+        - docker-compose up -d
+        
+      * stop containers
+        - docker-compose down        
+        
+      * Deal with containers that crash
+        * Automatic Container restarts 
+          * restart policies
+            * no, always, on-failure, unless-stopped
+      
+      * Container Status with Docker Compose
+        * need to run from folder which has "docker-compose.yml"
+        -  docker-compose ps      
+         
