@@ -6401,4 +6401,18 @@ public class RunFormQueries {
       * Container Status with Docker Compose
         * need to run from folder which has "docker-compose.yml"
         -  docker-compose ps      
-         
+      
+  * Build Work Flow 
+    * Run a docker file of custom type
+      * docker build -f Dockerfile.dev . 
+    
+    * Docker Volumes section 6, 69
+      * make changes take immediate effect      
+      * instead of copying all the files, we are going to map the file and folders in our local machine to the one in inside the container. 
+      * Command
+        - docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/app <imageid>
+                                 | put a bookmark on  | Map the pwd
+                                   the node_modules   | into the /app 
+                                   folder             | folder
+                                   
+          * -v $(pwd):/app => means map the current pwd on the local machine to the /app folder in the container                         
