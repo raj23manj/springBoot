@@ -2690,7 +2690,10 @@
          
   # What is Microservices
     * 
-    
+  
+  # Using rails/express/django as an microservice
+    * http://stytex.de/blog/2016/01/18/spring-cloud-sidecar-applications/  
+    * https://dzone.com/articles/microservices-sidecar-pattern-implementation-using-1
                
 # To Access Environment(application-properties)
     @Autowired
@@ -6274,3 +6277,4 @@ public class RunFormQueries {
 # All Basics of Spring
   * https://www.javatpoint.com/ioc-container
   * https://www.javatpoint.com/jpa-interview-questions 
+  
