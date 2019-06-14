@@ -6278,3 +6278,33 @@ public class RunFormQueries {
   * https://www.javatpoint.com/ioc-container
   * https://www.javatpoint.com/jpa-interview-questions 
   
+# Java Memory Management (https://www.udemy.com/java-memory-management/learn/lecture/6057442#overview)
+  * JVM memory is split into to stack and heap  (Section 2)
+    - stack memory is associated with the threads each created
+      - all local variables and primitive types are stored here in the stack
+    - heap memory is a huge memory and is used as common memory to be shared between threads
+      - all the objects which are big are stored in the heap and a reference variable is stored in the stack 
+      
+    - example:
+      public static void main(String[] args) {
+        List<String> myList = new ArrayList<String>();
+        myList.add("one"); //==> myList.add(new String("one"))
+        
+        printList(myList);
+      } 
+      
+      public static void printList(List<String> data) {
+        String value = data.get(0);
+        data.add("Four"); //==> data.add(new String("two"))
+        System.out.println(data)
+      }
+      
+      stack:                                        Heap:
+      
+         value   ------------------------------------------------------------       
+                                                                            |
+                                                                            v        
+         data    ------------------------------>  |
+         mylist=<ref-addr>   ----------->         | List(with data)   ---> String(one)  
+         
+  *                              
