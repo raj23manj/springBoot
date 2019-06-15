@@ -6307,4 +6307,38 @@ public class RunFormQueries {
          data    ------------------------------>  |
          mylist=<ref-addr>   ----------->         | List(with data)   ---> String(one)  
          
-  *                              
+  * Passing Valuesand Reference
+    - public static void main(String[] args) {
+      Customer c = new Customer("Sally");
+      renameCustomer(c);
+      System.out.println(c.getName()); 
+    }                            
+    
+    public static void renameCustomer(Customer cust) {
+    cust.setName("Diane");
+    }
+    
+    - Here, 
+    
+       Stack:                                       Heap:
+       
+          #cust.setName("Diane")#
+          
+         cust ------------------------------------> | Customer(name) -------> String(diane) 
+         c ---------------------------------------> | Customer(name) X String(sally) # this is set for garbage collection
+       
+         cust ------------------------------------> |
+         c ---------------------------------------> | Customer(name) -------> String(sally)
+    
+    
+    - final keyword
+       like making a constant
+       
+  * Escaping references: (section 4)
+    * by passing a copy of the objects
+    * by using a iterator
+    * using collections.unmodifyablemap => best solutions   
+    
+    * all primitive types and string are immutable, hence returning them is no a problem
+    * when a class has a setter it is not immutable abd returning the object reference is escaping, hence create
+      a read only interface and and make the class implement it and pass the type as that of the interface  
