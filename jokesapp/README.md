@@ -6335,6 +6335,9 @@ public class RunFormQueries {
        like making a constant
        
   * Escaping references: (section 4)
+    
+    * Note: when objects are immutable, assiging creates a new object of that type in the heap
+  
     * by passing a copy of the objects
     * by using a iterator
     * using collections.unmodifyablemap => best solutions   
@@ -6342,3 +6345,37 @@ public class RunFormQueries {
     * all primitive types and string are immutable, hence returning them is no a problem
     * when a class has a setter it is not immutable abd returning the object reference is escaping, hence create
       a read only interface and and make the class implement it and pass the type as that of the interface  
+      
+  * String Pools 
+    * only for string objects, when java creates a string object it places it in the string pool, so
+     String a = "hello";
+     String b = "hello";  
+     
+     when checking their equality with (==) , it will be a and b both referencing to same objects, but below case
+     it wont, java will place it it in different pools
+     
+     String c = new Integer(76).toString();
+     String d = "76";   
+     
+     To make it place in the same pool as string need to use intern() method
+     
+     String c = new Integer(76).toString().intern();
+     String d = "76";  
+     
+  * Garbage collection:
+    * memory leak : objects that are not freed continue to consume memory. Need to do a restart of th machines if 
+      it happens
+    * Java handles it by
+      * Running a virtual machine which is a program tha runs on the OS memory and handles the memory allocation
+        and freeing up memory
+      * Adopts Garbage Collection Strategy 
+    * Java Rule for garbage collection: (runs automatically)
+      Any object on the heap which cannot be reached by a reference from the stack is eligible for GC  
+      * SYstem.gc(); method available to free memory
+      * finalize() method will be called by GC, when added in the class
+      
+  * Detecting Soft Leaks:
+    *     
+      
+           
+     
