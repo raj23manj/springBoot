@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b24c273d-07f5-43b0-9949-5e842c2c3bfc" name="Default Changelist" comment="updated read me">
+    <list default="true" id="b24c273d-07f5-43b0-9949-5e842c2c3bfc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jokesapp/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/jokesapp/README.md" afterDir="false" />
     </list>
@@ -44,13 +44,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="md" value="54464" />
+          <entry key="md" value="58127" />
           <entry key="txt" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="54464" />
+          <entry key="Markdown" value="58127" />
           <entry key="PLAIN_TEXT" value="15" />
         </counts>
       </usages-collector>
@@ -62,8 +62,8 @@
         <entry file="file://$PROJECT_DIR$/jokesapp/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="519">
-                <caret line="6336" column="35" selection-start-line="6336" selection-start-column="35" selection-end-line="6336" selection-end-column="35" />
+              <first_editor relative-caret-position="624">
+                <caret line="6400" column="132" selection-start-line="6400" selection-start-column="132" selection-end-line="6400" selection-end-column="132" />
               </first_editor>
               <second_editor />
             </state>
@@ -91,6 +91,7 @@
       <find>mvn</find>
       <find>angular</find>
       <find>java</find>
+      <find>thread safe</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -104,9 +105,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="235" />
+    <option name="x" value="21" />
     <option name="y" value="23" />
-    <option name="width" value="1243" />
+    <option name="width" value="1410" />
     <option name="height" value="828" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -122,7 +123,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560599291524" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560653246940" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -150,20 +151,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1552008607229</updated>
-    </task>
-    <task id="LOCAL-00049" summary="updated read me">
-      <created>1552976515802</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1552976515802</updated>
-    </task>
-    <task id="LOCAL-00050" summary="updated read me">
-      <created>1553048944364</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1553048944399</updated>
     </task>
     <task id="LOCAL-00051" summary="updated read me">
       <created>1553050479901</created>
@@ -494,14 +481,28 @@
       <option name="project" value="LOCAL" />
       <updated>1560510329013</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="updated read me">
+      <created>1560599543329</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1560599543329</updated>
+    </task>
+    <task id="LOCAL-00099" summary="updated read me">
+      <created>1560606222027</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1560606222027</updated>
+    </task>
+    <option name="localTasksCounter" value="100" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="235" y="23" width="1243" height="828" extended-state="0" />
+    <frame x="21" y="23" width="1410" height="828" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20399667" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.048245613" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -611,8 +612,8 @@
     <entry file="file://$PROJECT_DIR$/jokesapp/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="519">
-            <caret line="6336" column="35" selection-start-line="6336" selection-start-column="35" selection-end-line="6336" selection-end-column="35" />
+          <first_editor relative-caret-position="624">
+            <caret line="6400" column="132" selection-start-line="6400" selection-start-column="132" selection-end-line="6400" selection-end-column="132" />
           </first_editor>
           <second_editor />
         </state>

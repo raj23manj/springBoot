@@ -6375,7 +6375,28 @@ public class RunFormQueries {
       * finalize() method will be called by GC, when added in the class
       
   * Detecting Soft Leaks:
-    *     
-      
+    *  when using multiple threads this will occur   
+  
+  * Mark and Sweep:
+    * Uses mark and sweep algorithm to mark all the alive objects, by traversing through the stack and making 
+      references of the variable's and it's references in the heap as alive. This is done through out the stack. When
+      this process starts it stops all the process, this is called stop the world event
+    * Once all are marked alive, the rest of the objects are destroyed, and the jvm allocates the live objects into
+      a contigueous memory and frees up fragments of memory so that allocation in future is easier.    
            
-     
+  * Generational Garbage Collection:
+    * Since the mark and sweep algo needs all the programs to be stopped which is not ideal, the jvm follows 
+      generational garbage collection.
+    * In this method the heap memory is divided into young generation and old generation heap memory. Any new objects created will be created
+      in the young generation, it's memory is less compared to old and gc runs to free the memory only when the yong generation is full, 
+      the live one's are then moved to the old heap memory. The GC on the young generation is very fast takes a fraction of a second and the application does not freeze.
+      Once a object survives once GC on yong generation, it is likely to live forever. All the surviveing objects are then copied to old generation, then the young generation
+      is empty and any new objects can be added to this young generation. GC of young generation is known as 'minor collection' 
+    * The GC will run even on the old generation only if it's needed i.e when its full, this is called 'major collection' and will be much slower and 
+      compaction processes(moving into contigeuous memory) will take some seconds and will be slow
+    * The young generation is divided into eden, s0 and s1 in the memory, instead of the live objects being directly into the old generation, during the
+      GC, it is first moved into s0 and then to s1. It is moved only to old generation if it survives gc on the young generation 8 times.       
+    * PermGen/MetaSpace:
+      * there is a seperate memory present for storing the meta data of a class when it is created and it is stored int the metaspace(in java 8). During re-delopyment of the
+        code this meta space is cleared everytime. This memory space is outside the jvm it is associated with the OS memory directly   
+          
