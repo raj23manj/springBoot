@@ -6413,3 +6413,18 @@ public class RunFormQueries {
     * single - uses single thread for small amounts of data single process
     * parallel - used for young generation(minor collections), running multiple threads in parallel, used for larger data sets better than concurrent
     * concurrent - closes to get to real time GC, it pauses the app to do marking of objects and the sweeps     
+    
+  * Strong , Weak and soft References
+    * the type of reference from the stack to heap can any of the type 
+    * weak reference:
+      is the weakest and will be likely available for GC, after GC variable will be set to null
+    * soft :
+      JVM will decide if the there is no space then only will this type of reference to GC, after GC variable will be set to null
+    * weak and soft are mostly used for caching  
+    * Ways to do in java   
+      - WeakReference<Book> myBook = book1;
+      - SoftReference<Book> myBook = book2;    
+      
+        if(myBook==null){
+            reload object from source
+        }
