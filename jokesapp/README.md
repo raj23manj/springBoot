@@ -6399,4 +6399,17 @@ public class RunFormQueries {
     * PermGen/MetaSpace:
       * there is a seperate memory present for storing the meta data of a class when it is created and it is stored int the metaspace(in java 8). During re-delopyment of the
         code this meta space is cleared everytime. This memory space is outside the jvm it is associated with the OS memory directly   
-          
+  
+  
+  * Tuning the virtual machine:
+    * Command line args to set the limit
+      * Heap Size
+        * -Xmx   - set max heap size   
+        * -Xms   - set starting heap size  
+        * -XX:maxPermSize  - set permsize(in java 6)
+        * -Xmn  - set size of the young generation
+        
+  * Types Of GC
+    * single - uses single thread for small amounts of data single process
+    * parallel - used for young generation(minor collections), running multiple threads in parallel, used for larger data sets better than concurrent
+    * concurrent - closes to get to real time GC, it pauses the app to do marking of objects and the sweeps     
