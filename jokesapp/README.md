@@ -4636,7 +4636,7 @@
   
   * Processes & Threads - section 2
     * Creating a process is costly, but a thread is cheap
-    * A thread is light weight process. 
+    * A thread is light weight process, it is also a unit of execution in a process 
     * A process can have any number of threads, these threads the share the same resources (memory etc) as that of the process that created it.
     * Think a java microservices application, each application is a process that can create threads.
     * A thread is used to execute a block of code, threads can communicate with each other(IPC - inter process communication)
