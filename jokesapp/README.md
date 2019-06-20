@@ -4664,33 +4664,37 @@
   * Basic Multithreading - section 3
     * Sequential Processing - 6
     * 7 & 8 how to create threads
+      * implement Runnable Interface
+      * extends Thread Class
     * Join - 9
-      * waits for this thread to die.
+      * waits for this(current attached method) thread to die.
       * t1.join() -> if a t1 thread is running then calling this the main thread will wait until t1 is dead to continue execution
-      * 	Runner1 t1 = new Runner1();
-        		Runner2 t2 = new Runner2();
-        		
-        		t1.start();
-        		t2.start();
-        		
-        		try {
-        			t1.join();
-        			//t2.join();
-        		} catch (InterruptedException e) {
-        			e.printStackTrace();
-        		}
-        		
-        		System.out.println("Finished the tasks..."); -> if we want this to be displayed at the end then use join(), if not it will print first only
+         *  Runner1 t1 = new Runner1();
+            Runner2 t2 = new Runner2();
+            
+            t1.start();
+            t2.start();
+            
+            try {
+                t1.join();
+                //t2.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            
+            System.out.println("Finished the tasks..."); -> if we want this to be displayed at the end then use join(), if not it will print first only
         
     * Volatile - 10
-      * There is a main memory "RAM", each thread1(cache + CPU1), thread2(cache + CPU2) are processors which have their own cache that keep
+      * There is a main memory "RAM"(HEAP), each thread1(cache(stack) + CPU1(thread)), thread2(cache(stack) + CPU2(thread)) are processors which have their own cache(stack) that keep
         local variables stored for better performance. Now if there is a variable that need's to be shared along with notifying its value changed
         between the threads we can use a Volatile variable, which will be stored on the "RAM". This variable will be shared between threads, when
         thread changes it's value other threads get notified of it's changes so that the value remains consistent between the threads.                 
       
+      * https://stackoverflow.com/questions/17748078/simplest-and-understandable-example-of-volatile-keyword-in-java
+      
       * IMPORTANT
         * not only sharing between thread's, if a variable is present in a runnable thread, it stores in the cache associated with thread only.
-        * class Worker implements Runnable {
+          * class Worker implements Runnable {
           
           	private boolean isTerminated = false; // => making this volatile, private volatile boolean isTerminated; stores it in the Main memory
           	
@@ -4743,7 +4747,7 @@
         		++counter;
         	}  
              
-    * Synchronized Blocks(avoid class intrensic locks) - 13
+    * Synchronized Blocks(avoid class intrensic locks(lock on all methods which ha synchronised)) - 13
       * when using "synchronized" on the methods as show below, java add's an class intrensic lock to App class, which means when two threads are started at the
         same time, when thread 1 is accessing count1 then thread2 cannot access count2 variable because the "synchronized" is present on both hte methods and
         making thread 1 to complete and adding an "Intrensic lock", this makes performance slower, to avoid this, see below example   
