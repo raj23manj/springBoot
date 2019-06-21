@@ -4803,7 +4803,26 @@
         -  { ....
            notify()
            Thread.sleep(3000) 
-           }    
+           }   
+        
+        *  here also since notify is in the loop, which means there is code following, it wont notify until it reaches wait()  
+          - while(true) {
+              if( list.size() == LIMIT ) {
+                    					System.out.println("Waiting for removing items from the list...");
+                    					lock.wait();
+                    				} else {
+                    					System.out.println("Adding: "+value);
+                    					list.add(value);
+                    					value++;
+                    					lock.notify();
+                    				}
+                    				
+                    				Thread.sleep(500);
+        
+          }
+           
+      * notifyall() - notifies all the threads that is waiting for this lock on the same object that is "Processor"     
+            
       
       * Notify & NotifyAll
         *  notifies all the threads that is waiting for this lock on the same object that is "Processor" 
