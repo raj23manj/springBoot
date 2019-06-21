@@ -1594,7 +1594,9 @@
           @ExcludeSuperclassListeners 
           
       * Register and Handle Event's using java config
-        * https://www.boraji.com/hibernate-5-event-listener-example      
+        * https://www.boraji.com/hibernate-5-event-listener-example  
+        
+  # From the documentation of hibernate         
         
   # Section 8, jhon
     * JDL-Studio for data modeling
@@ -4796,6 +4798,12 @@
       * this scenario comes because if the all the methods are synchronized, then it is case of one thread has to wait while other thread completes fully,
         see above example. To avoid this we use the "better approach" or use wait() and notify(). When thread1 starts execution it acquires lock, then waits after
         thread2 starts see's synchronized methods and wait's but instead because of the wait() in thread1 it gets the lock by transferring and continues.
+      * when using notify() and Thread.sleep(3000)(or any other code) together like below, the thread will not not immediatedly notify, it will wait until the end of the
+        block is reached and then only notify
+        -  { ....
+           notify()
+           Thread.sleep(3000) 
+           }    
       
       * Notify & NotifyAll
         *  notifies all the threads that is waiting for this lock on the same object that is "Processor" 
@@ -6432,3 +6440,7 @@ public class RunFormQueries {
         if(myBook==null){
             reload object from source
         }
+        
+  * Tools for memory leak Browser
+    * https://developers.google.com/web/tools/chrome-devtools/memory-problems/?utm_source=dcc&amp;utm_medium=redirect&amp;utm_campaign=2016q3     
+    * https://www.youtube.com/watch?v=nrPa0mEk4Pw 
