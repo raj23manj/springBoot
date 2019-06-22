@@ -5003,6 +5003,7 @@
       * we call unlock() in the finally block()      
       * in this type of lock's we can unlock the lock from anyother methods, that is an additional feature of this locks
       * we can lock in it many times, but we need to unlock in the same number of times.
+      * if we lock then we have to unlock if not it will become a deadlock
       *  public class App {
          
          	private static int counter = 0;
