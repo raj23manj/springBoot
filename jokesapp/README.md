@@ -5132,16 +5132,26 @@
         * Counting Semaphores: allows an arbitrary resource count
         * Binary Semaphores: semaphore which are restricted to the values 0 and 1   
       
-      * Semaphore are used in situations for example an library with study rooms, which has front desk. If there aer 10 rooms, and students want
+      * Semaphore are used in situations for example an library with study rooms, which has front desk. If there are 10 rooms, and students want
         to use it one. To prevent disputes students must request a room from the front desk. If no rooms are available then they have to wait until
-        any of the rooms get free. When a student using room has finished, he must return to the front desk and indicate that a room is free. 
+        any of the rooms get free. When a student using room has finished, he must return to the front desk and indicate that a room is free.
+        
+        * Types:
+          * Count Semaphore
+          * Binary Semaphore
+        
+        * Scenario 2: 
+           when downloading we can use semaphores, wait until all units are complete and then do task on it 
+           
+        * Scenario 3:
+          resctrict the number of people downloading an imgae, like 1000 only to download using acquire() the permits   
         
       * Semaphore tracks only how many resources are free, it does not keep track of which of the resources are free
       * the semaphores count may serve as a useful trigger for a number of different actions
       * producer-consumer problem can be implemented with the help of semaphores efficiently  
       
       * Mutex
-        * a mutex is essentially the same thisng as a binary semaphore
+        * a mutex is essentially the same thing as a binary semaphore
         * while a binary semaphore may be used as a mutex, a mutex is a more specific use-case 
         * Mutexes have a concept of a owner. only the process that locked the mutex is suppose to unlock it.
         * mutexes may provide priority inversion safety. if the mutex knows its current owner, it is possible to promote the priority of the owner
