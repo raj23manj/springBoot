@@ -45,13 +45,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="md" value="60007" />
+          <entry key="md" value="60363" />
           <entry key="txt" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="60007" />
+          <entry key="Markdown" value="60363" />
           <entry key="PLAIN_TEXT" value="15" />
         </counts>
       </usages-collector>
@@ -63,8 +63,8 @@
         <entry file="file://$PROJECT_DIR$/jokesapp/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="217">
-                <caret line="5067" column="57" lean-forward="true" selection-start-line="5067" selection-start-column="57" selection-end-line="5067" selection-end-column="57" />
+              <first_editor relative-caret-position="65">
+                <caret line="5535" column="20" lean-forward="true" selection-start-line="5535" selection-start-column="20" selection-end-line="5535" selection-end-column="20" />
               </first_editor>
               <second_editor />
             </state>
@@ -92,9 +92,9 @@
       <find>mvn</find>
       <find>angular</find>
       <find>java</find>
-      <find>thread safe</find>
       <find>multi threa</find>
       <find>hibernate</find>
+      <find>thread safe</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -154,20 +154,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1552008607229</updated>
-    </task>
-    <task id="LOCAL-00058" summary="updated read me">
-      <created>1553160740669</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1553160740669</updated>
-    </task>
-    <task id="LOCAL-00059" summary="updated read me">
-      <created>1553161558101</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1553161558101</updated>
     </task>
     <task id="LOCAL-00060" summary="updated read me">
       <created>1553164441653</created>
@@ -498,7 +484,21 @@
       <option name="project" value="LOCAL" />
       <updated>1561099667336</updated>
     </task>
-    <option name="localTasksCounter" value="107" />
+    <task id="LOCAL-00107" summary="updated read me">
+      <created>1561186771407</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1561186771408</updated>
+    </task>
+    <task id="LOCAL-00108" summary="updated read me">
+      <created>1561345717271</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1561345717271</updated>
+    </task>
+    <option name="localTasksCounter" value="109" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -616,8 +616,8 @@
       <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="217">
-            <caret line="5067" column="57" lean-forward="true" selection-start-line="5067" selection-start-column="57" selection-end-line="5067" selection-end-column="57" />
+          <first_editor relative-caret-position="65">
+            <caret line="5535" column="20" lean-forward="true" selection-start-line="5535" selection-start-column="20" selection-end-line="5535" selection-end-column="20" />
           </first_editor>
           <second_editor />
         </state>

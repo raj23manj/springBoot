@@ -5225,8 +5225,8 @@
          2.) ExecutorService es = Executors.newFixedThreadPool(N);
          	 *		- maximize the number of threads
          	 *		- if we want to start a job -> if all the threads are busy, we have to wait for one
-         	 *			to terminate
-         	 *
+         	 *			to terminate not like 'newCachedThreadPool' where it will create one for us
+         	 *   
          3.) ExecutorService es = Executors.newSingleThreadExecutor();
          	 *		It uses a single thread for the job
          	 *
@@ -5307,7 +5307,7 @@
         }
 
   * Concurrent Collections - section 4
-    * CountDownLatch - 23
+    * CountDownLatch/Latches - 23
       * This is used to synchronize one or more tasks by forcing them to wait for the completion of a set of operations being performed by other tasks
         // * 		- You give an initial count to a CountDownLatch object, and any task that calls await()
         // * 				on that object will block until the count reaches zero
