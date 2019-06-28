@@ -5121,6 +5121,7 @@
       * we can check whether the given lock is held or not using re-entrant lock     
       * we can get the list of threads waiting for the given lock with re-entrant locks
       * Synchronized blocks are nicer, we do not need the try-catch-finally block
+      * lock.tryLock(time in ms, Unit) => used to try if lock can be aquired for given time, if not held by other threads
       
     * Semaphores - 19 & 20
       * semaphores are thread safe be default
@@ -5562,7 +5563,7 @@
     * Concurrent maps - 28
       * using a thread safe hashmap => private ConcurrentMap<String, Integer> map;
       * see the example      
-      * other collections => Collections.synchronized*
+      * other collections => Collections.synchronized* (map, set, list)
       
     * Exchanger - 29
          *  With the help of Exchanger -> two threads can exchange objects
@@ -5611,6 +5612,24 @@
       * shuffel&sort: all th data is re-arranged for the next step to run in parallel. It makes sure that items with the 
         same keys will get to the same reducer   
       * combines the final results   
+      
+# Executor Service's In Depth:
+  * Difference between the implement Runnable and extends Thread     
+    * when we extend start() method is a part of the class itself, so when we instantiate we the class we get start() method.
+    * when we implement Runnable, it is just an interface, and need to implement run() method in the implementing class, to get the start() method
+      we need to pass the Runnable implementing class to  the Thread class as a constructor.
+      - new Thread(myclass).start
+      
+  * Executor Service:
+    * Uses internal thread pools
+    * shutdown(), shutdownNow()    
+    * Fixed Thread Pool:
+      * where we pass the number of threads that needs to be used to execute the task,  if new tasks are added apart from "n" tasks, then they have to wait
+        unit threads are free
+      * Only limited threads can be created  
+    * Cached Thread Pool:
+      * if threads in the thread pool are all busy, then a new thread will be created for the new task to execute, it the busy thread is free then it will be reused.
+      * there is no limit in thread creation, any number can be there
          
 # Using callable in controllers
   * https://grokonez.com/java-integration/work-spring-callable-controller  
