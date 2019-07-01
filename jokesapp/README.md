@@ -5621,7 +5621,7 @@
       - new Thread(myclass).start
       
   * Executor Service:
-    * Uses internal thread pools
+    * Uses internal thread pools, for each executor service created
     * shutdown(), shutdownNow()    
     * Fixed Thread Pool:
       * where we pass the number of threads that needs to be used to execute the task,  if new tasks are added apart from "n" tasks, then they have to wait
@@ -5630,7 +5630,70 @@
     * Cached Thread Pool:
       * if threads in the thread pool are all busy, then a new thread will be created for the new task to execute, it the busy thread is free then it will be reused.
       * there is no limit in thread creation, any number can be there
-         
+    * Single Thread Executor:
+      * Thread Pool Size is one
+      
+  * Naming Threads:
+    * using Thread.currentThreadName().getName();    
+    * when creating a thread
+      * new Thread(new LoopTask(), "MyThread");
+      * Thread t2 = new Thread(new LoopTask());
+      *    t2.setName("My Thread");
+      
+    * Executor Service - section3-17
+      * Need to implement ThreadFactory 
+      * ex: 
+          public class NamedThreadFactory implement ThreadFactory {
+            private static int cnt = 0;
+            private static String Name = "MyThread-";
+            
+            @Override
+            public Thread newThread(Runnable r) {
+              Thread t = new Thread(r, Name + ++count);
+              return t;
+            }
+          }
+          
+          in main class :
+            ExecutorService execService = Executors.newCachedThreadPool(new NamedThreadFactory());
+            execService.execute(new LoopTask());
+             execService.execute(new LoopTask());
+             
+             o/p: [MyTHread-1] ----
+                  [MyTHread-2] ----
+            
+    * Returning Values:
+      * Blocking :
+        * using synchronised blocks with wait() and notifyAll(), along with getter method
+      * Non - Blocking:
+        * Using CallBack and observer
+        * implementing ResultListener<T>  our own, and passing the object of the class of that to the thread and make it display value     
+      
+      * From Executor Services:
+        * 1st way
+          * implementing a callable interface
+          * use submit() method on executor method 
+          * the o/p will be in the order they are submitted, even if later task finished it needs to wait for the current one to complete
+        
+        * 2nd way
+          * the o/p will be in the order they are completed, even if later task finished it needs not wait for the current one to complete
+          * take() blocks until the given task completes, and poll() it is asynchronous it keeps polling and see's if any task completes.
+          * using completion service    
+             ExecutorService execService = Executors.newCachedThreadPool(new NamedThreadsFactory());
+             CompletionService<Integer> tasks = new ExecutorCompletionService<Integer>(execService);
+             
+             tasks.submit(new CalculationTaskA(2,3,2000));
+             tasks.submit(new CalculationTaskA(3,4,1000));
+             
+             tasks.submit(new newLoopTaskA(), 99);
+             
+             // take() it will wait until the next task is completed and then execute, if already present will proceed
+             
+             for(int i = 0; i < 4; i++){
+                System.out.println("Result = " + tasks.take().get());
+             }
+                          
+     
 # Using callable in controllers
   * https://grokonez.com/java-integration/work-spring-callable-controller  
   * https://stackoverflow.com/questions/45823737/how-to-parallel-execute-multiple-database-calls-using-spring     
