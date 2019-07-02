@@ -5715,6 +5715,35 @@
         * There is FutureTaskClass
           * FutureTask<?> ft3 = new FutureTask<Void> (new LoopTaskC(), null);
           
+    * Terminate Threads
+      * when task is done then thread ends or dies for normal threads but for executor's it is different as threads are cached after finishing tasks   
+      * need to implement a new method to be called to stop, when implementing runnable or callable, internally it uses a shutdown flag that it keeps checking constantly
+      * 1st way Terminating normal threads (non blocking) - private volatile boolean shutdown = false;
+      
+         public void cancel(){
+           System.ot.println('shut down');
+           
+           synchronized(this){
+                this.shutdown=true;
+           }
+         }   
+         
+         public void run() {
+           .....
+           
+           synchronised(this){
+            if(shutdown){
+                break;
+            }
+           }
+         }  
+      
+      * 2nd way - Terminating normal threads(non blocking)
+        * using interrupt method
+          * void Thread.interrupt() - usually called by another thread on the thread to be interrupted (from main user thread to interrupt the threads)
+          * static boolean Thread.interrupted() - to be called from inside the interrupted Thread (inside run() method)
+          * boolean Thread.isInterrupted() - to be called by another thread on the interrupted thread
+            
 # Using callable in controllers
   * https://grokonez.com/java-integration/work-spring-callable-controller  
   * https://stackoverflow.com/questions/45823737/how-to-parallel-execute-multiple-database-calls-using-spring     
