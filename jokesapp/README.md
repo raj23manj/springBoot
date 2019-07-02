@@ -5692,7 +5692,21 @@
              for(int i = 0; i < 4; i++){
                 System.out.println("Result = " + tasks.take().get());
              }
-                          
+    
+    * Creating Dameon Threads
+      * Dameon threads are background and/or service providing threads
+      * they are killed by JVM as soon as no user thread is running any longer, for daemon thread to be alive atleast one user thread needs to be alive 
+      * can be stopped normally too like normal threads            
+      * main thread is a user thread         
+      * Dameon threads can be running in background without interacting with any other threads
+      * Dameon threads can end before the user thread also finishes
+      * Creation of Dameon Threads
+        *  Thread t = new Thread(new LoopTask(), "Demo");
+           t.setDaemon(true);
+           
+    * Creating Dameon Threads Using Executor Service:
+      * similar to setting like normal thread like above  
+             
      
 # Using callable in controllers
   * https://grokonez.com/java-integration/work-spring-callable-controller  

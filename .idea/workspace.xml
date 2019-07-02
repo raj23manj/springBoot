@@ -45,13 +45,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="md" value="61585" />
+          <entry key="md" value="64310" />
           <entry key="txt" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="61585" />
+          <entry key="Markdown" value="64310" />
           <entry key="PLAIN_TEXT" value="15" />
         </counts>
       </usages-collector>
@@ -63,8 +63,8 @@
         <entry file="file://$PROJECT_DIR$/jokesapp/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="592">
-                <caret line="5628" column="43" selection-start-line="5628" selection-start-column="43" selection-end-line="5628" selection-end-column="43" />
+              <first_editor relative-caret-position="518">
+                <caret line="5707" column="56" selection-start-line="5707" selection-start-column="56" selection-end-line="5707" selection-end-column="56" />
               </first_editor>
               <second_editor />
             </state>
@@ -155,20 +155,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1552008607229</updated>
-    </task>
-    <task id="LOCAL-00061" summary="updated read me">
-      <created>1553167210116</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1553167210116</updated>
-    </task>
-    <task id="LOCAL-00062" summary="updated read me">
-      <created>1553182563733</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1553182563734</updated>
     </task>
     <task id="LOCAL-00063" summary="updated read me">
       <created>1553184819291</created>
@@ -499,7 +485,21 @@
       <option name="project" value="LOCAL" />
       <updated>1561438252831</updated>
     </task>
-    <option name="localTasksCounter" value="110" />
+    <task id="LOCAL-00110" summary="updated read me">
+      <created>1561702165359</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1561702165359</updated>
+    </task>
+    <task id="LOCAL-00111" summary="updated read me">
+      <created>1561984378825</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1561984378825</updated>
+    </task>
+    <option name="localTasksCounter" value="112" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -617,8 +617,8 @@
       <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="592">
-            <caret line="5628" column="43" selection-start-line="5628" selection-start-column="43" selection-end-line="5628" selection-end-column="43" />
+          <first_editor relative-caret-position="518">
+            <caret line="5707" column="56" selection-start-line="5707" selection-start-column="56" selection-end-line="5707" selection-end-column="56" />
           </first_editor>
           <second_editor />
         </state>
