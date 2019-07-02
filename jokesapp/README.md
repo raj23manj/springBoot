@@ -5707,7 +5707,14 @@
     * Creating Dameon Threads Using Executor Service:
       * similar to setting like normal thread like above  
              
-     
+    * Check if Threads are Alive
+      * t1.isAlive();
+      
+      * In Executor Service:
+        * is used to check if a task is done, using Future.isDone(); 
+        * There is FutureTaskClass
+          * FutureTask<?> ft3 = new FutureTask<Void> (new LoopTaskC(), null);
+          
 # Using callable in controllers
   * https://grokonez.com/java-integration/work-spring-callable-controller  
   * https://stackoverflow.com/questions/45823737/how-to-parallel-execute-multiple-database-calls-using-spring     
