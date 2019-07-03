@@ -6662,3 +6662,46 @@ public class RunFormQueries {
   * Tools for memory leak Browser
     * https://developers.google.com/web/tools/chrome-devtools/memory-problems/?utm_source=dcc&amp;utm_medium=redirect&amp;utm_campaign=2016q3     
     * https://www.youtube.com/watch?v=nrPa0mEk4Pw 
+    
+   
+  * Design Patterns:
+    * Creational 
+      * Builder
+      * Factories
+        * Abstract Factory
+        * Factory Method
+      * Prototype
+      Singleton
+      
+    * Structural
+      * Adapter
+      * Bridge
+      * Composite
+      * Decorator
+      * Facade
+      * Flyweight
+      * Proxy
+  
+    * Behavioral 
+      * Chain of responsibility     
+      * Command
+      * Interpreter 
+      * Iterator
+      * Mediator 
+      * Memento
+      * Null object
+      * Observer
+      * State
+      * Strategy 
+      * Template
+      * Visitor
+      
+  
+  * SOLID
+    * SRP -> only single responsibility
+    * OSP -> methods or classes should not modify, only extension and no modification    
+    * LSP -> substition of child to base should work -> this can be achieved using Factory pattern or seggregating each classes with SRP, 
+      * vechile -> with engine -> car
+                -> without engine -> cycle
+    * ISP -> how to split interfaces into smaller interfaces (YAGNI principle => you ain't gonna need it)  using decorator pattern  
+    * DIP ->        
