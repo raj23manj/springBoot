@@ -5632,6 +5632,8 @@
       * there is no limit in thread creation, any number can be there
     * Single Thread Executor:
       * Thread Pool Size is one
+    * it has two methods execute() (used to execute runnable implementation), and submit() (used to execute runnable & callable implementation's)  
+    * submit(), gives a future in return to call additional methods like get(), cancel(true) 
       
   * Naming Threads:
     * using Thread.currentThreadName().getName();    
@@ -5764,7 +5766,17 @@
           * using Future.cancel(boolean mayInterruptIfRunning) - to be called by the class holding the Future ref. (from main thread)
           * static boolean Thread.interrupted() - to be called from inside the interrupted task
           * boolean Future.isCancelled() - to be called on the future outside the interrupted task (from main thread)
-            
+      
+      * Terminating all executor tasks in one shot
+        * shutdownNow()
+          * uses interrupt under the hood
+          * returns a list of tasks that were awaiting execution yet
+          * to await termination after shutting down,
+            * boolean ExecService.awaitTermination(long timeout, TimeUnit unit)
+          * cancellation exception and interrupted exception  
+            * cancellation exeception: happens when cancel is called on future
+            * Interrupted exeception: happens when future.get() is called by current thread and waiting and is interrupted
+              
 # Using callable in controllers
   * https://grokonez.com/java-integration/work-spring-callable-controller  
   * https://stackoverflow.com/questions/45823737/how-to-parallel-execute-multiple-database-calls-using-spring     
