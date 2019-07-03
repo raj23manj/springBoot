@@ -5776,7 +5776,30 @@
           * cancellation exception and interrupted exception  
             * cancellation exeception: happens when cancel is called on future
             * Interrupted exeception: happens when future.get() is called by current thread and waiting and is interrupted
-              
+            
+    * Uncaught Exceptions:
+      * leaking exceptions from thread cannot be caught directly   
+      * we need to implement Thread.UncaughtExceptionHandler interface  
+      * need to implement void uncaughtException(Thread t, Throwable e)   
+      
+      * 1st way to handle uncaught exceptions: (default handler)
+        * set a default handler for all the threads in the system
+        * only one instance for all the threads
+        * done using static void Thread.setDefaultUncaughtExceptionHandler(UncaughtExceptionHandler eh)
+        * Need to create a class implementing UncaughtExceptionHandler interface
+        * Inform JVM to use this class by,
+          * Thread.setDefaultUncaughtExceptionHandler(new MycustomExceptionDefaultHandler())
+      
+      * 2nd way to handle uncaught exceptions: (having multiple handlers for each thread)
+        * need to use void Thread.setUncaughtExceptionHandler(UncaughtExceptionHandler eh) => this is an instance method
+        
+          Thread t = new Thread(new ExceptionLeakingTask(), "MyThread-1");
+          t.setUncaughtExceptionHandler(new MycustomExceptionDefaultHandler());
+      
+      * 3rd way to handle uncaught exceptions: defaults and overrides
+          
+        
+           
 # Using callable in controllers
   * https://grokonez.com/java-integration/work-spring-callable-controller  
   * https://stackoverflow.com/questions/45823737/how-to-parallel-execute-multiple-database-calls-using-spring     
