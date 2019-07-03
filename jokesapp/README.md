@@ -5743,6 +5743,27 @@
           * void Thread.interrupt() - usually called by another thread on the thread to be interrupted (from main user thread to interrupt the threads)
           * static boolean Thread.interrupted() - to be called from inside the interrupted Thread (inside run() method)
           * boolean Thread.isInterrupted() - to be called by another thread on the interrupted thread
+          * use break; statement to come out of the task if being interrupted
+      
+      * Terminating Normal Threads - Blocked Threads(sleeping)
+        * making the thread to sleep using sleep()
+        * then use interrupt() and interrupted() methods like above
+        * use break; statement to come out of the task if being interrupted
+        
+        * Recieve an interrupt at a blocking point and exit at a non-blocking point:
+          * we can set a boolean variable once when interrupted along with Thread.interrupted() and use it later in the code to exit.
+          * here once after setting the boolean flag after Thread.interrupt() is called, Thread.interrupted() will be true          
+      
+      * Terminating tasks that are run by executors
+        * Non-Blocking
+          * similar to setting a boolean flag and using it later with synchronised blocks
+          * need to implement a callable instead of runnable
+        
+        * Blocked   
+          * implementing callable
+          * using Future.cancel(boolean mayInterruptIfRunning) - to be called by the class holding the Future ref. (from main thread)
+          * static boolean Thread.interrupted() - to be called from inside the interrupted task
+          * boolean Future.isCancelled() - to be called on the future outside the interrupted task (from main thread)
             
 # Using callable in controllers
   * https://grokonez.com/java-integration/work-spring-callable-controller  
