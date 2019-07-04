@@ -5694,6 +5694,9 @@
              for(int i = 0; i < 4; i++){
                 System.out.println("Result = " + tasks.take().get());
              }
+             
+        * 3rd way 
+          * after calling join() method call the setter or variable to get the result     
     
     * Creating Dameon Threads
       * Dameon threads are background and/or service providing threads
@@ -5797,8 +5800,42 @@
           t.setUncaughtExceptionHandler(new MycustomExceptionDefaultHandler());
       
       * 3rd way to handle uncaught exceptions: defaults and overrides
-          
+        * Using Both default and override specific one
+      
+      * Handling Exceptions in Executors
+        * Need to create a class implementing UncaughtExceptionHandler interface  
+        * 1st way:
+          * use like normal thread 
+            * Thread.setDefaultUncaughtExceptionHandler(new MycustomExceptionDefaultHandler())
+              ExecutorService execService1 = Executors.newCachedThreadPool(); 
+              execService1.execute(new MyTask())
         
+        * 2nd way:
+          * Specific Handlers for different threads
+            * like creating a daemon thread and setting name for the threads implementing ThreadFactory class, we need to set 
+              custom handlers there using Thread's method
+              Thread.setDefaultUncaughtExceptionHandler(UncaughtExceptionHandler eh)
+              
+            * in constructor we can set
+              * Thread t = super.newThread(r)
+                t.setDefaultUncaughtExceptionHandler(new ThreadExceptionHandler());  
+                
+            * in the main class;
+               ThreadExceptionHandler => implements ThreadFactory class 
+               ExecutorService execService1 = Executors.newCachedThreadPool(new ThreadExceptionHandler());     
+                
+            * Using Both methods default and override       
+            
+    * Waiting For Threads to Finish
+      * Joining other threads using Normal Threads-Api      
+        using join() method   
+        
+      * Returning Value's from Tasks  
+        * after calling join() method call the setter or variable to get the result
+        
+      * Joining Executor Services
+        * count down latch
+        * cyclic barrier  
            
 # Using callable in controllers
   * https://grokonez.com/java-integration/work-spring-callable-controller  

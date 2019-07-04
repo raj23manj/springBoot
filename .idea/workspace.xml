@@ -45,13 +45,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="md" value="69112" />
+          <entry key="md" value="70063" />
           <entry key="txt" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="69112" />
+          <entry key="Markdown" value="70063" />
           <entry key="PLAIN_TEXT" value="15" />
         </counts>
       </usages-collector>
@@ -63,8 +63,8 @@
         <entry file="file://$PROJECT_DIR$/jokesapp/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="563">
-                <caret line="6706" column="13" selection-start-line="6706" selection-start-column="13" selection-end-line="6706" selection-end-column="13" />
+              <first_editor relative-caret-position="389">
+                <caret line="5827" column="12" lean-forward="true" selection-start-line="5827" selection-start-column="12" selection-end-line="5827" selection-end-column="12" />
               </first_editor>
               <second_editor />
             </state>
@@ -96,6 +96,7 @@
       <find>thread safe</find>
       <find>microse</find>
       <find>solid</find>
+      <find>threads</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -109,10 +110,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="41" />
-    <option name="y" value="61" />
-    <option name="width" value="1387" />
-    <option name="height" value="811" />
+    <option name="x" value="9" />
+    <option name="y" value="23" />
+    <option name="width" value="1422" />
+    <option name="height" value="830" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -127,7 +128,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562168750068" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562215813935" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -155,13 +156,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1552008607229</updated>
-    </task>
-    <task id="LOCAL-00069" summary="updated read me">
-      <created>1553230003043</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1553230003046</updated>
     </task>
     <task id="LOCAL-00070" summary="updated read me">
       <created>1553230835148</created>
@@ -499,14 +493,21 @@
       <option name="project" value="LOCAL" />
       <updated>1562140971953</updated>
     </task>
-    <option name="localTasksCounter" value="118" />
+    <task id="LOCAL-00118" summary="updated read me">
+      <created>1562168764262</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1562168764262</updated>
+    </task>
+    <option name="localTasksCounter" value="119" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="41" y="61" width="1387" height="811" extended-state="0" />
+    <frame x="9" y="23" width="1422" height="830" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.049814127" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.048550725" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -617,8 +618,8 @@
       <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="563">
-            <caret line="6706" column="13" selection-start-line="6706" selection-start-column="13" selection-end-line="6706" selection-end-column="13" />
+          <first_editor relative-caret-position="389">
+            <caret line="5827" column="12" lean-forward="true" selection-start-line="5827" selection-start-column="12" selection-end-line="5827" selection-end-column="12" />
           </first_editor>
           <second_editor />
         </state>
