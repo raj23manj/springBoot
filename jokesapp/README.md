@@ -6741,4 +6741,11 @@ public class RunFormQueries {
       * vechile -> with engine -> car
                 -> without engine -> cycle
     * ISP -> how to split interfaces into smaller interfaces (YAGNI principle => you ain't gonna need it)  using decorator pattern  
-    * DIP ->        
+    * DIP -> (dependency inversion)     
+      * High level modules should not depend on low-level modules. Both should depend on abstraction
+        => High level - means business logics, just need what i want dont care how it comes
+           Low level - access to data storage implementations(arrays, lists)  and SRP classes
+           
+           means that a highlevel(business logic) should not directly depend on a low-level(data storage/concrete class), depend on abstraction instead
+      * Abstractions should not depend on details. Details should depend on abstractions.  
+        => means use interfaces or abstract classes instead of concrete classes
