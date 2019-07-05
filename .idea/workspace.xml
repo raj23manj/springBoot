@@ -45,13 +45,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="md" value="70686" />
+          <entry key="md" value="72109" />
           <entry key="txt" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="70686" />
+          <entry key="Markdown" value="72109" />
           <entry key="PLAIN_TEXT" value="15" />
         </counts>
       </usages-collector>
@@ -63,8 +63,8 @@
         <entry file="file://$PROJECT_DIR$/jokesapp/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="535">
-                <caret line="6745" column="91" selection-start-line="6745" selection-start-column="91" selection-end-line="6745" selection-end-column="91" />
+              <first_editor relative-caret-position="446">
+                <caret line="5870" column="76" selection-start-line="5870" selection-start-column="76" selection-end-line="5870" selection-end-column="76" />
               </first_editor>
               <second_editor />
             </state>
@@ -110,10 +110,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="9" />
     <option name="y" value="23" />
-    <option name="width" value="1422" />
-    <option name="height" value="830" />
+    <option name="width" value="1387" />
+    <option name="height" value="811" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -128,7 +127,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562219383592" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562314015947" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -156,13 +155,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1552008607229</updated>
-    </task>
-    <task id="LOCAL-00071" summary="updated read me">
-      <created>1553232616439</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1553232616439</updated>
     </task>
     <task id="LOCAL-00072" summary="updated read me">
       <created>1553233891108</created>
@@ -500,14 +492,21 @@
       <option name="project" value="LOCAL" />
       <updated>1562216044733</updated>
     </task>
-    <option name="localTasksCounter" value="120" />
+    <task id="LOCAL-00120" summary="updated read me">
+      <created>1562219766611</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1562219766611</updated>
+    </task>
+    <option name="localTasksCounter" value="121" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="9" y="23" width="1422" height="830" extended-state="0" />
+    <frame x="0" y="23" width="1387" height="811" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.048550725" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.049814127" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -618,8 +617,8 @@
       <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="535">
-            <caret line="6745" column="91" selection-start-line="6745" selection-start-column="91" selection-end-line="6745" selection-end-column="91" />
+          <first_editor relative-caret-position="446">
+            <caret line="5870" column="76" selection-start-line="5870" selection-start-column="76" selection-end-line="5870" selection-end-column="76" />
           </first_editor>
           <second_editor />
         </state>

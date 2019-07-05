@@ -5836,6 +5836,42 @@
       * Joining Executor Services
         * count down latch
         * cyclic barrier  
+        
+  * Scheduling Tasks    
+    * java.util.Timer
+      * For One Time Execution
+        * void schedule(TimerTask task, Date d)  
+        * void schedule(TimerTask task, long delay)
+      * For Multiple time executions fixed delay 
+        * void schedule(TimerTask task, Date d, long period)
+        * void schedule(TimerTask task, long d, long period)
+      * For Multiple time executions fixed rate   
+        * void scheduleAtFixedRate(TimerTask task, Date date,  long period)
+        * void scheduleAtFixedRate(TimerTask task, long delay,  long period)
+      * void cancel()
+      * TimerTask is the task that needs to be executed in future
+      * we set date when to be executed or time in ms delay to be executed from current time
+      
+      * important points:
+        * Single task-execution-thread per Timer Object
+        * Timer tasks should complete quickly
+        * Always call Timer.cancel(), when application is shutting down, otherwise it will cause memory leaks
+          especially when using dameon threads
+        * don't schedule more taks on Timer after cancelling it   
+        * Timer is thread safe
+      
+    * java.util.TimerTask  
+      * create a task implementing java.util.TimerTask which inturn implements runnable
+      * make sure tasks execution are short lived
+      * void scheduledExecutionTime() => return the time it takes for execution of task
+      * boolean cancel()
+      
+    * One Time Execution  
+      * instead of implementing runnable, implement java.util.TimerTask 
+      * Run the Timer thread as a Dameon thread and not a normal user thread
+      * Code:
+        Timer timer = new Timer("Timer-thread", true);  => the boolean flag represents whether it needs to be run as dameon mode or not
+        timer.schedule(new myTask(), scheduled time)
            
 # Using callable in controllers
   * https://grokonez.com/java-integration/work-spring-callable-controller  
