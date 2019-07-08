@@ -6581,6 +6581,12 @@ public class RunFormQueries {
   * https://www.javatpoint.com/ioc-container
   * https://www.javatpoint.com/jpa-interview-questions 
   
+# Find Memory Leak Using Chrome:
+  * https://www.youtube.com/watch?v=nrPa0mEk4Pw  
+  * https://www.youtube.com/channel/UCqiJuQ4EgqKrvw4pDwKzbJQ
+  * https://developers.google.com/web/tools/chrome-devtools/memory-problems/?utm_source=dcc&amp;utm_medium=redirect&amp;utm_campaign=2016q3
+  * https://developers.google.com/web/tools/chrome-devtools/evaluate-performance/reference
+  
 # Java Memory Management (https://www.udemy.com/java-memory-management/learn/lecture/6057442#overview)
   * JVM memory is split into to stack and heap  (Section 2)
     - stack memory is associated with the threads each created
