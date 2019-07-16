@@ -5868,10 +5868,15 @@
       
     * One Time Execution  
       * instead of implementing runnable, implement java.util.TimerTask 
-      * Run the Timer thread as a Dameon thread and not a normal user thread
+      * Run the Timer thread as a Dameon thread and not a normal user thread, coz it might take a long time to terminate and make the program hang
       * Code:
         Timer timer = new Timer("Timer-thread", true);  => the boolean flag represents whether it needs to be run as dameon mode or not
         timer.schedule(new myTask(), scheduled time)
+        
+    * Repeated Fixed-Delay Executions   
+      * Timer and TimerTask
+        * void schedule(TimerTask task, long delay, long period)
+        * void schedule(TimerTask task, Date firstTime, long period) 
            
 # Using callable in controllers
   * https://grokonez.com/java-integration/work-spring-callable-controller  
