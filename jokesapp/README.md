@@ -3211,6 +3211,36 @@
         // no inheritance hirerchical chain involved 
       }
       
+    * Recurssive Generics => need to see 
+      https://stackoverflow.com/questions/211143/java-enum-definition
+      
+      
+       
+      class PersonBuilder<SELF extends PersonBuilder<SELF>>
+      {
+        protected Person person = new Person();
+      
+        // critical to return SELF here
+        public SELF withName(String name)
+        {
+          person.name = name;
+          return self();
+        }
+      
+        protected SELF self()
+        {
+          // unchecked cast, but actually safe
+          // proof: try sticking a non-PersonBuilder
+          //        as SELF parameter; it won't work!
+          return (SELF) this;
+        }
+      
+        public Person build()
+        {
+          return person;
+        }
+      }
+      
   # Static & Final
     * Static
         * used for creating class methods and variables
@@ -6751,6 +6781,10 @@ public class RunFormQueries {
   * Design Patterns:
     * Creational 
       * Builder
+        * piece by peice construction. Example StringBuilder, pass an array to function return a "ul".
+        * not fluent builder
+        * fluent builder (using inheritance and recursive generics)
+        * facade builder
       * Factories
         * Abstract Factory
         * Factory Method
@@ -6796,3 +6830,7 @@ public class RunFormQueries {
            means that a highlevel(business logic) should not directly depend on a low-level(data storage/concrete class), depend on abstraction instead
       * Abstractions should not depend on details. Details should depend on abstractions.  
         => means use interfaces or abstract classes instead of concrete classes
+        
+  
+  * Install Java with Mac
+    * https://stackoverflow.com/questions/24342886/how-to-install-java-8-on-mac      
