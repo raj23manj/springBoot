@@ -5907,7 +5907,19 @@
       * Timer and TimerTask
         * void schedule(TimerTask task, long delay, long period)
         * void schedule(TimerTask task, Date firstTime, long period) 
-           
+        
+    * Repeated Fixed-Rate Executions
+      * Timer and TimerTask
+          * void scheduleAtFixedRate(TimerTask task, long delay, long period)
+          * void scheduleAtFixedRate(TimerTask task, Date firstTime, long period)     
+    
+    * Scheduling Tasks Using Executors API
+      * Single-thread-scheduled-executor
+        * static ScheduledExecutorService newSingleThreadScheduledExecutor()
+      * Scheduled-thread-pool
+        * newScheduledThreadPool(int poolSize)
+          
+          
 # Using callable in controllers
   * https://grokonez.com/java-integration/work-spring-callable-controller  
   * https://stackoverflow.com/questions/45823737/how-to-parallel-execute-multiple-database-calls-using-spring     
@@ -6781,15 +6793,21 @@ public class RunFormQueries {
   * Design Patterns:
     * Creational 
       * Builder
-        * piece by peice construction. Example StringBuilder, pass an array to function return a "ul".
+        * piece by piece construction. Example StringBuilder, pass an array to function return a "ul".
         * not fluent builder
         * fluent builder (using inheritance and recursive generics)
         * facade builder
       * Factories
         * Abstract Factory
+          * hirerchy of class implementing an interface, with correspondence hirerchy of factory classes
         * Factory Method
+          * to overcome how to use of overloading constructors with same types and arguments multiple times
       * Prototype
-      Singleton
+        * All about object copying - deep copy
+        * Cloneable interface => not recommended
+        * Using copy Constructor
+        * Copy Through Serialization, implementing Serializable
+      * Singleton
       
     * Structural
       * Adapter
@@ -6834,3 +6852,8 @@ public class RunFormQueries {
   
   * Install Java with Mac
     * https://stackoverflow.com/questions/24342886/how-to-install-java-8-on-mac      
+    
+  * New Things in Java
+    * Pair<k,v>
+    * Reflections()  => https://www.geeksforgeeks.org/reflection-in-java/, https://www.baeldung.com/reflections-library
+    * Recursive Generics (for fluent builder)

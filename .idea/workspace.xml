@@ -20,7 +20,7 @@
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.closed" value="6" />
-          <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.11" value="2" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.18" value="1" />
@@ -28,7 +28,7 @@
           <entry key="project.open.time.5" value="2" />
           <entry key="project.open.time.6" value="2" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="10" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -45,13 +45,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="md" value="72718" />
+          <entry key="md" value="73484" />
           <entry key="txt" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="72718" />
+          <entry key="Markdown" value="73484" />
           <entry key="PLAIN_TEXT" value="15" />
         </counts>
       </usages-collector>
@@ -63,8 +63,8 @@
         <entry file="file://$PROJECT_DIR$/jokesapp/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="593">
-                <caret line="6835" column="79" selection-start-line="6835" selection-start-column="79" selection-end-line="6835" selection-end-column="79" />
+              <first_editor relative-caret-position="520">
+                <caret line="6808" column="63" selection-start-line="6808" selection-start-column="63" selection-end-line="6808" selection-end-column="63" />
               </first_editor>
               <second_editor />
             </state>
@@ -96,8 +96,8 @@
       <find>thread safe</find>
       <find>microse</find>
       <find>solid</find>
-      <find>threads</find>
       <find>generics</find>
+      <find>threads</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -111,8 +111,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="53" />
-    <option name="y" value="62" />
+    <option name="x" value="16" />
+    <option name="y" value="60" />
     <option name="width" value="1387" />
     <option name="height" value="811" />
   </component>
@@ -123,13 +123,13 @@
     </navigator>
     <panes>
       <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562553097987" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563420522665" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -157,13 +157,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1552008607229</updated>
-    </task>
-    <task id="LOCAL-00075" summary="updated read me">
-      <created>1553258193747</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1553258193749</updated>
     </task>
     <task id="LOCAL-00076" summary="updated read me">
       <created>1553264271905</created>
@@ -501,14 +494,21 @@
       <option name="project" value="LOCAL" />
       <updated>1563262321162</updated>
     </task>
-    <option name="localTasksCounter" value="124" />
+    <task id="LOCAL-00124" summary="updated read me">
+      <created>1563365509144</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1563365509144</updated>
+    </task>
+    <option name="localTasksCounter" value="125" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="53" y="62" width="1387" height="811" extended-state="0" />
+    <frame x="16" y="60" width="1387" height="811" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.051301114" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.05204461" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -616,15 +616,15 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jokesapp/README.md">
-      <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="593">
-            <caret line="6835" column="79" selection-start-line="6835" selection-start-column="79" selection-end-line="6835" selection-end-column="79" />
+          <first_editor relative-caret-position="520">
+            <caret line="6808" column="63" selection-start-line="6808" selection-start-column="63" selection-end-line="6808" selection-end-column="63" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
+      <provider editor-type-id="text-editor" />
     </entry>
   </component>
   <component name="masterDetails">
