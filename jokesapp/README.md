@@ -6808,9 +6808,15 @@ public class RunFormQueries {
         * Using copy Constructor
         * Copy Through Serialization, implementing Serializable
       * Singleton
-      
+        * make the constructor private
+        * when using reflections it can be overriden, even using serialisation
+        
     * Structural
       * Adapter
+        * like electric adapter
+        * a translator between two classes
+        * a bird and toyBird, adapter BirdtoToyAdapter
+        * https://www.geeksforgeeks.org/adapter-pattern/
       * Bridge
       * Composite
       * Decorator
