@@ -6818,8 +6818,24 @@ public class RunFormQueries {
         * a bird and toyBird, adapter BirdtoToyAdapter
         * https://www.geeksforgeeks.org/adapter-pattern/
       * Bridge
+        * connecting components together through abstractions
+        * decoupling interface/abstraction from implementation
+        * https://www.geeksforgeeks.org/bridge-design-pattern/
+        * vechile -> car, bike. workshop -> produce, assemble
       * Composite
+        * objects use other objects fields/methods through inheritance and composition
+        * treat individual object or groups of object in the similar fashion 
+        * graphicObject class(has array to containd one object or list array) => circle or square
       * Decorator
+        * want to add additional functionality to existing object, without inheriting from them
+        * string is a final class,
+           * using delegation to delegate normal methods and add new methods
+        * Dynamic Decorator:
+           * similar  
+        * Static Decorator:
+           * using generics   
+        * Adapter Decorator
+          * using both adapter and decorator    
       * Facade
       * Flyweight
       * Proxy
