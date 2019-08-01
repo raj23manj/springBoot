@@ -6837,7 +6837,10 @@ public class RunFormQueries {
         * Adapter Decorator
           * using both adapter and decorator    
       * Facade
+        * provide a simple , easy to understand user interface over a large and complex body of code 
+        * veg resturants, non-veg-resturants, both and hotel keeper(facade) in a hotel
       * Flyweight
+        * 
       * Proxy
   
     * Behavioral 
