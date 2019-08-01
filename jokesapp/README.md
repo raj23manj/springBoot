@@ -6840,7 +6840,11 @@ public class RunFormQueries {
         * provide a simple , easy to understand user interface over a large and complex body of code 
         * veg resturants, non-veg-resturants, both and hotel keeper(facade) in a hotel
       * Flyweight
-        * 
+        * space optimization
+        * avoid redundancy 
+        * user name example, user array list
+        * flyweight objects is that they are immutable
+        * use hashmap, list
       * Proxy
   
     * Behavioral 
@@ -6882,3 +6886,4 @@ public class RunFormQueries {
     * Pair<k,v>
     * Reflections()  => https://www.geeksforgeeks.org/reflection-in-java/, https://www.baeldung.com/reflections-library
     * Recursive Generics (for fluent builder)
+    * Function<String, Integer> getOrAdd = (String s) -> { ... return 1;}
