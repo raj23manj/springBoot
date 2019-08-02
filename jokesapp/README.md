@@ -6896,3 +6896,19 @@ public class RunFormQueries {
     * Recursive Generics (for fluent builder)
     * Function<String, Integer> getOrAdd = (String s) -> { ... return 1;}
     * invocationHandler
+    
+    
+* Apache Maven(GURU):
+  * CLI compiling java 
+    * *.jar, *.war, *.ear, *.Fatjars, docker containers     
+    * we can unzip jar files
+    * javac xxx.java => creates a compiled class file(bytecode)
+      * Compile with 3rd party libraries
+       * javac -classpath ./lib/* HelloWorld
+    * java xxx => to run  
+    * create a jar file
+      * jar cf name.jar xxx.class
+      * to run jar file need to add it to classpath
+        * java -classpath name.jar <Class tot run>
+        * to run 3rd party libraires
+          * java -classpath ./lib/*:./ HelloWorld
