@@ -6846,6 +6846,14 @@ public class RunFormQueries {
         * flyweight objects is that they are immutable
         * use hashmap, list
       * Proxy
+        * a class that functions as an interface to a particular resource. That resource may be remote, expensive to construct, or may require logging or some other
+          functionality
+        * Protection Proxy
+          * car driver to drive car.   
+        * Property Proxy
+          * using generics
+        * Dynamic Proxy for logging
+          * java gives invocationHandler to implement this   
   
     * Behavioral 
       * Chain of responsibility     
@@ -6887,3 +6895,4 @@ public class RunFormQueries {
     * Reflections()  => https://www.geeksforgeeks.org/reflection-in-java/, https://www.baeldung.com/reflections-library
     * Recursive Generics (for fluent builder)
     * Function<String, Integer> getOrAdd = (String s) -> { ... return 1;}
+    * invocationHandler
