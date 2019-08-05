@@ -6949,3 +6949,22 @@ public class RunFormQueries {
       * sub modules can also inherit
       * 'effective pom' is the pom complete with inherited properties
         * mvn help:effective-pom   
+        
+    * Maven-dependencies
+      * dependency - it is an artifact which your maven project depends upon, a jar or pom
+      * transitive dependency - a dependency of an artifact which your project depends on.
+        * can go many layers deep
+        * cyclic dependencies are not supported
+      * Dependency Management - allow project authors to specifiy the versions of artifacts to be used   
+      * Dependency Mediation - Determines what version to use when multiple versions of the same dependecny are encountered
+        * 'Nearest Definition' in dependency tree is used
+        * example: A -> B, A -> D 2.0, B -> D 1.5, then D version 2.0 would be included
+      * Excluded Dependencies - Ability to exclude specific dependency
+      * Optional Dependencies - Ability to make dependencies optional(exclude by default for downstream projects)    
+      * Dependency Scope:
+        * compile: default, available on the classpaths of the projects. Also propogated to downstream projects
+        * Provided: Like compile, but expected to be provided by JDK or Container at runtime
+        * Runtime: Not required for compile, but needed for runtime. On Runtime and test classpaths, not compile (JDBC Connection)
+        * Test: Only available on the test classpath, not transitive
+        * System: similar to provide, but JAR is added to system explicitly(via file path)
+        * Import: imports dependency of POM
