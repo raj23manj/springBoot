@@ -7006,4 +7006,7 @@ public class RunFormQueries {
         * https://www.baeldung.com/maven-wrapper
         * The Maven Wrapper is an excellent choice for projects that need a specific version of Maven
         * mvn -N io.takari:maven:wrapper   (default version specified in the packages taken) 
-        * mvn -N io.takari:maven:wrapper -Dmaven=3.6.0      
+        * mvn -N io.takari:maven:wrapper -Dmaven=3.6.0   
+      
+      * Maven ArcheTypes:
+        *  It is a project template    
