@@ -6912,3 +6912,40 @@ public class RunFormQueries {
         * java -classpath name.jar <Class tot run>
         * to run 3rd party libraires
           * java -classpath ./lib/*:./ HelloWorld
+  
+  * Maven Basics:
+    * maven corodinates:
+      * used to identify artifacts
+      * groupid => unique to org(use domain name, but reverse)
+      * artifactid => project name
+      * version => specifies version 
+        * ex: 3.2.1-987-beta
+          * major.minor.incremental(3.2.1)
+          * Build number - 987 from ci build
+          * Qualifier - 'beta' - string qualifier
+        * ex: 3.2.1-SNAPSHOT
+          * this implies as development version
+          * not stable, shoild check for newer versions
+          * maven will first check locally then remote repos
+          * by default maven will check remote repos once per day (option is configurable) 
+      
+      * groupid & artifactId can be inherited from parent POM 
+      
+    * maven repositories:
+      * local => under <use home>/.m2/
+      * central => public hosted by maven community (maven.org)
+      * remote - other locations which can be public or private (github, nexus)        
+    
+    * maven-wagon
+      * it is a unified maven api
+      * it is a transportation abstraction for artifact and repository handling code
+      * allows different providers to communicate with maven repositories, uses HTTP/HTTPS
+      * some time may need to configure Wagon for proxy settings 
+    
+    * Maven Project Object Model
+      * POM, is the pom.xml that describes a maven project
+      * must comply with maven-4.0.0..xsd
+      * can inherit properties from parent POM
+      * sub modules can also inherit
+      * 'effective pom' is the pom complete with inherited properties
+        * mvn help:effective-pom   
