@@ -6856,8 +6856,15 @@ public class RunFormQueries {
           * java gives invocationHandler to implement this   
   
     * Behavioral 
-      * Chain of responsibility     
+      * Chain of responsibility   
+        * A chain of components who all get a chance to process a command or a query, optionally having default processing implementation 
+          and an ability to terminate the processing chain  
+        * Method Chain  
+          * number, being negative  posivite 
       * Command
+        * an object which represents an instructions to perform a particular action. Contains all the information necessary for the action to
+          be taken
+        * bank account deposit and withdraw  
       * Interpreter 
       * Iterator
       * Mediator 
@@ -6896,6 +6903,7 @@ public class RunFormQueries {
     * Recursive Generics (for fluent builder)
     * Function<String, Integer> getOrAdd = (String s) -> { ... return 1;}
     * invocationHandler
+    * List.of(String ...)
     
     
 * Apache Maven(GURU):
@@ -7010,3 +7018,5 @@ public class RunFormQueries {
       
       * Maven ArcheTypes:
         *  It is a project template    
+        
+        
