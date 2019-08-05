@@ -7002,3 +7002,8 @@ public class RunFormQueries {
               * Site - site
               * Post-site
               * Site-deploy  - deploy
+      * Maven Wrapper:
+        * https://www.baeldung.com/maven-wrapper
+        * The Maven Wrapper is an excellent choice for projects that need a specific version of Maven
+        * mvn -N io.takari:maven:wrapper   (default version specified in the packages taken) 
+        * mvn -N io.takari:maven:wrapper -Dmaven=3.6.0      

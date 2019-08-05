@@ -33,25 +33,29 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="cmd" value="1" />
           <entry key="java" value="7" />
           <entry key="md" value="1" />
+          <entry key="mvnw" value="1" />
+          <entry key="properties" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JAVA" value="7" />
-          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="PLAIN_TEXT" value="3" />
+          <entry key="Properties" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="md" value="79899" />
+          <entry key="md" value="80029" />
           <entry key="txt" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="79899" />
+          <entry key="Markdown" value="80029" />
           <entry key="PLAIN_TEXT" value="15" />
         </counts>
       </usages-collector>
@@ -63,8 +67,8 @@
         <entry file="file://$PROJECT_DIR$/jokesapp/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="593">
-                <caret line="7003" column="37" selection-start-line="7003" selection-start-column="37" selection-end-line="7003" selection-end-column="37" />
+              <first_editor relative-caret-position="563">
+                <caret line="7005" column="48" selection-start-line="7005" selection-start-column="48" selection-end-line="7005" selection-end-column="48" />
               </first_editor>
               <second_editor />
             </state>
@@ -118,8 +122,7 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-28" />
-    <option name="y" value="66" />
+    <option name="y" value="61" />
     <option name="width" value="1387" />
     <option name="height" value="811" />
   </component>
@@ -130,13 +133,34 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="ProjectPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="John Thompson Java Course" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jokesapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="John Thompson Java Course" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jokesapp" type="462c0819:PsiDirectoryNode" />
+              <item name=".mvn" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="John Thompson Java Course" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jokesapp" type="462c0819:PsiDirectoryNode" />
+              <item name=".mvn" type="462c0819:PsiDirectoryNode" />
+              <item name="wrapper" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="AndroidView" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1564986112766" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1564987058122" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -164,13 +188,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1552008607229</updated>
-    </task>
-    <task id="LOCAL-00085" summary="updated read me">
-      <created>1553666927986</created>
-      <option name="number" value="00085" />
-      <option name="presentableId" value="LOCAL-00085" />
-      <option name="project" value="LOCAL" />
-      <updated>1553666927986</updated>
     </task>
     <task id="LOCAL-00086" summary="updated read me">
       <created>1553840440700</created>
@@ -508,14 +525,21 @@
       <option name="project" value="LOCAL" />
       <updated>1564982173241</updated>
     </task>
-    <option name="localTasksCounter" value="134" />
+    <task id="LOCAL-00134" summary="updated read me">
+      <created>1564986133282</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1564986133282</updated>
+    </task>
+    <option name="localTasksCounter" value="135" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-28" y="66" width="1387" height="811" extended-state="0" />
+    <frame x="0" y="61" width="1387" height="811" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.052788105" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25427508" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -622,11 +646,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/jokesapp/mvnw.cmd">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jokesapp/.mvn/wrapper/maven-wrapper.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jokesapp/mvnw">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1328" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/jokesapp/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="593">
-            <caret line="7003" column="37" selection-start-line="7003" selection-start-column="37" selection-end-line="7003" selection-end-column="37" />
+          <first_editor relative-caret-position="563">
+            <caret line="7005" column="48" selection-start-line="7005" selection-start-column="48" selection-end-line="7005" selection-end-column="48" />
           </first_editor>
           <second_editor />
         </state>
