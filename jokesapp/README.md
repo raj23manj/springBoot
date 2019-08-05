@@ -6968,3 +6968,37 @@ public class RunFormQueries {
         * Test: Only available on the test classpath, not transitive
         * System: similar to provide, but JAR is added to system explicitly(via file path)
         * Import: imports dependency of POM
+      * Maven Dependency Plugin:
+        * dependencies are managed by this
+        * important goals:
+          * dependency:tree - shows the dependency tree, useful for resolving conflicts
+          * dependency:go-offline: resolve all-all prepare to go offline
+          * dependency:purge-local-repository - clear artifacts from local repo
+          * dependency:sources - get sources for all dependencies 
+      * Maven standard directory layout:
+        *  projects structure
+      * Maven Build Cycles:
+        * a lifecyle is a pre-defined group of build steps called phases
+        * each phase can be bound to one or more plugin goals  
+        * maven has 3 pre defined lifecycles: clean, default, site
+          * clean: does a clean of the project, removes all build artifacts from working directory (delets target directory)
+            * defined with plugin bindings
+            * preclean =? clean => post clean
+          * default: does build and deployment of the project (testing, it testing packaging and deploy it target is mentioned)
+            * defined without plugin bindings   
+            * default life cycle high-level
+              * validate - verify project is correct
+              * compile - compile source code
+              * Test - test compiled source code
+              * package - package compiled files to packaging type
+              * verify - run integration tests
+              * install - install to local maven repository
+              * deploy - deploy to shared maven repository
+          * site: creates a website for your project, least used. like clean lifecycle
+            * defined with plugin bindings
+            * maven websites are all built using this site lifecycle   
+            * Lifecycles:
+              * Pre-site
+              * Site - site
+              * Post-site
+              * Site-deploy  - deploy
