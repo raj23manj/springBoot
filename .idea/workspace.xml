@@ -49,13 +49,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="md" value="80536" />
+          <entry key="md" value="81688" />
           <entry key="txt" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="80536" />
+          <entry key="Markdown" value="81688" />
           <entry key="PLAIN_TEXT" value="15" />
         </counts>
       </usages-collector>
@@ -67,8 +67,8 @@
         <entry file="file://$PROJECT_DIR$/jokesapp/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="1059">
-                <caret line="6905" column="24" selection-start-line="6905" selection-start-column="24" selection-end-line="6905" selection-end-column="24" />
+              <first_editor relative-caret-position="622">
+                <caret line="7069" column="26" selection-start-line="7069" selection-start-column="26" selection-end-line="7069" selection-end-column="26" />
               </first_editor>
               <second_editor />
             </state>
@@ -160,7 +160,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1565003746079" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1565060005478" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -188,13 +188,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1552008607229</updated>
-    </task>
-    <task id="LOCAL-00088" summary="updated read me">
-      <created>1554173630622</created>
-      <option name="number" value="00088" />
-      <option name="presentableId" value="LOCAL-00088" />
-      <option name="project" value="LOCAL" />
-      <updated>1554173630622</updated>
     </task>
     <task id="LOCAL-00089" summary="updated read me">
       <created>1554187163906</created>
@@ -532,7 +525,14 @@
       <option name="project" value="LOCAL" />
       <updated>1564989257572</updated>
     </task>
-    <option name="localTasksCounter" value="137" />
+    <task id="LOCAL-00137" summary="updated read me">
+      <created>1565004049673</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
+      <option name="project" value="LOCAL" />
+      <updated>1565004049673</updated>
+    </task>
+    <option name="localTasksCounter" value="138" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -660,8 +660,8 @@
     <entry file="file://$PROJECT_DIR$/jokesapp/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="1059">
-            <caret line="6905" column="24" selection-start-line="6905" selection-start-column="24" selection-end-line="6905" selection-end-column="24" />
+          <first_editor relative-caret-position="622">
+            <caret line="7069" column="26" selection-start-line="7069" selection-start-column="26" selection-end-line="7069" selection-end-column="26" />
           </first_editor>
           <second_editor />
         </state>

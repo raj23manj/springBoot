@@ -7019,4 +7019,52 @@ public class RunFormQueries {
       * Maven ArcheTypes:
         *  It is a project template    
         
-        
+      * Maven Plugins:
+        * Maven Lifecycle Plugins:
+            * Maven Clean Plugin : default lifecycle
+              * Clean - has 'clean' goal
+              * example:
+               <build>
+                 <plugins>
+                   <plugin>
+                     <groupId>org.apache.maven.plugins</groupId>
+                     <artifactId>maven-clean-plugin</<artifactId>
+                     <!--<version>x.x.x</version>-->
+                     <executions>
+                       <id>auto-clean</id>
+                       <phase>initialize</phase>
+                       <goals>
+                         <goal>clean</goal>
+                       </<goals>
+                     </executions>
+                   </plugin>
+                 </<plugins>
+               </build>
+                 
+            * Maven Compiler Plugins : default lifecycle 
+              * compiler:compile, compiler:testCompile
+              * example:
+                
+            * Maven Resources plugin : default lifecycle 
+              * resources:resources, resources:testResources, resources:copy-resources  
+              
+            * Maven Surefire Plugin : default lifecycle
+              * surefire:test => executing UT of project from test directory
+              
+            * Maven Jar Plugin : default lifecycle
+              * jar:jar, jar:test-jar
+              * to build jars from compiled artifacts and project resources 
+               
+            * Maven deploy plugin
+              * deploy:deploy, deploy:deploy-file
+              * to deploy artifacts to maven repos     
+              * configuration part of maven POM
+              
+            * Maven Site Plugin
+              * site:site, site:deploy, site:run, site:stage, site:stage-deploy, site:attach-descriptor, site:jar, site:effective-site
+                
+            * Maven and Source Control:
+              * gitignore
+            
+            * other plugins  
+            * cheat sheets
