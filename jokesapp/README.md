@@ -7068,3 +7068,9 @@ public class RunFormQueries {
             
             * other plugins  
             * cheat sheets
+      
+      * Generating Source with maven:
+        * from XSD schema -> using jaxb plugin
+        * from json schema -> jasonschema2pojo  
+      
+      * MapStruct    
