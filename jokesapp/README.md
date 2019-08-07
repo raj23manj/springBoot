@@ -6866,7 +6866,12 @@ public class RunFormQueries {
           be taken
         * bank account deposit and withdraw  
       * Interpreter 
+        * macmt rules example
+        * lexer(split string) and parser(convert to objects and do calculation)
+        * Antlr
       * Iterator
+        * traverse data structures
+        * java has Iterator<T>, Iterable<T>
       * Mediator 
       * Memento
       * Null object
@@ -7073,4 +7078,10 @@ public class RunFormQueries {
         * from XSD schema -> using jaxb plugin
         * from json schema -> jasonschema2pojo  
       
-      * MapStruct    
+      * MapStruct
+    
+    * Testing with maven:
+      * Unit Testing - completed by Maven Surefire Plugin
+      * Integration Testing - completed by maven Failsafe Plugin (heavy weight tests)
+      * Jacoco     
+      * Spot bugs maven plugin
