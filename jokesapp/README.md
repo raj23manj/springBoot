@@ -7085,3 +7085,13 @@ public class RunFormQueries {
       * Integration Testing - completed by maven Failsafe Plugin (heavy weight tests)
       * Jacoco     
       * Spot bugs maven plugin
+    
+    * Multi Module Projects:
+      * nested pom
+      * parent pom  
+      * maven reactor is what builds each module of the maven project
+        * build order
+          * project dependencies
+          * plugin declaration
+          * order of modules declared in the modules section in POM
+          * each multi module creates a transitive dependency
