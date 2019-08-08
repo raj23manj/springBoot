@@ -7095,3 +7095,6 @@ public class RunFormQueries {
           * plugin declaration
           * order of modules declared in the modules section in POM
           * each multi module creates a transitive dependency
+      * Maven Flatten and Enforcer Plugin  
+      * BOM (bill of material)
+        * following DRY 

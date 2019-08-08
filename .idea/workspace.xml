@@ -49,13 +49,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="md" value="82473" />
+          <entry key="md" value="82561" />
           <entry key="txt" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="82473" />
+          <entry key="Markdown" value="82561" />
           <entry key="PLAIN_TEXT" value="15" />
         </counts>
       </usages-collector>
@@ -68,7 +68,7 @@
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
               <first_editor relative-caret-position="622">
-                <caret line="7096" column="61" selection-start-line="7096" selection-start-column="61" selection-end-line="7096" selection-end-column="61" />
+                <caret line="7099" column="23" selection-start-line="7099" selection-start-column="23" selection-end-line="7099" selection-end-column="23" />
               </first_editor>
               <second_editor />
             </state>
@@ -161,7 +161,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1565181220416" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1565229767301" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -189,13 +189,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1552008607229</updated>
-    </task>
-    <task id="LOCAL-00092" summary="updated read me">
-      <created>1554692014584</created>
-      <option name="number" value="00092" />
-      <option name="presentableId" value="LOCAL-00092" />
-      <option name="project" value="LOCAL" />
-      <updated>1554692014585</updated>
     </task>
     <task id="LOCAL-00093" summary="updated read me">
       <created>1554704407930</created>
@@ -533,7 +526,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565161890091</updated>
     </task>
-    <option name="localTasksCounter" value="141" />
+    <task id="LOCAL-00141" summary="updated read me">
+      <created>1565195726687</created>
+      <option name="number" value="00141" />
+      <option name="presentableId" value="LOCAL-00141" />
+      <option name="project" value="LOCAL" />
+      <updated>1565195726687</updated>
+    </task>
+    <option name="localTasksCounter" value="142" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -662,7 +662,7 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
           <first_editor relative-caret-position="622">
-            <caret line="7096" column="61" selection-start-line="7096" selection-start-column="61" selection-end-line="7096" selection-end-column="61" />
+            <caret line="7099" column="23" selection-start-line="7099" selection-start-column="23" selection-end-line="7099" selection-end-column="23" />
           </first_editor>
           <second_editor />
         </state>
