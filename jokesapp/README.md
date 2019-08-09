@@ -7098,3 +7098,15 @@ public class RunFormQueries {
       * Maven Flatten and Enforcer Plugin  
       * BOM (bill of material)
         * following DRY 
+    
+    * Build Profiles:
+      * Per Project: 
+        * defined in pom.xml
+        * cli -> mvn package -S <path to setting file> 
+      
+      * Per User:
+        * <user home>/.m2/settings.xml
+      
+      * Global:
+        * <Maven Home>/conf/settings.xml    
+            
