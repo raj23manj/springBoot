@@ -3279,8 +3279,18 @@
       * If we wnat to add and read at the same time, we have to declare the collection with no wild card. List<Double>  
       
       * Type erasure 
-                      
-      
+        * java uses type erasure to handle generics
+        * replace all type parameters in generic types with their bounds or Object. If the type parameters are unbounded
+          So the final bytecode will contain plain java objects/classes. Uses type casts if necessary
+        * sometimes it generates extra methods called bridge methods in order to maintain polymorphism with generic types  
+        * Bridge methods are usually occur when inheritance is used. It is an additional method during type erasure in order to avoid ambiguous
+          situations.
+        
+    * Collections:
+      * collection extends the Iterable interface
+      * List(ArrayList, LinkedList, Vector(synchronised) -> Stack), Queue(priorityQueue, Deque -> ArrayDeque), Set(HashSet, LinkedHashSet, SortedSet -> TreeSet)
+      * Map (HashTable, HashMap, LinkedHashMap, SortedMap -> TreeMap)
+                           
       
   # Static & Final
     * Static
