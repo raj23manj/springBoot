@@ -3264,16 +3264,22 @@
       * Unbounded wildcards
         * Collection<?>  
             
-      * Upper Bound WildCard
+      * Upper Bound WildCard(for read)
         * "? extends T" 
         * accepts any subclasses of type T 
+        * cast to type "T" while iterating
         * can be used only to read from list not add in list, if needed use LowerBound
       
-      * Lower Bound Wildcard
+      * Lower Bound Wildcard(for write)
         * "? super T"   
-        * reading -> not guaranteed an integer because it may be pointing to a number, the only guarantee is an object or sub class of object
+        * reading -> not guaranteed an integer because it may be pointing to a number, the only guarantee is an object or sub class of object. ~ you can cast to object while iterating
           writing -> you can not add Object or serializable to a List<? super Number> even though Number extends Object and serialisable. You
-                     can add Integer or double  
+                     can add Integer or double, which are sub types of number 
+                     
+      * If we wnat to add and read at the same time, we have to declare the collection with no wild card. List<Double>  
+      
+      * Type erasure 
+                      
       
       
   # Static & Final
