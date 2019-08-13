@@ -49,13 +49,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="md" value="82772" />
+          <entry key="md" value="84043" />
           <entry key="txt" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="82772" />
+          <entry key="Markdown" value="84043" />
           <entry key="PLAIN_TEXT" value="15" />
         </counts>
       </usages-collector>
@@ -67,8 +67,8 @@
         <entry file="file://$PROJECT_DIR$/jokesapp/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="337">
-                <caret line="7096" column="61" lean-forward="true" selection-start-line="7096" selection-start-column="61" selection-end-line="7096" selection-end-column="61" />
+              <first_editor relative-caret-position="593">
+                <caret line="3275" column="46" selection-start-line="3275" selection-start-column="46" selection-end-line="3275" selection-end-column="46" />
               </first_editor>
               <second_editor />
             </state>
@@ -100,9 +100,10 @@
       <find>microse</find>
       <find>solid</find>
       <find>threads</find>
-      <find>generics</find>
       <find>hibernate</find>
       <find>lam</find>
+      <find>profile</find>
+      <find>generics</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -189,13 +190,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1552008607229</updated>
-    </task>
-    <task id="LOCAL-00094" summary="updated read me">
-      <created>1554868068223</created>
-      <option name="number" value="00094" />
-      <option name="presentableId" value="LOCAL-00094" />
-      <option name="project" value="LOCAL" />
-      <updated>1554868068224</updated>
     </task>
     <task id="LOCAL-00095" summary="updated read me">
       <created>1554949904666</created>
@@ -533,7 +527,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565230269903</updated>
     </task>
-    <option name="localTasksCounter" value="143" />
+    <task id="LOCAL-00143" summary="updated read me">
+      <created>1565330119526</created>
+      <option name="number" value="00143" />
+      <option name="presentableId" value="LOCAL-00143" />
+      <option name="project" value="LOCAL" />
+      <updated>1565330119526</updated>
+    </task>
+    <option name="localTasksCounter" value="144" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -661,8 +662,8 @@
     <entry file="file://$PROJECT_DIR$/jokesapp/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="337">
-            <caret line="7096" column="61" lean-forward="true" selection-start-line="7096" selection-start-column="61" selection-end-line="7096" selection-end-column="61" />
+          <first_editor relative-caret-position="593">
+            <caret line="3275" column="46" selection-start-line="3275" selection-start-column="46" selection-end-line="3275" selection-end-column="46" />
           </first_editor>
           <second_editor />
         </state>

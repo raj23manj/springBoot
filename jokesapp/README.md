@@ -3241,6 +3241,41 @@
         }
       }
       
+    * introduction to collections and Generics in Java
+      * Generics help to reduce runtime bugs to copile time bugs(easier to detect and fix) 
+      * Used to implement generic algorithm
+      * avoid casting, it is expensive
+      
+      * Multiple Type Parameter:
+        class HashTable<T,E>
+      
+      * Array Method
+        public<T> void show(T[] array)  
+      
+      * Bounded Types
+        * Restrict type of typed arguments  
+        * Generic that implements an interface
+          * public static <T extends Comparable<T>> T cal(T ti, T t2)
+          
+      * Type Inference
+        * compilers ability to look at each method invocation and corresponding declarations to determine the type arguments
+          that make the invocation applicable  
+          
+      * Unbounded wildcards
+        * Collection<?>  
+            
+      * Upper Bound WildCard
+        * "? extends T" 
+        * accepts any subclasses of type T 
+        * can be used only to read from list not add in list, if needed use LowerBound
+      
+      * Lower Bound Wildcard
+        * "? super T"   
+        * reading -> not guaranteed an integer because it may be pointing to a number, the only guarantee is an object or sub class of object
+          writing -> you can not add Object or serializable to a List<? super Number> even though Number extends Object and serialisable. You
+                     can add Integer or double  
+      
+      
   # Static & Final
     * Static
         * used for creating class methods and variables
@@ -7109,4 +7144,7 @@ public class RunFormQueries {
       
       * Global:
         * <Maven Home>/conf/settings.xml    
+        
+    * Release Plugin:
+      * used to release versions of projects    
             
