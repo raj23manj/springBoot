@@ -3289,7 +3289,7 @@
     * Collections:
       * collection extends the Iterable interface
       * List(ArrayList, LinkedList, Vector(synchronised) -> Stack), Queue(priorityQueue, Deque -> ArrayDeque), Set(HashSet, LinkedHashSet, SortedSet -> TreeSet)
-      * Map (HashTable, HashMap, LinkedHashMap, SortedMap -> TreeMap)
+      * Map (HashTable(synchronised), HashMap, LinkedHashMap, SortedMap -> TreeMap)
                            
       
   # Static & Final
@@ -7163,4 +7163,15 @@ public class RunFormQueries {
         
     * Release Plugin:
       * used to release versions of projects    
-            
+    
+    * BOM(common dependencies between microservices)
+      * POM Difference from BOM 
+        * it provides a curated set od dependencies, also common set of properties inherited
+        * Does not set common plugins, common dependencies and common plugin configuration    
+        
+      * BOM Configuration
+        * set common maven properties, maven plugin and configurations, versions, dependencies, build profiles, any inheritable
+          property which is common       
+      
+      * BOM Creation:
+        * <packaging>pom</packaging>, represents it's a BOM    
