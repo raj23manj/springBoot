@@ -7174,4 +7174,5 @@ public class RunFormQueries {
           property which is common       
       
       * BOM Creation:
-        * <packaging>pom</packaging>, represents it's a BOM    
+        * <packaging>pom</packaging>, represents it's a BOM  
+        * dependencyManagement => used when inheriting in parent pom for specific version(keep standard)
