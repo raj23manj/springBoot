@@ -3793,6 +3793,37 @@
         
       * anyMatch
         - persons.stream().anyMatch(p -> p.getCountry().equals("US"));     
+        
+  # Java 8 features - Modern java      
+    * Funtional programming
+    * Stream & Lamdbas
+    * Optional
+    * mutability (does not mutate)
+    
+    * lambda
+      * a function withou a name(anonymous functions)
+      * not tied to a class
+      
+      Function<String, String> add = (String name) -> { name.upperCase(); }
+      Comparator<Integer> comparatorLambda = ( a,  b) -> return a.compareTo(b)
+      
+    * Functional Interfaces
+      * Java.Util.Function; package 
+      * Single abstract method interfaces  
+      * Consumer
+        * accepts one i/p only, and perform on it(setters)
+        * Consumer<String> c1 = (s) -> print(s);
+        * [obj].forEach(c3.andThen(c4)); // (c3, c3 => consumer functions)
+        * [obj].forEach(c3.andThen(c4).accept(student)); 
+        * [obj].forEach(c3.andThen(c4).andThen(c2).accept(student)); // chaining multiple consumers
+        * Bi-Consumer
+      * Predicate
+        * Bi-Predicate
+      * Function
+        * Bi-Function
+        * UnaryOperator
+        * BinarayOperator
+      * Supplier 
          
 # Maven
   # Archetypes
