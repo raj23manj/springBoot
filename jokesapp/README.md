@@ -3804,26 +3804,91 @@
       * a function withou a name(anonymous functions)
       * not tied to a class
       
-      Function<String, String> add = (String name) -> { name.upperCase(); }
+      Function<String, String> add = (name) -> { name.upperCase(); }
       Comparator<Integer> comparatorLambda = ( a,  b) -> return a.compareTo(b)
       
     * Functional Interfaces
       * Java.Util.Function; package 
       * Single abstract method interfaces  
+      
       * Consumer
         * accepts one i/p only, and perform on it(setters)
         * Consumer<String> c1 = (s) -> print(s);
         * [obj].forEach(c3.andThen(c4)); // (c3, c3 => consumer functions)
         * [obj].forEach(c3.andThen(c4).accept(student)); 
-        * [obj].forEach(c3.andThen(c4).andThen(c2).accept(student)); // chaining multiple consumers
+        * [obj].forEach(c3.andThen(c4).andThen(c2).accept(student)); // chaining multiple consumers, accept is consumer method
         * Bi-Consumer
+          * extension to consumer
+          * Biconsumer<String, String> bi = (a,b) -> { sysout(a:b) }
+          * [obj].forEach(obj -> biconsumer.accep(obj.name, obj.activities));
+          
       * Predicate
+        * test() method and returns boolean
+        * Predicate<Integer> p = (i) ->  i%2==0;
+        * p1.and(p2).test(10); // chaining
+        * p1.or(p2).test(10); // chaining
+        * p1.or(p2).negate().test(10); // chaining
         * Bi-Predicate
+          * accepts two params
+          * static BiPredicate<Integer,Double> biPredicate = (gradeLevel, gpa) ->  gradeLevel>=3 && gpa >=3.9 ;
+            
+                static Consumer<Student> consumer = (student) -> {
+                        if(biPredicate.test(student.getGradeLevel(),student.getGpa())){
+                            System.out.println(student);
+                        }
+                };
+
       * Function
+        * takes 1 i/p and returns like a function
+          *  Function<String, String> add = (name) -> { name.upperCase(); }
+          *  add.apply("hi")
+          *  add.andThen(oneMoreFunction).apply("hi"); // oneMoreFunction another function
+        * apply(), compose(), andThen(), identity()
+          * andThen() executes in the same order
+          * compose() , executes in reverse order, first compose and then function
         * Bi-Function
+          * has only apply(), andThen();
+          * accepts two i/p, and one o/p
+          *  static BiFunction<List<Student>,Predicate<Student>,Map<String, Double>> biFunction = (students,studentPredicate)->{
+            
+                    Map<String,Double> studentGradeMap = new HashMap<>();
+                    students.forEach((student -> {
+            
+                        if(studentPredicate.test(student)){
+                            studentGradeMap.put(student.getName(),student.getGpa());
+                        }
+                    }));
+            
+                    return studentGradeMap;
+            
+                };
         * UnaryOperator
+          * i/p and o/p are of same types
+          * apply()
+          * identity()
+          * static UnaryOperator<String> unaryOperator = (s)->s.concat("Default");
         * BinarayOperator
+          * i/p and o/p are of same types
+                   static Comparator<Integer> comparator = (a,b) -> a.compareTo(b);
+                  BinaryOperator<Integer> binaryOperator = (a,b) -> a*b;
+         
+                 System.out.println(binaryOperator.apply(3,4));
+         
+                 BinaryOperator<Integer> maxBy = BinaryOperator.maxBy(comparator);
+                 System.out.println("Result is: " + maxBy.apply(5, 6));
+         
+                 BinaryOperator<Integer> minBy = BinaryOperator.minBy(comparator);
+                 System.out.println("Result is: " + minBy.apply(5, 6));
+        
       * Supplier 
+        * return new object
+        * no i/p, but o/p
+        * get()
+        *   public static  Supplier<Student> studentSupplier = () -> {
+                return  new Student("Adam",2,4.0,"male", Arrays.asList("swimming", "basketball","volleyball"));
+              };
+          
+            public static  Supplier<List<Student>> studentsSupplier = () -> StudentDataBase.getAllStudents();
          
 # Maven
   # Archetypes
