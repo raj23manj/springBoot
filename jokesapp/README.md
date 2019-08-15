@@ -3992,10 +3992,6 @@
        * Streams can be iterated only once
        * peek() is used to peek inbetween streams
        
-       * Terminal Operations
-         * collect()
-         * reduce()
-       
        * Operations
          * map()
          * flatMap(List::stream)
@@ -4039,10 +4035,27 @@
            * no methods, but can use it differently      
            * LongStream.rangeClosed(1,50).asDoubleStream().forEach(value -> System.out.print(value+",")); 
            
-          * mapToObj(), mapToLong(), mapToDouble()
-            * mapToObj() => used to convert each element in numeric stream to some object   
-            * mapToLong() => convert a numeric stream to a Long Stream       
-            * mapToDouble() => convert a numeric stream to a double stream    
+           * mapToObj(), mapToLong(), mapToDouble()
+             * mapToObj() => used to convert each element in numeric stream to some object   
+             * mapToLong() => convert a numeric stream to a Long Stream       
+             * mapToDouble() => convert a numeric stream to a double stream  
+              
+       * Terminal Operations
+         * collects data, starts the stream pipeline 
+         * collect()
+           * accepts a collector
+           * joining(delimiter, prefix, suffix)  => concatenates
+           * counting() => total count
+           * mapping(function<>, type of collection) => applies transformation first and then collects
+             * .collect(mapping(Student::getName,toList()))
+         * reduce()       
+         * forEach()
+         * min()
+         * max()
+         * reduce()
+         * maxBy(comparator), minBy(comparator)
+         * summinging(), averageint()
+         * groupingBy() ~ groupBY in SQL
                      
     # Maven
   # Archetypes
