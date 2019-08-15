@@ -3889,6 +3889,69 @@
               };
           
             public static  Supplier<List<Student>> studentsSupplier = () -> StudentDataBase.getAllStudents();
+            
+            
+    * Method Reference 
+     * shortcut for writing lambda expressions
+     * syntax:
+       ClassName::instane-methodName
+       ClassName::static-methodName
+       Instance::methodNmae
+       
+     * example:
+     
+       * FunctionMethodReference
+         Function<String, String> toUpper = (s) -> s.toUpperCase();
+           to
+         Function<String, String> toUpper = String::toUpperCase; 
+         
+       * ConsumerMethodReference
+           /**
+                * Class::instancemethod
+                */
+               static Consumer<Student>  c1= System.out::println; // p -> system.out.println(p);
+           
+           
+               /**
+                * instance::instancemethod
+                */
+               static Consumer<Student> c2 = (student -> student.printListOfActivities());
+               static Consumer<Student> c3 = (Student::printListOfActivities);   
+               
+       * SupplierMethod Reference
+         *  Supplier<Student> studentSupplier = Student::new; // return Student.new()        
+               
+       * Refactoring lambda expressions where it is complex
+         *  static Predicate<Student> predicateUsingLambda = (s) -> s.getGradeLevel()>=3;
+           
+               static Predicate<Student> predicateUsingMetRef = RefactorMethodReferenceExample::greaterThan;
+           
+           
+               static BiPredicate<Student,Integer> predicateUsingMethodReference = RefactorMethodReferenceExample::greaterThan;
+           
+               static public  boolean greaterThan(Student student){
+           
+                   return student.getGradeLevel() >3;
+               }
+           
+              static public  boolean greaterThan(Student student,Integer grade){
+           
+                   return student.getGradeLevel() >grade;
+               }
+               
+     * Constructor Reference:
+         * Syntax:
+           ClassName::new
+         * used with only functional interfaces  
+         * static Supplier<Student> studentSupplier = Student::new; // no arg constructor
+           
+           static Function<String, Student> studentFunction = Student::new;      // one arg constructor  
+           
+            System.out.println(studentSupplier.get());
+           
+            System.out.println(studentFunction.apply("Client123"));
+        
+              
          
 # Maven
   # Archetypes
