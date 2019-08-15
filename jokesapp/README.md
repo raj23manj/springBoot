@@ -4024,6 +4024,25 @@
                        List<Integer> integerList1  = Stream.generate(supplier)
                                .limit(10)
                                .collect(toList());
+                               
+       * Numeric Streams:
+         * avoids unboxing
+         * IntStream
+           * range(), rangeClosed()
+           * aggregate functions
+             * sum(), max(), min(), average()
+           * Boxing() & UnBoxing()
+             * boxed(), mapToInt()  
+         * LongStream
+           * range(), rangeClosed()
+         * DoubleStream  
+           * no methods, but can use it differently      
+           * LongStream.rangeClosed(1,50).asDoubleStream().forEach(value -> System.out.print(value+",")); 
+           
+          * mapToObj(), mapToLong(), mapToDouble()
+            * mapToObj() => used to convert each element in numeric stream to some object   
+            * mapToLong() => convert a numeric stream to a Long Stream       
+            * mapToDouble() => convert a numeric stream to a double stream    
                      
     # Maven
   # Archetypes
