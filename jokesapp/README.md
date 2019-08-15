@@ -4012,6 +4012,18 @@
            * limit(), 
            * findAny(), findFirst()
            * anyMatch(), allMatch(), noneMatch()
+       
+       * Factory Methods
+         * of(), generate(), iterate()
+           * of() => Stream.of('a', 'b') => used to create a stream
+         * generate(), iterate() are used to create infinite Streams
+           * Stream.iterate(1,x->x*2) => (1*2, 2*2, 4*2 ....)   
+           * Stream.generate(<Supplier>)
+             * Supplier<Integer> supplier = new Random()::nextInt;
+               
+                       List<Integer> integerList1  = Stream.generate(supplier)
+                               .limit(10)
+                               .collect(toList());
                      
     # Maven
   # Archetypes
