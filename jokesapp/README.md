@@ -3951,9 +3951,69 @@
            
             System.out.println(studentFunction.apply("Client123"));
         
-              
-         
-# Maven
+     * Lambdas And Local Varaibles:
+       * local variables defined in the method scope are not allowed to be defined to a lambda varaible
+       * Restrictions:
+           * int i = 0;
+             Consumer<Integer> c1 = (i) -> print(i); // compiler error           
+             
+             Consumer<Integer> c1 = (i1) -> { 
+                int i = 0; // not allowed
+               print(i1); }
+               
+           * int value = 4;
+              Consumer<Integer> c1 = (i) -> { 
+                            value++; /// not allowed if changing, need to be defined as final  
+                            print(value+i); // allowed
+                         }
+                  value = 6; //not allowed       
+                 
+           * Instance varaibles or class variables are allowed
+           
+           static int value = 4;
+           
+           psvm() {
+              Consumer<Integer> c1 = (i) -> { 
+                                          value++; 
+                                          print(value+i); 
+                                       }
+                          
+           }
+           
+     * Effictively Final:
+        * int value = 4;
+            Consumer<Integer> c1 = (i) -> { 
+                          value = 6; // this is effictively final
+                          print(value+i); // allowed
+                       }
+                     
+     
+     * Streams:
+       * Streams can be iterated only once
+       * peek() is used to peek inbetween streams
+       
+       * Terminal Operations
+         * collect()
+         * reduce()
+       
+       * Operations
+         * map()
+         * flatMap(List::stream)
+         * distint(), count(), sort()
+         * sorted() => accepts a comparator, pass reversed() to the comparator to sorted()
+         * filter()
+         * reduce() => get highest wihtout sorting
+           * min & max using reduce, always use with optional
+         * limit(n) , skip(n)  
+         * anyMatch(), allMatch(), noneMatch() => used to find a particular in the stream. Takes a predicate
+         * findAny(), findFirst() => find elements in the stream. Returns an optional. Takes a predicate
+         * Short Circuting 
+           * all these function need not iterate the entire array
+           * limit(), 
+           * findAny(), findFirst()
+           * anyMatch(), allMatch(), noneMatch()
+                     
+    # Maven
   # Archetypes
     - Maven project templating tool
          ex mojo, java ee, maven project
