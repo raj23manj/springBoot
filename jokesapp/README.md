@@ -4048,6 +4048,7 @@
            * counting() => total count
            * mapping(function<>, type of collection) => applies transformation first and then collects
              * .collect(mapping(Student::getName,toList()))
+           * groupingBy(classifier, supplier, downstream) ~ groupBY in SQL  
          * reduce()       
          * forEach()
          * min()
@@ -4055,7 +4056,37 @@
          * reduce()
          * maxBy(comparator), minBy(comparator)
          * summinging(), averageint()
-         * groupingBy() ~ groupBY in SQL
+         * groupingBy(classifier, supplier, downstream) ~ groupBY in SQL, nested level of grouping
+           * .collect(groupingBy(Student::getGradeLevel,   // nested level
+                                     groupingBy(student -> student.getGpa()>= 3.8 ?  "OUTSTANDING" : "AVERAGE")));
+           * .collect(groupingBy(Student::getName,
+                                      summingInt(Student::getNoteBooks)));   second argument can be of any type of collector       
+           * .collect(groupingBy(Student::getName,
+                                      toSet()));            
+           * .collect(groupingBy(Student::getName,LinkedHashMap::new,
+                                     toSet()));       // 3 args
+           * use collectingAndThen to get result of optional 
+             * 2 args       
+             * .collect(groupingBy(Student::getGradeLevel, collectingAndThen(maxBy(Comparator.comparingDouble(Student::getGpa))
+                                       ,Optional::get)));  
+         * partitioningBy()   ~ kindof grouping by collector, key will be boolean     
+           * .collect(partitioningBy(gpaPredicate));
+           * .collect(partitioningBy(gpaPredicate,toSet()));
+           * .collect(partitioningBy(gpaPredicate,toMap(Student::getName,Student::getActivities)));
+           
+       * Parallel Streams
+         * parallel(), parallelStream()   
+         * uses fork/join
+         * creates threads as many processors are there
+         * when there is common variable accessed by threads then avoid
+         * not always good, check timing
+         
+       * Optional
+         * to represent non-null value
+         * avoids null pointer exception and unnecessary null checks
+         
+                                       
+                                                                                       
                      
     # Maven
   # Archetypes
