@@ -4084,9 +4084,16 @@
        * Optional
          * to represent non-null value
          * avoids null pointer exception and unnecessary null checks
-         
-                                       
-                                                                                       
+         * empty(), ofNullable(), of()
+           * Optional.ofNullable('hello') // not certain if the value is a string, null can be passed
+           * Optional.of("f") // can't pass null here
+           * Optional.empty() // gives empty object optional as a result
+         * orElse(), orElseGet(), orElseThrow()
+           * orElse() => optionalStudent.map(Student::getName).orElse("Default"); gives default if null
+           * orElseGet() =>  optionalStudent.map(Student::getName).orElseGet(()->"Default");  takes a supplier                        
+           * orElseThrow() => optionalStudent.map(Student::getName).orElseThrow(()->new RuntimeException("No Data available")); throw exception
+         * ifPresent(consumer), isPresent()                                                                          
+         * map(), flatMap(), filter()
                      
     # Maven
   # Archetypes
