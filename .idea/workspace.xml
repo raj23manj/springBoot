@@ -27,15 +27,15 @@
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.5" value="2" />
           <entry key="project.open.time.6" value="3" />
-          <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="13" />
+          <entry key="project.open.time.7" value="2" />
+          <entry key="project.opened" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="cmd" value="1" />
           <entry key="java" value="7" />
-          <entry key="md" value="1" />
+          <entry key="md" value="2" />
           <entry key="mvnw" value="1" />
           <entry key="properties" value="1" />
         </counts>
@@ -43,19 +43,20 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JAVA" value="7" />
+          <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="Properties" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="md" value="91169" />
+          <entry key="md" value="92410" />
           <entry key="txt" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="91169" />
+          <entry key="Markdown" value="92410" />
           <entry key="PLAIN_TEXT" value="15" />
         </counts>
       </usages-collector>
@@ -67,8 +68,8 @@
         <entry file="file://$PROJECT_DIR$/jokesapp/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="312">
-                <caret line="4086" column="9" selection-start-line="4086" selection-start-column="9" selection-end-line="4086" selection-end-column="9" />
+              <first_editor relative-caret-position="139">
+                <caret line="4083" column="17" lean-forward="true" selection-start-line="4083" selection-start-column="17" selection-end-line="4083" selection-end-column="17" />
               </first_editor>
               <second_editor />
             </state>
@@ -136,9 +137,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -161,6 +159,9 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -192,13 +193,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1552008607229</updated>
-    </task>
-    <task id="LOCAL-00107" summary="updated read me">
-      <created>1561186771407</created>
-      <option name="number" value="00107" />
-      <option name="presentableId" value="LOCAL-00107" />
-      <option name="project" value="LOCAL" />
-      <updated>1561186771408</updated>
     </task>
     <task id="LOCAL-00108" summary="updated read me">
       <created>1561345717271</created>
@@ -536,14 +530,21 @@
       <option name="project" value="LOCAL" />
       <updated>1565881539290</updated>
     </task>
-    <option name="localTasksCounter" value="156" />
+    <task id="LOCAL-00156" summary="updated read me">
+      <created>1565936264693</created>
+      <option name="number" value="00156" />
+      <option name="presentableId" value="LOCAL-00156" />
+      <option name="project" value="LOCAL" />
+      <updated>1565936264694</updated>
+    </task>
+    <option name="localTasksCounter" value="157" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="24" width="1387" height="811" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25799257" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26171005" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -664,8 +665,8 @@
     <entry file="file://$PROJECT_DIR$/jokesapp/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="312">
-            <caret line="4086" column="9" selection-start-line="4086" selection-start-column="9" selection-end-line="4086" selection-end-column="9" />
+          <first_editor relative-caret-position="139">
+            <caret line="4083" column="17" lean-forward="true" selection-start-line="4083" selection-start-column="17" selection-end-line="4083" selection-end-column="17" />
           </first_editor>
           <second_editor />
         </state>

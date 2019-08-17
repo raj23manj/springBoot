@@ -4094,6 +4094,27 @@
            * orElseThrow() => optionalStudent.map(Student::getName).orElseThrow(()->new RuntimeException("No Data available")); throw exception
          * ifPresent(consumer), isPresent()                                                                          
          * map(), flatMap(), filter()
+         
+       * Default and Static methods in Interfaces:
+         * Default => can be overriden in classe, acts as instance methods
+         * Static => can not be overriden in classe  
+         
+         * sort()
+           * handling nulls in sort()
+           * Comparator.nullFirst()
+         
+         * Abstract classes vs interfaces
+           * instance variable are allowed in abstract classes but not in interfaces 
+           
+         * in multiple inheritanceor inheritance the which overrides always takes precedence, resolve to the child
+           implementation always 
+          
+         * when two interfaces have same method names, java will throw compiler error, in that case we need to implement the
+           method in the implementation class itself   
+         
+       * Dates & Time
+         * LocalDate, LocalTime, LocalDateTime as a part of java.time package
+               
                      
     # Maven
   # Archetypes
