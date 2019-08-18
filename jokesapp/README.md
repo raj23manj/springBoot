@@ -560,6 +560,7 @@
     * http://appsdeveloperblog.com/validate-request-body-in-restful-web-service/
     * https://www.mkyong.com/spring-mvc/spring-rest-api-validation/
     * https://g00glen00b.be/validating-the-input-of-your-rest-api-with-spring/  (nice way to implement errors)
+    * https://www.baeldung.com/spring-boot-bean-validation
     * the BindingResult parameter must immediately after the model attribute.
       -  @RequestMapping("/processForm")
          public String processForm(
@@ -1808,6 +1809,9 @@
     @Accessors
     @Wither
     @SneakyThrows 
+    
+    * Lombok & mapstruct
+      
     
   # Testing 
     * Code under Test (testing code)
@@ -7498,3 +7502,8 @@ public class RunFormQueries {
       * BOM Creation:
         * <packaging>pom</packaging>, represents it's a BOM  
         * dependencyManagement => used when inheriting in parent pom for specific version(keep standard)
+        
+# ObjectMapper(jackson), ModelMapper, Mapstruct
+  * ObjectMapper
+    * used to parse a Json, serialise and de-serialse a Java Object
+      * https://www.baeldung.com/jackson-object-mapper-tutorial        
