@@ -2170,7 +2170,11 @@
           * https://www.youtube.com/watch?v=cKjgkNt-tFg 
       
       * Session
-        * https://stackoverflow.com/questions/33921375/zuul-api-gateway-authentication   
+        * https://stackoverflow.com/questions/33921375/zuul-api-gateway-authentication
+        
+      * ELK logging
+        * https://dzone.com/articles/deploying-microprofile-microservices-with-tekton 
+        * https://www.youtube.com/watch?v=OM9ATTHrJAQ    
         
 # Micro Services 2.1.1
 
@@ -7250,6 +7254,9 @@ public class RunFormQueries {
         * traverse data structures
         * java has Iterator<T>, Iterable<T>
       * Mediator 
+        * a component that facilitates communication between other components without them necessarily being aware of each other
+          or having direct access to each other
+        * chat room, or online gaming, where each person are connected to a central(mediator)   
       * Memento
       * Null object
       * Observer
