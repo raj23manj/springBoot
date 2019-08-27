@@ -26,9 +26,9 @@
           <entry key="project.open.time.18" value="2" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.5" value="2" />
-          <entry key="project.open.time.6" value="3" />
-          <entry key="project.open.time.7" value="2" />
-          <entry key="project.opened" value="14" />
+          <entry key="project.open.time.6" value="4" />
+          <entry key="project.open.time.7" value="3" />
+          <entry key="project.opened" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -50,13 +50,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="md" value="92845" />
+          <entry key="md" value="92854" />
           <entry key="txt" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="92845" />
+          <entry key="Markdown" value="92854" />
           <entry key="PLAIN_TEXT" value="15" />
         </counts>
       </usages-collector>
@@ -68,8 +68,8 @@
         <entry file="file://$PROJECT_DIR$/jokesapp/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="509">
-                <caret line="2176" column="53" selection-start-line="2176" selection-start-column="53" selection-end-line="2176" selection-end-column="53" />
+              <first_editor relative-caret-position="281">
+                <caret line="6365" column="85" selection-start-line="6365" selection-start-column="85" selection-end-line="6365" selection-end-column="85" />
               </first_editor>
               <second_editor />
             </state>
@@ -140,6 +140,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -164,7 +165,6 @@
       </pane>
       <pane id="Scope" />
       <pane id="AndroidView" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -547,7 +547,7 @@
     <frame x="-14" y="23" width="1387" height="811" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26171005" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26914498" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -666,15 +666,15 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jokesapp/README.md">
+      <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="509">
-            <caret line="2176" column="53" selection-start-line="2176" selection-start-column="53" selection-end-line="2176" selection-end-column="53" />
+          <first_editor relative-caret-position="281">
+            <caret line="6365" column="85" selection-start-line="6365" selection-start-column="85" selection-end-line="6365" selection-end-column="85" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
-      <provider editor-type-id="text-editor" />
     </entry>
   </component>
   <component name="masterDetails">

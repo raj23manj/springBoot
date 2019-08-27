@@ -6361,6 +6361,9 @@
     #  Spring Boot Multiple Database Configuration
       * https://www.devglan.com/spring-boot/spring-boot-multiple-database-configuration
       * https://www.baeldung.com/spring-data-jpa-multiple-databases
+      * https://www.opencodez.com/java/connecting-multiple-databases-spring-data-jpa.htm
+      * https://stackoverflow.com/questions/30337582/spring-boot-configure-and-use-two-datasources
+      * https://dzone.com/articles/setup-multiple-datasources-with-spring-boot-and-sp
       
     # Creating Plugin Project(MOJO)  
       * https://dzone.com/articles/a-simple-maven-3-plugin
