@@ -1888,6 +1888,7 @@
   # Automatic Date Update
     * https://stackoverflow.com/questions/46504448/how-to-insert-data-with-automatic-value-to-createddate-and-updateddate-using-spr/46504581  
     * http://techie-mixture.blogspot.com/2018/01/spring-data-jpa-auditing-auto-save.html
+    * https://www.callicoder.com/spring-boot-jpa-hibernate-postgresql-restful-crud-api-example/
     
   # EH Cache (Level 2 Cache)
     * Cache provider, caches objects at session factory level  
@@ -6364,6 +6365,7 @@
       * https://www.opencodez.com/java/connecting-multiple-databases-spring-data-jpa.htm
       * https://stackoverflow.com/questions/30337582/spring-boot-configure-and-use-two-datasources
       * https://dzone.com/articles/setup-multiple-datasources-with-spring-boot-and-sp
+      * https://stackoverflow.com/questions/39430422/how-to-properly-specify-database-schema-in-spring-boot
       
     # Creating Plugin Project(MOJO)  
       * https://dzone.com/articles/a-simple-maven-3-plugin
@@ -7261,6 +7263,10 @@ public class RunFormQueries {
           or having direct access to each other
         * chat room, or online gaming, where each person are connected to a central(mediator)   
       * Memento
+        * a token/handle representing the system state. Lets us roll back to the state whe the token was generated. May or may not 
+          directly expose state information.
+        * example a bank with balance. The momento object will have balance set to it as a state and passed. If rollback the use this
+          state  
       * Null object
       * Observer
       * State
@@ -7517,3 +7523,6 @@ public class RunFormQueries {
   * ObjectMapper
     * used to parse a Json, serialise and de-serialse a Java Object
       * https://www.baeldung.com/jackson-object-mapper-tutorial        
+      
+# Docker + postgres + spring boot + amazon
+  * https://www.upnxtblog.com/index.php/2019/06/03/how-do-i-connect-to-postgresql-running-on-host-from-docker-container/      
