@@ -7578,4 +7578,8 @@ public class RunFormQueries {
           </Root>
       </Loggers>
       
-  </Configuration>      
+  </Configuration>     
+  
+  # Swagger & Resource not found exception
+    * https://dzone.com/articles/spring-boot-2-restful-api-documentation-with-swagg
+   

@@ -19,7 +19,7 @@
     <session id="1901758029">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="7" />
+          <entry key="project.closed" value="8" />
           <entry key="project.open.time.11" value="2" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.13" value="1" />
@@ -28,7 +28,8 @@
           <entry key="project.open.time.5" value="2" />
           <entry key="project.open.time.6" value="5" />
           <entry key="project.open.time.7" value="3" />
-          <entry key="project.opened" value="17" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="18" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -50,13 +51,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="md" value="93195" />
+          <entry key="md" value="93324" />
           <entry key="txt" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="93195" />
+          <entry key="Markdown" value="93324" />
           <entry key="PLAIN_TEXT" value="15" />
         </counts>
       </usages-collector>
@@ -68,8 +69,8 @@
         <entry file="file://$PROJECT_DIR$/jokesapp/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="222">
-                <caret line="1890" column="95" selection-start-line="1890" selection-start-column="95" selection-end-line="1890" selection-end-column="95" />
+              <first_editor relative-caret-position="607">
+                <caret line="7583" column="83" selection-start-line="7583" selection-start-column="83" selection-end-line="7583" selection-end-column="83" />
               </first_editor>
               <second_editor />
             </state>
@@ -80,11 +81,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>rabbit</find>
-      <find>@responseBody</find>
-      <find>transa</find>
-      <find>zuul</find>
-      <find>volatile</find>
       <find>predicate</find>
       <find>views</find>
       <find>stream</find>
@@ -102,7 +98,6 @@
       <find>lam</find>
       <find>profile</find>
       <find>generics</find>
-      <find>streams</find>
       <find>fork</find>
       <find>@valid</find>
       <find>https://www.baeldung.com/spring-boot-bean-validation</find>
@@ -110,6 +105,12 @@
       <find>microserv</find>
       <find>multiple db</find>
       <find>auditing</find>
+      <find>security</find>
+      <find>map</find>
+      <find>streams</find>
+      <find>package</find>
+      <find>war</find>
+      <find>log4j</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -128,9 +129,9 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="52" />
-    <option name="y" value="34" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="2059" />
+    <option name="y" value="-378" />
     <option name="width" value="1387" />
     <option name="height" value="811" />
   </component>
@@ -141,6 +142,8 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -163,8 +166,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -196,20 +197,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1552008607229</updated>
-    </task>
-    <task id="LOCAL-00111" summary="updated read me">
-      <created>1561984378825</created>
-      <option name="number" value="00111" />
-      <option name="presentableId" value="LOCAL-00111" />
-      <option name="project" value="LOCAL" />
-      <updated>1561984378825</updated>
-    </task>
-    <task id="LOCAL-00112" summary="updated read me">
-      <created>1562037854736</created>
-      <option name="number" value="00112" />
-      <option name="presentableId" value="LOCAL-00112" />
-      <option name="project" value="LOCAL" />
-      <updated>1562037854736</updated>
     </task>
     <task id="LOCAL-00113" summary="updated read me">
       <created>1562040746762</created>
@@ -540,14 +527,28 @@
       <option name="project" value="LOCAL" />
       <updated>1566895540960</updated>
     </task>
-    <option name="localTasksCounter" value="160" />
+    <task id="LOCAL-00160" summary="updated read me">
+      <created>1567659222509</created>
+      <option name="number" value="00160" />
+      <option name="presentableId" value="LOCAL-00160" />
+      <option name="project" value="LOCAL" />
+      <updated>1567659222510</updated>
+    </task>
+    <task id="LOCAL-00161" summary="updated read me">
+      <created>1567745142331</created>
+      <option name="number" value="00161" />
+      <option name="presentableId" value="LOCAL-00161" />
+      <option name="project" value="LOCAL" />
+      <updated>1567745142333</updated>
+    </task>
+    <option name="localTasksCounter" value="162" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="52" y="34" width="1387" height="811" extended-state="0" />
+    <frame x="2059" y="-378" width="1387" height="811" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27286246" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27657992" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -666,15 +667,15 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jokesapp/README.md">
+      <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="222">
-            <caret line="1890" column="95" selection-start-line="1890" selection-start-column="95" selection-end-line="1890" selection-end-column="95" />
+          <first_editor relative-caret-position="607">
+            <caret line="7583" column="83" selection-start-line="7583" selection-start-column="83" selection-end-line="7583" selection-end-column="83" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
-      <provider editor-type-id="text-editor" />
     </entry>
   </component>
   <component name="masterDetails">
