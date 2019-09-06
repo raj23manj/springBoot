@@ -1811,6 +1811,9 @@
     @SneakyThrows 
     
     * Lombok & mapstruct
+    
+    * issue 
+      * https://stackoverflow.com/questions/35842751/lombok-not-working-with-sts
       
     
   # Testing 
@@ -1974,6 +1977,7 @@
   * Zuul Gateway
     - https://howtodoinjava.com/spring-cloud/spring-cloud-api-gateway-zuul/
     - https://www.xoriant.com/blog/product-engineering/microservices-security-using-jwt-authentication-gateway.html  
+    - https://medium.com/@arjunac009/spring-boot-microservice-with-centralized-authentication-zuul-eureka-jwt-5719e05fde29
   
   # Spring Cloud(Finchley version)
   
@@ -7525,4 +7529,53 @@ public class RunFormQueries {
       * https://www.baeldung.com/jackson-object-mapper-tutorial        
       
 # Docker + postgres + spring boot + amazon
-  * https://www.upnxtblog.com/index.php/2019/06/03/how-do-i-connect-to-postgresql-running-on-host-from-docker-container/      
+  * https://www.upnxtblog.com/index.php/2019/06/03/how-do-i-connect-to-postgresql-running-on-host-from-docker-container/  
+
+# short cut keys STS
+  * https://www.codejava.net/ides/eclipse/25-eclipse-shortcut-keys-for-code-editing  
+      
+      
+      
+# Logging File  log4j2.xml
+
+  <?xml version="1.0" encoding="UTF-8"?>
+  <Configuration status="WARN" monitorInterval="30">
+      <Properties>
+          <Property name="LOG_PATTERN">
+              %d{yyyy-MM-dd HH:mm:ss.SSS} %5p ${hostName} --- [%15.15t] %-40.40c{1.} : %m%n%ex
+          </Property>
+          <!--  <Property name="fileName">"logs/treatment-algorithm.log"</Property>-->
+      </Properties>
+      
+      <Appenders>
+          <Console name="ConsoleAppender" target="SYSTEM_OUT" follow="true">
+              <PatternLayout pattern="${LOG_PATTERN}"/>
+          </Console>
+          
+          <!-- Rolling File Appender -->
+          <RollingFile name="FileAppender" fileName="logs/treatment-algorithm.log"
+                       filePattern="logs/treatment-algorithm-%d{yyyy-MM-dd}-%i.log">
+              <PatternLayout>
+                  <Pattern>${LOG_PATTERN}</Pattern>
+              </PatternLayout>
+              <Policies>
+                  <TimeBasedTriggeringPolicy interval="1" />
+                  <SizeBasedTriggeringPolicy size="100MB" />
+              </Policies>
+              <DefaultRolloverStrategy max="5"/>
+          </RollingFile>
+      </Appenders>
+      
+      <Loggers>
+          <Logger name="com.decisionresourcesgroup.treatmentalgo" level="debug" additivity="false">
+              <AppenderRef ref="ConsoleAppender" />
+              <AppenderRef ref="FileAppender"/>
+          </Logger>
+  
+          <Root level="info">
+              <AppenderRef ref="ConsoleAppender"/>
+              <AppenderRef ref="FileAppender"/>
+          </Root>
+      </Loggers>
+      
+  </Configuration>      
