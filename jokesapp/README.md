@@ -2707,6 +2707,9 @@
     * https://dzone.com/articles/the-mystery-of-eurekas-self-preservation
     * https://blog.asarkar.org/technical/netflix-eureka/  
     * https://stackoverflow.com/questions/33921557/understanding-spring-cloud-eureka-server-self-preservation-and-renew-threshold
+    * https://blog.asarkar.org/technical/netflix-eureka/
+    * https://stackoverflow.com/questions/33921557/understanding-spring-cloud-eureka-server-self-preservation-and-renew-threshold/41775757
+    * https://stackoverflow.com/questions/32616329/eureka-never-unregisters-a-service
     
   # Read TIme out error Zuul
     * http://appsdeveloperblog.com/zuul-api-gateway-timeout-error/      
