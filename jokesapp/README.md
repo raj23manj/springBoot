@@ -2701,7 +2701,11 @@
                * used to define the service, for which we want to collect the metrics
                  - turbine.app-config=flight-schedule
                *  takes the expression to create a turbine cluster
-                 - turbine.cluster-name-expression=new String("default")               
+                 - turbine.cluster-name-expression=new String("default")  
+                 
+  # Self preservation in Microservices
+    * https://dzone.com/articles/the-mystery-of-eurekas-self-preservation
+    * https://blog.asarkar.org/technical/netflix-eureka/                            
          
   # What is Microservices
     * 
@@ -7582,4 +7586,5 @@ public class RunFormQueries {
   
   # Swagger & Resource not found exception
     * https://dzone.com/articles/spring-boot-2-restful-api-documentation-with-swagg
+    * https://github.com/swagger-api/swagger-core/wiki/Annotations
    
