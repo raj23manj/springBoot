@@ -51,13 +51,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="md" value="93324" />
+          <entry key="md" value="93422" />
           <entry key="txt" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="93324" />
+          <entry key="Markdown" value="93422" />
           <entry key="PLAIN_TEXT" value="15" />
         </counts>
       </usages-collector>
@@ -69,8 +69,8 @@
         <entry file="file://$PROJECT_DIR$/jokesapp/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="607">
-                <caret line="7583" column="83" selection-start-line="7583" selection-start-column="83" selection-end-line="7583" selection-end-column="83" />
+              <first_editor relative-caret-position="457">
+                <caret line="2714" column="130" selection-start-line="2714" selection-start-column="130" selection-end-line="2714" selection-end-column="130" />
               </first_editor>
               <second_editor />
             </state>
@@ -81,7 +81,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>predicate</find>
       <find>views</find>
       <find>stream</find>
       <find>lambda</find>
@@ -111,6 +110,7 @@
       <find>package</find>
       <find>war</find>
       <find>log4j</find>
+      <find>microser</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -129,9 +129,9 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="2059" />
-    <option name="y" value="-378" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1440" />
+    <option name="y" value="-157" />
     <option name="width" value="1387" />
     <option name="height" value="811" />
   </component>
@@ -197,20 +197,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1552008607229</updated>
-    </task>
-    <task id="LOCAL-00113" summary="updated read me">
-      <created>1562040746762</created>
-      <option name="number" value="00113" />
-      <option name="presentableId" value="LOCAL-00113" />
-      <option name="project" value="LOCAL" />
-      <updated>1562040746762</updated>
-    </task>
-    <task id="LOCAL-00114" summary="updated read me">
-      <created>1562074494252</created>
-      <option name="number" value="00114" />
-      <option name="presentableId" value="LOCAL-00114" />
-      <option name="project" value="LOCAL" />
-      <updated>1562074494252</updated>
     </task>
     <task id="LOCAL-00115" summary="updated read me">
       <created>1562122721773</created>
@@ -541,11 +527,25 @@
       <option name="project" value="LOCAL" />
       <updated>1567745142333</updated>
     </task>
-    <option name="localTasksCounter" value="162" />
+    <task id="LOCAL-00162" summary="updated read me">
+      <created>1567775988689</created>
+      <option name="number" value="00162" />
+      <option name="presentableId" value="LOCAL-00162" />
+      <option name="project" value="LOCAL" />
+      <updated>1567775988689</updated>
+    </task>
+    <task id="LOCAL-00163" summary="updated read me">
+      <created>1568001091339</created>
+      <option name="number" value="00163" />
+      <option name="presentableId" value="LOCAL-00163" />
+      <option name="project" value="LOCAL" />
+      <updated>1568001091339</updated>
+    </task>
+    <option name="localTasksCounter" value="164" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2059" y="-378" width="1387" height="811" extended-state="0" />
+    <frame x="1440" y="-157" width="1387" height="811" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27657992" />
@@ -670,8 +670,8 @@
       <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="607">
-            <caret line="7583" column="83" selection-start-line="7583" selection-start-column="83" selection-end-line="7583" selection-end-column="83" />
+          <first_editor relative-caret-position="457">
+            <caret line="2714" column="130" selection-start-line="2714" selection-start-column="130" selection-end-line="2714" selection-end-column="130" />
           </first_editor>
           <second_editor />
         </state>

@@ -2705,7 +2705,14 @@
                  
   # Self preservation in Microservices
     * https://dzone.com/articles/the-mystery-of-eurekas-self-preservation
-    * https://blog.asarkar.org/technical/netflix-eureka/                            
+    * https://blog.asarkar.org/technical/netflix-eureka/  
+    * https://stackoverflow.com/questions/33921557/understanding-spring-cloud-eureka-server-self-preservation-and-renew-threshold
+    
+  # Read TIme out error Zuul
+    * http://appsdeveloperblog.com/zuul-api-gateway-timeout-error/      
+    * https://stackoverflow.com/questions/55418340/com-netflix-zuul-exception-zuulexception-hystrix-readed-time-out
+    * https://stackoverflow.com/questions/43591388/com-netflix-zuul-exception-zuulexception-forwarding-error-when-i-invoke-post-me
+    * https://stackoverflow.com/questions/35376860/zuul-proxy-not-able-to-route-resulting-in-com-netflix-zuul-exception-zuulexcept                      
          
   # What is Microservices
     * 
