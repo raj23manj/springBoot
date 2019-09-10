@@ -7600,5 +7600,9 @@ public class RunFormQueries {
    
   # ssh into server
     * ssh -i finename.pem user@0.0.0.0
+  
+  # Hikari DB properties
+    * https://github.com/brettwooldridge/HikariCP#configuration-knobs-baby
     
   # https://github.com/FaisalUmair/udemy-downloader-gui  
+  
