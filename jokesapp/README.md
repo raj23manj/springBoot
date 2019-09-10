@@ -7598,3 +7598,7 @@ public class RunFormQueries {
     * https://dzone.com/articles/spring-boot-2-restful-api-documentation-with-swagg
     * https://github.com/swagger-api/swagger-core/wiki/Annotations
    
+  # ssh into server
+    * ssh -i finename.pem user@0.0.0.0
+    
+  # https://github.com/FaisalUmair/udemy-downloader-gui  
