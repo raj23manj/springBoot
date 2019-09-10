@@ -7597,6 +7597,11 @@ public class RunFormQueries {
   # Swagger & Resource not found exception
     * https://dzone.com/articles/spring-boot-2-restful-api-documentation-with-swagg
     * https://github.com/swagger-api/swagger-core/wiki/Annotations
+    
+  # swagger authentication
+    * http://techie-mixture.blogspot.com/2018/01/how-to-add-authentication-key-in-swagger.html
+    * https://stackoverflow.com/questions/50545286/spring-boot-swagger-ui-set-jwt-token
+    * https://github.com/springfox/springfox/issues/1812  
    
   # ssh into server
     * ssh -i finename.pem user@0.0.0.0
