@@ -7611,3 +7611,20 @@ public class RunFormQueries {
     
   # https://github.com/FaisalUmair/udemy-downloader-gui  
   
+  # Json Ignore spring boot
+    * https://www.concretepage.com/jackson-api/jackson-jsonignore-jsonignoreproperties-and-jsonignoretype
+    
+  #  Audit Aware
+  https://www.baeldung.com/database-auditing-jpa
+  
+   public class AuditorAwareImpl implements AuditorAware<String> {
+   
+       @Override
+       public Optional<String>  getCurrentAuditor() {
+       	Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+       	String currentPrincipalName = null != authentication? authentication.getName() : "System";
+            return Optional.of(currentPrincipalName);
+       }
+   }   
+  
+  
