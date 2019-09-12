@@ -1142,6 +1142,10 @@
          @GeneratedValue(strategy=GenerationType.IDENTITY)
          private int id;
   
+  # Addidn custom queries
+    * https://dzone.com/articles/add-custom-functionality-to-a-spring-data-reposito
+    * https://www.baeldung.com/spring-data-composable-repositories
+  
   # Spring Data Finders  Section6 -> productData     
     * https://github.com/raj23manj/Hibernate_Basiscs/blob/master/productdata/src/main/java/com/rajesh/springdata/product/repos/ProductRepository.java
     
