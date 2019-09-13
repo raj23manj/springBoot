@@ -7634,4 +7634,9 @@ public class RunFormQueries {
   
   # K8s + docker + jenkins
     * https://dzone.com/articles/microservices-with-kubernetes-and-docker
+    
+  # k8s + docer + ingress
+    * https://dzone.com/articles/quick-guide-to-microservices-with-kubernetes-sprin
+    * https://www.edureka.co/blog/kubernetes-ingress-controller-nginx  
+    * https://blog.nebrass.fr/playing-with-spring-boot-on-kubernetes/
   
