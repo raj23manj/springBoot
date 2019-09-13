@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b24c273d-07f5-43b0-9949-5e842c2c3bfc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jokesapp/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/jokesapp/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/jokesapp/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,13 +50,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="md" value="93702" />
+          <entry key="md" value="93705" />
           <entry key="txt" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="93702" />
+          <entry key="Markdown" value="93705" />
           <entry key="PLAIN_TEXT" value="15" />
         </counts>
       </usages-collector>
@@ -70,7 +69,7 @@
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
               <first_editor relative-caret-position="593">
-                <caret line="7639" column="69" selection-start-line="7639" selection-start-column="69" selection-end-line="7639" selection-end-column="69" />
+                <caret line="7640" column="69" selection-start-line="7640" selection-start-column="69" selection-end-line="7640" selection-end-column="69" />
               </first_editor>
               <second_editor />
             </state>
@@ -197,13 +196,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1552008607229</updated>
-    </task>
-    <task id="LOCAL-00122" summary="updated read me">
-      <created>1562566155528</created>
-      <option name="number" value="00122" />
-      <option name="presentableId" value="LOCAL-00122" />
-      <option name="project" value="LOCAL" />
-      <updated>1562566155528</updated>
     </task>
     <task id="LOCAL-00123" summary="updated read me">
       <created>1563262321159</created>
@@ -541,7 +533,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568383509000</updated>
     </task>
-    <option name="localTasksCounter" value="171" />
+    <task id="LOCAL-00171" summary="updated read me">
+      <created>1568390151228</created>
+      <option name="number" value="00171" />
+      <option name="presentableId" value="LOCAL-00171" />
+      <option name="project" value="LOCAL" />
+      <updated>1568390151228</updated>
+    </task>
+    <option name="localTasksCounter" value="172" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -671,7 +670,7 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
           <first_editor relative-caret-position="593">
-            <caret line="7639" column="69" selection-start-line="7639" selection-start-column="69" selection-end-line="7639" selection-end-column="69" />
+            <caret line="7640" column="69" selection-start-line="7640" selection-start-column="69" selection-end-line="7640" selection-end-column="69" />
           </first_editor>
           <second_editor />
         </state>
