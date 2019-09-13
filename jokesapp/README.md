@@ -7632,3 +7632,6 @@ public class RunFormQueries {
    }   
   
   
+  # K8s + docker + jenkins
+    * https://dzone.com/articles/microservices-with-kubernetes-and-docker
+  
