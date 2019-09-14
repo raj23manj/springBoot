@@ -7646,12 +7646,14 @@ public class RunFormQueries {
   # Springboot-k8s
     * https://www.baeldung.com/spring-cloud-kubernetes  
     * https://dzone.com/articles/quick-guide-to-microservices-with-kubernetes-sprin
-    
+    * https://piotrminkowski.wordpress.com/2017/03/31/microservices-with-kubernetes-and-docker/
   
   # eureka & k8's
     * https://stackoverflow.com/questions/40567429/eureka-and-kubernetes  
     * https://dzone.com/articles/deploying-microservices-spring-cloud-vs-kubernetes
   
   # springboot + eureka + k8s  
-    https://luizkowalski.net/deploying-spring-cloud-netflix-apps-on-kubernetes/
+    * https://luizkowalski.net/deploying-spring-cloud-netflix-apps-on-kubernetes/
+    * https://stackoverflow.com/questions/53923295/running-spring-cloud-zuul-eureka-and-2-rest-backend-service-with-kubernetes
+    * https://github.com/dhananjay12/spring-microservice-k8s/tree/master/k8s
   

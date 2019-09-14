@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b24c273d-07f5-43b0-9949-5e842c2c3bfc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jokesapp/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/jokesapp/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/jokesapp/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,13 +51,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="md" value="93705" />
+          <entry key="md" value="93804" />
           <entry key="txt" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="93705" />
+          <entry key="Markdown" value="93804" />
           <entry key="PLAIN_TEXT" value="15" />
         </counts>
       </usages-collector>
@@ -68,8 +69,8 @@
         <entry file="file://$PROJECT_DIR$/jokesapp/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="593">
-                <caret line="7640" column="69" selection-start-line="7640" selection-start-column="69" selection-end-line="7640" selection-end-column="69" />
+              <first_editor relative-caret-position="518">
+                <caret line="7655" column="6" selection-start-line="7655" selection-start-column="6" selection-end-line="7655" selection-end-column="6" />
               </first_editor>
               <second_editor />
             </state>
@@ -196,20 +197,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1552008607229</updated>
-    </task>
-    <task id="LOCAL-00123" summary="updated read me">
-      <created>1563262321159</created>
-      <option name="number" value="00123" />
-      <option name="presentableId" value="LOCAL-00123" />
-      <option name="project" value="LOCAL" />
-      <updated>1563262321162</updated>
-    </task>
-    <task id="LOCAL-00124" summary="updated read me">
-      <created>1563365509144</created>
-      <option name="number" value="00124" />
-      <option name="presentableId" value="LOCAL-00124" />
-      <option name="project" value="LOCAL" />
-      <updated>1563365509144</updated>
     </task>
     <task id="LOCAL-00125" summary="updated read me">
       <created>1563504859835</created>
@@ -540,7 +527,21 @@
       <option name="project" value="LOCAL" />
       <updated>1568390151228</updated>
     </task>
-    <option name="localTasksCounter" value="172" />
+    <task id="LOCAL-00172" summary="updated read me">
+      <created>1568391489708</created>
+      <option name="number" value="00172" />
+      <option name="presentableId" value="LOCAL-00172" />
+      <option name="project" value="LOCAL" />
+      <updated>1568391489709</updated>
+    </task>
+    <task id="LOCAL-00173" summary="updated read me">
+      <created>1568452871769</created>
+      <option name="number" value="00173" />
+      <option name="presentableId" value="LOCAL-00173" />
+      <option name="project" value="LOCAL" />
+      <updated>1568452871770</updated>
+    </task>
+    <option name="localTasksCounter" value="174" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -669,8 +670,8 @@
       <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="593">
-            <caret line="7640" column="69" selection-start-line="7640" selection-start-column="69" selection-end-line="7640" selection-end-column="69" />
+          <first_editor relative-caret-position="518">
+            <caret line="7655" column="6" selection-start-line="7655" selection-start-column="6" selection-end-line="7655" selection-end-column="6" />
           </first_editor>
           <second_editor />
         </state>
