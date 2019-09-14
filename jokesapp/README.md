@@ -7639,4 +7639,19 @@ public class RunFormQueries {
     * https://dzone.com/articles/quick-guide-to-microservices-with-kubernetes-sprin
     * https://www.edureka.co/blog/kubernetes-ingress-controller-nginx  
     * https://blog.nebrass.fr/playing-with-spring-boot-on-kubernetes/
+    
+    * https://www.joyfulbikeshedding.com/blog/2018-03-26-studying-the-kubernetes-ingress-system.html
+    * https://itnext.io/migrating-a-spring-boot-service-to-kubernetes-in-5-steps-7c1702da81b6
+    
+  # Springboot-k8s
+    * https://www.baeldung.com/spring-cloud-kubernetes  
+    * https://dzone.com/articles/quick-guide-to-microservices-with-kubernetes-sprin
+    
+  
+  # eureka & k8's
+    * https://stackoverflow.com/questions/40567429/eureka-and-kubernetes  
+    * https://dzone.com/articles/deploying-microservices-spring-cloud-vs-kubernetes
+  
+  # springboot + eureka + k8s  
+    https://luizkowalski.net/deploying-spring-cloud-netflix-apps-on-kubernetes/
   
