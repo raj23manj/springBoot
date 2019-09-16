@@ -7656,4 +7656,11 @@ public class RunFormQueries {
     * https://luizkowalski.net/deploying-spring-cloud-netflix-apps-on-kubernetes/
     * https://stackoverflow.com/questions/53923295/running-spring-cloud-zuul-eureka-and-2-rest-backend-service-with-kubernetes
     * https://github.com/dhananjay12/spring-microservice-k8s/tree/master/k8s
+    * https://dzone.com/articles/developing-a-spring-boot-application-for-kubernete-4
+    logs:
+      * https://stackoverflow.com/questions/50263724/logs-sent-to-console-using-logback-configuration-in-java-app-not-visible-in-kub
   
+  # RDS + k8s
+    * https://dzone.com/articles/kubernetes-on-aws-how-to-connect-to-rds
+    * https://www.bogotobogo.com/DevOps/Docker/Docker_Kubernetes_AWS_4_Django_with_RDS_Kops.php
+    
