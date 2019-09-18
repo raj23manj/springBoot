@@ -7664,3 +7664,5 @@ public class RunFormQueries {
     * https://dzone.com/articles/kubernetes-on-aws-how-to-connect-to-rds
     * https://www.bogotobogo.com/DevOps/Docker/Docker_Kubernetes_AWS_4_Django_with_RDS_Kops.php
     
+  # minikube vpn issue:
+    * https://github.com/kubernetes/minikube/issues/1099  
