@@ -7689,7 +7689,16 @@ public class RunFormQueries {
       
       or  ./catalina.sh start  ,  stop  
       
+       ./catlina version
+       tail -f ...../logs/catlina.out
+      
       
   # Jenv Local Issue :
     * https://developer.bring.com/blog/configuring-jenv-the-right-way/
     * https://github.com/jenv/jenv/issues/212     
+    
+  # MVN enforcer - dependency resolving
+    * https://www.baeldung.com/maven-enforcer-plugin
+    
+  # Dependency convergence error for  .... :
+    * https://maven.apache.org/enforcer/enforcer-rules/dependencyConvergence.html  
