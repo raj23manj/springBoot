@@ -7666,3 +7666,30 @@ public class RunFormQueries {
     
   # minikube vpn issue:
     * https://github.com/kubernetes/minikube/issues/1099  
+    
+  # Sonar Qube
+    * https://dzone.com/articles/sonarcloud-integration-with-springboot-maven  
+    * https://www.baeldung.com/sonar-qube
+    
+  # Maven docker image:
+    * https://codefresh.io/howtos/using-docker-maven-maven-docker/
+    
+  # setup local registry:
+    * https://stackoverflow.com/questions/42564058/how-to-use-local-docker-images-with-minikube
+    * https://blog.hasura.io/sharing-a-local-registry-for-minikube-37c7240d0615/  
+    
+  # Create Image and Run Container
+    * https://medium.com/@pra4mesh/deploy-war-in-docker-tomcat-container-b52a3baea448    
+    
+  # Tomcat start stop:
+    * /Users/rmanjunath/Desktop/tomcat/apache-tomcat-9.0.12/bin
+      
+      ./startup.sh
+      ./shutdown.sh
+      
+      or  ./catalina.sh start  ,  stop  
+      
+      
+  # Jenv Local Issue :
+    * https://developer.bring.com/blog/configuring-jenv-the-right-way/
+    * https://github.com/jenv/jenv/issues/212     
