@@ -7702,3 +7702,20 @@ public class RunFormQueries {
     
   # Dependency convergence error for  .... :
     * https://maven.apache.org/enforcer/enforcer-rules/dependencyConvergence.html  
+    
+  # clear local repo and download
+    * https://www.mkyong.com/maven/maven-how-to-force-re-download-project-dependencies/  
+      * mvn dependency:purge-local-repository
+  
+  # Deploying Eureka as war
+    * https://github.com/spring-cloud-samples/eureka/issues/7 
+    
+  # Conflict dependency resolving
+    * https://dzone.com/articles/solving-dependency-conflicts-in-maven  
+    
+  # Differernt ways of deploying 
+    * https://medium.com/swlh/deploying-spring-boot-applications-15e14db25ff0
+    
+  # Orillelly way of deploying
+    * https://www.oreilly.com/ideas/how-to-manage-docker-containers-in-kubernetes-with-java       
+    * https://developer.okta.com/blog/2019/02/28/spring-microservices-docker

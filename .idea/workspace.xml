@@ -51,13 +51,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="md" value="94055" />
+          <entry key="md" value="94364" />
           <entry key="txt" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="94055" />
+          <entry key="Markdown" value="94364" />
           <entry key="PLAIN_TEXT" value="15" />
         </counts>
       </usages-collector>
@@ -69,8 +69,8 @@
         <entry file="file://$PROJECT_DIR$/jokesapp/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="593">
-                <caret line="7694" column="45" selection-start-line="7694" selection-start-column="45" selection-end-line="7694" selection-end-column="45" />
+              <first_editor relative-caret-position="353">
+                <caret line="7704" column="4" lean-forward="true" selection-start-line="7704" selection-start-column="4" selection-end-line="7704" selection-end-column="4" />
               </first_editor>
               <second_editor />
             </state>
@@ -81,7 +81,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>angular</find>
       <find>java</find>
       <find>multi threa</find>
       <find>thread safe</find>
@@ -111,6 +110,7 @@
       <find>custom</find>
       <find>HttpServletResponse</find>
       <find>threads</find>
+      <find>packaging</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -129,7 +129,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="1" />
     <option name="y" value="23" />
     <option name="width" value="1387" />
@@ -197,20 +197,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1552008607229</updated>
-    </task>
-    <task id="LOCAL-00127" summary="updated read me">
-      <created>1564554157584</created>
-      <option name="number" value="00127" />
-      <option name="presentableId" value="LOCAL-00127" />
-      <option name="project" value="LOCAL" />
-      <updated>1564554157584</updated>
-    </task>
-    <task id="LOCAL-00128" summary="updated read me">
-      <created>1564629697470</created>
-      <option name="number" value="00128" />
-      <option name="presentableId" value="LOCAL-00128" />
-      <option name="project" value="LOCAL" />
-      <updated>1564629697470</updated>
     </task>
     <task id="LOCAL-00129" summary="updated read me">
       <created>1564661108602</created>
@@ -541,7 +527,21 @@
       <option name="project" value="LOCAL" />
       <updated>1568804431998</updated>
     </task>
-    <option name="localTasksCounter" value="176" />
+    <task id="LOCAL-00176" summary="updated read me">
+      <created>1568885432629</created>
+      <option name="number" value="00176" />
+      <option name="presentableId" value="LOCAL-00176" />
+      <option name="project" value="LOCAL" />
+      <updated>1568885432630</updated>
+    </task>
+    <task id="LOCAL-00177" summary="updated read me">
+      <created>1568893541172</created>
+      <option name="number" value="00177" />
+      <option name="presentableId" value="LOCAL-00177" />
+      <option name="project" value="LOCAL" />
+      <updated>1568893541172</updated>
+    </task>
+    <option name="localTasksCounter" value="178" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -670,8 +670,8 @@
       <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="593">
-            <caret line="7694" column="45" selection-start-line="7694" selection-start-column="45" selection-end-line="7694" selection-end-column="45" />
+          <first_editor relative-caret-position="353">
+            <caret line="7704" column="4" lean-forward="true" selection-start-line="7704" selection-start-column="4" selection-end-line="7704" selection-end-column="4" />
           </first_editor>
           <second_editor />
         </state>
