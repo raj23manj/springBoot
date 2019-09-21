@@ -7719,3 +7719,12 @@ public class RunFormQueries {
   # Orillelly way of deploying
     * https://www.oreilly.com/ideas/how-to-manage-docker-containers-in-kubernetes-with-java       
     * https://developer.okta.com/blog/2019/02/28/spring-microservices-docker
+  
+  # minikube + local registry
+    * https://stackoverflow.com/questions/42564058/how-to-use-local-docker-images-with-minikube
+  
+  # set up minikube locally
+    * https://aws.amazon.com/blogs/opensource/kubernetes-on-laptop/    
+  
+  # Ingress - aws
+    * https://aws.amazon.com/blogs/opensource/kubernetes-ingress-aws-alb-ingress-controller/  
