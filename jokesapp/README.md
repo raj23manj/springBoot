@@ -7728,3 +7728,17 @@ public class RunFormQueries {
   
   # Ingress - aws
     * https://aws.amazon.com/blogs/opensource/kubernetes-ingress-aws-alb-ingress-controller/  
+  
+  # set Env in mac
+    * https://medium.com/@himanshuagarwal1395/setting-up-environment-variables-in-macos-sierra-f5978369b255
+    
+  # cluster context minikube
+    * https://stackoverflow.com/questions/43643463/how-to-switch-kubectl-clusters-between-gcloud-and-minikube?rq=1
+    * http://tdongsi.github.io/blog/2017/12/31/minikube-in-corporate-vpn/
+    
+    issue:
+      * https://github.com/kubernetes/minikube/issues/4776    
+      
+  # expose localhost to minikube
+    * https://stackoverflow.com/questions/43354167/minikube-expose-mysql-running-on-localhost-as-service    
+    * https://github.com/kubernetes/minikube/issues/2735

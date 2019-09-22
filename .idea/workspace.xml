@@ -19,17 +19,17 @@
     <session id="1901758029">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
+          <entry key="project.closed" value="11" />
           <entry key="project.open.time.11" value="2" />
-          <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.12" value="2" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.18" value="2" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.5" value="2" />
           <entry key="project.open.time.6" value="5" />
           <entry key="project.open.time.7" value="4" />
-          <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="19" />
+          <entry key="project.open.time.8" value="2" />
+          <entry key="project.opened" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -51,13 +51,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="md" value="94364" />
+          <entry key="md" value="94561" />
           <entry key="txt" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="94364" />
+          <entry key="Markdown" value="94561" />
           <entry key="PLAIN_TEXT" value="15" />
         </counts>
       </usages-collector>
@@ -69,8 +69,8 @@
         <entry file="file://$PROJECT_DIR$/jokesapp/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="353">
-                <caret line="7704" column="4" lean-forward="true" selection-start-line="7704" selection-start-column="4" selection-end-line="7704" selection-end-column="4" />
+              <first_editor relative-caret-position="127">
+                <caret line="7710" column="62" lean-forward="true" selection-start-line="7710" selection-start-column="62" selection-end-line="7710" selection-end-column="62" />
               </first_editor>
               <second_editor />
             </state>
@@ -130,8 +130,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1" />
-    <option name="y" value="23" />
+    <option name="x" value="115" />
+    <option name="y" value="47" />
     <option name="width" value="1387" />
     <option name="height" value="811" />
   </component>
@@ -141,8 +141,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -169,7 +169,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1565246590315" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1569055296254" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -197,20 +197,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1552008607229</updated>
-    </task>
-    <task id="LOCAL-00129" summary="updated read me">
-      <created>1564661108602</created>
-      <option name="number" value="00129" />
-      <option name="presentableId" value="LOCAL-00129" />
-      <option name="project" value="LOCAL" />
-      <updated>1564661108602</updated>
-    </task>
-    <task id="LOCAL-00130" summary="updated read me">
-      <created>1564741114658</created>
-      <option name="number" value="00130" />
-      <option name="presentableId" value="LOCAL-00130" />
-      <option name="project" value="LOCAL" />
-      <updated>1564741114658</updated>
     </task>
     <task id="LOCAL-00131" summary="updated read me">
       <created>1564745065265</created>
@@ -541,14 +527,28 @@
       <option name="project" value="LOCAL" />
       <updated>1568893541172</updated>
     </task>
-    <option name="localTasksCounter" value="178" />
+    <task id="LOCAL-00178" summary="updated read me">
+      <created>1568911090327</created>
+      <option name="number" value="00178" />
+      <option name="presentableId" value="LOCAL-00178" />
+      <option name="project" value="LOCAL" />
+      <updated>1568911090327</updated>
+    </task>
+    <task id="LOCAL-00179" summary="updated read me">
+      <created>1569046379933</created>
+      <option name="number" value="00179" />
+      <option name="presentableId" value="LOCAL-00179" />
+      <option name="project" value="LOCAL" />
+      <updated>1569046379933</updated>
+    </task>
+    <option name="localTasksCounter" value="180" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="23" width="1387" height="811" extended-state="0" />
+    <frame x="115" y="47" width="1387" height="811" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.08847584" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.089962825" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -667,15 +667,15 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jokesapp/README.md">
-      <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="353">
-            <caret line="7704" column="4" lean-forward="true" selection-start-line="7704" selection-start-column="4" selection-end-line="7704" selection-end-column="4" />
+          <first_editor relative-caret-position="127">
+            <caret line="7710" column="62" lean-forward="true" selection-start-line="7710" selection-start-column="62" selection-end-line="7710" selection-end-column="62" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
+      <provider editor-type-id="text-editor" />
     </entry>
   </component>
   <component name="masterDetails">
