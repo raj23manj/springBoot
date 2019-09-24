@@ -7635,10 +7635,12 @@ public class RunFormQueries {
   # K8s + docker + jenkins
     * https://dzone.com/articles/microservices-with-kubernetes-and-docker
     
-  # k8s + docer + ingress
+  # k8s + docker + ingress
     * https://dzone.com/articles/quick-guide-to-microservices-with-kubernetes-sprin
     * https://www.edureka.co/blog/kubernetes-ingress-controller-nginx  
-    * https://blog.nebrass.fr/playing-with-spring-boot-on-kubernetes/
+    * https://blog.nebrass.fr/playing-with-spring-boot-on-kubernetes/  -> good
+    * good example for implementation:
+      * https://github.com/SalehAly/kubernetes-spring-postgres
     
     * https://www.joyfulbikeshedding.com/blog/2018-03-26-studying-the-kubernetes-ingress-system.html
     * https://itnext.io/migrating-a-spring-boot-service-to-kubernetes-in-5-steps-7c1702da81b6
@@ -7742,3 +7744,7 @@ public class RunFormQueries {
   # expose localhost to minikube
     * https://stackoverflow.com/questions/43354167/minikube-expose-mysql-running-on-localhost-as-service    
     * https://github.com/kubernetes/minikube/issues/2735
+    
+  # Health checks K8s + spring boot
+    * https://www.baeldung.com/spring-boot-kubernetes-self-healing-apps
+    * https://dimitr.im/spring-boot-kubernetes  
