@@ -7290,6 +7290,8 @@ public class RunFormQueries {
         * example a bank with balance. The momento object will have balance set to it as a state and passed. If rollback the use this
           state  
       * Null object
+        * A no-op object that conforms to the required interface, satisfying a dependency requirement of some other object
+        * Log example, jut implement empty methods in a new class and pass it
       * Observer
       * State
       * Strategy 
