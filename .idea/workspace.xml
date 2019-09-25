@@ -52,13 +52,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="md" value="94656" />
+          <entry key="md" value="95309" />
           <entry key="txt" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="94656" />
+          <entry key="Markdown" value="95309" />
           <entry key="PLAIN_TEXT" value="15" />
         </counts>
       </usages-collector>
@@ -70,8 +70,8 @@
         <entry file="file://$PROJECT_DIR$/jokesapp/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="593">
-                <caret line="7749" column="46" selection-start-line="7749" selection-start-column="46" selection-end-line="7749" selection-end-column="46" />
+              <first_editor relative-caret-position="475">
+                <caret line="7302" column="16" lean-forward="true" selection-start-line="7302" selection-start-column="16" selection-end-line="7302" selection-end-column="16" />
               </first_editor>
               <second_editor />
             </state>
@@ -131,7 +131,7 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="7" />
+    <option name="x" value="-53" />
     <option name="y" value="23" />
     <option name="width" value="1387" />
     <option name="height" value="811" />
@@ -198,20 +198,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1552008607229</updated>
-    </task>
-    <task id="LOCAL-00132" summary="updated read me">
-      <created>1564981250173</created>
-      <option name="number" value="00132" />
-      <option name="presentableId" value="LOCAL-00132" />
-      <option name="project" value="LOCAL" />
-      <updated>1564981250173</updated>
-    </task>
-    <task id="LOCAL-00133" summary="updated read me">
-      <created>1564982173240</created>
-      <option name="number" value="00133" />
-      <option name="presentableId" value="LOCAL-00133" />
-      <option name="project" value="LOCAL" />
-      <updated>1564982173241</updated>
     </task>
     <task id="LOCAL-00134" summary="updated read me">
       <created>1564986133282</created>
@@ -542,11 +528,25 @@
       <option name="project" value="LOCAL" />
       <updated>1569155100691</updated>
     </task>
-    <option name="localTasksCounter" value="181" />
+    <task id="LOCAL-00181" summary="updated read me">
+      <created>1569333169770</created>
+      <option name="number" value="00181" />
+      <option name="presentableId" value="LOCAL-00181" />
+      <option name="project" value="LOCAL" />
+      <updated>1569333169771</updated>
+    </task>
+    <task id="LOCAL-00182" summary="updated read me">
+      <created>1569397386615</created>
+      <option name="number" value="00182" />
+      <option name="presentableId" value="LOCAL-00182" />
+      <option name="project" value="LOCAL" />
+      <updated>1569397386615</updated>
+    </task>
+    <option name="localTasksCounter" value="183" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="7" y="23" width="1387" height="811" extended-state="0" />
+    <frame x="1870" y="-385" width="1387" height="811" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.09070632" />
@@ -670,8 +670,8 @@
     <entry file="file://$PROJECT_DIR$/jokesapp/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="593">
-            <caret line="7749" column="46" selection-start-line="7749" selection-start-column="46" selection-end-line="7749" selection-end-column="46" />
+          <first_editor relative-caret-position="475">
+            <caret line="7302" column="16" lean-forward="true" selection-start-line="7302" selection-start-column="16" selection-end-line="7302" selection-end-column="16" />
           </first_editor>
           <second_editor />
         </state>

@@ -7254,6 +7254,13 @@ public class RunFormQueries {
         * flyweight objects is that they are immutable
         * use hashmap, list
       * Proxy
+        * overview:
+          * here both the proxy class and actual class implement the interface
+          * you are calling foo.bar()
+          * this assumes that foo is in the same process as bar()
+          * what if later on you want to pull all foo-related operations into a seperate process, by avoiding changing any code
+          * proxy to rescue, same interface entirely different behaviour
+          *  this is called communication proxy, other types logging, virtual, guarding ..
         * a class that functions as an interface to a particular resource. That resource may be remote, expensive to construct, or may require logging or some other
           functionality
         * Protection Proxy
@@ -7262,6 +7269,7 @@ public class RunFormQueries {
           * using generics
         * Dynamic Proxy for logging
           * java gives invocationHandler to implement this   
+          * acts like interceptor
   
     * Behavioral 
       * Chain of responsibility   
