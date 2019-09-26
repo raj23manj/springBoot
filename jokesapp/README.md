@@ -7758,3 +7758,9 @@ public class RunFormQueries {
   # Health checks K8s + spring boot
     * https://www.baeldung.com/spring-boot-kubernetes-self-healing-apps
     * https://dimitr.im/spring-boot-kubernetes  
+    
+  # Eureka vs Kubernetes
+    * https://blog.christianposta.com/microservices/netflix-oss-or-kubernetes-how-about-both/
+    
+  # Having numbers instead of random strings
+    * https://stackoverflow.com/questions/40274031/in-kubernetes-how-to-set-pods-names-when-using-replication-controllers    
