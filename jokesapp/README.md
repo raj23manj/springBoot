@@ -6462,6 +6462,8 @@
       * https://grokonez.com/spring-framework/spring-websocket/spring-boot-websocket-angular-5-client-sockjs-stomp (with angular)
       * https://www.youtube.com/watch?v=OK2Fn6k7pwo&t=974s
       
+      * https://stackoverflow.com/questions/37821323/ensure-that-a-message-is-received
+      
     # Controller
       * https://studiofreya.com/2012/02/06/spring-mvc-how-to-build-a-thread-safe-controller/  
       * https://stackoverflow.com/questions/30171027/is-spring-boot-mvc-controller-multithreaded
