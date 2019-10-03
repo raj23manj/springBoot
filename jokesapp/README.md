@@ -7305,7 +7305,10 @@ public class RunFormQueries {
         * A no-op object that conforms to the required interface, satisfying a dependency requirement of some other object
         * Log example, jut implement empty methods in a new class and pass it
       * Observer
+        * An Observer is an object that wishes to be informed about events happening in the system. The entity generating the events is an observable.
       * State
+        * A pattern in which the objects behaviour is determined by its state. An Object transitions from one state to another.
+        * A formalized construct which manages state and transition is called state machine
       * Strategy 
       * Template
       * Visitor
