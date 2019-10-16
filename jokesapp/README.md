@@ -7053,6 +7053,11 @@ public class RunFormQueries {
     - heap memory is a huge memory and is used as common memory to be shared between threads
       - all the objects which are big are stored in the heap and a reference variable is stored in the stack 
       
+    Pointers:
+      - objects are stored on the heap
+      - Variables are reference to the object
+      - Local variables are stored on the stack  
+      
     - example:
       public static void main(String[] args) {
         List<String> myList = new ArrayList<String>();
@@ -7075,7 +7080,7 @@ public class RunFormQueries {
          data    ------------------------------>  |
          mylist=<ref-addr>   ----------->         | List(with data)   ---> String(one)  
          
-  * Passing Valuesand Reference
+  * Passing Values and Reference
     - public static void main(String[] args) {
       Customer c = new Customer("Sally");
       renameCustomer(c);
@@ -7107,7 +7112,7 @@ public class RunFormQueries {
     * Note: when objects are immutable, assiging creates a new object of that type in the heap
   
     * by passing a copy of the objects
-    * by using a iterator
+    * by using a iterator, extending iterable class and calling iterator on the object itself. not advisible
     * using collections.unmodifyablemap => best solutions   
     
     * all primitive types and string are immutable, hence returning them is no a problem
@@ -7770,4 +7775,11 @@ public class RunFormQueries {
     * https://blog.christianposta.com/microservices/netflix-oss-or-kubernetes-how-about-both/
     
   # Having numbers instead of random strings
-    * https://stackoverflow.com/questions/40274031/in-kubernetes-how-to-set-pods-names-when-using-replication-controllers    
+    * https://stackoverflow.com/questions/40274031/in-kubernetes-how-to-set-pods-names-when-using-replication-controllers 
+    
+  # Spring Boot JVM management
+    * https://spring.io/blog/2015/12/10/spring-boot-memory-performance     
+    
+  # SpringBoot using multithread vs more containers
+    * https://www.reddit.com/r/docker/comments/917m8n/multiple_threads_processes_or_containers/
+    * https://forums.docker.com/t/multithreaded-application-support/49603/5  
