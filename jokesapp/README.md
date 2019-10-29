@@ -7315,6 +7315,9 @@ public class RunFormQueries {
         * A pattern in which the objects behaviour is determined by its state. An Object transitions from one state to another.
         * A formalized construct which manages state and transition is called state machine
       * Strategy 
+        * Decompose into higher and lower level parts
+        * like the excel I created for silverstone
+        * Make tea or coffee then only coffee or tea powder changes in mixing method.
       * Template
       * Visitor
       
@@ -7783,3 +7786,48 @@ public class RunFormQueries {
   # SpringBoot using multithread vs more containers
     * https://www.reddit.com/r/docker/comments/917m8n/multiple_threads_processes_or_containers/
     * https://forums.docker.com/t/multithreaded-application-support/49603/5  
+    
+  # Redis Cluster Setup:
+    * https://medium.com/zero-to/setup-persistence-redis-cluster-in-kubertenes-7d5b7ffdbd98  
+    * https://medium.com/@thanawitsupinnapong/setting-up-redis-in-kubernetes-with-helm-and-manual-persistent-volume-f1d52fa1919f
+    
+  # Hacker-earth
+    * https://www.hackerearth.com/practice/data-structures/hash-tables/basics-of-hash-tables/tutorial/
+    
+  # System Design
+    * Educative.io
+    * https://coursehunters.online/t/educative-io-design-gurus-grokking-the-system-design-interview-part-1/579  
+    * https://coursehunters.online/search?q=grokking%20the%20system%20design
+    
+  # Algo:
+    * http://btholt.github.io/four-semesters-of-cs/  
+      
+  # Redis Tutoria - Balaji
+    * redis-cli
+       * Single key operations
+          * SET/set k1 v1
+          * GET/get k1  
+          * del k1
+          * EXISTS/exists k1 => true => 1, false => 0
+          * keys k*, keys * => pattern search
+          * RENAME  key newkey => change key name even if a key with newkey exists already
+          * RENAMENX  key newkey => prevents if an key name as of new key exists already and exists with 0
+          * strlen key => returns lenght of key
+          * set k1 v1 nx => same as renamenx
+          * set k5 v5 xx => sets a value only if there is key k5 existing if not returns nil
+          * getset k1 0=> getss the old value k1 first and then sets a new value
+       * Bulk Operations
+         *  multipleset
+           * MSET/mset k1 v1 k2 v2  
+           * mget k1 k2
+           * msetnx k1 v1 k2 v2 => sets if none existed before. Returns 1 if all are set, or 0 if even one is not set
+           * setrange str0 5 v, ? (5th video) sets from vale from 5th position
+           * getrange key 0 5, get values from that range
+       * Arithmetic Operations on values
+         * INCR key , increments the value of the key
+         * INCRBY key 2, increment by 2 
+         * DECR key
+         * DECRBY key 2    
+         * INCRBYFLOAT key 10.2
+       * Arithmetic operations - bitwise
+         *   
