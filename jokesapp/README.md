@@ -2280,7 +2280,7 @@
       * when the client is running it tries to fetch a local registry from the eureka server to speed up the process if multiple nodes of eureka
         are present in the cluster, as we have one we can disable it
         - eureka.client.fetch-registry=false
-      * Once the eureka server is up and clients register, it takes adefault of 30 secs to wait before it appears on the dashboard. The reason for 
+      * Once the eureka server is up and clients register, it takes a default of 30 secs to wait before it appears on the dashboard. The reason for 
         this is the client after registering tries to give a heart beat at an interval of 10s for three time, and the eureka sever verifies it 
         once it is successful it shows up on the dashboard, and then singnals that this service can be used. In development phase we can reduce this
         time to 5 secs
@@ -3245,7 +3245,8 @@
       }
       
     * Recurssive Generics => need to see 
-      https://stackoverflow.com/questions/211143/java-enum-definition
+     * https://stackoverflow.com/questions/211143/java-enum-definition
+     * used in chain design and builder design pattern, to return self 
       
       
        
@@ -3275,7 +3276,7 @@
       }
       
     * introduction to collections and Generics in Java
-      * Generics help to reduce runtime bugs to copile time bugs(easier to detect and fix) 
+      * Generics help to reduce runtime bugs to compile time bugs(easier to detect and fix) 
       * Used to implement generic algorithm
       * avoid casting, it is expensive
       
@@ -3309,7 +3310,7 @@
           writing -> you can not add Object or serializable to a List<? super Number> even though Number extends Object and serialisable. You
                      can add Integer or double, which are sub types of number 
                      
-      * If we wnat to add and read at the same time, we have to declare the collection with no wild card. List<Double>  
+      * If we want to add and read at the same time, we have to declare the collection with no wild card. List<Double>  
       
       * Type erasure 
         * java uses type erasure to handle generics
@@ -3418,7 +3419,7 @@
     * equalsTo()
       * check if two objects are equal
       * by default it will only check for two objects are instances of the same class 
-      * need oveeriding so we can customise
+      * need overiding so we can customise
       
       
     *  hashcode() 
@@ -3491,7 +3492,7 @@
     * A Thread will terminate once it returns from its run method after completing or else if it encounters a return statement  
     * When calling start() method after overriding run method it will execute in another thread, if run() itself is called, it will
       execute in the same thread
-    * Interrupting a thread will terminate the thread, to interrup an thread we instance of that thread from the main thread.
+    * Interrupting a thread will terminate the thread, to interrup an thread we need instance of that thread from the main thread.
     * We can make a thread to join with other thread and wake it up if it is sleeping   
        // when a thread is put to sleep here, anotherThread instead making it to sleep
        // for 3 sec's, we can make it join to this(myRunnableTHread) thread, once this
@@ -3502,7 +3503,7 @@
       variables on the instances(countdownclass) it will be added to the thread's Stack      
     * Race-Condition(Thread Interference): when multiple thread share the same resource and write them, leads to a race condition.
     * Synchronisation: To avoid race condition, we need to use synchronised methods or statements
-      - Constructors cannot ne synchronised
+      - Constructors cannot be synchronised
       - not use local variables if using synchronisation  
       - we need to synchronise the code that only needs to be synchronised, like the for loop(int i), this will affect performance of application
       - Methods that can be only called inside synchronised code: (Pub/Sub)
@@ -3549,7 +3550,7 @@
     treated as values.  
   
   * Scenario
-    * imagine if i class has only one menthod and i want to call it, i need to instantiate the class. Instead if
+    * imagine if i class has only one method and i want to call it, i need to instantiate the class. Instead if
       I could oly call or pass the method, that is where lambda's come in.
   
   * In Java 7
@@ -3834,7 +3835,7 @@
     * mutability (does not mutate)
     
     * lambda
-      * a function withou a name(anonymous functions)
+      * a function without a name(anonymous functions)
       * not tied to a class
       
       Function<String, String> add = (name) -> { name.upperCase(); }
@@ -4129,7 +4130,7 @@
          * map(), flatMap(), filter()
          
        * Default and Static methods in Interfaces:
-         * Default => can be overriden in classe, acts as instance methods
+         * Default => can be overriden in class, acts as instance methods
          * Static => can not be overriden in classe  
          
          * sort()
@@ -4139,7 +4140,7 @@
          * Abstract classes vs interfaces
            * instance variable are allowed in abstract classes but not in interfaces 
            
-         * in multiple inheritanceor inheritance the which overrides always takes precedence, resolve to the child
+         * in multiple inheritance or inheritance the which overrides always takes precedence, resolve to the child
            implementation always 
           
          * when two interfaces have same method names, java will throw compiler error, in that case we need to implement the
@@ -5185,7 +5186,7 @@
         		++counter;
         	}  
              
-    * Synchronized Blocks(avoid class intrensic locks(lock on all methods which ha synchronised)) - 13
+    * Synchronized Blocks(avoid class intrensic locks(lock on all methods which has synchronised)) - 13
       * when using "synchronized" on the methods as show below, java add's an class intrensic lock to App class, which means when two threads are started at the
         same time, when thread 1 is accessing count1 then thread2 cannot access count2 variable because the "synchronized" is present on both hte methods and
         making thread 1 to complete and adding an "Intrensic lock", this makes performance slower, to avoid this, see below example   
@@ -5989,7 +5990,7 @@
          * It implements the BlockingQueue interface
          * 
          * 	- unbounded concurrent queue
-         * 	- it uses the same ordering rules as the java.util.PriorityQueue class -> have to implement the C0mparable interface
+         * 	- it uses the same ordering rules as the java.util.PriorityQueue class -> have to implement the Comparable interface
          * 			The comparable interface will determine what will the order in the queue
          * 
          * 			The priority can be the same compare() == 0 case
@@ -6045,7 +6046,7 @@
   * MapReduce - section 10
     * we can make the given algorithm parallel
       * map: splits the original dataset
-      * shuffel&sort: all th data is re-arranged for the next step to run in parallel. It makes sure that items with the 
+      * shuffel&sort: all the data is re-arranged for the next step to run in parallel. It makes sure that items with the 
         same keys will get to the same reducer   
       * combines the final results   
       
@@ -6438,6 +6439,7 @@
       
     # Spring Boot Interview
       * http://candidjava.com/tutorial/spring-boot-interview-questions/
+      * java => https://javarevisited.blogspot.com/2017/01/how-to-prepare-for-java-interviews.html
       
     # Rails
       * https://www.wisdomjobs.com/e-university/ruby-on-rails-interview-questions.html     
@@ -7318,7 +7320,12 @@ public class RunFormQueries {
         * Decompose into higher and lower level parts
         * like the excel I created for silverstone
         * Make tea or coffee then only coffee or tea powder changes in mixing method.
+        * it is done using composition, using interfaces
       * Template
+        * makes use of abstract member
+        * inheritors override the abstract members
+        * parent template method invoked
+        * allows us to define the skeleton in the base abstract class and concrete implemenation in the subclass
       * Visitor
       
   
@@ -7801,6 +7808,9 @@ public class RunFormQueries {
     
   # Algo:
     * http://btholt.github.io/four-semesters-of-cs/  
+    
+  # Must Do Interview Programs:
+    * https://www.geeksforgeeks.org/must-do-coding-questions-for-companies-like-amazon-microsoft-adobe/#Greedy  
       
   # Redis Tutoria - Balaji
     * redis-cli
