@@ -7863,7 +7863,6 @@ public class RunFormQueries {
                requires helloWorld;
              }
              
-             
       * Private Methods 
         * same like class
       * Try with resource enhancements
@@ -7881,8 +7880,52 @@ public class RunFormQueries {
        * like get PID, get parent, wait for process to terminate, Destroy Process
       * JShell
         * like ruby shell or py shell
+    
+    * Java 10
+      * performance improvements 
+      * Experimental JIT compiler (Graal) only on linux os 
+      * var type inference
+        * like ruby javascript
+        * instead of using 
+           * before java 10
+             String val = "Hi";
+           * In Java 10  
+             var val = "hi";
+             var studentMap = new HashMap<>();
+             var stringMustIntialise = null;
+                   
+      * consolidate JDK into single repository
+      * Garbage-collector Interface
+      * Parallel Full GC for G1
+      * Heap Allocation on alternative memory devices     
+      * Remove javah
+      * Root Certificates   
+    
+    * Java 11
+      * Remove features
+        * Modules
+        * Classes
+        * Methods
+          * Thread.destroy()
+          * Thread.stop()
+        * Tools     
         
+      * String Handling  
+        * repeat(n)
+        * isBlank()
+        * lines()
+        * strip()
+        * stripLeading()
+        * stripTrailing()
       
+      * HttpClient
+        * used to call webservice 
+        
+      * Lambda Enhancements
+        *  AddInternal add = (var a, var b) -> (a+b);
+        *  AddInternal add = (final var a, final var b) -> (a+b);
+        *  AddInternal add = (@Min(value = 10) var a, @Min(value = 10) var b) -> (a+b); => validation
+        
   # Redis Tutoria - Balaji
     * redis-cli
        * Single key operations
