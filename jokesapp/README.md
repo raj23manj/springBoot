@@ -7138,15 +7138,15 @@ public class RunFormQueries {
      String d = "76";  
      
   * Garbage collection:
-    * memory leak : objects that are not freed continue to consume memory. Need to do a restart of th machines if 
+    * memory leak : objects that are not freed continue to consume memory. Need to do a restart of the machines if 
       it happens
     * Java handles it by
-      * Running a virtual machine which is a program tha runs on the OS memory and handles the memory allocation
+      * Running a virtual machine which is a program that runs on the OS memory and handles the memory allocation
         and freeing up memory
       * Adopts Garbage Collection Strategy 
     * Java Rule for garbage collection: (runs automatically)
       Any object on the heap which cannot be reached by a reference from the stack is eligible for GC  
-      * SYstem.gc(); method available to free memory
+      * System.gc(); method available to free memory
       * finalize() method will be called by GC, when added in the class
       
   * Detecting Soft Leaks:
@@ -7177,6 +7177,8 @@ public class RunFormQueries {
   
   
   * Tuning the virtual machine:
+    * https://javarevisited.blogspot.com/2011/11/hotspot-jvm-options-java-examples.html
+    * 
     * Command line args to set the limit
       * Heap Size
         * -Xmx   - set max heap size   
@@ -7562,7 +7564,7 @@ public class RunFormQueries {
     
     * BOM(common dependencies between microservices)
       * POM Difference from BOM 
-        * it provides a curated set od dependencies, also common set of properties inherited
+        * it provides a curated set of dependencies, also common set of properties inherited
         * Does not set common plugins, common dependencies and common plugin configuration    
         
       * BOM Configuration
@@ -7808,9 +7810,78 @@ public class RunFormQueries {
     
   # Algo:
     * http://btholt.github.io/four-semesters-of-cs/  
+  
+  # Interview for Cracking:
+    * https://github.com/bephrem1/backtobackswe/issues/1
+    * https://github.com/bephrem1/backtobackswe  
     
   # Must Do Interview Programs:
     * https://www.geeksforgeeks.org/must-do-coding-questions-for-companies-like-amazon-microsoft-adobe/#Greedy  
+    
+  # Java 7,8,9,10,11,12 features:
+    * java 7
+      * Multi-catch
+        * catch multiple exceptions in single catch block
+        * try {
+        } catch(Exception1 | Exception2)
+      * special try-with-resource statement
+        * no need to close explicitly, will be closed 
+        * no need of finally block
+      * Diamond operator with generic declarations  
+        * diamond operator <>
+        * simplefies coding
+        * List<String> new ArrayList<>();
+      * Strings in switch statements
+      * underscore in binary literals and numeric literals
+      * G1 Garbage Collector
+       * yound, old and perm gen generations
+       * each has equal size 1-32mb
+      * New file system Api(NIO 2.0)
+        
+    * java 8
+      * Lambdas
+      * Default and static Method in interfaces with definitions 
+      * Functional Interfaces(Consumer, predicate, Function, supplier)    
+      * ForEachLoop
+      * Streams(operations, map, flatmap,parallel streams)
+      * Joda-Time(Date and Time)
+      
+    * Java 9
+      * modular programming (JPMS/Jigsaw)
+        * https://www.baeldung.com/project-jigsaw-java-modularity
+        * Java platform module system(JPMS)
+        * Jigsaw is a project name
+        * jar is a group of packager, jar contains Classes + interfaces. But moudle contains Classes + interfaces + Configuration Data
+        * example:
+          * configuration data
+            * module helloWorld {
+              exports com.jff.mypackage; => some calss with sout
+            }
+            
+          * How To use 
+             module clientModule {
+               requires helloWorld;
+             }
+             
+             
+      * Private Methods 
+        * same like class
+      * Try with resource enhancements
+      * Factory Methods for collections
+      * Stream Enhancement
+        * new methods
+          * takeWhile => take until condition satisfies 
+          * dropWhile
+          * ofNullable => prevents NullPointer Exception, when passing a null 
+      * JLink (java Linker)
+        * to create custom JRE
+      * Safe Varargs Enhancement
+      * Process API Updates
+       * communication with OS is easier, for system programming
+       * like get PID, get parent, wait for process to terminate, Destroy Process
+      * JShell
+        * like ruby shell or py shell
+        
       
   # Redis Tutoria - Balaji
     * redis-cli
