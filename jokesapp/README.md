@@ -7925,7 +7925,29 @@ public class RunFormQueries {
         *  AddInternal add = (var a, var b) -> (a+b);
         *  AddInternal add = (final var a, final var b) -> (a+b);
         *  AddInternal add = (@Min(value = 10) var a, @Min(value = 10) var b) -> (a+b); => validation
-        
+    
+    * Java 12
+      * Switch Expression
+        * using ENUMS in switch case    
+        * passing a  block
+        * no need of using break statement
+        * Assigning swith expression to variable
+        * can use single case for multiple options
+          * switch(case) {
+            case JAN -> season = "summer";
+            case FEB,MAR,APR -> season = "summer";
+            } 
+            
+            => 
+            
+            var season = switch(case) {...}
+      * NUmber Formating
+        * NumberFormat fmt = NumberFormat.getCOmpactNumberInstance();
+          String result = fmt.format(1000) => 1K
+      
+      * String New methods  
+        * indent => specify number of spaces
+        * transform =>  converts the string to given string
   # Redis Tutoria - Balaji
     * redis-cli
        * Single key operations
