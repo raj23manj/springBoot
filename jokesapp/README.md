@@ -7332,8 +7332,41 @@ public class RunFormQueries {
       
   
   * SOLID
-    * SRP -> only single responsibility
-    * OSP -> methods or classes should not modify, only extension and no modification    
+    * SRP -> only single responsibility. Move to separate classes. Journal with list of things to do, and same class has persistence to file. Move persistentce to file mehtods to seperate class
+    * OSP -> methods or classes should not modify, only extension and no modification. Use Generics   
+      interface Specification<T> {
+        boolean isSatisfied(T item);
+      } 
+      
+      interface Filter<T> {
+        Stream<T> filter(List<T> items, Specification<T> spec);
+      }
+      
+      class ColorSpecification implements Specification<Product> {
+        @Override
+        public boolean isSatisfied(Product item) {
+          return item.color == color;
+        }
+      } 
+      
+       class SizeSpecification implements Specification<Product> {
+              @Override
+              public boolean isSatisfied(Product item) {
+                return item.size == size;
+              }
+            } 
+      
+      class BetterFilter implements Filter<Product> {
+        Stream<Product> filter(List<Product> items, Specification<Product> spec) {
+          return items.stream.filter(p -> spec.isSatisfied(p));
+        }
+      }
+      
+      psvm() {
+        BetterFilter bf = new BetterFilter();
+        bf.filter(products, new ColorSpecification(Color.GREEN)).forEach(p -> p.name);
+      }
+      
     * LSP -> substition of child to base should work -> this can be achieved using Factory pattern or seggregating each classes with SRP, 
       * vechile -> with engine -> car
                 -> without engine -> cycle
