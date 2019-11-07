@@ -7368,17 +7368,112 @@ public class RunFormQueries {
       }
       
     * LSP -> substition of child to base should work -> this can be achieved using Factory pattern or seggregating each classes with SRP, 
+      * https://www.javacodegeeks.com/2011/11/solid-liskov-substitution-principle.html
       * vechile -> with engine -> car
                 -> without engine -> cycle
     * ISP -> how to split interfaces into smaller interfaces (YAGNI principle => you ain't gonna need it)  using decorator pattern  
-    * DIP -> (dependency inversion)     
+      * Interface Machine {
+        print();
+        fax();
+        scan();
+      } => split to seperate interface
+    * DIP -> (dependency inversion principle)     
       * High level modules should not depend on low-level modules. Both should depend on abstraction
-        => High level - means business logics, just need what i want dont care how it comes
-           Low level - access to data storage implementations(arrays, lists)  and SRP classes
-           
+        => High level - means business logics, just need what i want dont care how it comes (like services business logic)
+           Low level - access to data storage implementations(arrays, lists)  and SRP classes(like models and having methods manupliating in the same class)
            means that a highlevel(business logic) should not directly depend on a low-level(data storage/concrete class), depend on abstraction instead
+    
       * Abstractions should not depend on details. Details should depend on abstractions.  
         => means use interfaces or abstract classes instead of concrete classes
+      
+      *  
+         enum Relationship
+         {
+           PARENT,
+           CHILD,
+           SIBLING
+         }
+         
+         class Person
+         {
+           public String name;
+           // dob etc.
+         
+         
+           public Person(String name) {
+             this.name = name;
+           }
+         }
+         
+         interface RelationshipBrowser // like repository
+         {
+           List<Person> findAllChildrenOf(String name);
+         }
+         
+         class Relationships implements RelationshipBrowser
+         {
+           
+           // Triplet class requires javatuples
+           private List<Triplet<Person, Relationship, Person>> relations =
+             new ArrayList<>();
+         
+           public List<Triplet<Person, Relationship, Person>> getRelations() {
+             return relations;
+           }
+         
+           public void addParentAndChild(Person parent, Person child)
+           {
+             relations.add(new Triplet<>(parent, Relationship.PARENT, child));
+             relations.add(new Triplet<>(child, Relationship.CHILD, parent));
+           }
+           
+           public List<Person> findAllChildrenOf(String name) {
+                    
+                        return relations.stream()
+                          .filter(x -> Objects.equals(x.getValue0().name, name)
+                                  && x.getValue1() == Relationship.PARENT)
+                          .map(Triplet::getValue2)
+                          .collect(Collectors.toList());
+                      }
+         }
+         
+         class Research
+         {
+           public Research(Relationships relationships)
+           {
+             // high-level: find all of john's children // bad way
+             List<Triplet<Person, Relationship, Person>> relations = relationships.getRelations();
+             relations.stream()
+               .filter(x -> x.getValue0().name.equals("John")
+                       && x.getValue1() == Relationship.PARENT)
+               .forEach(ch -> System.out.println("John has a child called " + ch.getValue2().name));
+           }
+         
+           public Research(RelationshipBrowser browser)
+           {
+             List<Person> children = browser.findAllChildrenOf("John");
+             for (Person child : children)
+               System.out.println("John has a child called " + child.name);
+           }
+         }
+         
+         class DIPDemo
+         {
+           public static void main(String[] args)
+           {
+             Person parent = new Person("John");
+             Person child1 = new Person("Chris");
+             Person child2 = new Person("Matt");
+         
+             // low-level module
+             Relationships relationships = new Relationships();
+             relationships.addParentAndChild(parent, child1);
+             relationships.addParentAndChild(parent, child2);
+         
+             new Research(relationships);
+           }
+         }  
+        
         
   
   * Install Java with Mac
