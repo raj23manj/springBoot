@@ -8080,6 +8080,9 @@ public class RunFormQueries {
       * String New methods  
         * indent => specify number of spaces
         * transform =>  converts the string to given string
+        
+    * JWT Security measures    
+      * https://blog.hasura.io/best-practices-of-using-jwt-with-graphql/  
   # Redis Tutoria - Balaji
     * redis-cli
        * Single key operations
