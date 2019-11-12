@@ -1023,6 +1023,7 @@
   * Used to scan the packages and create beans
   - package guru.springframework.didemo;
     @SpringBootApplication  => does a component scan from the package that is mentioned above and down
+    @Configuration, @EnableAutoConfiguration and @ComponentScan 
     // package scan
     @ComponentScan(basePackages = {"guru.springframework.didemo.services", "guru.springframework.didemo"})
     // @ComponentScan(basePackages = {"guru"}) // this also works
@@ -1044,7 +1045,7 @@
   
 # JPA
   * Hibernate, OpenJPA are implementers of this 
-  * Set of specification to be implemented
+  * Set of specification to be implemented on how java objects needs to be persisted into tho DB
   * ORM Tool   
   * Criteria update, delete , Schema Generation, Validations, Queries against stored procedures  	 
   
@@ -6440,6 +6441,8 @@
     # Spring Boot Interview
       * http://candidjava.com/tutorial/spring-boot-interview-questions/
       * java => https://javarevisited.blogspot.com/2017/01/how-to-prepare-for-java-interviews.html
+      * hibernate => https://www.onlineinterviewquestions.com/hibernate-interview-questions-answers/
+      * JPA => https://codingcompiler.com/jpa-interview-questions-answers/, https://www.javaguides.net/2018/12/jpa-interview-questions-and-answers-for-beginners-and-experienced.html
       
     # Rails
       * https://www.wisdomjobs.com/e-university/ruby-on-rails-interview-questions.html     
